@@ -30,12 +30,14 @@ enum AppSection: String, CaseIterable, Identifiable {
 final class AppState: ObservableObject {
     let client = ECClient()
 
-    // Connection settings
-    @AppStorage("host") var host: String = ""
-    @AppStorage("port") var port: Int = 4712
-    @AppStorage("autoConnect") var autoConnect: Bool = false
+    // Connection settings. Backed by UserDefaults manually (not @AppStorage):
+    // @AppStorage inside an ObservableObject does not fire objectWillChange,
+    // which left bound controls like the idle-timeout Picker "stuck".
+    @Published var host: String { didSet { UserDefaults.standard.set(host, forKey: "host") } }
+    @Published var port: Int { didSet { UserDefaults.standard.set(port, forKey: "port") } }
+    @Published var autoConnect: Bool { didSet { UserDefaults.standard.set(autoConnect, forKey: "autoConnect") } }
     // Auto-disconnect after this many seconds of inactivity (0 = disabled).
-    @AppStorage("idleTimeout") var idleTimeout: Int = 120
+    @Published var idleTimeout: Int { didSet { UserDefaults.standard.set(idleTimeout, forKey: "idleTimeout") } }
     @Published var password: String = ""
 
     // Connection state
@@ -109,6 +111,12 @@ final class AppState: ObservableObject {
     }
 
     init() {
+        let defaults = UserDefaults.standard
+        host = defaults.string(forKey: "host") ?? ""
+        port = defaults.object(forKey: "port") as? Int ?? 4712
+        autoConnect = defaults.bool(forKey: "autoConnect")
+        idleTimeout = defaults.object(forKey: "idleTimeout") as? Int ?? 120
+
         if !host.isEmpty {
             password = Keychain.loadPassword(account: "\(host):\(port)") ?? ""
         }
