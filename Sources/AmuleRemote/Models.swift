@@ -83,7 +83,7 @@ enum PartFileStatus: UInt64 {
     }
 }
 
-struct DownloadItem: Identifiable, Hashable {
+struct DownloadItem: Identifiable, Hashable, Codable {
     var hash: Data
     var name: String
     var sizeFull: UInt64

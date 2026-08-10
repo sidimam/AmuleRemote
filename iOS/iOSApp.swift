@@ -83,8 +83,9 @@ struct iOSConnectionView: View {
                 .onChange(of: state.port) { _, _ in state.reloadStoredPassword() }
 
                 Section {
-                    Toggle("Salva la password nel Portachiavi", isOn: $state.savePassword)
                     Toggle("Connetti automaticamente all'avvio", isOn: $state.autoConnect)
+                } footer: {
+                    Text("Server e password vengono salvati automaticamente nel Portachiavi.")
                 }
 
                 Section {
@@ -102,12 +103,6 @@ struct iOSConnectionView: View {
                         }
                     }
                     .disabled(state.host.isEmpty || state.password.isEmpty || state.connecting)
-                }
-
-                Section {
-                    Text("Il traffico EC non è cifrato: da fuori casa usa una VPN (WireGuard/Tailscale) invece di esporre la porta 4712 su Internet.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
                 }
             }
             .navigationTitle("Connessione")

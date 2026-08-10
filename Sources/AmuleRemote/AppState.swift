@@ -33,7 +33,6 @@ final class AppState: ObservableObject {
     // Connection settings
     @AppStorage("host") var host: String = ""
     @AppStorage("port") var port: Int = 4712
-    @AppStorage("savePassword") var savePassword: Bool = true
     @AppStorage("autoConnect") var autoConnect: Bool = false
     @Published var password: String = ""
 
@@ -95,11 +94,8 @@ final class AppState: ObservableObject {
             try await client.connect(host: host, port: UInt16(clamping: port), password: password)
             serverVersion = await client.serverVersion
             connected = true
-            if savePassword {
-                Keychain.savePassword(password, account: "\(host):\(port)")
-            } else {
-                Keychain.deletePassword(account: "\(host):\(port)")
-            }
+            Keychain.savePassword(password, account: "\(host):\(port)")
+            loadCompletedCache()
             startPolling()
             await refreshAll()
             _ = try? await UNUserNotificationCenter.current()
@@ -111,8 +107,11 @@ final class AppState: ObservableObject {
         connecting = false
     }
 
-    /// Re-fill the password from the Keychain when host/port change to a known server.
+    /// Re-fill the password from the Keychain when host/port change to a known
+    /// server — but ONLY if the field is empty, so it never clobbers a value the
+    /// user (or iOS AutoFill from the Passwords app) has just entered.
     func reloadStoredPassword() {
+        guard password.isEmpty else { return }
         if let p = Keychain.loadPassword(account: "\(host):\(port)"), !p.isEmpty {
             password = p
         }
@@ -180,7 +179,27 @@ final class AppState: ObservableObject {
 
     // The daemon drops finished files from its queue; like aMuleGUI we keep
     // them visible client-side until the user clicks "Rimuovi completati".
+    // Persisted to disk (per server) so they survive app relaunches on iOS.
     private var completedCache: [Data: DownloadItem] = [:]
+    // Last progress seen for every hash, to detect completion even when a fast
+    // download vanishes from the queue between two polls without ever being
+    // observed at 100%.
+    private var lastProgress: [Data: Double] = [:]
+
+    private var completedKey: String { "completed-\(host):\(port)" }
+
+    private func loadCompletedCache() {
+        completedCache.removeAll()
+        guard let data = UserDefaults.standard.data(forKey: completedKey),
+              let items = try? JSONDecoder().decode([DownloadItem].self, from: data) else { return }
+        for item in items { completedCache[item.hash] = item }
+    }
+
+    private func saveCompletedCache() {
+        if let data = try? JSONEncoder().encode(Array(completedCache.values)) {
+            UserDefaults.standard.set(data, forKey: completedKey)
+        }
+    }
 
     func refreshDownloads() async {
         do {
@@ -189,11 +208,16 @@ final class AppState: ObservableObject {
             let fresh = reply.allTags(.partfile).compactMap(DownloadItem.parse)
             let freshHashes = Set(fresh.map(\.hash))
 
-            // A file that vanished from the queue while (nearly) done has completed.
-            for old in downloads where !freshHashes.contains(old.hash) {
+            // A file that vanished from the queue is treated as completed when
+            // it was clearly near the end. We use the highest progress ever
+            // seen for that hash (not just the last row) to survive fast
+            // downloads that jump from ~90% to gone between two polls.
+            let previous = downloads.filter { completedCache[$0.hash] == nil }
+            for old in previous where !freshHashes.contains(old.hash) {
+                let seenProgress = max(old.progress, lastProgress[old.hash] ?? 0)
                 let finished = old.isComplete
                     || old.status == PartFileStatus.completing.rawValue
-                    || old.progress >= 0.999
+                    || seenProgress >= 0.90
                 if finished && completedCache[old.hash] == nil {
                     var done = old
                     done.status = PartFileStatus.complete.rawValue
@@ -204,8 +228,11 @@ final class AppState: ObservableObject {
                     notifyDownloadCompleted(done)
                 }
             }
+            // Remember progress for the files still in the queue.
+            for f in fresh { lastProgress[f.hash] = f.progress }
             // If the daemon still reports a file, its live row wins.
             for h in freshHashes { completedCache.removeValue(forKey: h) }
+            saveCompletedCache()
 
             downloads = (fresh + completedCache.values)
                 .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
@@ -256,6 +283,7 @@ final class AppState: ObservableObject {
     func delete(_ item: DownloadItem) async {
         // A cached completed row no longer exists on the daemon: just drop it.
         if completedCache.removeValue(forKey: item.hash) != nil {
+            saveCompletedCache()
             downloads.removeAll { $0.hash == item.hash }
             return
         }
@@ -274,6 +302,7 @@ final class AppState: ObservableObject {
 
     func clearCompleted() async {
         completedCache.removeAll()
+        saveCompletedCache()
         downloads.removeAll { $0.isComplete }
         do {
             _ = try await client.request(ECPacket(.clearCompleted))

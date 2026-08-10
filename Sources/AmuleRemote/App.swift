@@ -132,7 +132,6 @@ struct ConnectionView: View {
                 TextField("Host / IP del server:", text: $state.host, prompt: Text("es. unraid.local o 192.168.1.10"))
                 TextField("Porta EC:", value: $state.port, format: .number.grouping(.never))
                 SecureField("Password:", text: $state.password)
-                Toggle("Salva la password nel Portachiavi", isOn: $state.savePassword)
                 Toggle("Connetti automaticamente all'avvio", isOn: $state.autoConnect)
             }
             .formStyle(.grouped)
@@ -151,12 +150,6 @@ struct ConnectionView: View {
             .controlSize(.large)
             .disabled(state.host.isEmpty || state.password.isEmpty || state.connecting)
             .keyboardShortcut(.defaultAction)
-
-            Text("Su Unraid: abilita le External Connections in amule.conf (ECPort 4712, AcceptExternalConnections=1) e apri/inoltra la porta.")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: 480)
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

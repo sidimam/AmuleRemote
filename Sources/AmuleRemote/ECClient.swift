@@ -29,22 +29,42 @@ actor ECClient {
         )
         connection = conn
 
-        try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
-            var resumed = false
-            conn.stateUpdateHandler = { state in
-                switch state {
-                case .ready:
-                    if !resumed { resumed = true; cont.resume() }
-                case .failed(let err):
-                    if !resumed { resumed = true; cont.resume(throwing: err) }
-                    conn.cancel()
-                case .cancelled:
-                    if !resumed { resumed = true; cont.resume(throwing: ECError(message: "Connessione annullata")) }
-                default:
-                    break
+        let queue = DispatchQueue(label: "ec-client")
+        // Hard connection timeout: NWConnection sits in .waiting (retrying)
+        // forever when the host is unreachable and never fails on its own —
+        // without this the UI spinner would spin indefinitely.
+        let timeout = DispatchWorkItem { conn.cancel() }
+        queue.asyncAfter(deadline: .now() + 12, execute: timeout)
+
+        do {
+            try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
+                var resumed = false
+                conn.stateUpdateHandler = { state in
+                    switch state {
+                    case .ready:
+                        if !resumed { resumed = true; cont.resume() }
+                    case .failed(let err):
+                        if !resumed { resumed = true; cont.resume(throwing: err) }
+                        conn.cancel()
+                    case .waiting(let err):
+                        // Host unreachable / connection refused: fail fast
+                        // instead of letting Network.framework keep retrying.
+                        if !resumed { resumed = true; cont.resume(throwing: err) }
+                        conn.cancel()
+                    case .cancelled:
+                        if !resumed { resumed = true; cont.resume(throwing: ECError(message: "Timeout di connessione: server non raggiungibile")) }
+                    default:
+                        break
+                    }
                 }
+                conn.start(queue: queue)
             }
-            conn.start(queue: DispatchQueue(label: "ec-client"))
+            timeout.cancel()
+        } catch {
+            timeout.cancel()
+            conn.stateUpdateHandler = nil
+            disconnectNow()
+            throw error
         }
         conn.stateUpdateHandler = nil
 
