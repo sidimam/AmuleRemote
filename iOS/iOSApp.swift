@@ -28,16 +28,13 @@ struct iOSRootView: View {
                     iOSMoreView()
                         .tabItem { Label("Altro", systemImage: "ellipsis.circle") }
                 }
+                // Observe touches to reset the inactivity timer WITHOUT
+                // intercepting them (a DragGesture here would swallow taps).
+                .background(ActivityObserver { state.markActivity() })
             } else {
                 iOSConnectionView()
             }
         }
-        // Any tap/scroll/gesture resets the inactivity timer.
-        .contentShape(Rectangle())
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 0).onChanged { _ in state.markActivity() },
-            including: .all
-        )
         .alert("Errore", isPresented: Binding(
             get: { state.lastError != nil },
             set: { if !$0 { state.lastError = nil } }
@@ -110,6 +107,50 @@ struct iOSConnectionView: View {
                 }
             }
             .navigationTitle("Connessione")
+        }
+    }
+}
+
+/// Attaches a gesture recognizer to the window that reports every touch
+/// beginning but never recognizes — so it resets the idle timer without
+/// interfering with buttons, scrolling, or text fields.
+struct ActivityObserver: UIViewRepresentable {
+    let onActivity: () -> Void
+
+    func makeCoordinator() -> Coordinator { Coordinator(onActivity) }
+
+    func makeUIView(context: Context) -> UIView {
+        let v = UIView(frame: .zero)
+        v.isUserInteractionEnabled = false
+        DispatchQueue.main.async {
+            guard let window = v.window else { return }
+            let g = TouchObservingGesture()
+            g.onTouch = context.coordinator.onActivity
+            g.cancelsTouchesInView = false
+            g.delaysTouchesBegan = false
+            g.delaysTouchesEnded = false
+            g.delegate = context.coordinator
+            window.addGestureRecognizer(g)
+            context.coordinator.gesture = g
+        }
+        return v
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {}
+
+    final class Coordinator: NSObject, UIGestureRecognizerDelegate {
+        let onActivity: () -> Void
+        weak var gesture: UIGestureRecognizer?
+        init(_ onActivity: @escaping () -> Void) { self.onActivity = onActivity }
+        func gestureRecognizer(_ g: UIGestureRecognizer,
+                               shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
+    }
+
+    final class TouchObservingGesture: UIGestureRecognizer {
+        var onTouch: () -> Void = {}
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+            onTouch()
+            state = .failed   // never recognize → never block the touch
         }
     }
 }
