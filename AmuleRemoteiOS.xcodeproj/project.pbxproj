@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
+		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
+		31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
+		5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
+		6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
+		7761B10AF19B7B98E6D42669 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
+		C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
+		CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
+		F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
+		FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F0FF267CE6A349E7920DC3 /* Assets.xcassets */; };
+		FE4AD028CE7AEA16007DF77E /* iOSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		17F0FF267CE6A349E7920DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		306B40E1F956585F27596B33 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCodes.swift; sourceTree = "<group>"; };
+		551D61B3C316A758F472D362 /* ECPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPacket.swift; sourceTree = "<group>"; };
+		651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECClient.swift; sourceTree = "<group>"; };
+		768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTransfersView.swift; sourceTree = "<group>"; };
+		7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSServersView.swift; sourceTree = "<group>"; };
+		8390595FF34396F6925227C7 /* RemotePrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePrefs.swift; sourceTree = "<group>"; };
+		9F5B6700651A1B859099CEF3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSearchView.swift; sourceTree = "<group>"; };
+		D6123B9A396E3E5945D43C29 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMoreView.swift; sourceTree = "<group>"; };
+		EEFA29040CB7283195E2EA96 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		017D5B5241F4C336DCB9682B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26888F84055ABC55BD2701BA = {
+			isa = PBXGroup;
+			children = (
+				964F1EA71FA6A67C47E8FD83 /* AmuleRemote */,
+				2ABA5F5625B8B3D952A3BA99 /* iOS */,
+				017D5B5241F4C336DCB9682B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2ABA5F5625B8B3D952A3BA99 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				17F0FF267CE6A349E7920DC3 /* Assets.xcassets */,
+				EEFA29040CB7283195E2EA96 /* iOSApp.swift */,
+				DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */,
+				C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */,
+				7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */,
+				768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		964F1EA71FA6A67C47E8FD83 /* AmuleRemote */ = {
+			isa = PBXGroup;
+			children = (
+				306B40E1F956585F27596B33 /* AppState.swift */,
+				651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */,
+				3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */,
+				551D61B3C316A758F472D362 /* ECPacket.swift */,
+				9F5B6700651A1B859099CEF3 /* Keychain.swift */,
+				D6123B9A396E3E5945D43C29 /* Models.swift */,
+				8390595FF34396F6925227C7 /* RemotePrefs.swift */,
+			);
+			name = AmuleRemote;
+			path = Sources/AmuleRemote;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1686C4644C73D596405737A /* AmuleRemoteiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84CDB10529E34A0C53D7D8F4 /* Build configuration list for PBXNativeTarget "AmuleRemoteiOS" */;
+			buildPhases = (
+				D17C615FDDE7EAC5178AB3B2 /* Sources */,
+				10E4D0D03DCC551425AA62E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmuleRemoteiOS;
+			packageProductDependencies = (
+			);
+			productName = AmuleRemoteiOS;
+			productReference = 7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D307B6EBB1710BF99E346017 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A1686C4644C73D596405737A = {
+						DevelopmentTeam = X5SR67A8AL;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AF987204570BDC0EFB8B82E5 /* Build configuration list for PBXProject "AmuleRemoteiOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 26888F84055ABC55BD2701BA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 017D5B5241F4C336DCB9682B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1686C4644C73D596405737A /* AmuleRemoteiOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10E4D0D03DCC551425AA62E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D17C615FDDE7EAC5178AB3B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */,
+				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
+				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
+				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
+				BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */,
+				7761B10AF19B7B98E6D42669 /* Models.swift in Sources */,
+				CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */,
+				5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */,
+				31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */,
+				FE4AD028CE7AEA16007DF77E /* iOSSearchView.swift in Sources */,
+				23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */,
+				0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		13125FFFE3FD24021737AFAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
+				PRODUCT_NAME = "aMule Remote";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5099C0582BE42D9663693202 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
+				PRODUCT_NAME = "aMule Remote";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC5E7B776AC98CA2CAF7EA44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F14048FA814C8CBEB81C89BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84CDB10529E34A0C53D7D8F4 /* Build configuration list for PBXNativeTarget "AmuleRemoteiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5099C0582BE42D9663693202 /* Debug */,
+				13125FFFE3FD24021737AFAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF987204570BDC0EFB8B82E5 /* Build configuration list for PBXProject "AmuleRemoteiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC5E7B776AC98CA2CAF7EA44 /* Debug */,
+				F14048FA814C8CBEB81C89BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D307B6EBB1710BF99E346017 /* Project object */;
+}
