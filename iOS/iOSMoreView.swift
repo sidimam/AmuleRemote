@@ -24,6 +24,21 @@ struct iOSMoreView: View {
                     }
                 }
 
+                Section {
+                    Picker("Disconnetti dopo inattività", selection: $state.idleTimeout) {
+                        Text("Mai").tag(0)
+                        Text("60 secondi").tag(60)
+                        Text("120 secondi").tag(120)
+                        Text("5 minuti").tag(300)
+                        Text("10 minuti").tag(600)
+                        Text("30 minuti").tag(1800)
+                    }
+                } header: {
+                    Text("Impostazioni app")
+                } footer: {
+                    Text("Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto.")
+                }
+
                 Section("Connessione") {
                     LabeledContent("Server", value: "\(state.host):\(state.port)")
                     LabeledContent("Versione aMule", value: state.serverVersion.isEmpty ? "—" : state.serverVersion)

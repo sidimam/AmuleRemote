@@ -25,8 +25,6 @@ struct iOSRootView: View {
                         .tabItem { Label("Ricerca", systemImage: "magnifyingglass") }
                     iOSServersView()
                         .tabItem { Label("Server", systemImage: "server.rack") }
-                    iOSSharedView()
-                        .tabItem { Label("Condivisi", systemImage: "folder") }
                     iOSMoreView()
                         .tabItem { Label("Altro", systemImage: "ellipsis.circle") }
                 }
@@ -34,6 +32,12 @@ struct iOSRootView: View {
                 iOSConnectionView()
             }
         }
+        // Any tap/scroll/gesture resets the inactivity timer.
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0).onChanged { _ in state.markActivity() },
+            including: .all
+        )
         .alert("Errore", isPresented: Binding(
             get: { state.lastError != nil },
             set: { if !$0 { state.lastError = nil } }

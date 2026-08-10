@@ -34,6 +34,8 @@ final class AppState: ObservableObject {
     @AppStorage("host") var host: String = ""
     @AppStorage("port") var port: Int = 4712
     @AppStorage("autoConnect") var autoConnect: Bool = false
+    // Auto-disconnect after this many seconds of inactivity (0 = disabled).
+    @AppStorage("idleTimeout") var idleTimeout: Int = 120
     @Published var password: String = ""
 
     // Connection state
@@ -64,6 +66,37 @@ final class AppState: ObservableObject {
     @Published var prefsLoaded = false
 
     private var pollTask: Task<Void, Never>?
+
+    // MARK: - Idle auto-disconnect
+    private var idleTask: Task<Void, Never>?
+    private var lastActivity = ContinuousClock.now
+
+    /// Call on any user interaction to reset the inactivity timer.
+    func markActivity() {
+        lastActivity = ContinuousClock.now
+    }
+
+    private func startIdleWatcher() {
+        idleTask?.cancel()
+        // Idle auto-disconnect is an iOS/iPadOS feature; on macOS the window
+        // stays connected (we don't track pointer activity there).
+        #if !os(iOS)
+        return
+        #else
+        guard idleTimeout > 0 else { return }
+        idleTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                guard let self, self.connected, self.idleTimeout > 0 else { continue }
+                let elapsed = ContinuousClock.now - self.lastActivity
+                if elapsed > .seconds(self.idleTimeout) {
+                    self.lastError = "Disconnesso per inattività (\(self.idleTimeout)s)."
+                    await self.disconnect()
+                }
+            }
+        }
+        #endif
+    }
 
     // Both the SwiftUI primaryAction and the AppKit double-click monitor can
     // fire for one physical double-click: collapse duplicates within 1 s.
@@ -96,7 +129,9 @@ final class AppState: ObservableObject {
             connected = true
             Keychain.savePassword(password, account: "\(host):\(port)")
             loadCompletedCache()
+            markActivity()
             startPolling()
+            startIdleWatcher()
             await refreshAll()
             _ = try? await UNUserNotificationCenter.current()
                 .requestAuthorization(options: [.alert, .sound, .badge])
@@ -120,6 +155,8 @@ final class AppState: ObservableObject {
     func disconnect() async {
         pollTask?.cancel()
         pollTask = nil
+        idleTask?.cancel()
+        idleTask = nil
         await client.disconnectNow()
         connected = false
         serverVersion = ""
