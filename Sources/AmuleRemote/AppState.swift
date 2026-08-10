@@ -418,12 +418,16 @@ final class AppState: ObservableObject {
     private var searchTimeoutTask: Task<Void, Never>?
 
     func refreshSearch() async {
-        guard let liveID = liveSearchID,
-              let i = searchSessions.firstIndex(where: { $0.id == liveID }),
-              searchSessions[i].inProgress else { return }
+        guard let liveID = liveSearchID else { return }
+        // Re-resolve the session by ID after every await: the array can change
+        // (tab closed, new search started) while a request is in flight, so a
+        // cached index would go out of range. Returns nil if it's gone.
+        func indexOfLive() -> Int? { searchSessions.firstIndex { $0.id == liveID } }
+
+        guard let start = indexOfLive(), searchSessions[start].inProgress else { return }
         do {
             let prog = try await client.request(ECPacket(.searchProgress))
-            if let v = prog.tag(.searchStatus)?.numberValue {
+            if let i = indexOfLive(), let v = prog.tag(.searchStatus)?.numberValue {
                 // 0xffff = progress unknown (Kad); 100 = finished
                 if v <= 100 { searchSessions[i].progress = Double(v) / 100 }
                 if v >= 100 && v != 0xFFFF { searchSessions[i].inProgress = false }
@@ -431,7 +435,7 @@ final class AppState: ObservableObject {
             let res = try await client.request(
                 ECPacket(.searchResults, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
             let items = res.allTags(.searchFile).compactMap(SearchResultItem.parse)
-            if !items.isEmpty || !searchSessions[i].inProgress {
+            if let i = indexOfLive(), !items.isEmpty || !searchSessions[i].inProgress {
                 searchSessions[i].results = items.sorted { $0.sources > $1.sources }
             }
         } catch { handle(error) }
