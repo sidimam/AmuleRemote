@@ -164,6 +164,52 @@ struct DownloadItem: Identifiable, Hashable, Codable {
         return f.string(from: eta) ?? "—"
     }
 
+    // Resilient decoding: any field added in a later app version may be missing
+    // from data saved by an older version. Decode every field with a default so
+    // the persisted history survives schema changes instead of failing wholesale
+    // (which would silently wipe the "already downloaded" history).
+    enum CodingKeys: String, CodingKey {
+        case hash, name, sizeFull, sizeDone, sizeXfer, speed, status, partmetID
+        case stopped, priority, sources, sourcesXfer, sourcesA4AF, sourcesNotCurrent
+        case category, ed2kLink, lastSeenComplete, firstSeen
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        hash = try c.decode(Data.self, forKey: .hash)
+        name = (try? c.decode(String.self, forKey: .name)) ?? "?"
+        sizeFull = (try? c.decode(UInt64.self, forKey: .sizeFull)) ?? 0
+        sizeDone = (try? c.decode(UInt64.self, forKey: .sizeDone)) ?? 0
+        sizeXfer = (try? c.decode(UInt64.self, forKey: .sizeXfer)) ?? 0
+        speed = (try? c.decode(Double.self, forKey: .speed)) ?? 0
+        status = (try? c.decode(UInt64.self, forKey: .status)) ?? PartFileStatus.complete.rawValue
+        partmetID = (try? c.decode(UInt64.self, forKey: .partmetID)) ?? 0
+        stopped = (try? c.decode(Bool.self, forKey: .stopped)) ?? false
+        priority = (try? c.decode(UInt64.self, forKey: .priority)) ?? 1
+        sources = (try? c.decode(UInt64.self, forKey: .sources)) ?? 0
+        sourcesXfer = (try? c.decode(UInt64.self, forKey: .sourcesXfer)) ?? 0
+        sourcesA4AF = (try? c.decode(UInt64.self, forKey: .sourcesA4AF)) ?? 0
+        sourcesNotCurrent = (try? c.decode(UInt64.self, forKey: .sourcesNotCurrent)) ?? 0
+        category = (try? c.decode(UInt64.self, forKey: .category)) ?? 0
+        ed2kLink = (try? c.decode(String.self, forKey: .ed2kLink)) ?? ""
+        lastSeenComplete = (try? c.decode(UInt64.self, forKey: .lastSeenComplete)) ?? 0
+        firstSeen = try? c.decodeIfPresent(Date.self, forKey: .firstSeen)
+    }
+
+    // Explicit memberwise-style initializer (an init(from:) alone would suppress
+    // the synthesized one that `parse` relies on).
+    init(hash: Data, name: String, sizeFull: UInt64, sizeDone: UInt64, sizeXfer: UInt64,
+         speed: Double, status: UInt64, partmetID: UInt64, stopped: Bool, priority: UInt64,
+         sources: UInt64, sourcesXfer: UInt64, sourcesA4AF: UInt64, sourcesNotCurrent: UInt64,
+         category: UInt64, ed2kLink: String, lastSeenComplete: UInt64, firstSeen: Date? = nil) {
+        self.hash = hash; self.name = name; self.sizeFull = sizeFull; self.sizeDone = sizeDone
+        self.sizeXfer = sizeXfer; self.speed = speed; self.status = status; self.partmetID = partmetID
+        self.stopped = stopped; self.priority = priority; self.sources = sources
+        self.sourcesXfer = sourcesXfer; self.sourcesA4AF = sourcesA4AF
+        self.sourcesNotCurrent = sourcesNotCurrent; self.category = category
+        self.ed2kLink = ed2kLink; self.lastSeenComplete = lastSeenComplete; self.firstSeen = firstSeen
+    }
+
     static func parse(_ tag: ECTag) -> DownloadItem? {
         var hash = tag.hashValue16
         if hash == nil { hash = tag.child(.partfileHash)?.hashValue16 }
