@@ -222,11 +222,17 @@ struct PrefsView: View {
 
     private var tweaksTab: some View {
         Form {
-            SwiftUI.Section("Core tweaks") {
+            SwiftUI.Section {
                 TextField("Nuove connessioni max ogni 5 secondi:", value: $state.prefs.maxConnPerFive, format: .number)
-                TextField("Buffer file (byte):", value: $state.prefs.fileBufferSize, format: .number)
+                TextField("Buffer file (KB):", value: $state.prefs.fileBufferSize, format: .number)
                 TextField("Dimensione coda upload:", value: $state.prefs.uploadQueueSize, format: .number)
                 TextField("Keepalive server (secondi):", value: $state.prefs.serverKeepAliveTimeout, format: .number)
+            } header: {
+                Text("Parametri avanzati (core)")
+            } footer: {
+                Text("Corrispondono a MaxConnectionsPerFiveSeconds, FileBufferSizePref, QueueSizePref e ServerKeepAliveTimeout in amule.conf. Modificali solo se sai cosa fai.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
             SwiftUI.Section("Kademlia") {
                 TextField("URL aggiornamento nodes.dat:", text: $state.prefs.kadUpdateURL)

@@ -421,14 +421,14 @@ enum ECDetailLevel: UInt8 {
 enum ECSearchType: UInt8, CaseIterable, Identifiable {
     case local = 0x00
     case global = 0x01
-    case kad = 0x02
+    // Kademlia search (0x02) intentionally omitted: only local and global
+    // (server) searches are offered.
 
     var id: UInt8 { rawValue }
     var label: String {
         switch self {
         case .local: return "Locale"
         case .global: return "Globale (server)"
-        case .kad: return "Kademlia"
         }
     }
 }

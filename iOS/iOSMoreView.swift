@@ -132,9 +132,7 @@ struct iOSPrefsView: View {
                         NavigationLink("Server") { PrefsServerForm() }
                         NavigationLink("File") { PrefsFileForm() }
                         NavigationLink("Sicurezza") { PrefsSicurezzaForm() }
-                        NavigationLink("Filtri messaggi e firma") { PrefsFiltriForm() }
-                        NavigationLink("Avanzate (core tweaks)") { PrefsAvanzateForm() }
-                        NavigationLink("Controllo remoto (web)") { PrefsRemoteForm() }
+                        NavigationLink("Avanzate") { PrefsAvanzateForm() }
                     }
                     Section {
                         Button {
@@ -351,68 +349,23 @@ struct PrefsSicurezzaForm: View {
     }
 }
 
-struct PrefsFiltriForm: View {
-    @EnvironmentObject var state: AppState
-
-    var body: some View {
-        Form {
-            Section("Filtro messaggi") {
-                Toggle("Filtra i messaggi", isOn: $state.prefs.msgFilterEnabled)
-                Toggle("Blocca tutti", isOn: $state.prefs.msgFilterAll)
-                Toggle("Solo dagli amici", isOn: $state.prefs.msgFilterFriends)
-                Toggle("Solo da client identificati", isOn: $state.prefs.msgFilterSecure)
-                Toggle("Filtra per parole chiave", isOn: $state.prefs.msgFilterByKeyword)
-                TextField("Parole chiave (virgola)", text: $state.prefs.msgFilterKeywords)
-            }
-            Section("Firma in linea") {
-                Toggle("Abilita firma in linea", isOn: $state.prefs.onlineSigEnabled)
-            }
-            Section {
-            } footer: {
-                Text("Proxy, Interfaccia ed Eventi non sono esposti dal protocollo EC: si impostano solo in amule.conf sul server.")
-            }
-        }
-        .navigationTitle("Filtri e firma")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
 struct PrefsAvanzateForm: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
         Form {
-            Section("Core tweaks") {
+            Section {
                 PrefNumField(label: "Nuove conn. max / 5 s", value: $state.prefs.maxConnPerFive)
-                PrefNumField(label: "Buffer file (byte)", value: $state.prefs.fileBufferSize)
+                PrefNumField(label: "Buffer file (KB)", value: $state.prefs.fileBufferSize)
                 PrefNumField(label: "Dimensione coda upload", value: $state.prefs.uploadQueueSize)
                 PrefNumField(label: "Keepalive server (s)", value: $state.prefs.serverKeepAliveTimeout)
-            }
-            Section("Kademlia") {
-                TextField("URL nodes.dat", text: $state.prefs.kadUpdateURL)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
+            } header: {
+                Text("Parametri avanzati (core)")
+            } footer: {
+                Text("Valori del cuore di aMule (MaxConnectionsPerFiveSeconds, FileBufferSizePref, QueueSizePref, ServerKeepAliveTimeout). Cambiali solo se sai cosa fai.")
             }
         }
         .navigationTitle("Avanzate")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct PrefsRemoteForm: View {
-    @EnvironmentObject var state: AppState
-
-    var body: some View {
-        Form {
-            Section("Web server (amuleweb)") {
-                Toggle("Avvia automaticamente", isOn: $state.prefs.webserverAutorun)
-                PrefNumField(label: "Porta web", value: $state.prefs.webserverPort)
-                Toggle("Accesso ospite", isOn: $state.prefs.webserverGuest)
-                Toggle("Compressione gzip", isOn: $state.prefs.webserverUseGzip)
-                PrefNumField(label: "Refresh pagina (s)", value: $state.prefs.webserverRefresh)
-            }
-        }
-        .navigationTitle("Controllo remoto")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
