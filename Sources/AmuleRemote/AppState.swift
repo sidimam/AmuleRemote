@@ -45,6 +45,9 @@ final class AppState: ObservableObject {
     @Published var connecting = false
     @Published var serverVersion = ""
     @Published var lastError: String?
+    // Shown as a banner on the connection screen when the server drops the
+    // connection (e.g. amuled stopped) — instead of a raw network-error alert.
+    @Published var connectionLostMessage: String?
 
     @Published var selectedSection: AppSection? = .downloads
 
@@ -131,12 +134,14 @@ final class AppState: ObservableObject {
         guard !connecting else { return }
         connecting = true
         lastError = nil
+        connectionLostMessage = nil
         do {
             try await client.connect(host: host, port: UInt16(clamping: port), password: password)
             serverVersion = await client.serverVersion
             connected = true
             Keychain.savePassword(password, account: "\(host):\(port)")
             loadCompletedCache()
+            loadFirstSeen()
             markActivity()
             startPolling()
             startIdleWatcher()
@@ -171,11 +176,18 @@ final class AppState: ObservableObject {
     }
 
     private func handle(_ error: Error) {
-        lastError = error.localizedDescription
-        // A dead socket means every subsequent request fails: drop the session.
-        if (error as? ECError)?.message.contains("Connessione chiusa") == true
-            || (error as NSError).domain == "NWErrorDomain" {
+        // Already showing the "server stopped" banner: ignore the follow-up
+        // errors from other in-flight requests in the same failure cascade.
+        if connectionLostMessage != nil { return }
+        // Any I/O error on a live EC session means the connection is gone
+        // (the stream is strictly sequential — it can't recover): treat every
+        // such error as "server stopped", drop the session, and show a clean
+        // banner instead of a raw Network.framework alert (e.g. NWError 53).
+        if connected {
+            connectionLostMessage = "Server interrotto: la connessione al server aMule è stata chiusa."
             Task { await disconnect() }
+        } else {
+            lastError = error.localizedDescription
         }
     }
 
@@ -226,12 +238,44 @@ final class AppState: ObservableObject {
     // them visible client-side until the user clicks "Rimuovi completati".
     // Persisted to disk (per server) so they survive app relaunches on iOS.
     private var completedCache: [Data: DownloadItem] = [:]
+
+    /// Whether a search result hash is already downloading or was downloaded.
+    /// Used to colour search rows (red = in transfer, green = already done).
+    func matchState(for hash: Data) -> SearchMatch {
+        if completedCache[hash] != nil { return .completed }
+        if let item = downloads.first(where: { $0.hash == hash }) {
+            return item.isComplete ? .completed : .downloading
+        }
+        return .none
+    }
     // Last progress seen for every hash, to detect completion even when a fast
     // download vanishes from the queue between two polls without ever being
     // observed at 100%.
     private var lastProgress: [Data: Double] = [:]
 
+    // Prima volta che l'app ha visto ogni file nella coda download (per server),
+    // per stimarne l'età. amuled non espone la data di inizio via EC.
+    private var firstSeen: [Data: Date] = [:]
+
     private var completedKey: String { "completed-\(host):\(port)" }
+    private var firstSeenKey: String { "firstseen-\(host):\(port)" }
+
+    private func loadFirstSeen() {
+        firstSeen.removeAll()
+        guard let data = UserDefaults.standard.data(forKey: firstSeenKey),
+              let dict = try? JSONDecoder().decode([String: Double].self, from: data) else { return }
+        for (hex, epoch) in dict {
+            if let h = dataFromHex(hex) { firstSeen[h] = Date(timeIntervalSince1970: epoch) }
+        }
+    }
+
+    private func saveFirstSeen() {
+        var dict: [String: Double] = [:]
+        for (h, d) in firstSeen { dict[hexString(h)] = d.timeIntervalSince1970 }
+        if let data = try? JSONEncoder().encode(dict) {
+            UserDefaults.standard.set(data, forKey: firstSeenKey)
+        }
+    }
 
     private func loadCompletedCache() {
         completedCache.removeAll()
@@ -275,11 +319,22 @@ final class AppState: ObservableObject {
             }
             // Remember progress for the files still in the queue.
             for f in fresh { lastProgress[f.hash] = f.progress }
+
+            // Track first-seen date per hash (download age). New files get "now";
+            // files that left the queue are forgotten.
+            let now = Date()
+            for h in freshHashes where firstSeen[h] == nil { firstSeen[h] = now }
+            for h in Array(firstSeen.keys) where !freshHashes.contains(h) { firstSeen.removeValue(forKey: h) }
+            saveFirstSeen()
+
             // If the daemon still reports a file, its live row wins.
             for h in freshHashes { completedCache.removeValue(forKey: h) }
             saveCompletedCache()
 
-            downloads = (fresh + completedCache.values)
+            let freshWithAge = fresh.map { item -> DownloadItem in
+                var i = item; i.firstSeen = firstSeen[item.hash]; return i
+            }
+            downloads = (freshWithAge + completedCache.values)
                 .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         } catch {
             handle(error)

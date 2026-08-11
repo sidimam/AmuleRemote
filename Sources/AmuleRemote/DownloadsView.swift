@@ -63,6 +63,13 @@ struct DownloadsView: View {
                 }
                 .width(75)
 
+                TableColumn("Età", value: \.ageDays) { item in
+                    Text(item.isComplete ? "—" : item.ageText)
+                        .foregroundStyle(.secondary)
+                        .help(item.isComplete ? "" : "In download da \(item.ageText)")
+                }
+                .width(80)
+
                 TableColumn("Stato", value: \.status) { item in
                     statusCell(item)
                 }

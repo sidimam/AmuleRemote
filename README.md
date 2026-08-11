@@ -11,8 +11,8 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 
 ## Funzionalità
 
-- **Trasferimenti**: coda download con avanzamento, velocità, fonti, tempo stimato e stato; pausa / riprendi / ferma / elimina; priorità (bassa/normale/alta/auto); assegnazione categoria; aggiunta link ed2k://; rimozione completati; selezione multipla; pannello upload attivi.
-- **Ricerca**: **locale** e **globale (server)**, a schede (più ricerche contemporanee), con filtri (tipo file, estensione, dimensione min/max, disponibilità) e timeout automatico di 120 s. Doppio clic / tocco su un risultato per scaricarlo.
+- **Trasferimenti**: coda download con avanzamento, velocità, fonti, tempo stimato, stato ed **età del download** (da quanti giorni è in coda); pausa / riprendi / ferma / elimina; priorità (bassa/normale/alta/auto); assegnazione categoria; aggiunta link ed2k://; rimozione completati; selezione multipla; pannello upload attivi.
+- **Ricerca**: **locale** e **globale (server)**, a schede (più ricerche contemporanee), con filtri (tipo file, estensione, dimensione min/max, disponibilità) e timeout automatico di 120 s. Doppio clic / tocco su un risultato per scaricarlo. I risultati già presenti nei tuoi trasferimenti sono evidenziati in **rosso**, quelli già scaricati in **verde**.
 - **Server**: lista server con utenti/file/ping, connetti (doppio clic), disconnetti, aggiungi, rimuovi, aggiorna lista da URL server.met; controllo reti **eD2k** e **Kad** (avvia/ferma).
 - **File condivisi** *(macOS)*: elenco con richieste/upload, priorità di condivisione, ricarica cartelle condivise, copia link ed2k.
 - **Statistiche** e **Log** del server in tempo reale.
@@ -21,6 +21,7 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
   - **iOS / iPadOS**: le voci più utili di `amule.conf` — Generale e cartelle, Connessione, Server, File, Sicurezza, Avanzate.
 - **Notifiche** al completamento dei download (su iOS anche su Apple Watch).
 - Password conservata nel **Portachiavi**; disconnessione automatica dopo inattività (iOS) e riconnessione automatica opzionale.
+- Se il server aMule si ferma, l'app si **disconnette automaticamente** e mostra un banner **"Server interrotto"** invece di un errore di rete.
 
 ## Configurazione lato server (Unraid / Docker)
 
@@ -91,7 +92,7 @@ Con un Apple ID gratuito l'app sul dispositivo scade dopo **7 giorni**; con un a
 
 ## Versioning
 
-La *marketing version* resta **1.0**; cambia solo il numero di **build** progressivo (versione corrente: **build 9**), mantenuto allineato tra macOS e iOS.
+La *marketing version* resta **1.0**; cambia solo il numero di **build** progressivo (versione corrente: **build 10**), mantenuto allineato tra macOS e iOS.
 
 ## Verifica del protocollo
 

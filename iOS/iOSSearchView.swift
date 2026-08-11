@@ -128,10 +128,18 @@ struct iOSSearchView: View {
                             downloadTarget = r
                         } label: {
                             VStack(alignment: .leading, spacing: 3) {
-                                Text(r.name)
-                                    .font(.subheadline)
-                                    .lineLimit(2)
-                                    .foregroundStyle(r.alreadyKnown ? .secondary : .primary)
+                                let m = state.matchState(for: r.hash)
+                                HStack(spacing: 5) {
+                                    if m != .none {
+                                        Image(systemName: m == .completed ? "checkmark.circle.fill" : "arrow.down.circle.fill")
+                                            .foregroundStyle(m.color ?? .primary)
+                                            .font(.caption)
+                                    }
+                                    Text(r.name)
+                                        .font(.subheadline)
+                                        .lineLimit(2)
+                                        .foregroundStyle(m.color ?? (r.alreadyKnown ? .secondary : .primary))
+                                }
                                 HStack {
                                     Text(formatBytes(r.size))
                                     Spacer()

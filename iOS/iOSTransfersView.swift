@@ -25,6 +25,7 @@ struct iOSTransfersView: View {
         case "fonti": sorted = items.sorted { $0.sources < $1.sources }
         case "priorita": sorted = items.sorted { $0.priority < $1.priority }
         case "aggiunti": sorted = items.sorted { $0.partmetID > $1.partmetID } // nuovi prima
+        case "eta": sorted = items.sorted { $0.ageDays > $1.ageDays } // più vecchi prima
         default: sorted = items.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         }
         return sortAsc ? sorted : sorted.reversed()
@@ -87,10 +88,10 @@ struct iOSTransfersView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    SortMenu(options: [("aggiunti", "Appena aggiunti"), ("nome", "Nome"),
-                                       ("avanzamento", "Avanzamento"), ("dimensione", "Dimensione"),
-                                       ("velocita", "Velocità"), ("stato", "Stato"),
-                                       ("fonti", "Fonti"), ("priorita", "Priorità")],
+                    SortMenu(options: [("aggiunti", "Appena aggiunti"), ("eta", "Età (giorni)"),
+                                       ("nome", "Nome"), ("avanzamento", "Avanzamento"),
+                                       ("dimensione", "Dimensione"), ("velocita", "Velocità"),
+                                       ("stato", "Stato"), ("fonti", "Fonti"), ("priorita", "Priorità")],
                              sortKey: $sortKey, ascending: $sortAsc)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -213,6 +214,9 @@ struct DownloadRow: View {
             .foregroundStyle(.secondary)
             HStack {
                 Text("Fonti: \(item.sourcesXfer)/\(item.sources)")
+                if !item.isComplete, item.firstSeen != nil {
+                    Text("• da \(item.ageText)")
+                }
                 Spacer()
                 Text(FilePriority.describe(item.priority))
                 if !item.etaLabel.isEmpty {

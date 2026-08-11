@@ -52,6 +52,23 @@ struct iOSConnectionView: View {
     var body: some View {
         NavigationStack {
             Form {
+                if let msg = state.connectionLostMessage {
+                    Section {
+                        HStack(spacing: 10) {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .foregroundStyle(.orange)
+                            Text(msg).font(.callout)
+                            Spacer()
+                            Button {
+                                state.connectionLostMessage = nil
+                            } label: { Image(systemName: "xmark.circle.fill") }
+                                .buttonStyle(.plain)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .listRowBackground(Color.orange.opacity(0.15))
+                }
+
                 Section {
                     VStack(spacing: 12) {
                         Image(systemName: "network")

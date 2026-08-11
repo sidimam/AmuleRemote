@@ -120,6 +120,24 @@ struct ConnectionView: View {
 
     var body: some View {
         VStack(spacing: 24) {
+            if let msg = state.connectionLostMessage {
+                HStack(spacing: 10) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundStyle(.orange)
+                    Text(msg)
+                        .font(.callout)
+                    Spacer()
+                    Button {
+                        state.connectionLostMessage = nil
+                    } label: { Image(systemName: "xmark.circle.fill") }
+                        .buttonStyle(.plain)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(12)
+                .background(Color.orange.opacity(0.15), in: RoundedRectangle(cornerRadius: 10))
+                .frame(maxWidth: 460)
+            }
+
             Image(systemName: "network")
                 .font(.system(size: 56))
                 .foregroundStyle(.tint)

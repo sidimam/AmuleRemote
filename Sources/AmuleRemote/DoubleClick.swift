@@ -35,19 +35,14 @@ private struct TableDoubleClickMonitor: NSViewRepresentable {
                 return
             }
             guard monitor == nil else { return }
-            monitor = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown]) { [weak self] event in
+            monitor = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseUp]) { [weak self] event in
                 guard let self, let win = self.window, event.window === win,
                       event.clickCount == 2 else { return event }
+                // Any double-click landing over the table area triggers the action.
+                // We deliberately don't exclude the header strip: a stray double
+                // click there is harmless, and the geometry check was fragile.
                 let p = self.convert(event.locationInWindow, from: nil)
-                // Inside the table area, but below the ~26pt column header strip.
-                let headerHeight: CGFloat = 26
-                var body = self.bounds
-                if self.isFlipped {
-                    body.origin.y += headerHeight
-                } // non-flipped: header occupies the TOP, i.e. high y values
-                body.size.height -= headerHeight
-                if self.bounds.contains(p),
-                   self.isFlipped ? body.contains(p) : p.y < self.bounds.height - headerHeight {
+                if self.bounds.contains(p) {
                     let act = self.action
                     DispatchQueue.main.async { act() }
                 }

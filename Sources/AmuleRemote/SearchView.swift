@@ -196,9 +196,17 @@ struct SearchView: View {
 
             Table(sortedResults, selection: $selection, sortOrder: $sortOrder) {
                 TableColumn("Nome", value: \.name) { r in
-                    Text(r.name)
-                        .foregroundStyle(r.alreadyKnown ? .secondary : .primary)
-                        .help(r.name)
+                    HStack(spacing: 6) {
+                        let m = state.matchState(for: r.hash)
+                        if m != .none {
+                            Image(systemName: m == .completed ? "checkmark.circle.fill" : "arrow.down.circle.fill")
+                                .foregroundStyle(m.color ?? .primary)
+                        }
+                        Text(r.name)
+                            .foregroundStyle(nameColor(r))
+                            .help(m == .completed ? "Già scaricato in precedenza"
+                                  : m == .downloading ? "Già nei trasferimenti" : r.name)
+                    }
                 }
                 .width(min: 260, ideal: 420)
 
@@ -301,6 +309,11 @@ struct SearchView: View {
             content()
                 .frame(width: width)
         }
+    }
+
+    private func nameColor(_ r: SearchResultItem) -> Color {
+        if let c = state.matchState(for: r.hash).color { return c }
+        return r.alreadyKnown ? .secondary : .primary
     }
 
     private func startSearch() {

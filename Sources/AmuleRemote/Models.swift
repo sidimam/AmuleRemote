@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 // MARK: - Helpers
 
@@ -17,6 +18,19 @@ func ipString(_ ip: UInt32) -> String {
 
 func hexString(_ data: Data) -> String {
     data.map { String(format: "%02X", $0) }.joined()
+}
+
+func dataFromHex(_ s: String) -> Data? {
+    guard s.count % 2 == 0 else { return nil }
+    var out = Data(capacity: s.count / 2)
+    var idx = s.startIndex
+    while idx < s.endIndex {
+        let next = s.index(idx, offsetBy: 2)
+        guard let b = UInt8(s[idx..<next], radix: 16) else { return nil }
+        out.append(b)
+        idx = next
+    }
+    return out
 }
 
 // MARK: - Priorities
@@ -102,8 +116,25 @@ struct DownloadItem: Identifiable, Hashable, Codable {
     var category: UInt64
     var ed2kLink: String
     var lastSeenComplete: UInt64
+    /// When this file was first seen in the download queue by the app
+    /// (amuled doesn't expose the real start date via EC). Set by AppState.
+    var firstSeen: Date? = nil
 
     var id: Data { hash }
+
+    /// Giorni da quando il file è in download (0 = oggi).
+    var ageDays: Int {
+        guard let firstSeen else { return 0 }
+        return max(0, Calendar.current.dateComponents([.day], from: firstSeen, to: Date()).day ?? 0)
+    }
+
+    /// Etichetta dell'età del download: "oggi", "1 giorno", "N giorni", "—".
+    var ageText: String {
+        guard firstSeen != nil else { return "—" }
+        let d = ageDays
+        if d <= 0 { return "oggi" }
+        return d == 1 ? "1 giorno" : "\(d) giorni"
+    }
 
     var progress: Double {
         sizeFull > 0 ? Double(sizeDone) / Double(sizeFull) : 0
@@ -184,6 +215,22 @@ struct UploadItem: Identifiable, Hashable {
 }
 
 // MARK: - Search
+
+/// Whether a search result matches a file already in the transfer queue or
+/// already downloaded, so the UI can colour it.
+enum SearchMatch {
+    case none
+    case downloading   // presente nei trasferimenti (rosso)
+    case completed     // già scaricato in precedenza (verde)
+
+    var color: Color? {
+        switch self {
+        case .none: return nil
+        case .downloading: return .red
+        case .completed: return .green
+        }
+    }
+}
 
 struct SearchResultItem: Identifiable, Hashable {
     var hash: Data
