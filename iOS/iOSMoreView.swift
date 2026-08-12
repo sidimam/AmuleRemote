@@ -69,7 +69,10 @@ func appVersionString() -> String {
 
 struct iOSServerTestView: View {
     @EnvironmentObject var state: AppState
-    @AppStorage("webTestHost") private var webHost = "amule.manieridimambro.it"
+    // Il dominio del webserver viene ricordato SOLO dopo un test riuscito
+    // dall'utente: di default il campo è vuoto.
+    @AppStorage("webTestHost") private var savedWebHost = ""
+    @State private var webHost = ""
     @State private var running = false
     @State private var ecDone = false
     @State private var ecOK = false
@@ -116,6 +119,8 @@ struct iOSServerTestView: View {
         }
         .navigationTitle("Test connessione")
         .navigationBarTitleDisplayMode(.inline)
+        // Pre-compila solo con un dominio già testato in precedenza.
+        .onAppear { if webHost.isEmpty { webHost = savedWebHost } }
     }
 
     @ViewBuilder
@@ -145,6 +150,7 @@ struct iOSServerTestView: View {
         } else {
             let r = await ServerTest.httpResponds(host: host)
             webOK = r.ok; webDetail = r.detail; webDone = true
+            savedWebHost = host   // ricordato solo ora, dopo un test reale
         }
         running = false
     }
