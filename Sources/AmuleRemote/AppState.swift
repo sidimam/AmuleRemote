@@ -132,6 +132,9 @@ final class AppState: ObservableObject {
 
     func connect() async {
         guard !connecting else { return }
+        // Trim stray spaces/newlines from the host (a leading space pasted into
+        // the field makes DNS resolution fail with NWError -65554 NoSuchRecord).
+        host = host.trimmingCharacters(in: .whitespacesAndNewlines)
         connecting = true
         lastError = nil
         connectionLostMessage = nil
@@ -179,16 +182,32 @@ final class AppState: ObservableObject {
         // Already showing the "server stopped" banner: ignore the follow-up
         // errors from other in-flight requests in the same failure cascade.
         if connectionLostMessage != nil { return }
-        // Any I/O error on a live EC session means the connection is gone
-        // (the stream is strictly sequential — it can't recover): treat every
-        // such error as "server stopped", drop the session, and show a clean
-        // banner instead of a raw Network.framework alert (e.g. NWError 53).
-        if connected {
+
+        // Distinguish a real network/socket drop (server stopped) from a
+        // one-off protocol/parse error on a single reply. Parse errors keep the
+        // stream aligned (we already consumed the framed bytes), so they must
+        // NOT tear down an otherwise healthy session.
+        let isNetworkDrop: Bool
+        if let ec = error as? ECError {
+            let m = ec.message
+            isNetworkDrop = m.contains("Connessione chiusa")
+                || m.contains("Non connesso")
+                || m.contains("Timeout")
+                || m.contains("non raggiungibile")
+        } else {
+            let ns = error as NSError
+            isNetworkDrop = ns.domain == "NWErrorDomain"
+                || ns.domain == NSPOSIXErrorDomain
+                || ns.domain == (kCFErrorDomainCFNetwork as String)
+        }
+
+        if isNetworkDrop, connected {
             connectionLostMessage = "Server interrotto: la connessione al server aMule è stata chiusa."
             Task { await disconnect() }
-        } else {
+        } else if !connected {
             lastError = error.localizedDescription
         }
+        // A parse error while still connected is ignored: the next poll retries.
     }
 
     private func startPolling() {

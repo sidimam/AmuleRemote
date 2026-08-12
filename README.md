@@ -92,7 +92,7 @@ Con un Apple ID gratuito l'app sul dispositivo scade dopo **7 giorni**; con un a
 
 ## Versioning
 
-La *marketing version* resta **1.0**; cambia solo il numero di **build** progressivo (versione corrente: **build 11**), mantenuto allineato tra macOS e iOS.
+La *marketing version* resta **1.0**; cambia solo il numero di **build** progressivo (versione corrente: **build 12**), mantenuto allineato tra macOS e iOS.
 
 ## Verifica del protocollo
 
