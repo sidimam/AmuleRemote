@@ -49,9 +49,6 @@ struct iOSSearchView: View {
                             .textInputAutocapitalization(.never)
                             .focused($searchFieldFocused)
                             .onSubmit { startSearch() }
-                        SortMenu(options: [("fonti", "Fonti"), ("nome", "Nome"),
-                                           ("dimensione", "Dimensione"), ("complete", "Fonti complete")],
-                                 sortKey: $sortKey, ascending: $sortAsc)
                         Button {
                             startSearch()
                         } label: {
@@ -158,6 +155,11 @@ struct iOSSearchView: View {
             .navigationTitle("Ricerca")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    SortMenu(options: [("fonti", "Fonti"), ("nome", "Nome"),
+                                       ("dimensione", "Dimensione"), ("complete", "Fonti complete")],
+                             sortKey: $sortKey, ascending: $sortAsc)
+                }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button {

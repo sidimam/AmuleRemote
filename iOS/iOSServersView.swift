@@ -40,16 +40,7 @@ struct iOSServersView: View {
                             .buttonStyle(.bordered)
                             .controlSize(.small)
                     } else {
-                        Button("Auto") { Task { await state.connectToAnyServer() } }
-                            .buttonStyle(.bordered)
-                            .controlSize(.small)
-                    }
-                    if state.connState.kadRunning {
-                        Button("Ferma Kad") { Task { await state.kadStop() } }
-                            .buttonStyle(.bordered)
-                            .controlSize(.small)
-                    } else {
-                        Button("Avvia Kad") { Task { await state.kadStart() } }
+                        Button("Connetti") { Task { await state.connectToAnyServer() } }
                             .buttonStyle(.bordered)
                             .controlSize(.small)
                     }
@@ -108,10 +99,23 @@ struct iOSServersView: View {
                              sortKey: $sortKey, ascending: $sortAsc)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button { showAddServer = true } label: { Image(systemName: "plus") }
-                    Button {
-                        Task { await state.updateServerListFromURL("http://gruk.org/server.met.gz") }
-                    } label: { Image(systemName: "globe") }
+                    Button { showAddServer = true } label: {
+                        Label("Aggiungi server", systemImage: "plus")
+                    }
+                    Menu {
+                        Button {
+                            Task { await state.updateServerListFromURL("http://gruk.org/server.met.gz") }
+                        } label: {
+                            Label("Aggiorna lista server (server.met)", systemImage: "arrow.down.circle")
+                        }
+                        Button {
+                            Task { await state.refreshServers() }
+                        } label: {
+                            Label("Ricarica dal server", systemImage: "arrow.clockwise")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
                 }
             }
             .confirmationDialog("Connettere a \(connectTarget?.name ?? "")?",
