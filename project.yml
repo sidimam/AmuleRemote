@@ -15,6 +15,7 @@ targets:
       - path: Sources/AmuleRemote/RemotePrefs.swift
       - path: Sources/AmuleRemote/Keychain.swift
       - path: Sources/AmuleRemote/AppState.swift
+      - path: Sources/AmuleRemote/DemoMode.swift
       - path: iOS
     settings:
       base:
@@ -28,7 +29,7 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         TARGETED_DEVICE_FAMILY: "1,2"
-        CURRENT_PROJECT_VERSION: 14
+        CURRENT_PROJECT_VERSION: 15
         MARKETING_VERSION: "1.0"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic

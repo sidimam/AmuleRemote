@@ -168,6 +168,20 @@ struct ConnectionView: View {
             .controlSize(.large)
             .disabled(state.host.isEmpty || state.password.isEmpty || state.connecting)
             .keyboardShortcut(.defaultAction)
+
+            Button {
+                state.enterDemoMode()
+            } label: {
+                Label("Prova la modalità demo", systemImage: "play.circle")
+            }
+            .buttonStyle(.link)
+            .disabled(state.connecting)
+
+            Text("Esplora l'app con dati di esempio, senza un server (equivale a inserire DEMO come host e DEMO come password).")
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 460)
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

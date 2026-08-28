@@ -43,6 +43,8 @@ final class AppState: ObservableObject {
     // Connection state
     @Published var connected = false
     @Published var connecting = false
+    // Modalità demo (login DEMO/DEMO): dati di esempio, nessuna rete.
+    @Published var demoMode = false
     @Published var serverVersion = ""
     @Published var lastError: String?
     // Shown as a banner on the connection screen when the server drops the
@@ -135,6 +137,12 @@ final class AppState: ObservableObject {
         // Trim stray spaces/newlines from the host (a leading space pasted into
         // the field makes DNS resolution fail with NWError -65554 NoSuchRecord).
         host = host.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Credenziali demo per la revisione App Store e per provare l'app
+        // senza un server: tutto simulato in locale, nessuna connessione.
+        if isDemoLogin {
+            enterDemoMode()
+            return
+        }
         connecting = true
         lastError = nil
         connectionLostMessage = nil
@@ -173,7 +181,11 @@ final class AppState: ObservableObject {
         pollTask = nil
         idleTask?.cancel()
         idleTask = nil
-        await client.disconnectNow()
+        if demoMode {
+            exitDemoMode()
+        } else {
+            await client.disconnectNow()
+        }
         connected = false
         serverVersion = ""
     }
@@ -210,7 +222,7 @@ final class AppState: ObservableObject {
         // A parse error while still connected is ignored: the next poll retries.
     }
 
-    private func startPolling() {
+    func startPolling() {
         pollTask?.cancel()
         pollTask = Task { [weak self] in
             while !Task.isCancelled {
@@ -222,6 +234,7 @@ final class AppState: ObservableObject {
 
     private func pollTick() async {
         guard connected else { return }
+        if demoMode { demoTick(); return }
         await refreshStats()
         await refreshDownloads()
         if selectedSection == .downloads { await refreshUploads() }
@@ -238,6 +251,7 @@ final class AppState: ObservableObject {
     // MARK: - Stats
 
     func refreshStats() async {
+        if demoMode { return }
         do {
             let statsReply = try await client.request(
                 ECPacket(.statReq, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
@@ -310,6 +324,7 @@ final class AppState: ObservableObject {
     }
 
     func refreshDownloads() async {
+        if demoMode { return }
         do {
             let reply = try await client.request(
                 ECPacket(.getDloadQueue, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
@@ -361,6 +376,7 @@ final class AppState: ObservableObject {
     }
 
     func refreshUploads() async {
+        if demoMode { return }
         do {
             let reply = try await client.request(
                 ECPacket(.getUloadQueue, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
@@ -382,6 +398,7 @@ final class AppState: ObservableObject {
     }
 
     private func partfileCommand(_ op: ECOp, hash: Data, children: [ECTag] = []) async {
+        if demoMode { demoPartfileCommand(op, hash: hash, children: children); return }
         do {
             var tag = ECTag.hash16(.partfile, hash)
             tag.children = children
@@ -423,6 +440,7 @@ final class AppState: ObservableObject {
         completedCache.removeAll()
         saveCompletedCache()
         downloads.removeAll { $0.isComplete }
+        if demoMode { return }
         do {
             _ = try await client.request(ECPacket(.clearCompleted))
             await refreshDownloads()
@@ -430,6 +448,7 @@ final class AppState: ObservableObject {
     }
 
     func addEd2kLink(_ link: String, category: UInt64 = 0) async {
+        if demoMode { demoAddEd2kLink(link); return }
         do {
             var tag = ECTag.string(.string, link.trimmingCharacters(in: .whitespacesAndNewlines))
             tag.children = [.number(.partfileCat, category)]
@@ -445,6 +464,7 @@ final class AppState: ObservableObject {
 
     func startSearch(text: String, type: ECSearchType, fileType: String,
                      extension ext: String, minSizeBytes: UInt64, maxSizeBytes: UInt64, availability: Int) async {
+        if demoMode { demoStartSearch(text: text, type: type); return }
         do {
             var tag = ECTag(.searchType, type: .uint32, value: {
                 var be = UInt32(type.rawValue).bigEndian
@@ -516,6 +536,10 @@ final class AppState: ObservableObject {
     }
 
     func stopSearch() async {
+        if demoMode {
+            for i in searchSessions.indices { searchSessions[i].inProgress = false }
+            return
+        }
         do {
             _ = try await client.request(ECPacket(.searchStop))
             if let liveID = liveSearchID,
@@ -539,6 +563,7 @@ final class AppState: ObservableObject {
 
     func downloadResult(_ item: SearchResultItem, category: UInt64 = 0) async {
         guard firstFire("dl-\(hexString(item.hash))") else { return }
+        if demoMode { demoDownloadResult(item); return }
         do {
             var tag = ECTag.hash16(.knownfile, item.hash)
             tag.children = [.number(.partfileCat, category)]
@@ -552,6 +577,7 @@ final class AppState: ObservableObject {
     // MARK: - Servers
 
     func refreshServers() async {
+        if demoMode { return }
         do {
             let reply = try await client.request(
                 ECPacket(.getServerList, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
@@ -561,6 +587,7 @@ final class AppState: ObservableObject {
     }
 
     private func serverCommand(_ op: ECOp, _ server: ServerItem?) async {
+        if demoMode { demoServerCommand(op, server); return }
         do {
             var tags: [ECTag] = []
             if let server {
@@ -584,6 +611,7 @@ final class AppState: ObservableObject {
     func removeServer(_ s: ServerItem) async { await serverCommand(.serverRemove, s) }
 
     func addServer(address: String, port: String, name: String) async {
+        if demoMode { demoAddServer(address: address, port: port, name: name); return }
         do {
             let reply = try await client.request(ECPacket(.serverAdd, tags: [
                 .string(.serverAddress, "\(address.trimmingCharacters(in: .whitespaces)):\(port.trimmingCharacters(in: .whitespaces))"),
@@ -597,6 +625,7 @@ final class AppState: ObservableObject {
     }
 
     func updateServerListFromURL(_ url: String) async {
+        if demoMode { demoAppendLogLine("Lista server aggiornata da \(url) (demo)."); return }
         do {
             _ = try await client.request(ECPacket(.serverUpdateFromURL, tags: [.string(.string, url)]))
             await refreshServers()
@@ -607,21 +636,26 @@ final class AppState: ObservableObject {
 
     func ed2kConnect() async { await serverCommand(.serverConnect, nil) }
     func kadStart() async {
+        if demoMode { demoKad(start: true); return }
         do { _ = try await client.request(ECPacket(.kadStart)); await refreshStats() } catch { handle(error) }
     }
     func kadStop() async {
+        if demoMode { demoKad(start: false); return }
         do { _ = try await client.request(ECPacket(.kadStop)); await refreshStats() } catch { handle(error) }
     }
     func connectAll() async {
+        if demoMode { demoEd2k(connect: true); demoKad(start: true); return }
         do { _ = try await client.request(ECPacket(.connect)); await refreshStats() } catch { handle(error) }
     }
     func disconnectAll() async {
+        if demoMode { demoEd2k(connect: false); demoKad(start: false); return }
         do { _ = try await client.request(ECPacket(.disconnect)); await refreshStats() } catch { handle(error) }
     }
 
     // MARK: - Shared files
 
     func refreshShared() async {
+        if demoMode { return }
         do {
             let reply = try await client.request(
                 ECPacket(.getSharedFiles, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
@@ -631,6 +665,7 @@ final class AppState: ObservableObject {
     }
 
     func reloadSharedFiles() async {
+        if demoMode { return }
         do {
             _ = try await client.request(ECPacket(.sharedFilesReload))
             await refreshShared()
@@ -638,6 +673,7 @@ final class AppState: ObservableObject {
     }
 
     func setSharedPriority(_ item: SharedFileItem, _ prio: FilePriority) async {
+        if demoMode { demoSetSharedPriority(item, prio); return }
         do {
             var tag = ECTag.hash16(.knownfile, item.hash)
             tag.children = [.uint8(.knownfilePrio, prio.rawValue)]
@@ -649,6 +685,7 @@ final class AppState: ObservableObject {
     // MARK: - Log
 
     func refreshLog() async {
+        if demoMode { return }
         do {
             let reply = try await client.request(ECPacket(.getLog))
             let lines = reply.allTags(.string).compactMap(\.stringValue)
@@ -657,6 +694,11 @@ final class AppState: ObservableObject {
     }
 
     func resetLog() async {
+        if demoMode {
+            logText = ""
+            demoAppendLogLine("Log azzerato.")
+            return
+        }
         do {
             _ = try await client.request(ECPacket(.resetLog))
             await refreshLog()
@@ -666,6 +708,7 @@ final class AppState: ObservableObject {
     // MARK: - Preferences
 
     func loadPrefs() async {
+        if demoMode { prefsLoaded = true; return }
         do {
             let reply = try await client.request(ECPacket(.getPreferences, tags: [
                 .uint32(.selectPrefs, ECPrefs.all),
@@ -677,6 +720,7 @@ final class AppState: ObservableObject {
     }
 
     func savePrefs() async {
+        if demoMode { return }   // le modifiche restano visibili in locale
         do {
             let reply = try await client.request(prefs.buildSetPacket())
             if reply.opcode == .failed {
@@ -687,6 +731,7 @@ final class AppState: ObservableObject {
     }
 
     func shutdownDaemon() async {
+        if demoMode { await disconnect(); return }
         do {
             _ = try await client.request(ECPacket(.shutdown))
         } catch {

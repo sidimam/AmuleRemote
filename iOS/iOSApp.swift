@@ -122,6 +122,21 @@ struct iOSConnectionView: View {
                     }
                     .disabled(state.host.isEmpty || state.password.isEmpty || state.connecting)
                 }
+
+                Section {
+                    Button {
+                        state.enterDemoMode()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Label("Prova la modalità demo", systemImage: "play.circle")
+                            Spacer()
+                        }
+                    }
+                    .disabled(state.connecting)
+                } footer: {
+                    Text("Esplora l'app con dati di esempio, senza un server (equivale a inserire DEMO come host e DEMO come password).")
+                }
             }
             .navigationTitle("Connessione")
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
+		15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
 		5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
@@ -28,6 +29,7 @@
 		3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCodes.swift; sourceTree = "<group>"; };
 		551D61B3C316A758F472D362 /* ECPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPacket.swift; sourceTree = "<group>"; };
 		651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECClient.swift; sourceTree = "<group>"; };
+		74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
 		768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTransfersView.swift; sourceTree = "<group>"; };
 		7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSServersView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				306B40E1F956585F27596B33 /* AppState.swift */,
+				74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */,
 				651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */,
 				3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */,
 				551D61B3C316A758F472D362 /* ECPacket.swift */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */,
+				15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */,
 				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
 				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
@@ -180,7 +184,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
@@ -208,7 +212,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";

@@ -41,7 +41,7 @@ struct iOSMoreView: View {
                 }
 
                 Section("Connessione") {
-                    LabeledContent("Server", value: "\(state.host):\(state.port)")
+                    LabeledContent("Server", value: state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)")
                     LabeledContent("Versione aMule", value: state.serverVersion.isEmpty ? "—" : state.serverVersion)
                     Button("Disconnetti", role: .destructive) {
                         Task { await state.disconnect() }
@@ -84,7 +84,7 @@ struct iOSServerTestView: View {
     var body: some View {
         Form {
             Section {
-                LabeledContent("Indirizzo", value: "\(state.host):\(state.port)")
+                LabeledContent("Indirizzo", value: state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)")
                 resultRow("Porta EC raggiungibile", done: ecDone, ok: ecOK, detail: ecDetail)
             } header: {
                 Text("Server EC (External Connections)")
@@ -141,6 +141,18 @@ struct iOSServerTestView: View {
     private func runTests() async {
         running = true
         ecDone = false; webDone = false
+        // In modalità demo il test è simulato (nessuna rete coinvolta).
+        if state.demoMode {
+            try? await Task.sleep(nanoseconds: 700_000_000)
+            ecOK = true; ecDetail = "raggiungibile (demo)"; ecDone = true
+            let host = webHost.trimmingCharacters(in: .whitespaces)
+            webOK = !host.isEmpty
+            webDetail = host.isEmpty ? "nessun dominio" : "HTTPS 200 (demo)"
+            webDone = true
+            if !host.isEmpty { savedWebHost = host }
+            running = false
+            return
+        }
         let ec = await ServerTest.tcpReachable(host: state.host.trimmingCharacters(in: .whitespaces),
                                                port: UInt16(clamping: state.port))
         ecOK = ec; ecDetail = ec ? "raggiungibile" : "non raggiungibile"; ecDone = true

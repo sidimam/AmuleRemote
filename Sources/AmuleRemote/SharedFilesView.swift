@@ -116,7 +116,7 @@ struct StatsView: View {
                 GroupBox("Server aMule") {
                     statsGrid([
                         ("Versione", state.serverVersion.isEmpty ? "—" : state.serverVersion),
-                        ("Host", "\(state.host):\(state.port)"),
+                        ("Host", state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)"),
                     ])
                     HStack {
                         Spacer()
