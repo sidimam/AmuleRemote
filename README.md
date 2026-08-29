@@ -6,8 +6,8 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 
 ## Download
 
-- **macOS**: scarica `aMuleRemote-macOS.zip` dalla pagina **[Releases](https://github.com/sidimam/AmuleRemoteiOS/releases)**, decomprimi e trascina l'app in `/Applicazioni`. L'app è firmata localmente: al primo avvio fai **clic destro → Apri** (vedi *Firma e distribuzione*).
-- **iOS / iPadOS**: si compila con Xcode (vedi *Versione iOS*) oppure via TestFlight.
+- **macOS**: scarica **`aMuleRemote-macOS.dmg`** dall'ultima **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, apri il DMG e trascina **aMule Remote** sulla cartella **Applications** lì accanto. L'app è firmata **Developer ID** e **notarizzata da Apple**: si avvia subito, senza avvisi di Gatekeeper né richieste del portachiavi. *(In alternativa c'è anche lo `.zip` con la stessa app.)*
+- **iOS / iPadOS**: via TestFlight (App Store in revisione), oppure si compila con Xcode (vedi *Versione iOS*).
 
 ## Funzionalità
 
@@ -65,17 +65,18 @@ Vedi la sezione *Versione iOS* e il **[Wiki → Compilazione e firma](https://gi
 
 ## Firma e distribuzione
 
-L'app macOS è firmata con un certificato locale **"aMule Remote Signing"** (autofirmato, valido 10 anni), valido solo sul Mac su cui è stato creato. Su altri Mac, al primo avvio, fai **clic destro sull'app → Apri → Apri** per superare Gatekeeper.
+Dalla build 15 l'app macOS distribuita nelle Release è firmata con **Developer ID Application** e **notarizzata da Apple** (con staple): si installa e si avvia su qualsiasi Mac senza avvisi di sicurezza e senza richieste del portachiavi.
 
-Per una distribuzione senza avvisi servono un account Apple Developer e la notarizzazione:
+Processo usato per pubblicare (riferimento):
 
 ```bash
-# con un certificato "Developer ID Application" installato:
-codesign --force --deep --options runtime \
+codesign --force --deep --options runtime --timestamp \
   --sign "Developer ID Application: TUO NOME (TEAMID)" "aMule Remote.app"
-ditto -c -k --keepParent "aMule Remote.app" "aMuleRemote.zip"
-xcrun notarytool submit aMuleRemote.zip --keychain-profile "AC_PROFILE" --wait
+ditto -c -k --keepParent "aMule Remote.app" notarize.zip
+xcrun notarytool submit notarize.zip --key AuthKey.p8 --key-id KEYID --issuer ISSUER --wait
 xcrun stapler staple "aMule Remote.app"
+# DMG: cartella con l'app + link simbolico ad /Applications, layout Finder,
+# hdiutil convert UDZO, poi codesign + notarytool + stapler anche sul DMG.
 ```
 
 ## Versione iOS
