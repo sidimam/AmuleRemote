@@ -137,6 +137,15 @@ struct ECTag {
     func childString(_ name: ECTagName) -> String? { child(name)?.stringValue }
     func childNumber(_ name: ECTagName) -> UInt64? { child(name)?.numberValue }
 
+    /// Boolean EC: aMule invia i booleani "veri" come TAG VUOTO (CECEmptyTag,
+    /// presente senza valore) e omette quelli falsi. Un tag presente senza
+    /// valore numerico va quindi letto come TRUE, non come 0.
+    func childBool(_ name: ECTagName) -> Bool {
+        guard let c = child(name) else { return false }
+        if let n = c.numberValue { return n != 0 }
+        return true
+    }
+
     // MARK: encoding
 
     private var hasChildren: Bool { !children.isEmpty }

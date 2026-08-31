@@ -118,41 +118,41 @@ struct RemotePrefs {
             r.slotAllocation = c.childNumber(.connSlotAllocation) ?? 0
             r.tcpPort = c.childNumber(.connTCPPort) ?? 4662
             r.udpPort = c.childNumber(.connUDPPort) ?? 4672
-            r.udpDisabled = c.child(.connUDPDisable) != nil && (c.childNumber(.connUDPDisable) ?? 1) != 0
+            r.udpDisabled = c.childBool(.connUDPDisable)
             r.maxFileSources = c.childNumber(.connMaxFileSources) ?? 0
             r.maxConnections = c.childNumber(.connMaxConn) ?? 0
-            r.autoconnect = (c.childNumber(.connAutoconnect) ?? 0) != 0
-            r.reconnect = (c.childNumber(.connReconnect) ?? 0) != 0
+            r.autoconnect = c.childBool(.connAutoconnect)
+            r.reconnect = c.childBool(.connReconnect)
             r.networkED2K = (c.childNumber(.networkED2K) ?? 1) != 0
             r.networkKad = (c.childNumber(.networkKademlia) ?? 1) != 0
         }
         if let s = p.tag(.prefsServers) {
-            r.removeDeadServers = (s.childNumber(.serversRemoveDead) ?? 0) != 0
+            r.removeDeadServers = s.childBool(.serversRemoveDead)
             r.deadServerRetries = s.childNumber(.serversDeadServerRetries) ?? 0
-            r.serversAutoUpdate = (s.childNumber(.serversAutoUpdate) ?? 0) != 0
-            r.serversAddFromServer = (s.childNumber(.serversAddFromServer) ?? 0) != 0
-            r.serversAddFromClient = (s.childNumber(.serversAddFromClient) ?? 0) != 0
-            r.useScoreSystem = (s.childNumber(.serversUseScoreSystem) ?? 0) != 0
-            r.smartIDCheck = (s.childNumber(.serversSmartIDCheck) ?? 0) != 0
-            r.safeServerConnect = (s.childNumber(.serversSafeServerConnect) ?? 0) != 0
-            r.autoconnStaticOnly = (s.childNumber(.serversAutoconnStaticOnly) ?? 0) != 0
-            r.manualHighPrio = (s.childNumber(.serversManualHighPrio) ?? 0) != 0
+            r.serversAutoUpdate = s.childBool(.serversAutoUpdate)
+            r.serversAddFromServer = s.childBool(.serversAddFromServer)
+            r.serversAddFromClient = s.childBool(.serversAddFromClient)
+            r.useScoreSystem = s.childBool(.serversUseScoreSystem)
+            r.smartIDCheck = s.childBool(.serversSmartIDCheck)
+            r.safeServerConnect = s.childBool(.serversSafeServerConnect)
+            r.autoconnStaticOnly = s.childBool(.serversAutoconnStaticOnly)
+            r.manualHighPrio = s.childBool(.serversManualHighPrio)
             r.serversUpdateURL = s.childString(.serversUpdateURL) ?? ""
         }
         if let f = p.tag(.prefsFiles) {
-            r.ichEnabled = (f.childNumber(.filesICHEnabled) ?? 0) != 0
-            r.aichTrust = (f.childNumber(.filesAICHTrust) ?? 0) != 0
-            r.newPaused = (f.childNumber(.filesNewPaused) ?? 0) != 0
-            r.newAutoDLPrio = (f.childNumber(.filesNewAutoDLPrio) ?? 0) != 0
-            r.previewPrio = (f.childNumber(.filesPreviewPrio) ?? 0) != 0
-            r.newAutoULPrio = (f.childNumber(.filesNewAutoULPrio) ?? 0) != 0
-            r.ulFullChunks = (f.childNumber(.filesULFullChunks) ?? 0) != 0
-            r.startNextPaused = (f.childNumber(.filesStartNextPaused) ?? 0) != 0
-            r.resumeSameCat = (f.childNumber(.filesResumeSameCat) ?? 0) != 0
-            r.saveSources = (f.childNumber(.filesSaveSources) ?? 0) != 0
-            r.extractMetadata = (f.childNumber(.filesExtractMetadata) ?? 0) != 0
-            r.allocFullSize = (f.childNumber(.filesAllocFullSize) ?? 0) != 0
-            r.checkFreeSpace = (f.childNumber(.filesCheckFreeSpace) ?? 0) != 0
+            r.ichEnabled = f.childBool(.filesICHEnabled)
+            r.aichTrust = f.childBool(.filesAICHTrust)
+            r.newPaused = f.childBool(.filesNewPaused)
+            r.newAutoDLPrio = f.childBool(.filesNewAutoDLPrio)
+            r.previewPrio = f.childBool(.filesPreviewPrio)
+            r.newAutoULPrio = f.childBool(.filesNewAutoULPrio)
+            r.ulFullChunks = f.childBool(.filesULFullChunks)
+            r.startNextPaused = f.childBool(.filesStartNextPaused)
+            r.resumeSameCat = f.childBool(.filesResumeSameCat)
+            r.saveSources = f.childBool(.filesSaveSources)
+            r.extractMetadata = f.childBool(.filesExtractMetadata)
+            r.allocFullSize = f.childBool(.filesAllocFullSize)
+            r.checkFreeSpace = f.childBool(.filesCheckFreeSpace)
             r.minFreeSpace = f.childNumber(.filesMinFreeSpace) ?? 0
         }
         if let d = p.tag(.prefsDirectories) {
@@ -161,33 +161,33 @@ struct RemotePrefs {
             if let shared = d.child(.directoriesShared) {
                 r.sharedDirs = shared.children.compactMap(\.stringValue)
             }
-            r.shareHidden = (d.childNumber(.directoriesShareHidden) ?? 0) != 0
-            r.autoRescanShared = (d.childNumber(.directoriesAutoRescan) ?? 0) != 0
+            r.shareHidden = d.childBool(.directoriesShareHidden)
+            r.autoRescanShared = d.childBool(.directoriesAutoRescan)
             r.directoriesLoaded = true
         }
         if let m = p.tag(.prefsMessageFilter) {
-            r.msgFilterEnabled = (m.childNumber(.msgFilterEnabled) ?? 0) != 0
-            r.msgFilterAll = (m.childNumber(.msgFilterAll) ?? 0) != 0
-            r.msgFilterFriends = (m.childNumber(.msgFilterFriends) ?? 0) != 0
-            r.msgFilterSecure = (m.childNumber(.msgFilterSecure) ?? 0) != 0
-            r.msgFilterByKeyword = (m.childNumber(.msgFilterByKeyword) ?? 0) != 0
+            r.msgFilterEnabled = m.childBool(.msgFilterEnabled)
+            r.msgFilterAll = m.childBool(.msgFilterAll)
+            r.msgFilterFriends = m.childBool(.msgFilterFriends)
+            r.msgFilterSecure = m.childBool(.msgFilterSecure)
+            r.msgFilterByKeyword = m.childBool(.msgFilterByKeyword)
             r.msgFilterKeywords = m.childString(.msgFilterKeywords) ?? ""
         }
         if let o = p.tag(.prefsOnlineSig) {
-            r.onlineSigEnabled = (o.childNumber(.onlineSigEnabled) ?? 0) != 0
+            r.onlineSigEnabled = o.childBool(.onlineSigEnabled)
         }
         if let s = p.tag(.prefsSecurity) {
             r.canSeeShares = s.childNumber(.securityCanSeeShares) ?? 0
-            r.ipfilterClients = (s.childNumber(.ipfilterClients) ?? 0) != 0
-            r.ipfilterServers = (s.childNumber(.ipfilterServers) ?? 0) != 0
-            r.ipfilterAutoUpdate = (s.childNumber(.ipfilterAutoUpdate) ?? 0) != 0
+            r.ipfilterClients = s.childBool(.ipfilterClients)
+            r.ipfilterServers = s.childBool(.ipfilterServers)
+            r.ipfilterAutoUpdate = s.childBool(.ipfilterAutoUpdate)
             r.ipfilterUpdateURL = s.childString(.ipfilterUpdateURL) ?? ""
             r.ipfilterLevel = s.childNumber(.ipfilterLevel) ?? 127
-            r.ipfilterFilterLAN = (s.childNumber(.ipfilterFilterLAN) ?? 0) != 0
-            r.useSecIdent = (s.childNumber(.securityUseSecIdent) ?? 0) != 0
-            r.obfuscationSupported = (s.childNumber(.securityObfuscationSupported) ?? 0) != 0
-            r.obfuscationRequested = (s.childNumber(.securityObfuscationRequested) ?? 0) != 0
-            r.obfuscationRequired = (s.childNumber(.securityObfuscationRequired) ?? 0) != 0
+            r.ipfilterFilterLAN = s.childBool(.ipfilterFilterLAN)
+            r.useSecIdent = s.childBool(.securityUseSecIdent)
+            r.obfuscationSupported = s.childBool(.securityObfuscationSupported)
+            r.obfuscationRequested = s.childBool(.securityObfuscationRequested)
+            r.obfuscationRequired = s.childBool(.securityObfuscationRequired)
         }
         if let t = p.tag(.prefsCoreTweaks) {
             r.maxConnPerFive = t.childNumber(.coretwMaxConnPerFive) ?? 0
@@ -196,10 +196,10 @@ struct RemotePrefs {
             r.serverKeepAliveTimeout = t.childNumber(.coretwSrvKeepaliveTimeout) ?? 0
         }
         if let w = p.tag(.prefsRemoteCtrl) {
-            r.webserverAutorun = (w.childNumber(.webserverAutorun) ?? 0) != 0
+            r.webserverAutorun = w.childBool(.webserverAutorun)
             r.webserverPort = w.childNumber(.webserverPort) ?? 4711
-            r.webserverGuest = (w.childNumber(.webserverGuest) ?? 0) != 0
-            r.webserverUseGzip = (w.childNumber(.webserverUseGzip) ?? 0) != 0
+            r.webserverGuest = w.childBool(.webserverGuest)
+            r.webserverUseGzip = w.childBool(.webserverUseGzip)
             r.webserverRefresh = w.childNumber(.webserverRefresh) ?? 0
         }
         if let k = p.tag(.prefsKademlia) {

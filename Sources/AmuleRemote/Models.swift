@@ -223,7 +223,7 @@ struct DownloadItem: Identifiable, Hashable, Codable {
             speed: Double(tag.childNumber(.partfileSpeed) ?? 0),
             status: tag.childNumber(.partfileStatus) ?? 6,
             partmetID: tag.childNumber(.partfilePartmetID) ?? 0,
-            stopped: (tag.childNumber(.partfileStopped) ?? 0) != 0,
+            stopped: tag.childBool(.partfileStopped),
             priority: tag.childNumber(.partfilePrio) ?? 1,
             sources: tag.childNumber(.partfileSourceCount) ?? 0,
             sourcesXfer: tag.childNumber(.partfileSourceCountXfer) ?? 0,
@@ -298,7 +298,7 @@ struct SearchResultItem: Identifiable, Hashable {
             size: tag.childNumber(.partfileSizeFull) ?? 0,
             sources: tag.childNumber(.partfileSourceCount) ?? 0,
             completeSources: tag.childNumber(.partfileSourceCountXfer) ?? 0,
-            alreadyKnown: (tag.childNumber(.knownfileOnQueue) ?? 0) != 0
+            alreadyKnown: tag.childBool(.knownfileOnQueue)
         )
     }
 }
@@ -345,7 +345,7 @@ struct ServerItem: Identifiable, Hashable {
             files: tag.childNumber(.serverFiles) ?? 0,
             ping: tag.childNumber(.serverPing) ?? 0,
             priority: tag.childNumber(.serverPrio) ?? 1,
-            isStatic: (tag.childNumber(.serverStatic) ?? 0) != 0,
+            isStatic: tag.childBool(.serverStatic),
             version: tag.childString(.serverVersion) ?? "",
             failed: tag.childNumber(.serverFailed) ?? 0
         )
