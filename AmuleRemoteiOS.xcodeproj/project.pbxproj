@@ -14,6 +14,7 @@
 		31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
 		59CA1A6A5D5617ABA92CEC7D /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */; };
 		5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
+		68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647DE5C537E5A0C773834631 /* Assets.xcassets */; };
 		6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		7761B10AF19B7B98E6D42669 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
@@ -63,6 +64,7 @@
 		4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmuleRemoteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		551D61B3C316A758F472D362 /* ECPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPacket.swift; sourceTree = "<group>"; };
 		5AA34F0092F1EE95CE096FF9 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		647DE5C537E5A0C773834631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECClient.swift; sourceTree = "<group>"; };
 		6EC813EA1F5EF0E980C60AEC /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		5E6B68ADC85F9F0D59A0DED7 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
+				647DE5C537E5A0C773834631 /* Assets.xcassets */,
 				88BC625A305C1514549A27A8 /* WatchApp.swift */,
 			);
 			path = Watch;
@@ -155,6 +158,7 @@
 			buildConfigurationList = C9BB2D17C3F44FDB56E996D3 /* Build configuration list for PBXNativeTarget "AmuleRemoteWatch" */;
 			buildPhases = (
 				8DB00C176321DD7265425A23 /* Sources */,
+				CFFCCBF381602B8A5E113137 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFCCBF381602B8A5E113137 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
