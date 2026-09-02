@@ -4,3 +4,9 @@ DerivedData/
 *.xcarchive
 xcuserdata/
 aMule Remote.app/
+
+# Artefatti di build e pacchetti release (stanno nelle Release, non nel repo)
+build/
+*.dmg
+*.zip
+notarize.zip
