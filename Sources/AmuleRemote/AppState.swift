@@ -40,6 +40,22 @@ final class AppState: ObservableObject {
     @Published var idleTimeout: Int { didSet { UserDefaults.standard.set(idleTimeout, forKey: "idleTimeout") } }
     @Published var password: String = ""
 
+    // Profili server (default = quello proposto all'avvio e usato in background).
+    @Published var profiles: [ServerProfile] { didSet { ProfileStore.save(profiles) } }
+    @Published var defaultProfileID: UUID? { didSet { ProfileStore.defaultID = defaultProfileID } }
+
+    // Aspetto: chiaro / scuro / sistema.
+    @Published var themeMode: ThemeMode { didSet { UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode") } }
+
+    // Blocco biometrico (Face ID / Touch ID) opzionale.
+    @Published var biometricLockEnabled: Bool { didSet { UserDefaults.standard.set(biometricLockEnabled, forKey: "biometricLock") } }
+    @Published var locked = false
+
+    // Notifiche
+    @Published var notifyDownloadsEnabled: Bool { didSet { UserDefaults.standard.set(notifyDownloadsEnabled, forKey: "notifyDownloads") } }
+    @Published var notifyNetworkEnabled: Bool { didSet { UserDefaults.standard.set(notifyNetworkEnabled, forKey: "notifyNetwork") } }
+    @Published var backgroundChecksEnabled: Bool { didSet { UserDefaults.standard.set(backgroundChecksEnabled, forKey: "backgroundChecks") } }
+
     // Connection state
     @Published var connected = false
     @Published var connecting = false
@@ -99,6 +115,9 @@ final class AppState: ObservableObject {
                 if elapsed > .seconds(self.idleTimeout) {
                     self.lastError = "Disconnesso per inattività (\(self.idleTimeout)s)."
                     await self.disconnect()
+                    // Il monitoraggio continua anche da disconnessi: controlli
+                    // periodici leggeri con notifiche di completamenti e cadute.
+                    self.startOfflineMonitor()
                 }
             }
         }
@@ -121,13 +140,112 @@ final class AppState: ObservableObject {
         port = defaults.object(forKey: "port") as? Int ?? 4712
         autoConnect = defaults.bool(forKey: "autoConnect")
         idleTimeout = defaults.object(forKey: "idleTimeout") as? Int ?? 120
+        themeMode = ThemeMode(rawValue: defaults.string(forKey: "themeMode") ?? "") ?? .system
+        biometricLockEnabled = defaults.bool(forKey: "biometricLock")
+        notifyDownloadsEnabled = defaults.object(forKey: "notifyDownloads") as? Bool ?? true
+        notifyNetworkEnabled = defaults.object(forKey: "notifyNetwork") as? Bool ?? true
+        backgroundChecksEnabled = defaults.object(forKey: "backgroundChecks") as? Bool ?? true
+        profiles = ProfileStore.load()
+        defaultProfileID = ProfileStore.defaultID
+
+        // Migrazione: il server già configurato nelle build precedenti diventa
+        // il primo profilo (e quello predefinito).
+        if profiles.isEmpty && !host.isEmpty && host.uppercased() != "DEMO" {
+            let p = ServerProfile(name: host, host: host, port: port)
+            profiles = [p]
+            defaultProfileID = p.id
+        }
+        // All'avvio comanda il profilo predefinito, se esiste.
+        if let def = profiles.first(where: { $0.id == defaultProfileID }) {
+            host = def.host
+            port = def.port
+        }
+
+        locked = biometricLockEnabled
 
         if !host.isEmpty {
             password = Keychain.loadPassword(account: "\(host):\(port)") ?? ""
         }
-        if autoConnect && !host.isEmpty && !password.isEmpty {
+        // Con il blocco attivo la connessione automatica parte dopo lo sblocco.
+        if !locked && autoConnect && !host.isEmpty && !password.isEmpty {
             Task { await connect() }
         }
+    }
+
+    // MARK: - Profili
+
+    /// Il profilo che corrisponde ai valori di connessione correnti (se esiste).
+    var currentProfile: ServerProfile? {
+        profiles.first { $0.host == host && $0.port == port }
+    }
+
+    /// Carica host/porta/password di un profilo nei campi correnti (senza connettere).
+    func applyProfile(_ p: ServerProfile) {
+        host = p.host
+        port = p.port
+        password = Keychain.loadPassword(account: p.address) ?? ""
+    }
+
+    /// Cambio rapido: disconnette dal server corrente e connette al profilo scelto.
+    func switchProfile(to p: ServerProfile) async {
+        if connected || demoMode { await disconnect() }
+        applyProfile(p)
+        if !password.isEmpty {
+            await connect()
+        }
+    }
+
+    func upsertProfile(_ p: ServerProfile) {
+        if let i = profiles.firstIndex(where: { $0.id == p.id }) {
+            profiles[i] = p
+        } else {
+            profiles.append(p)
+        }
+        if defaultProfileID == nil { defaultProfileID = p.id }
+    }
+
+    func deleteProfile(_ p: ServerProfile) {
+        profiles.removeAll { $0.id == p.id }
+        if defaultProfileID == p.id { defaultProfileID = profiles.first?.id }
+    }
+
+    func setDefaultProfile(_ p: ServerProfile) {
+        defaultProfileID = p.id
+    }
+
+    /// Dopo una connessione riuscita, un server nuovo entra da solo nei profili.
+    private func autoCreateProfileIfNeeded() {
+        guard currentProfile == nil, !host.isEmpty else { return }
+        let p = ServerProfile(name: host, host: host, port: port)
+        profiles.append(p)
+        if defaultProfileID == nil { defaultProfileID = p.id }
+    }
+
+    // MARK: - Blocco biometrico
+
+    func unlock() async {
+        guard locked else { return }
+        guard await BiometricAuth.authenticate(reason: "Sblocca aMule Remote") else { return }
+        locked = false
+        if autoConnect && !connected && !host.isEmpty && !password.isEmpty {
+            await connect()
+        }
+    }
+
+    func lockNow() {
+        if biometricLockEnabled { locked = true }
+    }
+
+    /// Attiva/disattiva il blocco: entrambe le direzioni richiedono
+    /// un'autenticazione riuscita, così nessuno può spegnerlo al posto tuo.
+    func setBiometricLock(_ enabled: Bool) async {
+        guard enabled != biometricLockEnabled else { return }
+        let reason = enabled
+            ? "Attiva il blocco di aMule Remote"
+            : "Disattiva il blocco di aMule Remote"
+        guard await BiometricAuth.authenticate(reason: reason) else { return }
+        biometricLockEnabled = enabled
+        if !enabled { locked = false }
     }
 
     // MARK: - Connection
@@ -150,15 +268,18 @@ final class AppState: ObservableObject {
             try await client.connect(host: host, port: UInt16(clamping: port), password: password)
             serverVersion = await client.serverVersion
             connected = true
+            stopOfflineMonitor()
+            lastNetState = nil
             Keychain.savePassword(password, account: "\(host):\(port)")
+            autoCreateProfileIfNeeded()
             loadCompletedCache()
             loadFirstSeen()
             markActivity()
             startPolling()
             startIdleWatcher()
             await refreshAll()
-            _ = try? await UNUserNotificationCenter.current()
-                .requestAuthorization(options: [.alert, .sound, .badge])
+            await Notifier.requestPermission()
+            pushWatchSnapshot()
         } catch {
             lastError = error.localizedDescription
             connected = false
@@ -181,6 +302,7 @@ final class AppState: ObservableObject {
         pollTask = nil
         idleTask?.cancel()
         idleTask = nil
+        stopOfflineMonitor()
         if demoMode {
             exitDemoMode()
         } else {
@@ -188,6 +310,58 @@ final class AppState: ObservableObject {
         }
         connected = false
         serverVersion = ""
+        lastNetState = nil
+        pushWatchSnapshot()
+    }
+
+    // MARK: - Monitor offline (iOS)
+    // Dopo la disconnessione per inattività l'app continua a controllare il
+    // server una volta al minuto (finché resta in foreground) e a notificare
+    // download completati e cadute di rete. In background subentra il
+    // Background App Refresh (BackgroundRefresh.swift).
+    private var offlineMonitorTask: Task<Void, Never>?
+
+    func startOfflineMonitor() {
+        #if os(iOS)
+        guard backgroundChecksEnabled, !demoMode, !host.isEmpty, !password.isEmpty else { return }
+        let h = host, p = port, pw = password
+        offlineMonitorTask?.cancel()
+        offlineMonitorTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 60_000_000_000)
+                guard let self, !self.connected else { return }
+                await BackgroundMonitor.checkOnce(host: h, port: p, password: pw,
+                                                  notifyDownloads: self.notifyDownloadsEnabled,
+                                                  notifyNetwork: self.notifyNetworkEnabled)
+            }
+        }
+        #endif
+    }
+
+    func stopOfflineMonitor() {
+        offlineMonitorTask?.cancel()
+        offlineMonitorTask = nil
+    }
+
+    // MARK: - Snapshot per Apple Watch
+
+    /// Pubblica lo stato corrente sull'Apple Watch (solo iOS; no-op su macOS).
+    func pushWatchSnapshot() {
+        #if os(iOS)
+        let items: [[String: Any]] = downloads.prefix(20).map {
+            ["n": $0.name, "p": $0.progress, "s": $0.speed, "c": $0.isComplete]
+        }
+        let payload: [String: Any] = [
+            "connected": connected,
+            "profile": currentProfile?.name ?? (demoMode ? "Demo" : host),
+            "dl": stats.dlSpeed,
+            "ul": stats.ulSpeed,
+            "ed2k": connState.ed2kConnected,
+            "kad": connState.kadOK,
+            "items": items,
+        ]
+        WatchBridge.shared.push(payload)
+        #endif
     }
 
     private func handle(_ error: Error) {
@@ -240,6 +414,7 @@ final class AppState: ObservableObject {
         if selectedSection == .downloads { await refreshUploads() }
         if searchSessions.contains(where: { $0.inProgress }) { await refreshSearch() }
         if selectedSection == .log { await refreshLog() }
+        pushWatchSnapshot()
     }
 
     func refreshAll() async {
@@ -260,8 +435,31 @@ final class AppState: ObservableObject {
             let connReply = try await client.request(
                 ECPacket(.getConnState, tags: [.uint8(.detailLevel, ECDetailLevel.web.rawValue)]))
             connState = ConnState.parse(connReply)
+            notifyNetworkTransitions()
         } catch {
             handle(error)
+        }
+    }
+
+    // Ultimo stato delle reti visto in QUESTA sessione, per rilevare le
+    // transizioni connesso → disconnesso (mai notificare lo stato iniziale).
+    private var lastNetState: (ed2k: Bool, kad: Bool)?
+
+    private func notifyNetworkTransitions() {
+        let current = (ed2k: connState.ed2kConnected, kad: connState.kadOK)
+        defer {
+            lastNetState = current
+            // Persistito anche per i controlli in background.
+            Notifier.recordNetState(server: "\(host):\(port)", ed2k: current.ed2k, kad: current.kad)
+        }
+        guard notifyNetworkEnabled, let prev = lastNetState else { return }
+        if prev.ed2k && !current.ed2k {
+            Notifier.post(id: "ed2k-drop", title: "eD2k disconnesso",
+                          body: "\(host) non è più connesso alla rete eD2k.")
+        }
+        if prev.kad && !current.kad {
+            Notifier.post(id: "kad-drop", title: "Kad disconnesso",
+                          body: "\(host) non è più connesso alla rete Kad.")
         }
     }
 
@@ -354,6 +552,15 @@ final class AppState: ObservableObject {
             // Remember progress for the files still in the queue.
             for f in fresh { lastProgress[f.hash] = f.progress }
 
+            // Snapshot persistito per i controlli in background (nome incluso,
+            // per il testo delle notifiche di completamento).
+            var bgEntries: [String: Notifier.QueueEntry] = [:]
+            for f in fresh {
+                let hex = hexString(f.hash)
+                bgEntries[hex] = .init(p: max(f.progress, lastProgress[f.hash] ?? 0), n: f.name)
+            }
+            Notifier.recordQueue(server: "\(host):\(port)", entries: bgEntries)
+
             // Track first-seen date per hash (download age). New files get "now";
             // files that left the queue are forgotten.
             let now = Date()
@@ -387,14 +594,13 @@ final class AppState: ObservableObject {
     }
 
     /// Local notification on download completion; iOS mirrors it to Apple Watch.
+    /// Il registro per-server evita doppioni tra polling in foreground e
+    /// controlli in background sullo stesso completamento.
     private func notifyDownloadCompleted(_ item: DownloadItem) {
-        let content = UNMutableNotificationContent()
-        content.title = "Download completato ✅"
-        content.body = item.name
-        content.sound = .default
-        let request = UNNotificationRequest(identifier: "dl-\(hexString(item.hash))",
-                                            content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request)
+        let hex = hexString(item.hash)
+        guard Notifier.markCompletedOnce(server: "\(host):\(port)", hashHex: hex) else { return }
+        guard notifyDownloadsEnabled else { return }
+        Notifier.post(id: "dl-\(hex)", title: "Download completato ✅", body: item.name)
     }
 
     private func partfileCommand(_ op: ECOp, hash: Data, children: [ECTag] = []) async {

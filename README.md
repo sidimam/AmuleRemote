@@ -19,7 +19,11 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 - **Impostazioni aMule** (remote), lettura e scrittura diretta su amuled:
   - **macOS**: set completo — Generale, Connessione, Server, File, Sicurezza, Filtri messaggi, Avanzate (core tweaks + Kademlia), Controllo remoto (webserver).
   - **iOS / iPadOS**: le voci più utili di `amule.conf` — Generale e cartelle, Connessione, Server, File, Sicurezza, Avanzate.
-- **Notifiche** al completamento dei download (su iOS anche su Apple Watch).
+- **Profili server** *(build 16)*: più server amuled salvati con nome, uno **predefinito** proposto all'avvio; cambio rapido dal footer (macOS) o dalla tab Altro (iOS). Password sempre nel Portachiavi.
+- **Tema** *(build 16)*: chiaro, scuro o come il sistema — selettore su iOS (Altro → Impostazioni app) e macOS (⌘,).
+- **Blocco con Face ID / Touch ID** *(build 16)*, opzionale: all'apertura (e al ritorno in primo piano su iOS) l'app chiede l'autenticazione biometrica, con fallback al codice del dispositivo.
+- **Notifiche**: download completati e **disconnessioni eD2k/Kad** — anche dopo la disconnessione per inattività (controllo al minuto finché l'app è aperta) e in background con il Background App Refresh, quando iOS lo consente. Su iOS le notifiche arrivano anche su Apple Watch.
+- **App per Apple Watch** *(build 16)*: velocità, stato reti eD2k/Kad e coda download con avanzamento, sincronizzati dall'iPhone.
 - Password conservata nel **Portachiavi**; disconnessione automatica dopo inattività (iOS) e riconnessione automatica opzionale.
 - Se il server aMule si ferma, l'app si **disconnette automaticamente** e mostra un banner **"Server interrotto"** invece di un errore di rete.
 

@@ -9,9 +9,16 @@ struct AmuleRemoteApp: App {
             ContentView()
                 .environmentObject(state)
                 .frame(minWidth: 980, minHeight: 620)
+                .preferredColorScheme(state.themeMode.colorScheme)
         }
         .commands {
             CommandGroup(replacing: .newItem) {}
+        }
+        // App menu → Impostazioni… (⌘,): aspetto, blocco Touch ID, profili.
+        Settings {
+            MacSettingsView()
+                .environmentObject(state)
+                .preferredColorScheme(state.themeMode.colorScheme)
         }
     }
 }
@@ -21,7 +28,9 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if state.connected {
+            if state.locked {
+                LockScreenView()
+            } else if state.connected {
                 MainSplitView()
             } else {
                 ConnectionView()
@@ -100,9 +109,26 @@ struct ConnectionFooter: View {
                     .font(.caption)
             }
             HStack {
-                Text(state.host)
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
+                if state.profiles.count > 1 {
+                    // Cambio profilo al volo: disconnette e riconnette al server scelto.
+                    Menu {
+                        ForEach(state.profiles) { p in
+                            Button(p.id == state.defaultProfileID ? "\(p.name) ★" : p.name) {
+                                Task { await state.switchProfile(to: p) }
+                            }
+                            .disabled(state.currentProfile?.id == p.id)
+                        }
+                    } label: {
+                        Text(state.currentProfile?.name ?? state.host)
+                            .font(.caption2)
+                    }
+                    .menuStyle(.borderlessButton)
+                    .fixedSize()
+                } else {
+                    Text(state.host)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
                 Spacer()
                 Button("Disconnetti") {
                     Task { await state.disconnect() }
@@ -147,6 +173,24 @@ struct ConnectionView: View {
                 .foregroundStyle(.secondary)
 
             Form {
+                if !state.profiles.isEmpty {
+                    Picker("Profilo:", selection: Binding(
+                        get: { state.currentProfile?.id },
+                        set: { newID in
+                            if let id = newID, let p = state.profiles.first(where: { $0.id == id }) {
+                                state.applyProfile(p)
+                            }
+                        }
+                    )) {
+                        ForEach(state.profiles) { p in
+                            Text(p.id == state.defaultProfileID ? "\(p.name) ★" : p.name)
+                                .tag(Optional(p.id))
+                        }
+                        if state.currentProfile == nil {
+                            Text("Nuovo server…").tag(Optional<UUID>.none)
+                        }
+                    }
+                }
                 TextField("Host / IP del server:", text: $state.host, prompt: Text("es. unraid.local o 192.168.1.10"))
                 TextField("Porta EC:", value: $state.port, format: .number.grouping(.never))
                 SecureField("Password:", text: $state.password)

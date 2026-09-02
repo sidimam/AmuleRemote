@@ -25,7 +25,45 @@ struct iOSMoreView: View {
                     }
                 }
 
+                if !state.profiles.isEmpty {
+                    Section {
+                        Picker("Profilo attivo", selection: Binding(
+                            get: { state.currentProfile?.id },
+                            set: { newID in
+                                if let id = newID, let p = state.profiles.first(where: { $0.id == id }) {
+                                    Task { await state.switchProfile(to: p) }
+                                }
+                            }
+                        )) {
+                            ForEach(state.profiles) { p in
+                                if p.id == state.defaultProfileID {
+                                    Label(p.name, systemImage: "star.fill").tag(Optional(p.id))
+                                } else {
+                                    Text(p.name).tag(Optional(p.id))
+                                }
+                            }
+                            if state.currentProfile == nil {
+                                Text(state.demoMode ? "Demo" : "—").tag(Optional<UUID>.none)
+                            }
+                        }
+                        NavigationLink {
+                            iOSProfilesView()
+                        } label: {
+                            Label("Gestisci profili", systemImage: "person.2.badge.gearshape")
+                        }
+                    } header: {
+                        Text("Profili server")
+                    } footer: {
+                        Text("Cambiando profilo l'app si disconnette dal server corrente e si connette a quello scelto.")
+                    }
+                }
+
                 Section {
+                    Picker("Aspetto", selection: $state.themeMode) {
+                        ForEach(ThemeMode.allCases) { mode in
+                            Label(mode.label, systemImage: mode.icon).tag(mode)
+                        }
+                    }
                     Picker("Disconnetti dopo inattività", selection: $state.idleTimeout) {
                         Text("Mai").tag(0)
                         Text("60 secondi").tag(60)
@@ -34,10 +72,27 @@ struct iOSMoreView: View {
                         Text("10 minuti").tag(600)
                         Text("30 minuti").tag(1800)
                     }
+                    Toggle(isOn: Binding(
+                        get: { state.biometricLockEnabled },
+                        set: { newValue in Task { await state.setBiometricLock(newValue) } }
+                    )) {
+                        Label("Richiedi \(BiometricAuth.biometryLabel)", systemImage: BiometricAuth.biometryIcon)
+                    }
+                    .disabled(!BiometricAuth.isAvailable)
                 } header: {
                     Text("Impostazioni app")
                 } footer: {
-                    Text("Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto.")
+                    Text("Con il blocco attivo, all'apertura (e al ritorno in primo piano) l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto.")
+                }
+
+                Section {
+                    Toggle("Download completati", isOn: $state.notifyDownloadsEnabled)
+                    Toggle("Disconnessioni eD2k / Kad", isOn: $state.notifyNetworkEnabled)
+                    Toggle("Controlli in background", isOn: $state.backgroundChecksEnabled)
+                } header: {
+                    Text("Notifiche")
+                } footer: {
+                    Text("Con i controlli in background attivi, l'app verifica il server anche dopo la disconnessione per inattività (una volta al minuto finché è aperta) e periodicamente in background, quando iOS lo consente. Le notifiche arrivano anche su Apple Watch.")
                 }
 
                 Section("Connessione") {

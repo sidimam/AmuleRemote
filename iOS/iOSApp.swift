@@ -3,11 +3,30 @@ import SwiftUI
 @main
 struct AmuleRemoteiOSApp: App {
     @StateObject private var state = AppState()
+    @Environment(\.scenePhase) private var scenePhase
+
+    init() {
+        // La registrazione del BGTask deve avvenire prima della fine del lancio.
+        BackgroundRefresh.register()
+        WatchBridge.shared.activate()
+    }
 
     var body: some Scene {
         WindowGroup {
             iOSRootView()
                 .environmentObject(state)
+                .preferredColorScheme(state.themeMode.colorScheme)
+        }
+        .onChange(of: scenePhase) { _, phase in
+            switch phase {
+            case .background:
+                state.lockNow()
+                if state.backgroundChecksEnabled && !state.demoMode {
+                    BackgroundRefresh.schedule()
+                }
+            default:
+                break
+            }
         }
     }
 }
@@ -17,7 +36,9 @@ struct iOSRootView: View {
 
     var body: some View {
         Group {
-            if state.connected {
+            if state.locked {
+                LockScreenView()
+            } else if state.connected {
                 TabView {
                     iOSTransfersView()
                         .tabItem { Label("Trasferimenti", systemImage: "arrow.down.circle") }
@@ -83,6 +104,33 @@ struct iOSConnectionView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .listRowBackground(Color.clear)
+                }
+
+                if !state.profiles.isEmpty {
+                    Section("Profilo") {
+                        Picker("Profilo", selection: Binding(
+                            get: { state.currentProfile?.id },
+                            set: { newID in
+                                if let id = newID, let p = state.profiles.first(where: { $0.id == id }) {
+                                    state.applyProfile(p)
+                                }
+                            }
+                        )) {
+                            ForEach(state.profiles) { p in
+                                if p.id == state.defaultProfileID {
+                                    Label(p.name, systemImage: "star.fill").tag(Optional(p.id))
+                                } else {
+                                    Text(p.name).tag(Optional(p.id))
+                                }
+                            }
+                            if state.currentProfile == nil {
+                                Text("Nuovo server…").tag(Optional<UUID>.none)
+                            }
+                        }
+                        NavigationLink("Gestisci profili") {
+                            iOSProfilesView()
+                        }
+                    }
                 }
 
                 Section("Server") {
