@@ -12,5 +12,20 @@
 	</array>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Face ID protegge l'accesso all'app e ai tuoi server aMule.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.sdimambro.amule-remote-ios.ed2k</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ed2k</string>
+			</array>
+		</dict>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 </dict>
 </plist>

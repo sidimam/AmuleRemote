@@ -47,6 +47,14 @@ final class AppState: ObservableObject {
     // Aspetto: chiaro / scuro / sistema.
     @Published var themeMode: ThemeMode { didSet { UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode") } }
 
+    // Lingua: di sistema o forzata (cambio live per la UI, completo al riavvio).
+    @Published var appLanguage: AppLanguage {
+        didSet {
+            UserDefaults.standard.set(appLanguage.rawValue, forKey: "appLanguage")
+            appLanguage.applySystemOverride()
+        }
+    }
+
     // Blocco biometrico (Face ID / Touch ID) opzionale.
     @Published var biometricLockEnabled: Bool { didSet { UserDefaults.standard.set(biometricLockEnabled, forKey: "biometricLock") } }
     @Published var locked = false
@@ -141,6 +149,7 @@ final class AppState: ObservableObject {
         autoConnect = defaults.bool(forKey: "autoConnect")
         idleTimeout = defaults.object(forKey: "idleTimeout") as? Int ?? 120
         themeMode = ThemeMode(rawValue: defaults.string(forKey: "themeMode") ?? "") ?? .system
+        appLanguage = AppLanguage(rawValue: defaults.string(forKey: "appLanguage") ?? "") ?? .system
         biometricLockEnabled = defaults.bool(forKey: "biometricLock")
         notifyDownloadsEnabled = defaults.object(forKey: "notifyDownloads") as? Bool ?? true
         notifyNetworkEnabled = defaults.object(forKey: "notifyNetwork") as? Bool ?? true
@@ -211,6 +220,40 @@ final class AppState: ObservableObject {
 
     func setDefaultProfile(_ p: ServerProfile) {
         defaultProfileID = p.id
+    }
+
+    // MARK: - Link ed2k:// aperti dal sistema
+
+    /// Link ed2k ricevuto da un clic esterno (Safari, Mail…), in attesa di
+    /// conferma dall'utente prima di essere accodato.
+    @Published var pendingEd2kLink: String?
+
+    func handleIncomingURL(_ url: URL) {
+        let s = url.absoluteString.removingPercentEncoding ?? url.absoluteString
+        guard s.lowercased().hasPrefix("ed2k://") else { return }
+        pendingEd2kLink = s
+    }
+
+    /// Nome file leggibile da un link ed2k://|file|nome|size|hash|/
+    nonisolated static func ed2kLinkName(_ link: String) -> String {
+        let parts = link.split(separator: "|")
+        return parts.count > 2 ? String(parts[2]) : link
+    }
+
+    /// Conferma del link in attesa: connette se serve, poi accoda.
+    func confirmPendingEd2kLink() async {
+        guard let link = pendingEd2kLink else { return }
+        pendingEd2kLink = nil
+        if !connected {
+            await connect()
+        }
+        guard connected else { return }
+        await addEd2kLink(link)
+    }
+
+    /// URL Incoming del profilo corrente (per il download in locale).
+    var incomingBaseURL: String {
+        currentProfile?.incomingURL ?? ""
     }
 
     /// Dopo una connessione riuscita, un server nuovo entra da solo nei profili.

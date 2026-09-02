@@ -64,6 +64,11 @@ struct iOSMoreView: View {
                             Label(mode.label, systemImage: mode.icon).tag(mode)
                         }
                     }
+                    Picker("Lingua", selection: $state.appLanguage) {
+                        ForEach(AppLanguage.allCases) { lang in
+                            Text(lang.label).tag(lang)
+                        }
+                    }
                     Picker("Disconnetti dopo inattività", selection: $state.idleTimeout) {
                         Text("Mai").tag(0)
                         Text("60 secondi").tag(60)

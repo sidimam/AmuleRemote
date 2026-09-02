@@ -27,6 +27,15 @@ struct MacGeneralSettings: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                Picker("Lingua:", selection: $state.appLanguage) {
+                    ForEach(AppLanguage.allCases) { lang in
+                        Text(lang.label).tag(lang)
+                    }
+                }
+            } footer: {
+                Text("Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
 
             Section {
@@ -119,6 +128,8 @@ struct MacProfileEditor: View {
     @State private var port: Int
     @State private var password: String
     @State private var isDefault: Bool
+    @State private var incomingURL: String
+    @State private var incomingHeaders: String
 
     init(profile: ServerProfile?) {
         original = profile
@@ -128,6 +139,8 @@ struct MacProfileEditor: View {
         let stored = profile.flatMap { Keychain.loadPassword(account: $0.address) } ?? ""
         _password = State(initialValue: stored)
         _isDefault = State(initialValue: profile != nil && profile?.id == ProfileStore.defaultID)
+        _incomingURL = State(initialValue: profile?.incomingURL ?? "")
+        _incomingHeaders = State(initialValue: profile.map { LocalDownloadConfig.rawHeaders(for: $0.address) } ?? "")
     }
 
     var body: some View {
@@ -140,6 +153,12 @@ struct MacProfileEditor: View {
                 TextField("Porta EC:", value: $port, format: .number.grouping(.never))
                 SecureField("Password:", text: $password)
                 Toggle("Profilo predefinito", isOn: $isDefault)
+                Section("Download in locale (opzionale)") {
+                    TextField("URL Incoming:", text: $incomingURL, prompt: Text("https://nas.local/incoming/"))
+                    TextField("Header HTTP:", text: $incomingHeaders, prompt: Text("Nome: Valore (uno per riga)"), axis: .vertical)
+                        .lineLimit(2...4)
+                        .font(.callout.monospaced())
+                }
             }
             HStack {
                 Button("Annulla") { dismiss() }
@@ -161,10 +180,13 @@ struct MacProfileEditor: View {
         profile.name = cleanName.isEmpty ? cleanHost : cleanName
         profile.host = cleanHost
         profile.port = port
+        let cleanIncoming = incomingURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        profile.incomingURL = cleanIncoming.isEmpty ? nil : cleanIncoming
         state.upsertProfile(profile)
         if !password.isEmpty {
             Keychain.savePassword(password, account: profile.address)
         }
+        LocalDownloadConfig.saveHeaders(incomingHeaders, for: profile.address)
         if isDefault {
             state.setDefaultProfile(profile)
         } else if state.defaultProfileID == profile.id {

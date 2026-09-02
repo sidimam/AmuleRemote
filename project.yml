@@ -3,6 +3,7 @@
 name: AmuleRemoteiOS
 options:
   bundleIdPrefix: com.sdimambro
+  developmentLanguage: it
 targets:
   AmuleRemoteiOS:
     type: application
@@ -21,6 +22,8 @@ targets:
       - path: Sources/AmuleRemote/AppTheme.swift
       - path: Sources/AmuleRemote/BiometricLock.swift
       - path: Sources/AmuleRemote/Notifier.swift
+      - path: Sources/AmuleRemote/LocalDownload.swift
+      - path: Localizable.xcstrings
       - path: iOS
     dependencies:
       - target: AmuleRemoteWatch
@@ -50,6 +53,7 @@ targets:
     deploymentTarget: "10.0"
     sources:
       - path: Watch
+      - path: Localizable.xcstrings
     settings:
       base:
         PRODUCT_NAME: aMule Remote

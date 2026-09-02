@@ -24,6 +24,11 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 - **Blocco con Face ID / Touch ID** *(build 16)*, opzionale: all'apertura (e al ritorno in primo piano su iOS) l'app chiede l'autenticazione biometrica, con fallback al codice del dispositivo.
 - **Notifiche**: download completati e **disconnessioni eD2k/Kad** — anche dopo la disconnessione per inattività (controllo al minuto finché l'app è aperta) e in background con il Background App Refresh, quando iOS lo consente. Su iOS le notifiche arrivano anche su Apple Watch.
 - **App per Apple Watch** *(build 16)*: velocità, stato reti eD2k/Kad e coda download con avanzamento, sincronizzati dall'iPhone.
+- **Siri e Comandi rapidi** *(build 16, iOS)*: intent "Stato di aMule", "Metti in pausa/Riprendi i download", "Aggiungi link eD2k" — funzionano anche ad app chiusa (connessione EC usa-e-getta al profilo predefinito).
+- **Link ed2k:// dal sistema** *(build 16)*: l'app è registrata come handler dello schema `ed2k` — un clic su un link in Safari/Mail la apre e accoda il download previa conferma.
+- **Download in locale** *(build 16)*: sui file completati, "Scarica sul dispositivo" trasferisce il file dalla cartella Incoming del server (pubblicata via HTTP/S, URL per profilo, header opzionali per Cloudflare Access) nei Documenti dell'app (iOS, visibili in File) o in ~/Downloads (macOS). Il protocollo EC non trasporta file: serve un file server sull'Incoming.
+- **7 lingue** *(build 16)*: italiano, inglese, spagnolo, francese, tedesco, cinese semplificato, arabo (con layout RTL) — selettore in-app con opzione "Sistema"; il cambio è immediato per l'interfaccia.
+- **Icona adattiva** *(build 16)*: variante scura e "tinted" su iOS (iOS 18+); su macOS l'icona del Dock segue il tema di sistema.
 - Password conservata nel **Portachiavi**; disconnessione automatica dopo inattività (iOS) e riconnessione automatica opzionale.
 - Se il server aMule si ferma, l'app si **disconnette automaticamente** e mostra un banner **"Server interrotto"** invece di un errore di rete.
 

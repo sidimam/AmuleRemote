@@ -4,6 +4,10 @@ import SwiftUI
 struct AmuleRemoteApp: App {
     @StateObject private var state = AppState()
 
+    init() {
+        DockIcon.start()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -43,6 +47,45 @@ struct ContentView: View {
             Button("OK", role: .cancel) { state.lastError = nil }
         } message: {
             Text(state.lastError ?? "")
+        }
+        // Link ed2k:// aperti dal sistema (browser ecc.): conferma e accoda.
+        .alert("Aggiungere ai download?", isPresented: Binding(
+            get: { state.pendingEd2kLink != nil },
+            set: { if !$0 { state.pendingEd2kLink = nil } }
+        )) {
+            Button("Annulla", role: .cancel) { state.pendingEd2kLink = nil }
+            Button("Aggiungi") { Task { await state.confirmPendingEd2kLink() } }
+        } message: {
+            Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
+        }
+        .onOpenURL { state.handleIncomingURL($0) }
+        .modifier(AppLocaleModifier(language: state.appLanguage))
+    }
+}
+
+/// Icona del Dock adattiva: segue il tema di sistema (chiaro/scuro) usando le
+/// due varianti PNG nel bundle. L'icona statica nel Finder resta la .icns.
+enum DockIcon {
+    static func start() {
+        // In App.init() NSApp non esiste ancora: primo aggiornamento al
+        // primo giro di run loop, quando l'applicazione è pronta.
+        DispatchQueue.main.async { update() }
+        DistributedNotificationCenter.default().addObserver(
+            forName: Notification.Name("AppleInterfaceThemeChangedNotification"),
+            object: nil, queue: .main
+        ) { _ in
+            DispatchQueue.main.async { update() }
+        }
+    }
+
+    static func update() {
+        guard let app = NSApp else { return }
+        // NSGlobalDomain: presente solo quando il sistema è in tema scuro.
+        let dark = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
+        let name = dark ? "dockicon-dark" : "dockicon-light"
+        if let url = Bundle.main.url(forResource: name, withExtension: "png"),
+           let image = NSImage(contentsOf: url) {
+            app.applicationIconImage = image
         }
     }
 }

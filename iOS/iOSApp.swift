@@ -64,6 +64,18 @@ struct iOSRootView: View {
         } message: {
             Text(state.lastError ?? "")
         }
+        // Link ed2k:// aperti da altre app (Safari, Mail…): conferma e accoda.
+        .alert("Aggiungere ai download?", isPresented: Binding(
+            get: { state.pendingEd2kLink != nil },
+            set: { if !$0 { state.pendingEd2kLink = nil } }
+        )) {
+            Button("Annulla", role: .cancel) { state.pendingEd2kLink = nil }
+            Button("Aggiungi") { Task { await state.confirmPendingEd2kLink() } }
+        } message: {
+            Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
+        }
+        .onOpenURL { state.handleIncomingURL($0) }
+        .modifier(AppLocaleModifier(language: state.appLanguage))
     }
 }
 
