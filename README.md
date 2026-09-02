@@ -4,6 +4,21 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 
 > 📖 Guide dettagliate nel **[Wiki](https://github.com/sidimam/AmuleRemoteiOS/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/)
 
+<p align="center">
+  <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest/download/aMuleRemote-macOS.dmg">
+    <img src="https://img.shields.io/badge/macOS-Scarica_il_DMG_(ultima_versione)-0071e3?style=for-the-badge&logo=apple&logoColor=white" alt="Scarica il DMG per macOS" height="44">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://apps.apple.com/it/app/amule-remote/id6800020841">
+    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/it-it?size=250x83" alt="Scarica dall'App Store per iPhone e iPad" height="44">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest">
+    <img src="https://img.shields.io/github/v/release/sidimam/AmuleRemoteiOS?label=ultima%20release&style=flat-square" alt="Ultima release">
+  </a>
+</p>
+
 ## Download
 
 - **macOS**: scarica **`aMuleRemote-macOS.dmg`** dall'ultima **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, apri il DMG e trascina **aMule Remote** sulla cartella **Applications** lì accanto. L'app è firmata **Developer ID** e **notarizzata da Apple**: si avvia subito, senza avvisi di Gatekeeper né richieste del portachiavi. *(In alternativa c'è anche lo `.zip` con la stessa app.)*
