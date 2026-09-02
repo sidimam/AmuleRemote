@@ -43,11 +43,35 @@ final class WatchStore: NSObject, ObservableObject, WCSessionDelegate {
 
     override init() {
         super.init()
+        // Dati di esempio per screenshot/demo: lancio con argomento -demoData.
+        if ProcessInfo.processInfo.arguments.contains("-demoData") {
+            loadDemoData()
+            return
+        }
         guard WCSession.isSupported() else { return }
         let session = WCSession.default
         session.delegate = self
         session.activate()
         apply(session.receivedApplicationContext)
+    }
+
+    private func loadDemoData() {
+        var snap = WatchSnapshot()
+        snap.connected = true
+        snap.profile = "Demo"
+        snap.dlSpeed = 1_780_000
+        snap.ulSpeed = 391_000
+        snap.ed2k = true
+        snap.kad = true
+        snap.timestamp = Date()
+        snap.items = [
+            WatchDownload(name: "Big Buck Bunny (2008) open movie 1080p.mkv", progress: 0.46, speed: 852_000, complete: false),
+            WatchDownload(name: "Debian 12.5 netinst amd64.iso", progress: 1.0, speed: 0, complete: true),
+            WatchDownload(name: "Sintel (2010) Blender open movie 1080p.mkv", progress: 0.81, speed: 640_000, complete: false),
+            WatchDownload(name: "Ubuntu 24.04 LTS desktop amd64.iso", progress: 0.12, speed: 0, complete: false),
+        ]
+        snapshot = snap
+        hasData = true
     }
 
     private func apply(_ context: [String: Any]) {
