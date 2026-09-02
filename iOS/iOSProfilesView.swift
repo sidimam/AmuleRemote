@@ -75,8 +75,6 @@ struct ProfileEditorView: View {
     @State private var port: Int
     @State private var password: String
     @State private var isDefault: Bool
-    @State private var incomingURL: String
-    @State private var incomingHeaders: String
 
     init(profile: ServerProfile?) {
         original = profile
@@ -86,8 +84,6 @@ struct ProfileEditorView: View {
         let stored = profile.flatMap { Keychain.loadPassword(account: $0.address) } ?? ""
         _password = State(initialValue: stored)
         _isDefault = State(initialValue: profile != nil && profile?.id == ProfileStore.defaultID)
-        _incomingURL = State(initialValue: profile?.incomingURL ?? "")
-        _incomingHeaders = State(initialValue: profile.map { LocalDownloadConfig.rawHeaders(for: $0.address) } ?? "")
     }
 
     var body: some View {
@@ -113,22 +109,6 @@ struct ProfileEditorView: View {
                 } footer: {
                     Text("Il profilo predefinito viene proposto all'avvio dell'app e usato per i controlli in background.")
                 }
-                Section {
-                    TextField("https://nas.local/incoming/", text: $incomingURL)
-                        .textContentType(.URL)
-                        .keyboardType(.URL)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                    TextField("Header (Nome: Valore, uno per riga)", text: $incomingHeaders, axis: .vertical)
-                        .lineLimit(2...4)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .font(.callout.monospaced())
-                } header: {
-                    Text("Download in locale (opzionale)")
-                } footer: {
-                    Text("URL HTTP(S) che pubblica la cartella Incoming del server: abilita \"Scarica sul dispositivo\" sui file completati. Gli header opzionali (es. CF-Access-Client-Id / CF-Access-Client-Secret) vengono inviati a ogni richiesta e conservati nel Portachiavi.")
-                }
             }
             .navigationTitle(original == nil ? "Nuovo profilo" : "Modifica profilo")
             .navigationBarTitleDisplayMode(.inline)
@@ -151,13 +131,10 @@ struct ProfileEditorView: View {
         profile.name = cleanName.isEmpty ? cleanHost : cleanName
         profile.host = cleanHost
         profile.port = port
-        let cleanIncoming = incomingURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        profile.incomingURL = cleanIncoming.isEmpty ? nil : cleanIncoming
         state.upsertProfile(profile)
         if !password.isEmpty {
             Keychain.savePassword(password, account: profile.address)
         }
-        LocalDownloadConfig.saveHeaders(incomingHeaders, for: profile.address)
         if isDefault {
             state.setDefaultProfile(profile)
         } else if state.defaultProfileID == profile.id {

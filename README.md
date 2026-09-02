@@ -26,7 +26,6 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 - **App per Apple Watch** *(build 16)*: velocità, stato reti eD2k/Kad e coda download con avanzamento, sincronizzati dall'iPhone.
 - **Siri e Comandi rapidi** *(build 16, iOS)*: intent "Stato di aMule", "Metti in pausa/Riprendi i download", "Aggiungi link eD2k" — funzionano anche ad app chiusa (connessione EC usa-e-getta al profilo predefinito).
 - **Link ed2k:// dal sistema** *(build 16)*: l'app è registrata come handler dello schema `ed2k` — un clic su un link in Safari/Mail la apre e accoda il download previa conferma.
-- **Download in locale** *(build 16)*: sui file completati, "Scarica sul dispositivo" trasferisce il file dalla cartella Incoming del server (pubblicata via HTTP/S, URL per profilo, header opzionali per Cloudflare Access) nei Documenti dell'app (iOS, visibili in File) o in ~/Downloads (macOS). Il protocollo EC non trasporta file: serve un file server sull'Incoming.
 - **7 lingue** *(build 16)*: italiano, inglese, spagnolo, francese, tedesco, cinese semplificato, arabo (con layout RTL) — selettore in-app con opzione "Sistema"; il cambio è immediato per l'interfaccia.
 - **Icona adattiva** *(build 16)*: variante scura e "tinted" su iOS (iOS 18+); su macOS l'icona del Dock segue il tema di sistema.
 - Password conservata nel **Portachiavi**; disconnessione automatica dopo inattività (iOS) e riconnessione automatica opzionale.

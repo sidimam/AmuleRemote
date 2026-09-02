@@ -4721,46 +4721,6 @@
         }
       }
     },
-    "Download in locale (opzionale)": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تنزيل محلي (اختياري)"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lokaler Download (optional)"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Local download (optional)"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descarga local (opcional)"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Téléchargement local (facultatif)"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "本地下载（可选）"
-          }
-        }
-      }
-    },
     "Elimina": {
       "localizations": {
         "ar": {
@@ -6357,86 +6317,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "哈希"
-          }
-        }
-      }
-    },
-    "Header (Nome: Valore, uno per riga)": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ترويسات (الاسم: القيمة، واحدة في كل سطر)"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Header (Name: Wert, einer pro Zeile)"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Headers (Name: Value, one per line)"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cabeceras (Nombre: Valor, una por línea)"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En-têtes (Nom : Valeur, un par ligne)"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "标头（名称: 值，每行一个）"
-          }
-        }
-      }
-    },
-    "Header HTTP:": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ترويسات HTTP:"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HTTP-Header:"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HTTP headers:"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cabeceras HTTP:"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En-têtes HTTP :"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HTTP 标头："
           }
         }
       }
@@ -8401,46 +8281,6 @@
         }
       }
     },
-    "Mostra nel Finder": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "إظهار في Finder"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Im Finder zeigen"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show in Finder"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar en el Finder"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Afficher dans le Finder"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在访达中显示"
-          }
-        }
-      }
-    },
     "N.": {
       "localizations": {
         "ar": {
@@ -9037,46 +8877,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "名称："
-          }
-        }
-      }
-    },
-    "Nome: Valore (uno per riga)": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "الاسم: القيمة (واحدة في كل سطر)"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name: Wert (einer pro Zeile)"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name: Value (one per line)"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre: Valor (una por línea)"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nom : Valeur (un par ligne)"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "名称: 值（每行一个）"
           }
         }
       }
@@ -11761,86 +11561,6 @@
         }
       }
     },
-    "Scarica sul dispositivo": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تنزيل إلى الجهاز"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Auf das Gerät laden"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download to Device"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descargar en el dispositivo"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Télécharger sur l'appareil"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "下载到设备"
-          }
-        }
-      }
-    },
-    "Scarica sul dispositivo…": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تنزيل إلى الجهاز…"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Auf das Gerät laden…"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download to Device…"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descargar en el dispositivo…"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Télécharger sur l'appareil…"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "下载到设备…"
-          }
-        }
-      }
-    },
     "Scuro": {
       "localizations": {
         "ar": {
@@ -13157,86 +12877,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "全部"
-          }
-        }
-      }
-    },
-    "URL HTTP(S) che pubblica la cartella Incoming del server: abilita \"Scarica sul dispositivo\" sui file completati. Gli header opzionali (es. CF-Access-Client-Id / CF-Access-Client-Secret) vengono inviati a ogni richiesta e conservati nel Portachiavi.": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عنوان HTTP(S) ينشر مجلد Incoming على الخادم: يفعّل \"تنزيل إلى الجهاز\" للملفات المكتملة. تُرسل الترويسات الاختيارية (مثل CF-Access-Client-Id / CF-Access-Client-Secret) مع كل طلب وتُحفظ في سلسلة المفاتيح."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HTTP(S)-URL, die den Incoming-Ordner des Servers veröffentlicht: aktiviert \"Auf das Gerät laden\" für abgeschlossene Dateien. Optionale Header (z. B. CF-Access-Client-Id / CF-Access-Client-Secret) werden mit jeder Anfrage gesendet und im Schlüsselbund gesichert."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HTTP(S) URL publishing the server's Incoming folder: enables \"Download to Device\" on completed files. Optional headers (e.g. CF-Access-Client-Id / CF-Access-Client-Secret) are sent with every request and stored in the Keychain."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL HTTP(S) que publica la carpeta Incoming del servidor: habilita \"Descargar en el dispositivo\" en los archivos completados. Las cabeceras opcionales (p. ej. CF-Access-Client-Id / CF-Access-Client-Secret) se envían en cada solicitud y se guardan en el llavero."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL HTTP(S) publiant le dossier Incoming du serveur : active « Télécharger sur l'appareil » pour les fichiers terminés. Les en-têtes facultatifs (ex. CF-Access-Client-Id / CF-Access-Client-Secret) sont envoyés à chaque requête et conservés dans le trousseau."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "发布服务器 Incoming 文件夹的 HTTP(S) URL：为已完成文件启用“下载到设备”。可选标头（如 CF-Access-Client-Id / CF-Access-Client-Secret）随每个请求发送并保存在钥匙串中。"
-          }
-        }
-      }
-    },
-    "URL Incoming:": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عنوان Incoming:"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Incoming-URL:"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Incoming URL:"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL de Incoming:"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL Incoming :"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Incoming URL："
           }
         }
       }

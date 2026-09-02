@@ -8,10 +8,6 @@ struct ServerProfile: Identifiable, Codable, Equatable, Hashable {
     var name: String
     var host: String
     var port: Int
-    /// URL HTTP(S) che pubblica la cartella Incoming del server, per il
-    /// download in locale dei file completati (opzionale). Eventuali header
-    /// (es. Cloudflare Access) sono nel Portachiavi, non qui.
-    var incomingURL: String? = nil
 
     var address: String { "\(host):\(port)" }
 }

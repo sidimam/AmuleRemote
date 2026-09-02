@@ -22,7 +22,6 @@ targets:
       - path: Sources/AmuleRemote/AppTheme.swift
       - path: Sources/AmuleRemote/BiometricLock.swift
       - path: Sources/AmuleRemote/Notifier.swift
-      - path: Sources/AmuleRemote/LocalDownload.swift
       - path: Localizable.xcstrings
       - path: iOS
     dependencies:

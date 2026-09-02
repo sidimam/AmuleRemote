@@ -7,8 +7,6 @@ struct iOSTransfersView: View {
     @State private var selection = Set<Data>()
     @State private var editMode: EditMode = .inactive
     @State private var confirmDelete = false
-    @StateObject private var downloader = FileDownloadManager()
-    @State private var showDownloadSheet = false
     @AppStorage("iosSortTransfers") private var sortKey = "nome"
     @AppStorage("iosSortTransfersAsc") private var sortAsc = true
 
@@ -72,20 +70,6 @@ struct iOSTransfersView: View {
                                     UIPasteboard.general.string = item.ed2kLink
                                 }
                             }
-                            if item.isComplete {
-                                Button {
-                                    showDownloadSheet = true
-                                    if state.demoMode {
-                                        downloader.startDemo(fileName: item.name)
-                                    } else {
-                                        downloader.start(base: state.incomingBaseURL,
-                                                         fileName: item.name,
-                                                         headers: LocalDownloadConfig.headers(for: "\(state.host):\(state.port)"))
-                                    }
-                                } label: {
-                                    Label("Scarica sul dispositivo", systemImage: "arrow.down.to.line")
-                                }
-                            }
                             Divider()
                             Button("Elimina", role: .destructive) {
                                 Task { await state.delete(item) }
@@ -126,10 +110,6 @@ struct iOSTransfersView: View {
                         } label: { Image(systemName: "checkmark.circle") }
                     }
                 }
-            }
-            .sheet(isPresented: $showDownloadSheet) {
-                LocalDownloadSheet(manager: downloader)
-                    .presentationDetents([.medium])
             }
             .alert("Aggiungi link eD2k", isPresented: $showAddLink) {
                 TextField("ed2k://|file|…", text: $newLink)

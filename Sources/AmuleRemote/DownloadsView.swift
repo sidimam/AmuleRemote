@@ -7,8 +7,6 @@ struct DownloadsView: View {
     @State private var newLink = ""
     @State private var confirmDelete = false
     @State private var sortOrder = [KeyPathComparator(\DownloadItem.name)]
-    @StateObject private var downloader = FileDownloadManager()
-    @State private var showDownloadSheet = false
 
     private var sortedDownloads: [DownloadItem] {
         state.downloads.sorted(using: sortOrder)
@@ -122,9 +120,6 @@ struct DownloadsView: View {
                     Label("Aggiorna", systemImage: "arrow.clockwise")
                 }
             }
-        }
-        .sheet(isPresented: $showDownloadSheet) {
-            LocalDownloadSheet(manager: downloader)
         }
         .sheet(isPresented: $showAddLink) {
             VStack(spacing: 16) {
@@ -293,26 +288,9 @@ struct DownloadsView: View {
                 NSPasteboard.general.setString(item.ed2kLink, forType: .string)
             }
         }
-        if items.count == 1, let item = items.first, item.isComplete {
-            Button("Scarica sul dispositivo…") {
-                startLocalDownload(item)
-            }
-        }
         Button("Elimina…", role: .destructive) {
             selection = Set(items.map(\.hash))
             confirmDelete = true
-        }
-    }
-
-    /// Scarica il file completato dalla cartella Incoming pubblicata via HTTP(S).
-    private func startLocalDownload(_ item: DownloadItem) {
-        showDownloadSheet = true
-        if state.demoMode {
-            downloader.startDemo(fileName: item.name)
-        } else {
-            downloader.start(base: state.incomingBaseURL,
-                             fileName: item.name,
-                             headers: LocalDownloadConfig.headers(for: "\(state.host):\(state.port)"))
         }
     }
 }

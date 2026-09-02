@@ -30,7 +30,6 @@
 		C4020A6D93EC8DD93C3FE618 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C85E4775F68A1C7AFD60B /* WatchBridge.swift */; };
 		C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
-		D19CD258135433FD29CE2C28 /* LocalDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8789B658262293416A4D384 /* LocalDownload.swift */; };
 		D24FE39E7BA5136C8EC4241A /* AmuleRemoteWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F0FF267CE6A349E7920DC3 /* Assets.xcassets */; };
@@ -83,7 +82,6 @@
 		97EC007336CE595512BF2AEE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9F5B6700651A1B859099CEF3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
-		B8789B658262293416A4D384 /* LocalDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDownload.swift; sourceTree = "<group>"; };
 		BA2C85E4775F68A1C7AFD60B /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
 		C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSearchView.swift; sourceTree = "<group>"; };
 		D6123B9A396E3E5945D43C29 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */,
 				551D61B3C316A758F472D362 /* ECPacket.swift */,
 				9F5B6700651A1B859099CEF3 /* Keychain.swift */,
-				B8789B658262293416A4D384 /* LocalDownload.swift */,
 				D6123B9A396E3E5945D43C29 /* Models.swift */,
 				5AA34F0092F1EE95CE096FF9 /* Notifier.swift */,
 				6EC813EA1F5EF0E980C60AEC /* Profiles.swift */,
@@ -284,7 +281,6 @@
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
 				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
 				BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */,
-				D19CD258135433FD29CE2C28 /* LocalDownload.swift in Sources */,
 				7761B10AF19B7B98E6D42669 /* Models.swift in Sources */,
 				B6AEC3B49B30ABBEB3F70725 /* Notifier.swift in Sources */,
 				8D5CBF8C738F62892C65D4B7 /* Profiles.swift in Sources */,

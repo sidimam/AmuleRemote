@@ -251,11 +251,6 @@ final class AppState: ObservableObject {
         await addEd2kLink(link)
     }
 
-    /// URL Incoming del profilo corrente (per il download in locale).
-    var incomingBaseURL: String {
-        currentProfile?.incomingURL ?? ""
-    }
-
     /// Dopo una connessione riuscita, un server nuovo entra da solo nei profili.
     private func autoCreateProfileIfNeeded() {
         guard currentProfile == nil, !host.isEmpty else { return }
