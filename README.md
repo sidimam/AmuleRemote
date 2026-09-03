@@ -21,8 +21,8 @@ App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un se
 
 ## Download
 
-- **macOS**: scarica **`aMuleRemote-macOS.dmg`** dall'ultima **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, apri il DMG e trascina **aMule Remote** sulla cartella **Applications** lì accanto. L'app è firmata **Developer ID** e **notarizzata da Apple**: si avvia subito, senza avvisi di Gatekeeper né richieste del portachiavi. *(In alternativa c'è anche lo `.zip` con la stessa app.)*
-- **iOS / iPadOS**: via TestFlight (App Store in revisione), oppure si compila con Xcode (vedi *Versione iOS*).
+- **iOS / iPadOS**: **[scarica dall'App Store](https://apps.apple.com/it/app/amule-remote/id6800020841)** (gratis). In alternativa si compila con Xcode (vedi *Versione iOS*).
+- **macOS**: scarica **`aMuleRemote-macOS.dmg`** dall'ultima **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, apri il DMG e trascina **aMule Remote** sulla cartella **Applications** lì accanto. L'app è firmata **Developer ID** e **notarizzata da Apple**: si avvia subito, senza avvisi di Gatekeeper né richieste del portachiavi. *(In alternativa c'è anche lo `.zip` con la stessa app.)* La versione **Mac App Store** è in revisione: apparirà sulla [stessa scheda](https://apps.apple.com/it/app/amule-remote/id6800020841) dell'app iOS.
 
 ## Funzionalità
 
