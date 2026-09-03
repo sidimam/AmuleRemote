@@ -179,6 +179,25 @@ final class AppState: ObservableObject {
         if !locked && autoConnect && !host.isEmpty && !password.isEmpty {
             Task { await connect() }
         }
+
+        // Avvio diretto in modalità demo (per screenshot e collaudo):
+        // argomento di lancio -demo, con -section <search|servers|shared|stats|prefs>
+        // per aprire una sezione specifica.
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("-demo") {
+            locked = false
+            enterDemoMode()
+            if let i = args.firstIndex(of: "-section"), i + 1 < args.count {
+                switch args[i + 1] {
+                case "search": selectedSection = .search
+                case "servers": selectedSection = .servers
+                case "shared": selectedSection = .shared
+                case "stats": selectedSection = .stats
+                case "prefs": selectedSection = .prefs
+                default: selectedSection = .downloads
+                }
+            }
+        }
     }
 
     // MARK: - Profili
