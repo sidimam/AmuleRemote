@@ -10,3 +10,6 @@ build/
 *.dmg
 *.zip
 notarize.zip
+
+# Kit di ripristino (chiavi, certificati, manuali con credenziali): MAI nel repo
+aMuleRemote-RecoveryKit/
