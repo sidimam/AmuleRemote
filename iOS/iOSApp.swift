@@ -53,15 +53,32 @@ struct iOSRootView: View {
             if state.locked {
                 LockScreenView()
             } else if state.connected {
-                TabView {
+                // La tab selezionata segue `selectedSection` (stessa proprietà della
+                // barra laterale macOS): così `-section search|servers|stats` funziona
+                // anche qui, utile per screenshot e collaudo.
+                TabView(selection: Binding(
+                    get: {
+                        switch state.selectedSection ?? .downloads {
+                        case .search: return AppSection.search
+                        case .servers: return AppSection.servers
+                        case .downloads: return AppSection.downloads
+                        default: return AppSection.stats
+                        }
+                    },
+                    set: { state.selectedSection = $0 }
+                )) {
                     iOSTransfersView()
                         .tabItem { Label("Trasferimenti", systemImage: "arrow.down.circle") }
+                        .tag(AppSection.downloads)
                     iOSSearchView()
                         .tabItem { Label("Ricerca", systemImage: "magnifyingglass") }
+                        .tag(AppSection.search)
                     iOSServersView()
                         .tabItem { Label("Server", systemImage: "server.rack") }
+                        .tag(AppSection.servers)
                     iOSMoreView()
                         .tabItem { Label("Altro", systemImage: "ellipsis.circle") }
+                        .tag(AppSection.stats)
                 }
                 // Observe touches to reset the inactivity timer WITHOUT
                 // intercepting them (a DragGesture here would swallow taps).
