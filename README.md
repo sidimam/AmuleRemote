@@ -2,10 +2,10 @@
 
 Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch** companion) to remotely control an **amuled** server — for example the aMule container on your Unraid box, a NAS or a Raspberry Pi — over the **EC (External Connections)** protocol, the same one used by aMuleGUI and amulecmd. EC protocol 0x0204, compatible with aMule 2.3.x.
 
-> 📖 Detailed guides in the **[Wiki](https://github.com/sidimam/AmuleRemoteiOS/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/)
+> 📖 Detailed guides in the **[Wiki](https://github.com/sidimam/AmuleRemote/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemote/)
 
 <p align="center">
-  <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest/download/aMuleRemote-macOS.dmg">
+  <a href="https://github.com/sidimam/AmuleRemote/releases/latest/download/aMuleRemote-macOS.dmg">
     <img src="https://img.shields.io/badge/macOS-Download_the_DMG_(latest)-0071e3?style=for-the-badge&logo=apple&logoColor=white" alt="Download the macOS DMG" height="44">
   </a>
   &nbsp;&nbsp;
@@ -14,8 +14,8 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest">
-    <img src="https://img.shields.io/github/v/release/sidimam/AmuleRemoteiOS?label=latest%20release&style=flat-square" alt="Latest release">
+  <a href="https://github.com/sidimam/AmuleRemote/releases/latest">
+    <img src="https://img.shields.io/github/v/release/sidimam/AmuleRemote?label=latest%20release&style=flat-square" alt="Latest release">
   </a>
   &nbsp;
   <a href="https://github.com/sidimam/homebrew-tap">
@@ -27,7 +27,7 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
 
 - **iPhone / iPad**: **[App Store](https://apps.apple.com/app/amule-remote/id6800020841)** (free). The Apple Watch app is bundled. You can also build it yourself with Xcode (see *Building*).
 - **Mac**, three options:
-  - **DMG** — download **`aMuleRemote-macOS.dmg`** from the latest **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, open it and drag **aMule Remote** onto the **Applications** folder next to it. The app is signed with a **Developer ID** and **notarized by Apple**: it opens right away, with no Gatekeeper warnings and no keychain prompts. *(A `.zip` with the same app is attached to every release too.)*
+  - **DMG** — download **`aMuleRemote-macOS.dmg`** from the latest **[Release](https://github.com/sidimam/AmuleRemote/releases/latest)**, open it and drag **aMule Remote** onto the **Applications** folder next to it. The app is signed with a **Developer ID** and **notarized by Apple**: it opens right away, with no Gatekeeper warnings and no keychain prompts. *(A `.zip` with the same app is attached to every release too.)*
   - **Homebrew** — `brew install --cask sidimam/tap/amule-remote` (same notarized DMG, updated with `brew upgrade`). Cask source: [sidimam/homebrew-tap](https://github.com/sidimam/homebrew-tap).
   - **Mac App Store** — the sandboxed build lives on the [same App Store page](https://apps.apple.com/app/amule-remote/id6800020841) as the iOS app (universal purchase).
 - **Apple Vision Pro**: on the App Store in the countries where Vision Pro is sold.
@@ -64,7 +64,7 @@ ECPassword=<MD5 of your password>
 
 Generate the MD5 hash with: `echo -n "mypassword" | md5sum`.
 Expose/forward the container's **4712/TCP** port and restart the container after editing.
-Full guide: **[Wiki → Server setup](https://github.com/sidimam/AmuleRemoteiOS/wiki/Server-setup)**.
+Full guide: **[Wiki → Server setup](https://github.com/sidimam/AmuleRemote/wiki/Server-setup)**.
 
 > ⚠️ EC traffic is not encrypted. For access from outside your home use a VPN (WireGuard/Tailscale) instead of exposing port 4712 to the Internet.
 
@@ -90,7 +90,7 @@ The Xcode project is generated from `project.yml` with [XcodeGen](https://github
 xcodegen generate
 ```
 
-Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro) and `AmuleRemoteMac` (sandboxed Mac App Store build). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemoteiOS/wiki/Building-and-signing)**.
+Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro) and `AmuleRemoteMac` (sandboxed Mac App Store build). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemote/wiki/Building-and-signing)**.
 
 ## Signing and distribution
 
@@ -114,8 +114,8 @@ Marketing version and build number are kept aligned across all platforms. Curren
 
 ## Protocol verification
 
-The EC implementation (MD5-salted handshake, framing, nested tags, every operation) was tested end-to-end against a real amuled 2.3.x: authentication, statistics, server add/remove, ed2k links, download queue, pause/priority/delete, shared files, search, preferences get/set, log, wrong-password rejection. Details in **[Wiki → EC protocol](https://github.com/sidimam/AmuleRemoteiOS/wiki/EC-protocol)**.
+The EC implementation (MD5-salted handshake, framing, nested tags, every operation) was tested end-to-end against a real amuled 2.3.x: authentication, statistics, server add/remove, ed2k links, download queue, pause/priority/delete, shared files, search, preferences get/set, log, wrong-password rejection. Details in **[Wiki → EC protocol](https://github.com/sidimam/AmuleRemote/wiki/EC-protocol)**.
 
 ## Privacy
 
-aMule Remote collects no data at all: it only talks to the amuled server you configure. Server address and password are stored in the device Keychain. Full text: [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/).
+aMule Remote collects no data at all: it only talks to the amuled server you configure. Server address and password are stored in the device Keychain. Full text: [Privacy policy](https://sidimam.github.io/AmuleRemote/).
