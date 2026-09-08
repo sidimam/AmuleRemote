@@ -45,7 +45,12 @@ final class AppState: ObservableObject {
     @Published var defaultProfileID: UUID? { didSet { ProfileStore.defaultID = defaultProfileID } }
 
     // Aspetto: chiaro / scuro / sistema.
-    @Published var themeMode: ThemeMode { didSet { UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode") } }
+    @Published var themeMode: ThemeMode {
+        didSet {
+            UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode")
+            themeMode.applyToApplication()   // macOS: NSApp.appearance (fix transizioni)
+        }
+    }
 
     // Lingua: di sistema o forzata (cambio live per la UI, completo al riavvio).
     @Published var appLanguage: AppLanguage {
@@ -59,10 +64,23 @@ final class AppState: ObservableObject {
     @Published var biometricLockEnabled: Bool { didSet { UserDefaults.standard.set(biometricLockEnabled, forKey: "biometricLock") } }
     @Published var locked = false
 
-    // Notifiche
+    // Notifiche — interruttore principale (parte disattivato): tutte le altre
+    // notifiche funzionano solo se questo è attivo.
+    @Published var notificationsEnabled: Bool { didSet { UserDefaults.standard.set(notificationsEnabled, forKey: "notificationsEnabled") } }
     @Published var notifyDownloadsEnabled: Bool { didSet { UserDefaults.standard.set(notifyDownloadsEnabled, forKey: "notifyDownloads") } }
     @Published var notifyNetworkEnabled: Bool { didSet { UserDefaults.standard.set(notifyNetworkEnabled, forKey: "notifyNetwork") } }
     @Published var backgroundChecksEnabled: Bool { didSet { UserDefaults.standard.set(backgroundChecksEnabled, forKey: "backgroundChecks") } }
+    /// Intervallo (secondi) dei controlli quando l'app non è connessa:
+    /// timer offline (app aperta, tutte le piattaforme) e minimo richiesto
+    /// per il Background App Refresh su iOS (dove comunque decide il sistema).
+    @Published var checkInterval: Int { didSet { UserDefaults.standard.set(checkInterval, forKey: "checkInterval") } }
+    /// Colore dell'icona dell'app ("default" oppure il nome del colore).
+    @Published var iconColor: String {
+        didSet {
+            UserDefaults.standard.set(iconColor, forKey: "iconColor")
+            AppIconColor.apply(iconColor)
+        }
+    }
 
     // Connection state
     @Published var connected = false
@@ -151,9 +169,12 @@ final class AppState: ObservableObject {
         themeMode = ThemeMode(rawValue: defaults.string(forKey: "themeMode") ?? "") ?? .system
         appLanguage = AppLanguage(rawValue: defaults.string(forKey: "appLanguage") ?? "") ?? .system
         biometricLockEnabled = defaults.bool(forKey: "biometricLock")
+        notificationsEnabled = defaults.bool(forKey: "notificationsEnabled")   // default: disattivate
         notifyDownloadsEnabled = defaults.object(forKey: "notifyDownloads") as? Bool ?? true
         notifyNetworkEnabled = defaults.object(forKey: "notifyNetwork") as? Bool ?? true
         backgroundChecksEnabled = defaults.object(forKey: "backgroundChecks") as? Bool ?? true
+        checkInterval = defaults.object(forKey: "checkInterval") as? Int ?? 900
+        iconColor = defaults.string(forKey: "iconColor") ?? "default"
         profiles = ProfileStore.load()
         defaultProfileID = ProfileStore.defaultID
 
@@ -171,6 +192,14 @@ final class AppState: ObservableObject {
         }
 
         locked = biometricLockEnabled
+
+        // Mostra le notifiche anche con l'app in primo piano.
+        Notifier.activate()
+        // macOS: applica il tema scelto a NSApp appena l'app è pronta.
+        themeMode.applyToApplication()
+        // Riallinea l'icona al colore scelto (idempotente; utile dopo
+        // reinstallazioni o su piattaforme senza persistenza dell'alternativa).
+        AppIconColor.apply(iconColor)
 
         if !host.isEmpty {
             password = Keychain.loadPassword(account: "\(host):\(port)") ?? ""
@@ -278,6 +307,33 @@ final class AppState: ObservableObject {
         if defaultProfileID == nil { defaultProfileID = p.id }
     }
 
+    // MARK: - Notifiche (interruttore principale)
+
+    /// Mostrato quando l'utente attiva le notifiche ma il consenso di sistema
+    /// è negato: va cambiato dalle Impostazioni del dispositivo.
+    @Published var notificationsDenied = false
+
+    /// Attiva/disattiva l'interruttore principale delle notifiche.
+    /// All'attivazione chiede il consenso e invia una notifica di prova; se il
+    /// consenso è negato, l'interruttore torna spento e si segnala all'utente.
+    func setNotificationsEnabled(_ enabled: Bool) async {
+        // Aggiornamento ottimistico: l'interruttore risponde subito.
+        notificationsEnabled = enabled
+        guard enabled else { return }
+        let granted = await Notifier.requestPermissionGranted()
+        if granted {
+            Notifier.postTest()
+        } else {
+            // Consenso negato a livello di sistema: torna spento e avvisa.
+            notificationsEnabled = false
+            notificationsDenied = true
+        }
+    }
+
+    // Flag effettivi: una notifica parte solo se l'interruttore principale è on.
+    var effectiveNotifyDownloads: Bool { notificationsEnabled && notifyDownloadsEnabled }
+    var effectiveNotifyNetwork: Bool { notificationsEnabled && notifyNetworkEnabled }
+
     // MARK: - Blocco biometrico
 
     func unlock() async {
@@ -335,6 +391,7 @@ final class AppState: ObservableObject {
             startPolling()
             startIdleWatcher()
             await refreshAll()
+            await refreshServerReconnectFlag()
             await Notifier.requestPermission()
             pushWatchSnapshot()
         } catch {
@@ -371,28 +428,28 @@ final class AppState: ObservableObject {
         pushWatchSnapshot()
     }
 
-    // MARK: - Monitor offline (iOS)
-    // Dopo la disconnessione per inattività l'app continua a controllare il
-    // server una volta al minuto (finché resta in foreground) e a notificare
-    // download completati e cadute di rete. In background subentra il
-    // Background App Refresh (BackgroundRefresh.swift).
+    // MARK: - Monitor offline (tutte le piattaforme)
+    // Dopo la disconnessione (timeout di inattività o caduta del server)
+    // l'app continua a controllare il server a intervalli configurabili
+    // (checkInterval) finché resta aperta, notificando download completati e
+    // cadute di rete. Su iOS, in background, subentra il Background App
+    // Refresh (BackgroundRefresh.swift).
     private var offlineMonitorTask: Task<Void, Never>?
 
     func startOfflineMonitor() {
-        #if os(iOS)
-        guard backgroundChecksEnabled, !demoMode, !host.isEmpty, !password.isEmpty else { return }
+        guard notificationsEnabled, backgroundChecksEnabled, !demoMode, !host.isEmpty, !password.isEmpty else { return }
         let h = host, p = port, pw = password
         offlineMonitorTask?.cancel()
         offlineMonitorTask = Task { [weak self] in
             while !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: 60_000_000_000)
-                guard let self, !self.connected else { return }
+                let interval = await MainActor.run { self?.checkInterval ?? 900 }
+                try? await Task.sleep(nanoseconds: UInt64(max(interval, 60)) * 1_000_000_000)
+                guard let self, !Task.isCancelled, !self.connected else { return }
                 await BackgroundMonitor.checkOnce(host: h, port: p, password: pw,
-                                                  notifyDownloads: self.notifyDownloadsEnabled,
-                                                  notifyNetwork: self.notifyNetworkEnabled)
+                                                  notifyDownloads: self.effectiveNotifyDownloads,
+                                                  notifyNetwork: self.effectiveNotifyNetwork)
             }
         }
-        #endif
     }
 
     func stopOfflineMonitor() {
@@ -446,7 +503,12 @@ final class AppState: ObservableObject {
 
         if isNetworkDrop, connected {
             connectionLostMessage = "Server interrotto: la connessione al server aMule è stata chiusa."
-            Task { await disconnect() }
+            Task {
+                await disconnect()
+                // La connessione è caduta da sola: il monitoraggio continua
+                // in autonomia, come dopo il timeout di inattività.
+                startOfflineMonitor()
+            }
         } else if !connected {
             lastError = error.localizedDescription
         }
@@ -504,12 +566,16 @@ final class AppState: ObservableObject {
 
     private func notifyNetworkTransitions() {
         let current = (ed2k: connState.ed2kConnected, kad: connState.kadOK)
+        let server = "\(host):\(port)"
         defer {
             lastNetState = current
             // Persistito anche per i controlli in background.
-            Notifier.recordNetState(server: "\(host):\(port)", ed2k: current.ed2k, kad: current.kad)
+            Notifier.recordNetState(server: server, ed2k: current.ed2k, kad: current.kad)
         }
-        guard notifyNetworkEnabled, let prev = lastNetState else { return }
+        guard effectiveNotifyNetwork, let prev = lastNetState else { return }
+        // Con la riconnessione automatica attiva lato server il drop è
+        // transitorio: per scelta dell'utente non va notificato.
+        guard !Notifier.serverReconnectEnabled(server: server) else { return }
         if prev.ed2k && !current.ed2k {
             Notifier.post(id: "ed2k-drop", title: "eD2k disconnesso",
                           body: "\(host) non è più connesso alla rete eD2k.")
@@ -517,6 +583,22 @@ final class AppState: ObservableObject {
         if prev.kad && !current.kad {
             Notifier.post(id: "kad-drop", title: "Kad disconnesso",
                           body: "\(host) non è più connesso alla rete Kad.")
+        }
+    }
+
+    /// Legge dal server il flag "Riconnetti automaticamente" (solo la sezione
+    /// Connessione delle preferenze) e lo cachea per il gating delle notifiche.
+    private func refreshServerReconnectFlag() async {
+        guard !demoMode else { return }
+        do {
+            let reply = try await client.request(ECPacket(.getPreferences, tags: [
+                .uint32(.selectPrefs, ECPrefs.connections),
+                .uint8(.detailLevel, ECDetailLevel.full.rawValue),
+            ]))
+            let p = RemotePrefs.parse(reply)
+            Notifier.recordServerReconnect(server: "\(host):\(port)", enabled: p.reconnect)
+        } catch {
+            // Non bloccante: si riprova alla prossima connessione o al check offline.
         }
     }
 
@@ -656,7 +738,7 @@ final class AppState: ObservableObject {
     private func notifyDownloadCompleted(_ item: DownloadItem) {
         let hex = hexString(item.hash)
         guard Notifier.markCompletedOnce(server: "\(host):\(port)", hashHex: hex) else { return }
-        guard notifyDownloadsEnabled else { return }
+        guard effectiveNotifyDownloads else { return }
         Notifier.post(id: "dl-\(hex)", title: "Download completato ✅", body: item.name)
     }
 
@@ -729,6 +811,13 @@ final class AppState: ObservableObject {
                      extension ext: String, minSizeBytes: UInt64, maxSizeBytes: UInt64, availability: Int) async {
         if demoMode { demoStartSearch(text: text, type: type); return }
         do {
+            // Il daemon accetta UNA ricerca alla volta: se ne è rimasta una
+            // "fantasma" attiva (ricerca precedente non chiusa, o EC appena
+            // riconnesso), la nuova searchStart viene scartata in silenzio ed
+            // è quello che costringe a ripetere la ricerca. Ripuliamo prima con
+            // un searchStop (ignorato se non c'è nulla da fermare).
+            _ = try? await client.request(ECPacket(.searchStop))
+
             var tag = ECTag(.searchType, type: .uint32, value: {
                 var be = UInt32(type.rawValue).bigEndian
                 return Data(bytes: &be, count: 4)
@@ -979,6 +1068,7 @@ final class AppState: ObservableObject {
             ]))
             prefs = RemotePrefs.parse(reply)
             prefsLoaded = true
+            Notifier.recordServerReconnect(server: "\(host):\(port)", enabled: prefs.reconnect)
         } catch { handle(error) }
     }
 

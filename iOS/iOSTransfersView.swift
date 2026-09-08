@@ -95,19 +95,33 @@ struct iOSTransfersView: View {
                              sortKey: $sortKey, ascending: $sortAsc)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button(editMode == .active ? "Fine" : "Seleziona") {
-                        withAnimation {
-                            editMode = editMode == .active ? .inactive : .active
-                            if editMode == .inactive { selection = [] }
-                        }
-                    }
-                    if editMode == .inactive {
+                    if editMode == .active {
+                        // In selezione il "visto" pieno chiude la modalità.
+                        Button {
+                            withAnimation { editMode = .inactive; selection = [] }
+                        } label: { Image(systemName: "checkmark.circle.fill") }
+                            .accessibilityLabel(Text("Fine"))
+                    } else {
                         Button {
                             showAddLink = true
                         } label: { Image(systemName: "plus.circle") }
-                        Button {
-                            Task { await state.clearCompleted() }
-                        } label: { Image(systemName: "checkmark.circle") }
+                            .accessibilityLabel(Text("Aggiungi link eD2k"))
+                        Menu {
+                            Button {
+                                withAnimation { editMode = .active }
+                            } label: {
+                                Label("Seleziona", systemImage: "checkmark.circle")
+                            }
+                            Button {
+                                Task { await state.clearCompleted() }
+                            } label: {
+                                Label("Rimuovi completati", systemImage: "text.badge.checkmark")
+                            }
+                            .disabled(!state.downloads.contains { $0.isComplete })
+                        } label: {
+                            Image(systemName: "checkmark.circle")
+                        }
+                        .accessibilityLabel(Text("Seleziona"))
                     }
                 }
             }

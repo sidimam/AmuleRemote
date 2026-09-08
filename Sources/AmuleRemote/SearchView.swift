@@ -17,6 +17,8 @@ struct SearchView: View {
     @State private var resultFilter = ""
     @State private var invertFilter = false
     @State private var hideKnown = false
+    // Come su iOS i filtri si mostrano/nascondono col pulsante "slider".
+    @AppStorage("macShowSearchFilters") private var showFilters = true
 
     enum SizeUnit: String, CaseIterable, Identifiable {
         case kb = "KB", mb = "MB", gb = "GB"
@@ -66,17 +68,12 @@ struct SearchView: View {
         VStack(spacing: 0) {
             // Search bar
             VStack(spacing: 12) {
+                // Stessa barra di iOS: campo, Cerca, filtri; sotto il tipo
+                // di ricerca segmentato e "Ferma" mentre la ricerca è in corso.
                 HStack {
                     TextField("Cerca file…", text: $query)
                         .textFieldStyle(.roundedBorder)
                         .onSubmit { startSearch() }
-
-                    Picker("", selection: $searchType) {
-                        ForEach(ECSearchType.allCases) { t in
-                            Text(t.label).tag(t)
-                        }
-                    }
-                    .frame(width: 160)
 
                     Button {
                         startSearch()
@@ -87,14 +84,35 @@ struct SearchView: View {
                     .disabled(query.isEmpty)
 
                     Button {
-                        Task { await state.stopSearch() }
+                        showFilters.toggle()
                     } label: {
-                        Label("Ferma", systemImage: "stop.fill")
+                        Label("Filtri", systemImage: "slider.horizontal.3")
                     }
-                    .disabled(!searchRunning)
+                    .help("Mostra o nascondi i filtri di ricerca")
+                }
+
+                HStack {
+                    Picker("Tipo ricerca", selection: $searchType) {
+                        ForEach(ECSearchType.allCases) { t in
+                            Text(t.label).tag(t)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    .frame(maxWidth: 420)
+                    Spacer()
+                    if searchRunning {
+                        Button {
+                            Task { await state.stopSearch() }
+                        } label: {
+                            Label("Ferma", systemImage: "stop.fill")
+                        }
+                        .controlSize(.small)
+                    }
                 }
 
                 // Filters, clearly labeled
+                if showFilters {
                 HStack(alignment: .bottom, spacing: 14) {
                     filterField("Tipo di file", width: 150) {
                         Picker("", selection: $fileType) {
@@ -130,7 +148,7 @@ struct SearchView: View {
                     filterField("Disponibilità min", width: 100) {
                         TextField("", value: $availability, format: .number, prompt: Text("tutte"))
                     }
-                    Button("Azzera campi") {
+                    Button("Azzera filtri") {
                         fileType = ""; ext = ""; minSize = nil; maxSize = nil; availability = nil
                         resultFilter = ""; invertFilter = false; hideKnown = false
                     }
@@ -138,6 +156,7 @@ struct SearchView: View {
                     Spacer()
                 }
                 .textFieldStyle(.roundedBorder)
+                }
 
                 // Client-side filtering of results, like aMuleGUI's "Filtra risultati"
                 HStack(spacing: 14) {

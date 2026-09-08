@@ -11,52 +11,114 @@ struct MacSettingsView: View {
             MacProfilesSettings()
                 .tabItem { Label("Profili", systemImage: "person.2") }
         }
-        .frame(width: 480, height: 380)
+        .frame(width: 520, height: 620)
     }
 }
 
 struct MacGeneralSettings: View {
     @EnvironmentObject var state: AppState
 
+    /// Sotto-toggle notifiche: appare spento finché il master è disattivato.
+    private func gated(_ source: Binding<Bool>) -> Binding<Bool> {
+        Binding(get: { state.notificationsEnabled && source.wrappedValue },
+                set: { source.wrappedValue = $0 })
+    }
+
     var body: some View {
+        // Stesse righe, stesse icone e stesso ordine della sezione
+        // "Impostazioni app" / "Notifiche" di iOS e iPadOS.
         Form {
             Section {
-                Picker("Aspetto:", selection: $state.themeMode) {
+                Picker(selection: $state.themeMode) {
                     ForEach(ThemeMode.allCases) { mode in
-                        Text(mode.label).tag(mode)
+                        Label(mode.label, systemImage: mode.icon).tag(mode)
                     }
+                } label: {
+                    Label("Aspetto", systemImage: "circle.lefthalf.filled")
                 }
-                .pickerStyle(.segmented)
-                Picker("Lingua:", selection: $state.appLanguage) {
+                Picker(selection: $state.appLanguage) {
                     ForEach(AppLanguage.allCases) { lang in
                         Text(lang.label).tag(lang)
                     }
+                } label: {
+                    Label("Lingua", systemImage: "globe")
                 }
+                LabeledContent {
+                    IconColorPicker(selection: $state.iconColor)
+                } label: {
+                    Label("Colore icona", systemImage: "paintpalette")
+                }
+                Picker(selection: $state.idleTimeout) {
+                    Text("Mai").tag(0)
+                    Text("60 secondi").tag(60)
+                    Text("120 secondi").tag(120)
+                    Text("5 minuti").tag(300)
+                    Text("10 minuti").tag(600)
+                    Text("30 minuti").tag(1800)
+                } label: {
+                    Label("Disconnetti dopo inattività", systemImage: "zzz")
+                }
+                Toggle(isOn: Binding(
+                    get: { state.biometricLockEnabled },
+                    set: { newValue in Task { await state.setBiometricLock(newValue) } }
+                )) {
+                    Label("Richiedi \(BiometricAuth.biometryLabel)", systemImage: BiometricAuth.biometryIcon)
+                }
+                .disabled(!BiometricAuth.isAvailable)
+            } header: {
+                Text("Impostazioni app")
             } footer: {
-                Text("Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio.")
+                Text("Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
 
             Section {
-                Toggle("Richiedi \(BiometricAuth.biometryLabel) all'apertura", isOn: Binding(
-                    get: { state.biometricLockEnabled },
-                    set: { newValue in Task { await state.setBiometricLock(newValue) } }
-                ))
-                .disabled(!BiometricAuth.isAvailable)
+                Toggle(isOn: Binding(
+                    get: { state.notificationsEnabled },
+                    set: { v in Task { await state.setNotificationsEnabled(v) } }
+                )) {
+                    Label("Notifiche", systemImage: "bell.badge")
+                }
+                Toggle(isOn: gated($state.notifyDownloadsEnabled)) {
+                    Label("Download completati", systemImage: "checkmark.circle")
+                }
+                .disabled(!state.notificationsEnabled)
+                Toggle(isOn: gated($state.notifyNetworkEnabled)) {
+                    Label("Disconnessioni eD2k / Kad", systemImage: "wifi.slash")
+                }
+                .disabled(!state.notificationsEnabled)
+                Toggle(isOn: gated($state.backgroundChecksEnabled)) {
+                    Label("Controlli anche da disconnesso", systemImage: "clock.arrow.circlepath")
+                }
+                .disabled(!state.notificationsEnabled)
+                Picker(selection: $state.checkInterval) {
+                    Text("1 minuto").tag(60)
+                    Text("5 minuti").tag(300)
+                    Text("15 minuti").tag(900)
+                    Text("30 minuti").tag(1800)
+                    Text("1 ora").tag(3600)
+                } label: {
+                    Label("Intervallo controlli", systemImage: "timer")
+                }
+                .disabled(!state.notificationsEnabled)
+            } header: {
+                Text("Notifiche")
             } footer: {
-                Text("Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
+                Text("Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Dopo una disconnessione (timeout o server caduto) l'app continua a controllare il server all'intervallo scelto finché resta aperta, notificando download completati e cadute eD2k/Kad (queste ultime solo se sul server la riconnessione automatica è spenta).")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
 
-            Section("Notifiche") {
-                Toggle("Download completati", isOn: $state.notifyDownloadsEnabled)
-                Toggle("Disconnessioni eD2k / Kad", isOn: $state.notifyNetworkEnabled)
+            Section("Informazioni app") {
+                LabeledContent {
+                    Text(appVersionString())
+                } label: {
+                    Label("aMule Remote", systemImage: "app.badge")
+                }
             }
         }
         .formStyle(.grouped)
-        .padding()
     }
 }
 
@@ -147,7 +209,7 @@ struct MacProfileEditor: View {
                 TextField("Nome:", text: $name, prompt: Text("es. Unraid casa"))
                 TextField("Host / IP:", text: $host)
                 TextField("Porta EC:", value: $port, format: .number.grouping(.never))
-                SecureField("Password:", text: $password)
+                PasswordField("Password:", text: $password)
                 Toggle("Profilo predefinito", isOn: $isDefault)
             }
             HStack {

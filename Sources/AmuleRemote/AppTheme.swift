@@ -1,5 +1,16 @@
 import SwiftUI
 
+/// "1.2 (build 17)" dal bundle, mostrata nelle impostazioni di ogni piattaforma.
+func appVersionString() -> String {
+    let info = Bundle.main.infoDictionary
+    let v = info?["CFBundleShortVersionString"] as? String ?? "?"
+    let b = info?["CFBundleVersion"] as? String ?? "?"
+    return "\(v) (build \(b))"
+}
+#if os(macOS)
+import AppKit
+#endif
+
 /// Lingua dell'app: di sistema oppure una forzata dall'utente.
 /// Il cambio è immediato per l'interfaccia SwiftUI (environment locale);
 /// AppleLanguages viene sincronizzato per completare il cambio (notifiche,
@@ -75,9 +86,9 @@ enum ThemeMode: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .system: return "Sistema"
-        case .light: return "Chiaro"
-        case .dark: return "Scuro"
+        case .system: return String(localized: "Sistema")
+        case .light: return String(localized: "Chiaro")
+        case .dark: return String(localized: "Scuro")
         }
     }
 
@@ -96,5 +107,24 @@ enum ThemeMode: String, CaseIterable, Identifiable {
         case .light: return .light
         case .dark: return .dark
         }
+    }
+
+    /// Su macOS `.preferredColorScheme` è inaffidabile nel percorso
+    /// sistema→scuro→chiaro (finestre che restano scure): l'aspetto va
+    /// applicato a NSApp, che governa TUTTE le finestre in modo atomico.
+    /// No-op sulle altre piattaforme (dove preferredColorScheme funziona).
+    func applyToApplication() {
+        #if os(macOS)
+        DispatchQueue.main.async {
+            guard let app = NSApp else { return }
+            switch self {
+            case .system: app.appearance = nil
+            case .light: app.appearance = NSAppearance(named: .aqua)
+            case .dark: app.appearance = NSAppearance(named: .darkAqua)
+            }
+            // L'icona del Dock segue il tema effettivo.
+            DockIcon.update()
+        }
+        #endif
     }
 }

@@ -17,38 +17,39 @@ struct ServersView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Network controls
+            // Intestazione reti, stessa disposizione della sezione Server di iOS:
+            // stato a sinistra, pulsanti a destra.
             HStack(spacing: 12) {
-                GroupBox {
-                    HStack(spacing: 10) {
-                        Text("eD2k: \(state.connState.ed2kLabel)")
-                            .font(.callout)
-                        if state.connState.ed2kConnected || state.connState.ed2kConnecting {
-                            Button("Disconnetti") { Task { await state.disconnectFromServer() } }
-                                .controlSize(.small)
-                        } else {
-                            Button("Connetti automatico") { Task { await state.connectToAnyServer() } }
-                                .controlSize(.small)
-                                .help("Connette a un server qualsiasi scelto da aMule. Per un server preciso, fai doppio clic sul server nella lista.")
-                        }
-                    }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("eD2k: \(state.connState.ed2kLabel)")
+                    Text("Kad: \(state.connState.kadLabel)")
                 }
-                GroupBox {
-                    HStack(spacing: 10) {
-                        Text("Kad: \(state.connState.kadLabel)")
-                            .font(.callout)
-                        if state.connState.kadRunning {
-                            Button("Ferma") { Task { await state.kadStop() } }
-                                .controlSize(.small)
-                        } else {
-                            Button("Avvia") { Task { await state.kadStart() } }
-                                .controlSize(.small)
-                        }
-                    }
-                }
+                .font(.caption)
                 Spacer()
+                if state.connState.ed2kConnected || state.connState.ed2kConnecting {
+                    Button {
+                        Task { await state.disconnectFromServer() }
+                    } label: { Label("Disconnetti", systemImage: "bolt.slash") }
+                } else {
+                    Button {
+                        Task { await state.connectToAnyServer() }
+                    } label: { Label("Connetti", systemImage: "bolt") }
+                    .help("Connette a un server qualsiasi scelto da aMule. Per un server preciso, fai doppio clic sul server nella lista.")
+                }
+                if state.connState.kadRunning {
+                    Button {
+                        Task { await state.kadStop() }
+                    } label: { Label("Kad: Ferma", systemImage: "stop.fill") }
+                } else {
+                    Button {
+                        Task { await state.kadStart() }
+                    } label: { Label("Kad: Avvia", systemImage: "play.fill") }
+                }
             }
-            .padding(12)
+            .buttonStyle(.bordered)
+            .controlSize(.small)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
 
             Divider()
 
@@ -135,15 +136,20 @@ struct ServersView: View {
                 } label: {
                     Label("Aggiungi server", systemImage: "plus")
                 }
-                Button {
-                    showUpdateFromURL = true
+                // Come su iOS: le azioni secondarie stanno nel menu "…".
+                Menu {
+                    Button {
+                        showUpdateFromURL = true
+                    } label: {
+                        Label("Aggiorna lista server (server.met)", systemImage: "arrow.down.circle")
+                    }
+                    Button {
+                        Task { await state.refreshServers() }
+                    } label: {
+                        Label("Ricarica dal server", systemImage: "arrow.clockwise")
+                    }
                 } label: {
-                    Label("Aggiorna da URL (server.met)", systemImage: "globe")
-                }
-                Button {
-                    Task { await state.refreshServers() }
-                } label: {
-                    Label("Aggiorna", systemImage: "arrow.clockwise")
+                    Label("Altro", systemImage: "ellipsis.circle")
                 }
             }
         }
@@ -171,7 +177,7 @@ struct ServersView: View {
         }
         .sheet(isPresented: $showUpdateFromURL) {
             VStack(spacing: 14) {
-                Text("Aggiorna lista server da URL").font(.headline)
+                Text("Aggiorna lista server (server.met)").font(.headline)
                 TextField("http://…/server.met", text: $updateURL)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 420)

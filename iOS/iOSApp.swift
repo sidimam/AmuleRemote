@@ -8,10 +8,24 @@ struct AmuleRemoteiOSApp: App {
     init() {
         // La registrazione del BGTask deve avvenire prima della fine del lancio.
         BackgroundRefresh.register()
+        #if os(iOS)
+        // Il ponte verso Apple Watch esiste solo su iPhone (niente
+        // WatchConnectivity su iPadOS "puro" runtime o visionOS).
         WatchBridge.shared.activate()
+        #endif
     }
 
     var body: some Scene {
+        #if os(visionOS)
+        // Finestra abbastanza alta da mostrare tutta la schermata di
+        // connessione (compreso il pulsante della modalità demo) senza scorrere.
+        mainScene.defaultSize(width: 1000, height: 900)
+        #else
+        mainScene
+        #endif
+    }
+
+    private var mainScene: some Scene {
         WindowGroup {
             iOSRootView()
                 .environmentObject(state)
@@ -75,6 +89,11 @@ struct iOSRootView: View {
             Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
         }
         .onOpenURL { state.handleIncomingURL($0) }
+        .alert("Notifiche non consentite", isPresented: $state.notificationsDenied) {
+            Button("OK", role: .cancel) { state.notificationsDenied = false }
+        } message: {
+            Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni del dispositivo. Attivale da Impostazioni → aMule Remote → Notifiche.")
+        }
         .modifier(AppLocaleModifier(language: state.appLanguage))
     }
 }
@@ -152,10 +171,7 @@ struct iOSConnectionView: View {
                         .textInputAutocapitalization(.never)
                     TextField("Porta EC", value: $state.port, format: .number.grouping(.never))
                         .keyboardType(.numberPad)
-                    SecureField("Password", text: $state.password)
-                        .textContentType(.password)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
+                    PasswordField("Password", text: $state.password)
                 }
                 .onChange(of: state.host) { _, _ in state.reloadStoredPassword() }
                 .onChange(of: state.port) { _, _ in state.reloadStoredPassword() }
@@ -199,6 +215,22 @@ struct iOSConnectionView: View {
                 }
             }
             .navigationTitle("Connessione")
+            #if os(visionOS)
+            // Su visionOS la finestra può essere bassa e il pulsante demo in
+            // fondo al Form resterebbe nascosto: lo si raggiunge anche dalla barra.
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        state.enterDemoMode()
+                    } label: {
+                        Label("Demo", systemImage: "play.circle")
+                            .labelStyle(.titleAndIcon)
+                    }
+                    .help("Prova la modalità demo")
+                    .disabled(state.connecting)
+                }
+            }
+            #endif
         }
     }
 }

@@ -15,6 +15,8 @@ struct iOSProfilesView: View {
                         editing = profile
                     } label: {
                         HStack {
+                            Image(systemName: "server.rack")
+                                .foregroundStyle(.tint)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(profile.name)
                                     .foregroundStyle(.primary)
@@ -99,10 +101,7 @@ struct ProfileEditorView: View {
                         .textInputAutocapitalization(.never)
                     TextField("Porta EC", value: $port, format: .number.grouping(.never))
                         .keyboardType(.numberPad)
-                    SecureField("Password", text: $password)
-                        .textContentType(.password)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
+                    PasswordField("Password", text: $password)
                 }
                 Section {
                     Toggle("Profilo predefinito", isOn: $isDefault)

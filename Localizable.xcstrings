@@ -281,6 +281,86 @@
         }
       }
     },
+    "1 minuto": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دقيقة واحدة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Minute"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 minute"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 minuto"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 minute"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 分钟"
+          }
+        }
+      }
+    },
+    "1 ora": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ساعة واحدة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Stunde"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hour"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hora"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 heure"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 小时"
+          }
+        }
+      }
+    },
     "10 minuti": {
       "localizations": {
         "ar": {
@@ -357,6 +437,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "120 秒"
+          }
+        }
+      }
+    },
+    "15 minuti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "١٥ دقيقة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 Minuten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 minutes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 minutos"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 minutes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 分钟"
           }
         }
       }
@@ -1601,6 +1721,46 @@
         }
       }
     },
+    "Arancione": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "برتقالي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orange"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orange"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naranja"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orange"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "橙色"
+          }
+        }
+      }
+    },
     "Aspetto": {
       "localizations": {
         "ar": {
@@ -1677,6 +1837,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "外观："
+          }
+        }
+      }
+    },
+    "Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Con i controlli in background l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad (queste ultime non se sul server è attiva la riconnessione automatica). Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Le notifiche arrivano anche su Apple Watch.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فعّل الإشعارات لاستلام التنبيهات: في المرة الأولى يطلب التطبيق الإذن ويرسل إشعار اختبار. مع الفحوصات في الخلفية يفحص التطبيق الخادم حتى أثناء قطع الاتصال (مهلة أو انقطاع) وينبهك بالتنزيلات المكتملة وانقطاعات eD2k/Kad (الأخيرة ما لم تكن إعادة الاتصال التلقائية مفعّلة على الخادم). أثناء فتح التطبيق تتبع الفحوصات الفاصل المحدد؛ وفي الخلفية يحدد iOS الوتيرة مع هذه القيمة كحد أدنى (ليس أقل من ١٥ دقيقة حفاظًا على البطارية). تصل الإشعارات أيضًا إلى Apple Watch."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviere Mitteilungen, um Hinweise zu erhalten: beim ersten Mal fragt die App um Erlaubnis und sendet eine Testmitteilung. Mit Hintergrundprüfungen prüft die App den Server auch getrennt (Timeout oder Verbindungsabbruch) und meldet abgeschlossene Downloads sowie eD2k-/Kad-Trennungen (Letztere nur, wenn die automatische Wiederverbindung auf dem Server aus ist). Bei geöffneter App folgen die Prüfungen dem gewählten Intervall; im Hintergrund bestimmt iOS den Takt mit diesem Wert als Minimum (nie unter 15 Minuten, um den Akku zu schonen). Mitteilungen erreichen auch die Apple Watch."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on notifications to receive alerts: the first time, the app asks for permission and sends a test notification. With background checks the app checks the server even while disconnected (timeout or dropped connection) and alerts you about completed downloads and eD2k/Kad disconnections (the latter unless auto-reconnect is enabled on the server). While the app is open, checks follow the chosen interval; in the background iOS decides the cadence using this value as the minimum (never below 15 minutes, to protect battery life). Notifications also reach Apple Watch."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa las notificaciones para recibir los avisos: la primera vez, la app pide permiso y envía una notificación de prueba. Con las comprobaciones en segundo plano la app verifica el servidor incluso desconectada (tiempo de espera o conexión caída) y te avisa de descargas completadas y desconexiones de eD2k/Kad (estas últimas salvo que la reconexión automática esté activada en el servidor). Con la app abierta, las comprobaciones siguen el intervalo elegido; en segundo plano iOS decide la cadencia usando este valor como mínimo (nunca por debajo de 15 minutos, para proteger la batería). Las notificaciones llegan también al Apple Watch."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez les notifications pour recevoir les alertes : la première fois, l'app demande l'autorisation et envoie une notification de test. Avec les vérifications en arrière-plan, l'app vérifie le serveur même déconnectée (délai ou connexion perdue) et vous prévient des téléchargements terminés et des déconnexions eD2k/Kad (ces dernières sauf si la reconnexion automatique est activée côté serveur). App ouverte, les vérifications suivent l'intervalle choisi ; en arrière-plan, iOS décide de la cadence avec cette valeur comme minimum (jamais moins de 15 minutes, pour préserver la batterie). Les notifications arrivent aussi sur l'Apple Watch."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启通知以接收提醒：首次开启时，应用会请求权限并发送一条测试通知。开启后台检查后，即使已断开（超时或连接中断），应用仍会检查服务器，并在下载完成或 eD2k/Kad 断开时提醒你（若服务器已启用自动重连，则不通知断开）。应用打开时按所选间隔检查；在后台由 iOS 决定频率，并以该值为下限（不低于 15 分钟，以保护电池）。通知也会送达 Apple Watch。"
+          }
+        }
+      }
+    },
+    "Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Dopo una disconnessione (timeout o server caduto) l'app continua a controllare il server all'intervallo scelto finché resta aperta, notificando download completati e cadute eD2k/Kad (queste ultime solo se sul server la riconnessione automatica è spenta).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فعّل الإشعارات لاستلام التنبيهات: في المرة الأولى يطلب التطبيق الإذن ويرسل إشعار اختبار. بعد قطع الاتصال (مهلة أو سقوط الخادم) يواصل التطبيق فحص الخادم بالفاصل المحدد ما دام مفتوحًا، وينبه بالتنزيلات المكتملة وسقوط eD2k/Kad (الأخيرة فقط إذا كانت إعادة الاتصال التلقائية معطلة على الخادم)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviere Mitteilungen, um Hinweise zu erhalten: beim ersten Mal fragt die App um Erlaubnis und sendet eine Testmitteilung. Nach einer Trennung (Timeout oder Serverausfall) prüft die App den Server im gewählten Intervall weiter, solange sie geöffnet bleibt, und meldet abgeschlossene Downloads sowie eD2k-/Kad-Abbrüche (Letztere nur, wenn die automatische Wiederverbindung auf dem Server aus ist)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on notifications to receive alerts: the first time, the app asks for permission and sends a test notification. After a disconnection (timeout or server drop) the app keeps checking the server at the chosen interval while it stays open, notifying completed downloads and eD2k/Kad drops (the latter only when auto-reconnect is off on the server)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa las notificaciones para recibir los avisos: la primera vez, la app pide permiso y envía una notificación de prueba. Tras una desconexión (tiempo de espera o caída del servidor), la app sigue comprobando el servidor con el intervalo elegido mientras esté abierta, notificando descargas completadas y caídas de eD2k/Kad (estas últimas solo si la reconexión automática está desactivada en el servidor)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez les notifications pour recevoir les alertes : la première fois, l'app demande l'autorisation et envoie une notification de test. Après une déconnexion (délai ou chute du serveur), l'app continue de vérifier le serveur à l'intervalle choisi tant qu'elle reste ouverte, en notifiant les téléchargements terminés et les chutes eD2k/Kad (ces dernières uniquement si la reconnexion automatique est désactivée côté serveur)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开（超时或服务器掉线）后，只要应用保持打开，就会按所选间隔继续检查服务器，并通知已完成的下载和 eD2k/Kad 掉线（后者仅在服务器未启用自动重连时）。开启通知以接收提醒：首次开启时，应用会请求权限并发送一条测试通知。"
           }
         }
       }
@@ -2117,6 +2357,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "阻止所有消息"
+          }
+        }
+      }
+    },
+    "Blu": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أزرق"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blau"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blue"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azul"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bleu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "蓝色"
           }
         }
       }
@@ -2881,6 +3161,46 @@
         }
       }
     },
+    "Client bannati": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العملاء المحظورون"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesperrte Clients"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Banned clients"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clientes bloqueados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clients bannis"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已封禁的客户端"
+          }
+        }
+      }
+    },
     "Coda upload": {
       "localizations": {
         "ar": {
@@ -2917,6 +3237,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "上传队列"
+          }
+        }
+      }
+    },
+    "Colore icona": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لون الأيقونة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbolfarbe"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon color"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color del icono"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couleur de l'icône"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图标颜色"
+          }
+        }
+      }
+    },
+    "Colore icona:": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لون الأيقونة:"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbolfarbe:"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon color:"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color del icono:"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couleur de l'icône :"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图标颜色："
           }
         }
       }
@@ -3041,6 +3441,86 @@
         }
       }
     },
+    "Con i controlli in background attivi, l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad. Le disconnessioni non vengono notificate se sul server è attiva la riconnessione automatica. Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Le notifiche arrivano anche su Apple Watch.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مع تفعيل الفحوصات في الخلفية، يواصل التطبيق فحص الخادم حتى أثناء قطع الاتصال (مهلة أو انقطاع) وينبهك بالتنزيلات المكتملة وانقطاعات eD2k/Kad. لا يتم الإشعار بالانقطاعات إذا كانت إعادة الاتصال التلقائية مفعّلة على الخادم. أثناء فتح التطبيق تتبع الفحوصات الفاصل المحدد؛ وفي الخلفية يحدد iOS الوتيرة مع هذه القيمة كحد أدنى (ليس أقل من ١٥ دقيقة حفاظًا على البطارية). تصل الإشعارات أيضًا إلى Apple Watch."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit aktiven Hintergrundprüfungen prüft die App den Server auch getrennt (Timeout oder Verbindungsabbruch) und meldet abgeschlossene Downloads sowie eD2k-/Kad-Trennungen. Trennungen werden nicht gemeldet, wenn auf dem Server die automatische Wiederverbindung aktiv ist. Bei geöffneter App folgen die Prüfungen dem gewählten Intervall; im Hintergrund bestimmt iOS den Takt mit diesem Wert als Minimum (nie unter 15 Minuten, um den Akku zu schonen). Mitteilungen erreichen auch die Apple Watch."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With background checks on, the app keeps checking the server even while disconnected (timeout or dropped connection) and alerts you about completed downloads and eD2k/Kad disconnections. Disconnections are not notified when auto-reconnect is enabled on the server. While the app is open, checks follow the chosen interval; in the background iOS decides the cadence using this value as the minimum (never below 15 minutes, to protect battery life). Notifications also reach Apple Watch."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con las comprobaciones en segundo plano activas, la app sigue verificando el servidor incluso desconectada (tiempo de espera o conexión caída) y te avisa de descargas completadas y desconexiones de eD2k/Kad. Las desconexiones no se notifican si el servidor tiene activada la reconexión automática. Con la app abierta, las comprobaciones siguen el intervalo elegido; en segundo plano iOS decide la cadencia usando este valor como mínimo (nunca por debajo de 15 minutos, para proteger la batería). Las notificaciones llegan también al Apple Watch."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avec les vérifications en arrière-plan, l'app continue de vérifier le serveur même déconnectée (délai d'inactivité ou connexion perdue) et vous prévient des téléchargements terminés et des déconnexions eD2k/Kad. Les déconnexions ne sont pas notifiées si la reconnexion automatique est active côté serveur. App ouverte, les vérifications suivent l'intervalle choisi ; en arrière-plan, iOS décide de la cadence avec cette valeur comme minimum (jamais moins de 15 minutes, pour préserver la batterie). Les notifications arrivent aussi sur l'Apple Watch."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启后台检查后，即使已断开（超时或连接中断），应用仍会检查服务器，并在下载完成或 eD2k/Kad 断开时提醒你。若服务器已启用自动重连，则不会通知断开事件。应用打开时按所选间隔检查；在后台由 iOS 决定频率，并以该值为下限（不低于 15 分钟，以保护电池）。通知也会送达 Apple Watch。"
+          }
+        }
+      }
+    },
+    "Con i controlli in background attivi, l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad. Le disconnessioni non vengono notificate se sul server è attiva la riconnessione automatica. Le notifiche arrivano anche su Apple Watch.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مع تفعيل الفحوصات في الخلفية، يواصل التطبيق فحص الخادم حتى أثناء قطع الاتصال (مهلة أو انقطاع) وينبهك بالتنزيلات المكتملة وانقطاعات eD2k/Kad. لا يتم الإشعار بالانقطاعات إذا كانت إعادة الاتصال التلقائية مفعّلة على الخادم. تصل الإشعارات أيضًا إلى Apple Watch."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit aktiven Hintergrundprüfungen prüft die App den Server auch getrennt (Timeout oder Verbindungsabbruch) und meldet abgeschlossene Downloads sowie eD2k-/Kad-Trennungen. Trennungen werden nicht gemeldet, wenn auf dem Server die automatische Wiederverbindung aktiv ist. Mitteilungen erreichen auch die Apple Watch."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With background checks on, the app keeps checking the server even while disconnected (timeout or dropped connection) and alerts you about completed downloads and eD2k/Kad disconnections. Disconnections are not notified when auto-reconnect is enabled on the server. Notifications also reach Apple Watch."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con las comprobaciones en segundo plano activas, la app sigue verificando el servidor incluso desconectada (tiempo de espera o conexión caída) y te avisa de descargas completadas y desconexiones de eD2k/Kad. Las desconexiones no se notifican si el servidor tiene activada la reconexión automática. Las notificaciones llegan también al Apple Watch."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avec les vérifications en arrière-plan, l'app continue de vérifier le serveur même déconnectée (délai d'inactivité ou connexion perdue) et vous prévient des téléchargements terminés et des déconnexions eD2k/Kad. Les déconnexions ne sont pas notifiées si la reconnexion automatique est active côté serveur. Les notifications arrivent aussi sur l'Apple Watch."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启后台检查后，即使已断开（超时或连接中断），应用仍会检查服务器，并在下载完成或 eD2k/Kad 断开时提醒你。若服务器已启用自动重连，则不会通知断开事件。通知也会送达 Apple Watch。"
+          }
+        }
+      }
+    },
     "Con i controlli in background attivi, l'app verifica il server anche dopo la disconnessione per inattività (una volta al minuto finché è aperta) e periodicamente in background, quando iOS lo consente. Le notifiche arrivano anche su Apple Watch.": {
       "localizations": {
         "ar": {
@@ -3121,6 +3601,46 @@
         }
       }
     },
+    "Con il blocco attivo, all'apertura (e al ritorno in primo piano) l'app chiede %@ prima di mostrare i contenuti. Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مع تفعيل القفل، يطلب التطبيق %@ عند الفتح (وعند العودة إلى الواجهة) قبل عرض المحتوى. لتوفير البطارية والبيانات، يقطع التطبيق الاتصال بالخادم بعد فترة الخمول المحددة. ينطبق لون الأيقونة على iPhone وiPad وApple Vision Pro؛ وتحتفظ Apple Watch بالأيقونة الأصلية (قيد في watchOS)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bei aktiver Sperre fragt die App beim Öffnen (und bei Rückkehr in den Vordergrund) nach %@, bevor Inhalte angezeigt werden. Um Akku und Daten zu sparen, trennt sich die App nach der gewählten Inaktivitätszeit vom Server. Die Symbolfarbe gilt für iPhone, iPad und Apple Vision Pro; die Apple Watch behält das Originalsymbol (watchOS-Einschränkung)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With the lock on, the app asks for %@ at launch (and when returning to the foreground) before showing content. To save battery and data, the app disconnects from the server after the chosen inactivity period. The icon color applies to iPhone, iPad and Apple Vision Pro; Apple Watch keeps the original icon (a watchOS limitation)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con el bloqueo activo, la app pide %@ al abrirse (y al volver a primer plano) antes de mostrar el contenido. Para ahorrar batería y datos, la app se desconecta del servidor tras el período de inactividad elegido. El color del icono se aplica a iPhone, iPad y Apple Vision Pro; el Apple Watch mantiene el icono original (limitación de watchOS)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avec le verrouillage actif, l'app demande %@ à l'ouverture (et au retour au premier plan) avant d'afficher le contenu. Pour économiser batterie et données, l'app se déconnecte du serveur après la période d'inactivité choisie. La couleur de l'icône s'applique à l'iPhone, à l'iPad et à l'Apple Vision Pro ; l'Apple Watch garde l'icône d'origine (limite de watchOS)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启锁定后，应用在打开（及返回前台）时会先要求 %@ 再显示内容。为节省电量和流量，应用会在所选闲置时间后断开与服务器的连接。图标颜色适用于 iPhone、iPad 和 Apple Vision Pro；Apple Watch 保留原始图标（watchOS 的限制）。"
+          }
+        }
+      }
+    },
     "Con il blocco attivo, all'avvio l'app chiede %@ (o la password del Mac) prima di mostrare i contenuti.": {
       "localizations": {
         "ar": {
@@ -3157,6 +3677,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "开启锁定后，应用在启动时会先要求 %@（或 Mac 密码）再显示内容。"
+          }
+        }
+      }
+    },
+    "Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Il colore dell'icona vale per iPhone e iPad; su Apple Watch resta l'icona originale.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أثناء فتح التطبيق تتبع الفحوصات الفاصل المحدد؛ وفي الخلفية يحدد iOS الوتيرة مع هذه القيمة كحد أدنى (ليس أقل من ١٥ دقيقة حفاظًا على البطارية). ينطبق لون الأيقونة على iPhone وiPad؛ وتحتفظ Apple Watch بالأيقونة الأصلية."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bei geöffneter App folgen die Prüfungen dem gewählten Intervall; im Hintergrund bestimmt iOS den Takt mit diesem Wert als Minimum (nie unter 15 Minuten, um den Akku zu schonen). Die Symbolfarbe gilt für iPhone und iPad; die Apple Watch behält das Originalsymbol."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While the app is open, checks follow the chosen interval; in the background iOS decides the cadence using this value as the minimum (never below 15 minutes, to protect battery life). The icon color applies to iPhone and iPad; Apple Watch keeps the original icon."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con la app abierta, las comprobaciones siguen el intervalo elegido; en segundo plano iOS decide la cadencia usando este valor como mínimo (nunca por debajo de 15 minutos, para proteger la batería). El color del icono se aplica a iPhone y iPad; el Apple Watch mantiene el icono original."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App ouverte, les vérifications suivent l'intervalle choisi ; en arrière-plan, iOS décide de la cadence avec cette valeur comme minimum (jamais moins de 15 minutes, pour préserver la batterie). La couleur de l'icône s'applique à l'iPhone et à l'iPad ; l'Apple Watch garde l'icône d'origine."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "应用打开时按所选间隔检查；在后台由 iOS 决定频率，并以该值为下限（不低于 15 分钟，以保护电池）。图标颜色适用于 iPhone 和 iPad；Apple Watch 保留原始图标。"
           }
         }
       }
@@ -3841,6 +4401,46 @@
         }
       }
     },
+    "Controlli anche da disconnesso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متابعة الفحص أثناء قطع الاتصال"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch getrennt weiter prüfen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep checking while disconnected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir comprobando sin conexión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer à vérifier hors connexion"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开后继续检查"
+          }
+        }
+      }
+    },
     "Controlli in background": {
       "localizations": {
         "ar": {
@@ -4037,6 +4637,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "对应 amule.conf 中的 MaxConnectionsPerFiveSeconds、FileBufferSizePref、QueueSizePref 和 ServerKeepAliveTimeout。仅在了解其含义时修改。"
+          }
+        }
+      }
+    },
+    "DEMO (dati di esempio)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تجريبي (بيانات نموذجية)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO (Beispieldaten)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO (sample data)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO (datos de ejemplo)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DÉMO (données d'exemple)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "演示（示例数据）"
           }
         }
       }
@@ -4517,6 +5157,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "修改后请点按顶栏的“应用到服务器”，再到“共享”部分点按“重新载入共享”。"
+          }
+        }
+      }
+    },
+    "Dopo una disconnessione (timeout o server caduto) l'app continua a controllare il server all'intervallo scelto finché resta aperta, notificando download completati e cadute eD2k/Kad (queste ultime solo se sul server la riconnessione automatica è spenta).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد قطع الاتصال (مهلة أو سقوط الخادم) يواصل التطبيق فحص الخادم بالفاصل المحدد ما دام مفتوحًا، وينبه بالتنزيلات المكتملة وسقوط eD2k/Kad (الأخيرة فقط إذا كانت إعادة الاتصال التلقائية معطلة على الخادم)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach einer Trennung (Timeout oder Serverausfall) prüft die App den Server im gewählten Intervall weiter, solange sie geöffnet bleibt, und meldet abgeschlossene Downloads sowie eD2k-/Kad-Abbrüche (Letztere nur, wenn die automatische Wiederverbindung auf dem Server aus ist)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After a disconnection (timeout or server drop) the app keeps checking the server at the chosen interval while it stays open, notifying completed downloads and eD2k/Kad drops (the latter only when auto-reconnect is off on the server)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras una desconexión (tiempo de espera o caída del servidor), la app sigue comprobando el servidor con el intervalo elegido mientras esté abierta, notificando descargas completadas y caídas de eD2k/Kad (estas últimas solo si la reconexión automática está desactivada en el servidor)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après une déconnexion (délai ou chute du serveur), l'app continue de vérifier le serveur à l'intervalle choisi tant qu'elle reste ouverte, en notifiant les téléchargements terminés et les chutes eD2k/Kad (ces dernières uniquement si la reconnexion automatique est désactivée côté serveur)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开（超时或服务器掉线）后，只要应用保持打开，就会按所选间隔继续检查服务器，并通知已完成的下载和 eD2k/Kad 掉线（后者仅在服务器未启用自动重连时）。"
+          }
+        }
+      }
+    },
+    "Dopo una disconnessione (timeout o server caduto) l'app continua a controllare il server all'intervallo scelto finché resta aperta, notificando download completati e cadute eD2k/Kad (queste ultime solo se sul server la riconnessione automatica è spenta). Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد قطع الاتصال (مهلة أو سقوط الخادم) يواصل التطبيق فحص الخادم بالفاصل المحدد ما دام مفتوحًا، وينبه بالتنزيلات المكتملة وسقوط eD2k/Kad (الأخيرة فقط إذا كانت إعادة الاتصال التلقائية معطلة على الخادم). يغيّر اللون أيقونة Dock؛ وتبقى أيقونة Finder الأصلية."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach einer Trennung (Timeout oder Serverausfall) prüft die App den Server im gewählten Intervall weiter, solange sie geöffnet bleibt, und meldet abgeschlossene Downloads sowie eD2k-/Kad-Abbrüche (Letztere nur, wenn die automatische Wiederverbindung auf dem Server aus ist). Die Farbe ändert das Dock-Symbol; das Finder-Symbol bleibt das Original."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After a disconnection (timeout or server drop) the app keeps checking the server at the chosen interval while it stays open, notifying completed downloads and eD2k/Kad drops (the latter only when auto-reconnect is off on the server). The color changes the Dock icon; the Finder icon stays the original."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras una desconexión (tiempo de espera o caída del servidor), la app sigue comprobando el servidor con el intervalo elegido mientras esté abierta, notificando descargas completadas y caídas de eD2k/Kad (estas últimas solo si la reconexión automática está desactivada en el servidor). El color cambia el icono del Dock; el del Finder sigue siendo el original."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après une déconnexion (délai ou chute du serveur), l'app continue de vérifier le serveur à l'intervalle choisi tant qu'elle reste ouverte, en notifiant les téléchargements terminés et les chutes eD2k/Kad (ces dernières uniquement si la reconnexion automatique est désactivée côté serveur). La couleur change l'icône du Dock ; celle du Finder reste l'originale."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开（超时或服务器掉线）后，只要应用保持打开，就会按所选间隔继续检查服务器，并通知已完成的下载和 eD2k/Kad 掉线（后者仅在服务器未启用自动重连时）。颜色会更改 Dock 图标；访达中的图标保持原样。"
           }
         }
       }
@@ -5401,6 +6121,46 @@
         }
       }
     },
+    "File Kad": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات Kad"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad-Dateien"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad files"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivos Kad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichiers Kad"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad 文件"
+          }
+        }
+      }
+    },
     "File condivisi": {
       "localizations": {
         "ar": {
@@ -6281,6 +7041,46 @@
         }
       }
     },
+    "Grafite": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جرافيت"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graphit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graphite"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grafito"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graphite"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "石墨色"
+          }
+        }
+      }
+    },
     "Hash": {
       "localizations": {
         "ar": {
@@ -6601,6 +7401,46 @@
         }
       }
     },
+    "ID client": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "معرّف العميل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client-ID"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client ID"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID de cliente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户端 ID"
+          }
+        }
+      }
+    },
     "Identificazione e offuscamento": {
       "localizations": {
         "ar": {
@@ -6761,6 +7601,166 @@
         }
       }
     },
+    "Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تتغير لغة الواجهة فورًا؛ وتتحدث الإشعارات والتنسيقات عند التشغيل التالي. يغيّر اللون أيقونة Dock؛ وتبقى أيقونة Finder الأصلية."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Sprachwechsel gilt sofort für die Oberfläche; Mitteilungen und Formate folgen beim nächsten Start. Die Farbe ändert das Dock-Symbol; das Finder-Symbol bleibt das Original."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The language change is immediate for the interface; notifications and formats update at the next launch. The color changes the Dock icon; the Finder icon stays the original."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El cambio de idioma es inmediato para la interfaz; las notificaciones y los formatos se actualizan en el próximo inicio. El color cambia el icono del Dock; el del Finder sigue siendo el original."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le changement de langue est immédiat pour l'interface ; notifications et formats s'adaptent au prochain lancement. La couleur change l'icône du Dock ; celle du Finder reste l'originale."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "界面语言立即切换；通知和格式将在下次启动时更新。颜色会更改 Dock 图标；访达中的图标保持原样。"
+          }
+        }
+      }
+    },
+    "Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede %@ (o la password del Mac) prima di mostrare i contenuti.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُطبَّق تغيير اللغة على الواجهة فورًا؛ وتتكيّف الإشعارات والتنسيقات عند التشغيل التالي. يغيّر اللون أيقونة Dock؛ وتبقى أيقونة Finder الأصلية. مع تفعيل القفل، يطلب التطبيق عند التشغيل %@ (أو كلمة مرور Mac) قبل عرض المحتوى."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Sprachwechsel gilt sofort für die Oberfläche; Mitteilungen und Formate passen sich beim nächsten Start an. Die Farbe ändert das Dock-Symbol; das im Finder bleibt das Original. Bei aktiver Sperre fragt die App beim Start nach %@ (oder dem Mac-Passwort), bevor sie Inhalte anzeigt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The language change applies to the interface immediately; notifications and formats follow at the next launch. The color changes the Dock icon; the one in the Finder stays the original. With the lock on, at launch the app asks for %@ (or the Mac password) before showing any content."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El cambio de idioma es inmediato en la interfaz; notificaciones y formatos se adaptan en el próximo inicio. El color cambia el icono del Dock; el del Finder sigue siendo el original. Con el bloqueo activo, al iniciar la app pide %@ (o la contraseña del Mac) antes de mostrar el contenido."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le changement de langue est immédiat pour l'interface ; notifications et formats s'adaptent au prochain lancement. La couleur change l'icône du Dock ; celle du Finder reste l'originale. Avec le verrouillage actif, au lancement l'app demande %@ (ou le mot de passe du Mac) avant d'afficher le contenu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语言更改对界面立即生效；通知和格式在下次启动时调整。颜色会更改 Dock 中的图标；访达中的图标保持原样。启用锁定后，应用在启动时会先要求 %@（或 Mac 密码）再显示内容。"
+          }
+        }
+      }
+    },
+    "Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يغيّر اللون أيقونة Dock؛ وتبقى أيقونة Finder الأصلية."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Farbe ändert das Dock-Symbol; das Finder-Symbol bleibt das Original."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The color changes the Dock icon; the Finder icon stays the original."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El color cambia el icono del Dock; el del Finder sigue siendo el original."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La couleur change l'icône du Dock ; celle du Finder reste l'originale."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "颜色会更改 Dock 图标；访达中的图标保持原样。"
+          }
+        }
+      }
+    },
+    "Il colore dell'icona vale per iPhone e iPad; su Apple Watch resta l'icona originale.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ينطبق لون الأيقونة على iPhone وiPad؛ وتحتفظ Apple Watch بالأيقونة الأصلية."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Symbolfarbe gilt für iPhone und iPad; die Apple Watch behält das Originalsymbol."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The icon color applies to iPhone and iPad; Apple Watch keeps the original icon."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El color del icono se aplica a iPhone y iPad; el Apple Watch mantiene el icono original."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La couleur de l'icône s'applique à l'iPhone et à l'iPad ; l'Apple Watch garde l'icône d'origine."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图标颜色适用于 iPhone 和 iPad；Apple Watch 保留原始图标。"
+          }
+        }
+      }
+    },
     "Il demone remoto verrà arrestato e la connessione chiusa. Dovrai riavviarlo da Unraid.": {
       "localizations": {
         "ar": {
@@ -6881,6 +7881,46 @@
         }
       }
     },
+    "Illimitato": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير محدود"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbegrenzt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ilimitado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Illimité"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不限"
+          }
+        }
+      }
+    },
     "Impostazioni aMule (remoto)": {
       "localizations": {
         "ar": {
@@ -6957,6 +7997,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用设置"
+          }
+        }
+      }
+    },
+    "Impostazioni avanzate": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعدادات متقدمة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweiterte Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced Settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes avanzados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages avancés"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高级设置"
           }
         }
       }
@@ -7161,6 +8241,86 @@
         }
       }
     },
+    "Intervallo controlli": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فاصل الفحص"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prüfintervall"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check interval"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intervalo de comprobación"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intervalle de vérification"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查间隔"
+          }
+        }
+      }
+    },
+    "Intervallo controlli:": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فاصل الفحص:"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prüfintervall:"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check interval:"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intervalo de comprobación:"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intervalle de vérification :"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查间隔："
+          }
+        }
+      }
+    },
     "Inverti risultati": {
       "localizations": {
         "ar": {
@@ -7321,6 +8481,86 @@
         }
       }
     },
+    "Kad: Avvia": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: بدء"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Starten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Start"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Iniciar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad : Démarrer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad：启动"
+          }
+        }
+      }
+    },
+    "Kad: Ferma": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: إيقاف"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Stoppen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Stop"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad: Detener"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad : Arrêter"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad：停止"
+          }
+        }
+      }
+    },
     "Kademlia": {
       "localizations": {
         "ar": {
@@ -7437,6 +8677,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用已锁定。请使用 %@ 验证以继续。"
+          }
+        }
+      }
+    },
+    "Le notifiche di aMule Remote sono disattivate nelle Impostazioni del dispositivo. Attivale da Impostazioni → aMule Remote → Notifiche.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إشعارات aMule Remote معطّلة في إعدادات الجهاز. فعّلها من الإعدادات ← aMule Remote ← الإشعارات."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Mitteilungen von aMule Remote sind in den Geräteeinstellungen deaktiviert. Aktiviere sie unter Einstellungen → aMule Remote → Mitteilungen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote notifications are turned off in device Settings. Enable them in Settings → aMule Remote → Notifications."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones de aMule Remote están desactivadas en los Ajustes del dispositivo. Actívalas en Ajustes → aMule Remote → Notificaciones."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications d'aMule Remote sont désactivées dans les Réglages de l'appareil. Activez-les dans Réglages → aMule Remote → Notifications."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote 的通知已在设备设置中关闭。请在“设置 → aMule Remote → 通知”中开启。"
+          }
+        }
+      }
+    },
+    "Le notifiche di aMule Remote sono disattivate nelle Impostazioni di sistema. Attivale da Impostazioni di Sistema → Notifiche → aMule Remote.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إشعارات aMule Remote معطّلة في إعدادات النظام. فعّلها من إعدادات النظام ← الإشعارات ← aMule Remote."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Mitteilungen von aMule Remote sind in den Systemeinstellungen deaktiviert. Aktiviere sie unter Systemeinstellungen → Mitteilungen → aMule Remote."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote notifications are turned off in System Settings. Enable them in System Settings → Notifications → aMule Remote."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones de aMule Remote están desactivadas en Ajustes del Sistema. Actívalas en Ajustes del Sistema → Notificaciones → aMule Remote."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications d'aMule Remote sont désactivées dans les Réglages Système. Activez-les dans Réglages Système → Notifications → aMule Remote."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote 的通知已在系统设置中关闭。请在“系统设置 → 通知 → aMule Remote”中开启。"
           }
         }
       }
@@ -8281,6 +9601,86 @@
         }
       }
     },
+    "Mostra o nascondi i filtri di ricerca": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار أو إخفاء عوامل تصفية البحث"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchfilter ein- oder ausblenden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show or hide the search filters"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar u ocultar los filtros de búsqueda"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher ou masquer les filtres de recherche"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示或隐藏搜索筛选条件"
+          }
+        }
+      }
+    },
+    "Mostra password": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار كلمة المرور"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passwort anzeigen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show password"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar contraseña"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher le mot de passe"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示密码"
+          }
+        }
+      }
+    },
     "N.": {
       "localizations": {
         "ar": {
@@ -8357,6 +9757,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "隐藏已在队列中的文件"
+          }
+        }
+      }
+    },
+    "Nascondi password": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إخفاء كلمة المرور"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passwort verbergen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide password"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar contraseña"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masquer le mot de passe"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "隐藏密码"
           }
         }
       }
@@ -8921,6 +10361,86 @@
         }
       }
     },
+    "Notifiche attive": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإشعارات مفعّلة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen aktiv"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications on"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones activadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications activées"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知已开启"
+          }
+        }
+      }
+    },
+    "Notifiche non consentite": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإشعارات غير مسموح بها"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen nicht erlaubt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications not allowed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones no permitidas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications non autorisées"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未允许通知"
+          }
+        }
+      }
+    },
     "Numero progressivo: ordina discendente per vedere prima i download aggiunti di recente": {
       "localizations": {
         "ar": {
@@ -9157,6 +10677,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "好"
+          }
+        }
+      }
+    },
+    "Overhead down": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حِمل التنزيل الإضافي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overhead Download"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overhead down"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobrecarga de bajada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Surcharge descendante"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下行开销"
+          }
+        }
+      }
+    },
+    "Overhead up": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حِمل الرفع الإضافي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overhead Upload"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overhead up"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobrecarga de subida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Surcharge montante"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上行开销"
           }
         }
       }
@@ -10681,6 +12281,46 @@
         }
       }
     },
+    "Riceverai qui gli avvisi di aMule Remote.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ستصلك هنا تنبيهات aMule Remote."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hier erhältst du die Hinweise von aMule Remote."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You'll get aMule Remote alerts here."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquí recibirás los avisos de aMule Remote."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous recevrez ici les alertes d'aMule Remote."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你将在这里收到 aMule Remote 的提醒。"
+          }
+        }
+      }
+    },
     "Richiedi %@": {
       "localizations": {
         "ar": {
@@ -11361,6 +13001,46 @@
         }
       }
     },
+    "Rosso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أحمر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rot"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rojo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rouge"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "红色"
+          }
+        }
+      }
+    },
     "Salva": {
       "localizations": {
         "ar": {
@@ -11641,6 +13321,86 @@
         }
       }
     },
+    "Seleziona i download o rimuovi dalla lista quelli completati": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدد التنزيلات أو أزل المكتملة من القائمة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads auswählen oder abgeschlossene aus der Liste entfernen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select downloads or remove the completed ones from the list"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona descargas o quita de la lista las completadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sélectionner des téléchargements ou retirer de la liste ceux terminés"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择下载或从列表中移除已完成的下载"
+          }
+        }
+      }
+    },
+    "Seleziona tutto": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحديد الكل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle auswählen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select all"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seleccionar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tout sélectionner"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全选"
+          }
+        }
+      }
+    },
     "Server": {
       "localizations": {
         "ar": {
@@ -11757,6 +13517,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "EC 服务器（External Connections）"
+          }
+        }
+      }
+    },
+    "Server aMule": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خادم aMule"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule-Server"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule server"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Servidor aMule"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serveur aMule"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 服务器"
           }
         }
       }
@@ -13401,6 +15201,86 @@
         }
       }
     },
+    "Verde (originale)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أخضر (أصلي)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grün (Original)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Green (original)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verde (original)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vert (original)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "绿色（原版）"
+          }
+        }
+      }
+    },
+    "Verde acqua": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أزرق مخضر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Türkis"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teal"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verde azulado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bleu sarcelle"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "青色"
+          }
+        }
+      }
+    },
     "Verifica che l'app possa aprire una connessione TCP alla porta EC del server aMule.": {
       "localizations": {
         "ar": {
@@ -13557,6 +15437,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule 版本"
+          }
+        }
+      }
+    },
+    "Viola": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بنفسجي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Violett"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purple"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Violet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "紫色"
           }
         }
       }

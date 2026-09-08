@@ -80,56 +80,45 @@ struct StatsView: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                GroupBox("Velocità") {
-                    statsGrid([
-                        ("Download", formatSpeed(state.stats.dlSpeed)),
-                        ("Upload", formatSpeed(state.stats.ulSpeed)),
-                        ("Limite download", state.stats.dlSpeedLimit > 0 ? "\(state.stats.dlSpeedLimit) kB/s" : "Illimitato"),
-                        ("Limite upload", state.stats.ulSpeedLimit > 0 ? "\(state.stats.ulSpeedLimit) kB/s" : "Illimitato"),
-                        ("Overhead up", formatSpeed(Double(state.stats.upOverhead))),
-                        ("Overhead down", formatSpeed(Double(state.stats.downOverhead))),
-                    ])
-                }
-                GroupBox("Reti") {
-                    statsGrid([
-                        ("Utenti eD2k", "\(state.stats.ed2kUsers)"),
-                        ("File eD2k", "\(state.stats.ed2kFiles)"),
-                        ("Utenti Kad", "\(state.stats.kadUsers)"),
-                        ("File Kad", "\(state.stats.kadFiles)"),
-                        ("Nodi Kad", "\(state.stats.kadNodes)"),
-                        ("Server eD2k", state.connState.ed2kLabel),
-                        ("ID client", state.connState.ed2kID > 0 ? "\(state.connState.ed2kID)" : "—"),
-                    ])
-                }
-                GroupBox("Trasferimenti") {
-                    statsGrid([
-                        ("Fonti totali", "\(state.stats.totalSources)"),
-                        ("Coda upload", "\(state.stats.uploadQueueLength)"),
-                        ("Client bannati", "\(state.stats.bannedCount)"),
-                        ("File condivisi", "\(state.stats.sharedFileCount)"),
-                        ("Totale inviato", formatBytes(state.stats.totalSent)),
-                        ("Totale ricevuto", formatBytes(state.stats.totalReceived)),
-                    ])
-                }
-                GroupBox("Server aMule") {
-                    statsGrid([
-                        ("Versione", state.serverVersion.isEmpty ? "—" : state.serverVersion),
-                        ("Host", state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)"),
-                    ])
-                    HStack {
-                        Spacer()
-                        Button("Spegni amuled…", role: .destructive) {
-                            confirmShutdown = true
-                        }
-                    }
-                    .padding(.top, 4)
+        // Stesse sezioni, righe e icone della vista Statistiche di iOS.
+        Form {
+            Section("Velocità") {
+                statRow("Download", "arrow.down", formatSpeed(state.stats.dlSpeed))
+                statRow("Upload", "arrow.up", formatSpeed(state.stats.ulSpeed))
+                statRow("Limite download", "speedometer", state.stats.dlSpeedLimit > 0 ? "\(state.stats.dlSpeedLimit) kB/s" : String(localized: "Illimitato"))
+                statRow("Limite upload", "speedometer", state.stats.ulSpeedLimit > 0 ? "\(state.stats.ulSpeedLimit) kB/s" : String(localized: "Illimitato"))
+                statRow("Overhead up", "arrow.up.to.line", formatSpeed(Double(state.stats.upOverhead)))
+                statRow("Overhead down", "arrow.down.to.line", formatSpeed(Double(state.stats.downOverhead)))
+            }
+            Section("Reti") {
+                statRow("eD2k", "server.rack", state.connState.ed2kLabel)
+                statRow("ID client", "number", state.connState.ed2kID > 0 ? "\(state.connState.ed2kID)" : "—")
+                statRow("Utenti eD2k", "person.2", "\(state.stats.ed2kUsers)")
+                statRow("File eD2k", "doc.on.doc", "\(state.stats.ed2kFiles)")
+                statRow("Kad", "point.3.connected.trianglepath.dotted", state.connState.kadLabel)
+                statRow("Utenti Kad", "person.2", "\(state.stats.kadUsers)")
+                statRow("File Kad", "doc.on.doc", "\(state.stats.kadFiles)")
+                statRow("Nodi Kad", "circle.hexagongrid", "\(state.stats.kadNodes)")
+            }
+            Section("Trasferimenti") {
+                statRow("Fonti totali", "person.3", "\(state.stats.totalSources)")
+                statRow("Coda upload", "list.number", "\(state.stats.uploadQueueLength)")
+                statRow("Client bannati", "person.slash", "\(state.stats.bannedCount)")
+                statRow("File condivisi", "folder", "\(state.stats.sharedFileCount)")
+                statRow("Totale inviato", "tray.and.arrow.up", formatBytes(state.stats.totalSent))
+                statRow("Totale ricevuto", "tray.and.arrow.down", formatBytes(state.stats.totalReceived))
+            }
+            Section("Server aMule") {
+                statRow("Versione aMule", "info.circle", state.serverVersion.isEmpty ? "—" : state.serverVersion)
+                statRow("Server", "server.rack", state.demoMode ? String(localized: "DEMO (dati di esempio)") : "\(state.host):\(state.port)")
+                Button(role: .destructive) {
+                    confirmShutdown = true
+                } label: {
+                    Label("Spegni amuled…", systemImage: "power")
                 }
             }
-            .padding(20)
-            .frame(maxWidth: 700, alignment: .leading)
         }
+        .formStyle(.grouped)
         .navigationTitle("Statistiche")
         .confirmationDialog("Spegnere il demone aMule sul server?", isPresented: $confirmShutdown) {
             Button("Spegni amuled", role: .destructive) {
@@ -142,17 +131,13 @@ struct StatsView: View {
 
     @State private var confirmShutdown = false
 
-    private func statsGrid(_ rows: [(String, String)]) -> some View {
-        Grid(alignment: .leading, horizontalSpacing: 24, verticalSpacing: 6) {
-            ForEach(rows, id: \.0) { row in
-                GridRow {
-                    Text(row.0).foregroundStyle(.secondary)
-                    Text(row.1).font(.body.monospacedDigit())
-                }
-            }
+    @ViewBuilder
+    private func statRow(_ title: LocalizedStringKey, _ icon: String, _ value: String) -> some View {
+        LabeledContent {
+            Text(value).font(.body.monospacedDigit())
+        } label: {
+            Label(title, systemImage: icon)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(6)
     }
 }
 

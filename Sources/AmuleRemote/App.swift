@@ -9,11 +9,13 @@ struct AmuleRemoteApp: App {
     }
 
     var body: some Scene {
+        // Il tema è applicato via NSApp.appearance (ThemeMode.applyToApplication):
+        // .preferredColorScheme su macOS lascia finestre nel tema sbagliato
+        // nelle transizioni sistema→scuro→chiaro.
         WindowGroup {
             ContentView()
                 .environmentObject(state)
                 .frame(minWidth: 980, minHeight: 620)
-                .preferredColorScheme(state.themeMode.colorScheme)
         }
         // Dimensione del primo avvio (e canvas naturale per gli screenshot
         // dell'App Store: 1280×800 logici = 2560×1600 px su Retina).
@@ -25,7 +27,6 @@ struct AmuleRemoteApp: App {
         Settings {
             MacSettingsView()
                 .environmentObject(state)
-                .preferredColorScheme(state.themeMode.colorScheme)
         }
     }
 }
@@ -62,6 +63,11 @@ struct ContentView: View {
             Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
         }
         .onOpenURL { state.handleIncomingURL($0) }
+        .alert("Notifiche non consentite", isPresented: $state.notificationsDenied) {
+            Button("OK", role: .cancel) { state.notificationsDenied = false }
+        } message: {
+            Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni di sistema. Attivale da Impostazioni di Sistema → Notifiche → aMule Remote.")
+        }
         .modifier(AppLocaleModifier(language: state.appLanguage))
     }
 }
@@ -83,9 +89,12 @@ enum DockIcon {
 
     static func update() {
         guard let app = NSApp else { return }
-        // NSGlobalDomain: presente solo quando il sistema è in tema scuro.
-        let dark = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
-        let name = dark ? "dockicon-dark" : "dockicon-light"
+        // Aspetto EFFETTIVO dell'app (tiene conto del tema forzato via
+        // NSApp.appearance, non solo di quello di sistema).
+        let dark = app.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+        let color = UserDefaults.standard.string(forKey: "iconColor") ?? "default"
+        let base = color == "default" ? "dockicon" : "dockicon-\(color)"
+        let name = base + (dark ? "-dark" : "-light")
         if let url = Bundle.main.url(forResource: name, withExtension: "png"),
            let image = NSImage(contentsOf: url) {
             app.applicationIconImage = image
@@ -176,8 +185,10 @@ struct ConnectionFooter: View {
                         .foregroundStyle(.secondary)
                 }
                 Spacer()
-                Button("Disconnetti") {
+                Button {
                     Task { await state.disconnect() }
+                } label: {
+                    Label("Disconnetti", systemImage: "xmark.circle")
                 }
                 .controlSize(.small)
             }
@@ -239,7 +250,7 @@ struct ConnectionView: View {
                 }
                 TextField("Host / IP del server:", text: $state.host, prompt: Text("es. unraid.local o 192.168.1.10"))
                 TextField("Porta EC:", value: $state.port, format: .number.grouping(.never))
-                SecureField("Password:", text: $state.password)
+                PasswordField("Password:", text: $state.password)
                 Toggle("Connetti automaticamente all'avvio", isOn: $state.autoConnect)
             }
             .formStyle(.grouped)

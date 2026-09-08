@@ -1,127 +1,121 @@
 # aMule Remote
 
-App native per **macOS, iOS e iPadOS** (SwiftUI) per controllare da remoto un server **amuled** — ad esempio il container aMule sul tuo Unraid, un NAS o un Raspberry Pi — tramite il protocollo **EC (External Connections)**, lo stesso usato da aMuleGUI e amulecmd. Protocollo EC 0x0204, compatibile con aMule 2.3.x.
+Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch** companion) to remotely control an **amuled** server — for example the aMule container on your Unraid box, a NAS or a Raspberry Pi — over the **EC (External Connections)** protocol, the same one used by aMuleGUI and amulecmd. EC protocol 0x0204, compatible with aMule 2.3.x.
 
-> 📖 Guide dettagliate nel **[Wiki](https://github.com/sidimam/AmuleRemoteiOS/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/)
+> 📖 Detailed guides in the **[Wiki](https://github.com/sidimam/AmuleRemoteiOS/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/)
 
 <p align="center">
   <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest/download/aMuleRemote-macOS.dmg">
-    <img src="https://img.shields.io/badge/macOS-Scarica_il_DMG_(ultima_versione)-0071e3?style=for-the-badge&logo=apple&logoColor=white" alt="Scarica il DMG per macOS" height="44">
+    <img src="https://img.shields.io/badge/macOS-Download_the_DMG_(latest)-0071e3?style=for-the-badge&logo=apple&logoColor=white" alt="Download the macOS DMG" height="44">
   </a>
   &nbsp;&nbsp;
-  <a href="https://apps.apple.com/it/app/amule-remote/id6800020841">
-    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/it-it?size=250x83" alt="Scarica dall'App Store per iPhone e iPad" height="44">
+  <a href="https://apps.apple.com/app/amule-remote/id6800020841">
+    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store (iPhone, iPad, Mac, Apple Vision Pro)" height="44">
   </a>
 </p>
 <p align="center">
   <a href="https://github.com/sidimam/AmuleRemoteiOS/releases/latest">
-    <img src="https://img.shields.io/github/v/release/sidimam/AmuleRemoteiOS?label=ultima%20release&style=flat-square" alt="Ultima release">
+    <img src="https://img.shields.io/github/v/release/sidimam/AmuleRemoteiOS?label=latest%20release&style=flat-square" alt="Latest release">
+  </a>
+  &nbsp;
+  <a href="https://github.com/sidimam/homebrew-tap">
+    <img src="https://img.shields.io/badge/Homebrew-sidimam%2Ftap%2Famule--remote-fbb040?style=flat-square&logo=homebrew&logoColor=white" alt="Homebrew cask">
   </a>
 </p>
 
 ## Download
 
-- **iOS / iPadOS**: **[scarica dall'App Store](https://apps.apple.com/it/app/amule-remote/id6800020841)** (gratis). In alternativa si compila con Xcode (vedi *Versione iOS*).
-- **macOS**: scarica **`aMuleRemote-macOS.dmg`** dall'ultima **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, apri il DMG e trascina **aMule Remote** sulla cartella **Applications** lì accanto. L'app è firmata **Developer ID** e **notarizzata da Apple**: si avvia subito, senza avvisi di Gatekeeper né richieste del portachiavi. *(In alternativa c'è anche lo `.zip` con la stessa app.)* La versione **Mac App Store** è in revisione: apparirà sulla [stessa scheda](https://apps.apple.com/it/app/amule-remote/id6800020841) dell'app iOS.
+- **iPhone / iPad**: **[App Store](https://apps.apple.com/app/amule-remote/id6800020841)** (free). The Apple Watch app is bundled. You can also build it yourself with Xcode (see *Building*).
+- **Mac**, three options:
+  - **DMG** — download **`aMuleRemote-macOS.dmg`** from the latest **[Release](https://github.com/sidimam/AmuleRemoteiOS/releases/latest)**, open it and drag **aMule Remote** onto the **Applications** folder next to it. The app is signed with a **Developer ID** and **notarized by Apple**: it opens right away, with no Gatekeeper warnings and no keychain prompts. *(A `.zip` with the same app is attached to every release too.)*
+  - **Homebrew** — `brew install --cask sidimam/tap/amule-remote` (same notarized DMG, updated with `brew upgrade`). Cask source: [sidimam/homebrew-tap](https://github.com/sidimam/homebrew-tap).
+  - **Mac App Store** — the sandboxed build lives on the [same App Store page](https://apps.apple.com/app/amule-remote/id6800020841) as the iOS app (universal purchase).
+- **Apple Vision Pro**: on the App Store in the countries where Vision Pro is sold.
 
-## Funzionalità
+## Features
 
-- **Trasferimenti**: coda download con avanzamento, velocità, fonti, tempo stimato, stato ed **età del download** (da quanti giorni è in coda); pausa / riprendi / ferma / elimina; priorità (bassa/normale/alta/auto); assegnazione categoria; aggiunta link ed2k://; rimozione completati; selezione multipla; pannello upload attivi.
-- **Ricerca**: **locale** e **globale (server)**, a schede (più ricerche contemporanee), con filtri (tipo file, estensione, dimensione min/max, disponibilità) e timeout automatico di 120 s. Doppio clic / tocco su un risultato per scaricarlo. I risultati già presenti nei tuoi trasferimenti sono evidenziati in **rosso**, quelli già scaricati in **verde**.
-- **Server**: lista server con utenti/file/ping, connetti (doppio clic), disconnetti, aggiungi, rimuovi, aggiorna lista da URL server.met; controllo reti **eD2k** e **Kad** (avvia/ferma).
-- **File condivisi** *(macOS)*: elenco con richieste/upload, priorità di condivisione, ricarica cartelle condivise, copia link ed2k.
-- **Statistiche** e **Log** del server in tempo reale.
-- **Impostazioni aMule** (remote), lettura e scrittura diretta su amuled:
-  - **macOS**: set completo — Generale, Connessione, Server, File, Sicurezza, Filtri messaggi, Avanzate (core tweaks + Kademlia), Controllo remoto (webserver).
-  - **iOS / iPadOS**: le voci più utili di `amule.conf` — Generale e cartelle, Connessione, Server, File, Sicurezza, Avanzate.
-- **Profili server** *(build 16)*: più server amuled salvati con nome, uno **predefinito** proposto all'avvio; cambio rapido dal footer (macOS) o dalla tab Altro (iOS). Password sempre nel Portachiavi.
-- **Tema** *(build 16)*: chiaro, scuro o come il sistema — selettore su iOS (Altro → Impostazioni app) e macOS (⌘,).
-- **Blocco con Face ID / Touch ID** *(build 16)*, opzionale: all'apertura (e al ritorno in primo piano su iOS) l'app chiede l'autenticazione biometrica, con fallback al codice del dispositivo.
-- **Notifiche**: download completati e **disconnessioni eD2k/Kad** — anche dopo la disconnessione per inattività (controllo al minuto finché l'app è aperta) e in background con il Background App Refresh, quando iOS lo consente. Su iOS le notifiche arrivano anche su Apple Watch.
-- **App per Apple Watch** *(build 16)*: velocità, stato reti eD2k/Kad e coda download con avanzamento, sincronizzati dall'iPhone.
-- **Siri e Comandi rapidi** *(build 16, iOS)*: intent "Stato di aMule", "Metti in pausa/Riprendi i download", "Aggiungi link eD2k" — funzionano anche ad app chiusa (connessione EC usa-e-getta al profilo predefinito).
-- **Link ed2k:// dal sistema** *(build 16)*: l'app è registrata come handler dello schema `ed2k` — un clic su un link in Safari/Mail la apre e accoda il download previa conferma.
-- **7 lingue** *(build 16)*: italiano, inglese, spagnolo, francese, tedesco, cinese semplificato, arabo (con layout RTL) — selettore in-app con opzione "Sistema"; il cambio è immediato per l'interfaccia.
-- **Icona adattiva** *(build 16)*: variante scura e "tinted" su iOS (iOS 18+); su macOS l'icona del Dock segue il tema di sistema.
-- Password conservata nel **Portachiavi**; disconnessione automatica dopo inattività (iOS) e riconnessione automatica opzionale.
-- Se il server aMule si ferma, l'app si **disconnette automaticamente** e mostra un banner **"Server interrotto"** invece di un errore di rete.
+- **Transfers**: download queue with progress, speed, sources, ETA, status and **download age** (days in queue); pause / resume / stop / delete; priority (low/normal/high/auto); category assignment; add `ed2k://` links; multi-selection with an action bar; "Remove completed"; active uploads panel (Mac).
+- **Search**: **local** and **global (server)**, tabbed (several searches at once), with filters (file type, extension, min/max size, availability) and an automatic 120 s timeout. Double-click / tap a result to download it. Results already in your transfers are highlighted in **red**, files you already downloaded in **green**.
+- **Servers**: server list with users/files/ping, connect (double-click / tap), disconnect, add, remove, update the list from a `server.met` URL; **eD2k** and **Kad** network controls.
+- **Shared files** *(Mac)*: list with requests/uploads, share priority, reload shared folders, copy ed2k link.
+- **Statistics** and the server **log** in real time; **connection test** (EC port and optional web server) on iOS.
+- **aMule preferences** *(Mac)*: the full remote `amule.conf` editor — General, Connection, Servers, Files, Security, Message filters, Tweaks (core + Kademlia), Remote control (web server).
+- **Server profiles**: several named amuled servers, one **default** proposed at launch, quick switching; passwords always in the Keychain.
+- **Notifications** *(1.2)*: a single master switch that asks for permission and sends a test notification; separate toggles for **completed downloads**, **eD2k/Kad disconnections** and **checks while disconnected**, with a **configurable interval** (1 min – 1 h). Checks keep running after the idle disconnect on every platform; on iOS they also run in the background (Background App Refresh, never more often than every 15 minutes). eD2k/Kad drops are reported only when the server's auto-reconnect is off. Notifications also reach Apple Watch.
+- **Appearance**: light / dark / system theme; **7 app icon colors** *(1.2)* on iPhone, iPad and Vision Pro (with dark and tinted variants) and a matching Dock icon on the Mac.
+- **Face ID / Touch ID lock** (optional) and **auto-disconnect after inactivity** (configurable) on every platform.
+- **Apple Watch app**: speeds, eD2k/Kad status and the download queue, mirrored from the iPhone.
+- **Siri and Shortcuts** *(iOS)*: "aMule status", "Pause / Resume downloads", "Add eD2k link" — they work even when the app is closed.
+- **`ed2k://` links from the system**: the app is registered as the handler for the `ed2k` scheme — a click in Safari or Mail opens the app and queues the download after confirmation.
+- **7 languages**: English, Italian, Spanish, French, German, Simplified Chinese and Arabic (RTL), with an in-app selector and a "System" option.
+- **Demo mode**: explore the whole app with sample data and no server ("Try the demo mode" on the connection screen, or `DEMO` as host and password).
+- If the aMule server stops, the app **disconnects automatically** and shows a "Server stopped" banner instead of a network error.
 
-## Configurazione lato server (Unraid / Docker)
+## Server-side setup (Unraid / Docker)
 
-Nel file `amule.conf` del container (di solito in `/config/amule/` o simile):
+In the container's `amule.conf` (usually under `/config/amule/` or similar):
 
 ```ini
 [ExternalConnect]
 AcceptExternalConnections=1
 ECPort=4712
-ECPassword=<MD5 della tua password>
+ECPassword=<MD5 of your password>
 ```
 
-L'hash MD5 si genera con: `echo -n "lamiapassword" | md5sum`.
-Esponi/inoltra la porta **4712/TCP** del container. Riavvia il container dopo la modifica.
-Guida completa: **[Wiki → Configurazione del server](https://github.com/sidimam/AmuleRemoteiOS/wiki/Configurazione-del-server)**.
+Generate the MD5 hash with: `echo -n "mypassword" | md5sum`.
+Expose/forward the container's **4712/TCP** port and restart the container after editing.
+Full guide: **[Wiki → Server setup](https://github.com/sidimam/AmuleRemoteiOS/wiki/Server-setup)**.
 
-> ⚠️ Il traffico EC non è cifrato. Per l'accesso da fuori casa usa una VPN (WireGuard/Tailscale) invece di esporre la 4712 su Internet.
+> ⚠️ EC traffic is not encrypted. For access from outside your home use a VPN (WireGuard/Tailscale) instead of exposing port 4712 to the Internet.
 
-## Compilazione
+## Building
 
-### macOS
+### macOS (Swift Package)
 
-Richiede i Command Line Tools di Xcode (Swift 5.9+):
+Requires the Xcode Command Line Tools (Swift 5.9+):
 
 ```bash
 cd aMuleRemote
 swift build -c release
 cp .build/release/AmuleRemote "aMule Remote.app/Contents/MacOS/aMule Remote"
-codesign --force --deep --sign "aMule Remote Signing" "aMule Remote.app"
+xcrun xcstringstool compile Localizable.xcstrings --output-directory "aMule Remote.app/Contents/Resources"
+codesign --force --deep --sign - "aMule Remote.app"   # ad-hoc signature for local use
 ```
 
-### iOS / iPadOS
+### iOS / iPadOS, watchOS, visionOS and Mac App Store
 
-Il progetto Xcode è generato da `project.yml` con [XcodeGen](https://github.com/yonaskolb/XcodeGen):
+The Xcode project is generated from `project.yml` with [XcodeGen](https://github.com/yonaskolb/XcodeGen):
 
 ```bash
 xcodegen generate
 ```
 
-Vedi la sezione *Versione iOS* e il **[Wiki → Compilazione e firma](https://github.com/sidimam/AmuleRemoteiOS/wiki/Compilazione-e-firma)**.
+Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro) and `AmuleRemoteMac` (sandboxed Mac App Store build). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemoteiOS/wiki/Building-and-signing)**.
 
-## Firma e distribuzione
+## Signing and distribution
 
-Dalla build 15 l'app macOS distribuita nelle Release è firmata con **Developer ID Application** e **notarizzata da Apple** (con staple): si installa e si avvia su qualsiasi Mac senza avvisi di sicurezza e senza richieste del portachiavi.
+Since build 15 the macOS app published in the Releases is signed with a **Developer ID Application** certificate and **notarized by Apple** (stapled): it installs and opens on any Mac without security warnings and without keychain prompts.
 
-Processo usato per pubblicare (riferimento):
+Reference process:
 
 ```bash
 codesign --force --deep --options runtime --timestamp \
-  --sign "Developer ID Application: TUO NOME (TEAMID)" "aMule Remote.app"
+  --sign "Developer ID Application: YOUR NAME (TEAMID)" "aMule Remote.app"
 ditto -c -k --keepParent "aMule Remote.app" notarize.zip
 xcrun notarytool submit notarize.zip --key AuthKey.p8 --key-id KEYID --issuer ISSUER --wait
 xcrun stapler staple "aMule Remote.app"
-# DMG: cartella con l'app + link simbolico ad /Applications, layout Finder,
-# hdiutil convert UDZO, poi codesign + notarytool + stapler anche sul DMG.
+# DMG: folder with the app + a symlink to /Applications, Finder layout,
+# hdiutil convert UDZO, then codesign + notarytool + stapler on the DMG too.
 ```
-
-## Versione iOS
-
-L'app iOS/iPadOS (`AmuleRemoteiOS.xcodeproj`) riusa lo stesso motore EC del Mac. Interfaccia a tab: Trasferimenti (swipe per pausa/riprendi/elimina, selezione multipla), Ricerca a schede, Server (tocco per connettere), e **Altro** (Statistiche, Log, Impostazioni aMule).
-
-Per compilarla serve **Xcode completo** (gratuito, App Store):
-1. Installa Xcode e aprilo una volta (accetta la licenza, installa la piattaforma iOS)
-2. Apri `AmuleRemoteiOS.xcodeproj`
-3. In *Signing & Capabilities* seleziona il tuo Apple ID come Team
-4. Collega l'iPhone/iPad, selezionalo come destinazione e premi Run
-
-Con un Apple ID gratuito l'app sul dispositivo scade dopo **7 giorni**; con un account Developer a pagamento dura 1 anno (e puoi usare TestFlight). Guida: **[Wiki → Installazione su iPhone/iPad](https://github.com/sidimam/AmuleRemoteiOS/wiki/Installazione-su-iPhone-e-iPad)**.
 
 ## Versioning
 
-La *marketing version* resta **1.0**; cambia solo il numero di **build** progressivo (versione corrente: **build 12**), mantenuto allineato tra macOS e iOS.
+Marketing version and build number are kept aligned across all platforms. Current: **1.2 (build 17)**. Release tags follow the pattern `v1.2-build17`.
 
-## Verifica del protocollo
+## Protocol verification
 
-L'implementazione EC (handshake con salt MD5, framing, tag annidati, tutte le operazioni)
-è stata testata end-to-end contro un amuled 2.3.x reale: autenticazione, statistiche,
-server add/remove, link ed2k, coda download, pausa/priorità/eliminazione, condivisi,
-ricerca, preferenze get/set, log, rifiuto password errata. Dettagli nel
-**[Wiki → Protocollo EC](https://github.com/sidimam/AmuleRemoteiOS/wiki/Protocollo-EC)**.
+The EC implementation (MD5-salted handshake, framing, nested tags, every operation) was tested end-to-end against a real amuled 2.3.x: authentication, statistics, server add/remove, ed2k links, download queue, pause/priority/delete, shared files, search, preferences get/set, log, wrong-password rejection. Details in **[Wiki → EC protocol](https://github.com/sidimam/AmuleRemoteiOS/wiki/EC-protocol)**.
+
+## Privacy
+
+aMule Remote collects no data at all: it only talks to the amuled server you configure. Server address and password are stored in the device Keychain. Full text: [Privacy policy](https://sidimam.github.io/AmuleRemoteiOS/).

@@ -68,9 +68,13 @@ struct iOSSearchView: View {
                         }
                         .pickerStyle(.segmented)
                         if state.searchSessions.contains(where: { $0.inProgress }) {
-                            Button("Ferma") { Task { await state.stopSearch() } }
-                                .buttonStyle(.bordered)
-                                .controlSize(.small)
+                            Button {
+                                Task { await state.stopSearch() }
+                            } label: {
+                                Label("Ferma", systemImage: "stop.fill")
+                            }
+                            .buttonStyle(.bordered)
+                            .controlSize(.small)
                         }
                     }
                 }
@@ -150,7 +154,9 @@ struct iOSSearchView: View {
                     }
                 }
                 .listStyle(.plain)
+                #if !os(visionOS)
                 .scrollDismissesKeyboard(.immediately)
+                #endif
             }
             .navigationTitle("Ricerca")
             .navigationBarTitleDisplayMode(.inline)
@@ -160,6 +166,8 @@ struct iOSSearchView: View {
                                        ("dimensione", "Dimensione"), ("complete", "Fonti complete")],
                              sortKey: $sortKey, ascending: $sortAsc)
                 }
+                #if !os(visionOS)
+                // Su visionOS il placement .keyboard non esiste (tastiera flottante di sistema).
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button {
@@ -170,6 +178,7 @@ struct iOSSearchView: View {
                         Image(systemName: "keyboard.chevron.compact.down")
                     }
                 }
+                #endif
             }
             .sheet(isPresented: $showFilters) { filtersSheet }
             .confirmationDialog(downloadTarget?.name ?? "",

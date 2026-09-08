@@ -107,12 +107,31 @@ struct DownloadsView: View {
                 }
                 .help("Aggiungi un link ed2k:// o magnet")
 
-                Button {
-                    Task { await state.clearCompleted() }
+                // Stesso "visto" di iOS: menu con selezione e pulizia dei completati.
+                Menu {
+                    Button {
+                        selection = Set(state.downloads.map(\.hash))
+                    } label: {
+                        Label("Seleziona tutto", systemImage: "checkmark.circle")
+                    }
+                    .disabled(state.downloads.isEmpty)
+                    Button {
+                        selection = []
+                    } label: {
+                        Label("Deseleziona", systemImage: "circle")
+                    }
+                    .disabled(selection.isEmpty)
+                    Divider()
+                    Button {
+                        Task { await state.clearCompleted() }
+                    } label: {
+                        Label("Rimuovi completati", systemImage: "text.badge.checkmark")
+                    }
+                    .disabled(!state.downloads.contains { $0.isComplete })
                 } label: {
-                    Label("Rimuovi completati", systemImage: "checkmark.circle")
+                    Label("Seleziona", systemImage: "checkmark.circle")
                 }
-                .help("Rimuovi dalla lista i download completati")
+                .help("Seleziona i download o rimuovi dalla lista quelli completati")
 
                 Button {
                     Task { await state.refreshDownloads() }
@@ -154,32 +173,33 @@ struct DownloadsView: View {
     private var selectionBar: some View {
         VStack(spacing: 0) {
             Divider()
+            // Stesse azioni e stesse icone della barra di selezione di iOS.
             HStack(spacing: 10) {
                 Text("\(selectedItems.count) selezionati")
                     .font(.callout.weight(.medium))
-                Button("Riprendi") {
+                Button {
                     let items = selectedItems
                     Task { for i in items { await state.resume(i) } }
-                }
-                Button("Pausa") {
+                } label: { Label("Riprendi", systemImage: "play.fill") }
+                Button {
                     let items = selectedItems
                     Task { for i in items { await state.pause(i) } }
-                }
-                Button("Ferma") {
+                } label: { Label("Pausa", systemImage: "pause.fill") }
+                Button {
                     let items = selectedItems
                     Task { for i in items { await state.stop(i) } }
-                }
-                Menu("Priorità") {
+                } label: { Label("Ferma", systemImage: "stop.fill") }
+                Menu {
                     ForEach([FilePriority.low, .normal, .high, .auto]) { p in
                         Button(p.label) {
                             let items = selectedItems
                             Task { for i in items { await state.setPriority(i, p) } }
                         }
                     }
-                }
-                .frame(width: 90)
+                } label: { Label("Priorità", systemImage: "slider.horizontal.3") }
+                .fixedSize()
                 if !state.prefs.categories.isEmpty {
-                    Menu("Categoria") {
+                    Menu {
                         Button("Nessuna") {
                             let items = selectedItems
                             Task { for i in items { await state.setCategory(i, 0) } }
@@ -190,15 +210,19 @@ struct DownloadsView: View {
                                 Task { for i in items { await state.setCategory(i, cat.index) } }
                             }
                         }
-                    }
-                    .frame(width: 100)
+                    } label: { Label("Categoria", systemImage: "folder") }
+                    .fixedSize()
                 }
-                Button("Elimina…", role: .destructive) {
+                Button(role: .destructive) {
                     confirmDelete = true
-                }
+                } label: { Label("Elimina…", systemImage: "trash") }
+                .tint(.red)
                 Spacer()
-                Button("Deseleziona") { selection = [] }
+                Button {
+                    selection = []
+                } label: { Label("Deseleziona", systemImage: "circle") }
             }
+            .labelStyle(.titleAndIcon)
             .controlSize(.small)
             .padding(.horizontal, 12)
             .padding(.vertical, 6)

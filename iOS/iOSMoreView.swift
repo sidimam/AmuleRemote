@@ -4,6 +4,13 @@ import Network
 struct iOSMoreView: View {
     @EnvironmentObject var state: AppState
 
+    /// Binding di un sotto-toggle notifiche che appare spento (e non toccabile)
+    /// finché l'interruttore principale delle notifiche è disattivato.
+    private func gated(_ source: Binding<Bool>) -> Binding<Bool> {
+        Binding(get: { state.notificationsEnabled && source.wrappedValue },
+                set: { source.wrappedValue = $0 })
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -64,18 +71,26 @@ struct iOSMoreView: View {
                             Label(mode.label, systemImage: mode.icon).tag(mode)
                         }
                     }
-                    Picker("Lingua", selection: $state.appLanguage) {
+                    Picker(selection: $state.appLanguage) {
                         ForEach(AppLanguage.allCases) { lang in
                             Text(lang.label).tag(lang)
                         }
+                    } label: {
+                        Label("Lingua", systemImage: "globe")
                     }
-                    Picker("Disconnetti dopo inattività", selection: $state.idleTimeout) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("Colore icona", systemImage: "paintpalette")
+                        IconColorPicker(selection: $state.iconColor)
+                    }
+                    Picker(selection: $state.idleTimeout) {
                         Text("Mai").tag(0)
                         Text("60 secondi").tag(60)
                         Text("120 secondi").tag(120)
                         Text("5 minuti").tag(300)
                         Text("10 minuti").tag(600)
                         Text("30 minuti").tag(1800)
+                    } label: {
+                        Label("Disconnetti dopo inattività", systemImage: "zzz")
                     }
                     Toggle(isOn: Binding(
                         get: { state.biometricLockEnabled },
@@ -87,42 +102,73 @@ struct iOSMoreView: View {
                 } header: {
                     Text("Impostazioni app")
                 } footer: {
-                    Text("Con il blocco attivo, all'apertura (e al ritorno in primo piano) l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto.")
+                    Text("Con il blocco attivo, all'apertura (e al ritorno in primo piano) l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).")
                 }
 
                 Section {
-                    Toggle("Download completati", isOn: $state.notifyDownloadsEnabled)
-                    Toggle("Disconnessioni eD2k / Kad", isOn: $state.notifyNetworkEnabled)
-                    Toggle("Controlli in background", isOn: $state.backgroundChecksEnabled)
+                    Toggle(isOn: Binding(
+                        get: { state.notificationsEnabled },
+                        set: { v in Task { await state.setNotificationsEnabled(v) } }
+                    )) {
+                        Label("Notifiche", systemImage: "bell.badge")
+                    }
+                    Toggle(isOn: gated($state.notifyDownloadsEnabled)) {
+                        Label("Download completati", systemImage: "checkmark.circle")
+                    }
+                    .disabled(!state.notificationsEnabled)
+                    Toggle(isOn: gated($state.notifyNetworkEnabled)) {
+                        Label("Disconnessioni eD2k / Kad", systemImage: "wifi.slash")
+                    }
+                    .disabled(!state.notificationsEnabled)
+                    Toggle(isOn: gated($state.backgroundChecksEnabled)) {
+                        Label("Controlli in background", systemImage: "clock.arrow.circlepath")
+                    }
+                    .disabled(!state.notificationsEnabled)
+                    Picker(selection: $state.checkInterval) {
+                        Text("1 minuto").tag(60)
+                        Text("5 minuti").tag(300)
+                        Text("15 minuti").tag(900)
+                        Text("30 minuti").tag(1800)
+                        Text("1 ora").tag(3600)
+                    } label: {
+                        Label("Intervallo controlli", systemImage: "timer")
+                    }
+                    .disabled(!state.notificationsEnabled)
                 } header: {
                     Text("Notifiche")
                 } footer: {
-                    Text("Con i controlli in background attivi, l'app verifica il server anche dopo la disconnessione per inattività (una volta al minuto finché è aperta) e periodicamente in background, quando iOS lo consente. Le notifiche arrivano anche su Apple Watch.")
+                    Text("Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Con i controlli in background l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad (queste ultime non se sul server è attiva la riconnessione automatica). Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Le notifiche arrivano anche su Apple Watch.")
                 }
 
                 Section("Connessione") {
-                    LabeledContent("Server", value: state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)")
-                    LabeledContent("Versione aMule", value: state.serverVersion.isEmpty ? "—" : state.serverVersion)
-                    Button("Disconnetti", role: .destructive) {
+                    LabeledContent {
+                        Text(state.demoMode ? "DEMO (dati di esempio)" : "\(state.host):\(state.port)")
+                    } label: {
+                        Label("Server", systemImage: "server.rack")
+                    }
+                    LabeledContent {
+                        Text(state.serverVersion.isEmpty ? "—" : state.serverVersion)
+                    } label: {
+                        Label("Versione aMule", systemImage: "info.circle")
+                    }
+                    Button(role: .destructive) {
                         Task { await state.disconnect() }
+                    } label: {
+                        Label("Disconnetti", systemImage: "xmark.circle")
                     }
                 }
 
                 Section("Informazioni app") {
-                    LabeledContent("aMule Remote", value: appVersionString())
+                    LabeledContent {
+                        Text(appVersionString())
+                    } label: {
+                        Label("aMule Remote", systemImage: "app.badge")
+                    }
                 }
             }
             .navigationTitle("Altro")
         }
     }
-}
-
-/// "1.0 (build 12)" dal bundle.
-func appVersionString() -> String {
-    let info = Bundle.main.infoDictionary
-    let v = info?["CFBundleShortVersionString"] as? String ?? "?"
-    let b = info?["CFBundleVersion"] as? String ?? "?"
-    return "\(v) (build \(b))"
 }
 
 // MARK: - Test connessione
@@ -280,29 +326,38 @@ struct iOSStatsView: View {
     var body: some View {
         List {
             Section("Velocità") {
-                LabeledContent("Download", value: formatSpeed(state.stats.dlSpeed))
-                LabeledContent("Upload", value: formatSpeed(state.stats.ulSpeed))
-                LabeledContent("Limite download", value: state.stats.dlSpeedLimit > 0 ? "\(state.stats.dlSpeedLimit) kB/s" : "Illimitato")
-                LabeledContent("Limite upload", value: state.stats.ulSpeedLimit > 0 ? "\(state.stats.ulSpeedLimit) kB/s" : "Illimitato")
+                statRow("Download", "arrow.down", formatSpeed(state.stats.dlSpeed))
+                statRow("Upload", "arrow.up", formatSpeed(state.stats.ulSpeed))
+                statRow("Limite download", "speedometer", state.stats.dlSpeedLimit > 0 ? "\(state.stats.dlSpeedLimit) kB/s" : String(localized: "Illimitato"))
+                statRow("Limite upload", "speedometer", state.stats.ulSpeedLimit > 0 ? "\(state.stats.ulSpeedLimit) kB/s" : String(localized: "Illimitato"))
             }
             Section("Reti") {
-                LabeledContent("eD2k", value: state.connState.ed2kLabel)
-                LabeledContent("Utenti eD2k", value: "\(state.stats.ed2kUsers)")
-                LabeledContent("File eD2k", value: "\(state.stats.ed2kFiles)")
-                LabeledContent("Kad", value: state.connState.kadLabel)
-                LabeledContent("Utenti Kad", value: "\(state.stats.kadUsers)")
-                LabeledContent("Nodi Kad", value: "\(state.stats.kadNodes)")
+                statRow("eD2k", "server.rack", state.connState.ed2kLabel)
+                statRow("Utenti eD2k", "person.2", "\(state.stats.ed2kUsers)")
+                statRow("File eD2k", "doc.on.doc", "\(state.stats.ed2kFiles)")
+                statRow("Kad", "point.3.connected.trianglepath.dotted", state.connState.kadLabel)
+                statRow("Utenti Kad", "person.2", "\(state.stats.kadUsers)")
+                statRow("Nodi Kad", "circle.hexagongrid", "\(state.stats.kadNodes)")
             }
             Section("Trasferimenti") {
-                LabeledContent("Fonti totali", value: "\(state.stats.totalSources)")
-                LabeledContent("Coda upload", value: "\(state.stats.uploadQueueLength)")
-                LabeledContent("File condivisi", value: "\(state.stats.sharedFileCount)")
-                LabeledContent("Totale inviato", value: formatBytes(state.stats.totalSent))
-                LabeledContent("Totale ricevuto", value: formatBytes(state.stats.totalReceived))
+                statRow("Fonti totali", "person.3", "\(state.stats.totalSources)")
+                statRow("Coda upload", "list.number", "\(state.stats.uploadQueueLength)")
+                statRow("File condivisi", "folder", "\(state.stats.sharedFileCount)")
+                statRow("Totale inviato", "tray.and.arrow.up", formatBytes(state.stats.totalSent))
+                statRow("Totale ricevuto", "tray.and.arrow.down", formatBytes(state.stats.totalReceived))
             }
         }
         .navigationTitle("Statistiche")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder
+    private func statRow(_ title: LocalizedStringKey, _ icon: String, _ value: String) -> some View {
+        LabeledContent {
+            Text(value)
+        } label: {
+            Label(title, systemImage: icon)
+        }
     }
 }
 

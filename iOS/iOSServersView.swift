@@ -57,6 +57,10 @@ struct iOSServersView: View {
                         } label: {
                             VStack(alignment: .leading, spacing: 3) {
                                 HStack(spacing: 5) {
+                                    Image(systemName: "server.rack")
+                                        .foregroundStyle(state.connState.serverAddress == s.address
+                                                         ? AnyShapeStyle(.green) : AnyShapeStyle(.secondary))
+                                        .font(.caption)
                                     if state.connState.serverAddress == s.address {
                                         Image(systemName: "bolt.fill")
                                             .foregroundStyle(.green)
