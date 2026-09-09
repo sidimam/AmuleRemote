@@ -56,8 +56,15 @@ struct MacGeneralSettings: View {
                     Text("10 minuti").tag(600)
                     Text("30 minuti").tag(1800)
                 } label: {
-                    Label("Disconnetti dopo inattività", systemImage: "zzz")
+                    Label("Vai offline dopo inattività", systemImage: "zzz")
                 }
+                Toggle(isOn: Binding(
+                    get: { state.iCloudSyncEnabled },
+                    set: { state.setCloudSync($0) }
+                )) {
+                    Label("Sincronizza profili con iCloud", systemImage: "icloud")
+                }
+                .disabled(!CloudSync.isAvailable)
                 Toggle(isOn: Binding(
                     get: { state.biometricLockEnabled },
                     set: { newValue in Task { await state.setBiometricLock(newValue) } }
@@ -68,9 +75,16 @@ struct MacGeneralSettings: View {
             } header: {
                 Text("Impostazioni app")
             } footer: {
-                Text("Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
+                    if CloudSync.isAvailable {
+                        Text("Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi.")
+                    } else {
+                        Text("La sincronizzazione iCloud richiede la build firmata ufficiale (DMG dal sito, Homebrew o Mac App Store): questa copia non ha il profilo iCloud.")
+                    }
+                }
+                .font(.caption)
+                .foregroundStyle(.secondary)
             }
 
             Section {
@@ -110,13 +124,7 @@ struct MacGeneralSettings: View {
                     .foregroundStyle(.secondary)
             }
 
-            Section("Informazioni app") {
-                LabeledContent {
-                    Text(appVersionString())
-                } label: {
-                    Label("aMule Remote", systemImage: "app.badge")
-                }
-            }
+            AppInfoSection()
         }
         .formStyle(.grouped)
     }

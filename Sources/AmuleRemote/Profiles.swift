@@ -8,6 +8,9 @@ struct ServerProfile: Identifiable, Codable, Equatable, Hashable {
     var name: String
     var host: String
     var port: Int
+    /// Ultima modifica (per la fusione dei profili sincronizzati via iCloud:
+    /// vince la versione più recente). Assente nei profili delle build < 18.
+    var updatedAt: Date? = nil
 
     var address: String { "\(host):\(port)" }
 }

@@ -3,6 +3,8 @@ import SwiftUI
 @main
 struct AmuleRemoteApp: App {
     @StateObject private var state = AppState()
+    // Menu del Dock con le azioni rapide (MacQuickActions.swift).
+    @NSApplicationDelegateAdaptor(MacAppDelegate.self) private var appDelegate
 
     init() {
         DockIcon.start()
@@ -22,6 +24,29 @@ struct AmuleRemoteApp: App {
         .defaultSize(width: 1280, height: 800)
         .commands {
             CommandGroup(replacing: .newItem) {}
+            // Menu app → Informazioni su aMule Remote (versione, licenza, link).
+            CommandGroup(replacing: .appInfo) {
+                Button("Informazioni su aMule Remote") { MacAboutPanel.show() }
+            }
+            // Menu Aiuto: guida, segnalazioni, privacy.
+            CommandGroup(replacing: .help) {
+                Button("Guida di aMule Remote (wiki)") { NSWorkspace.shared.open(AppLinks.wiki) }
+                Button("Segnala un problema") { NSWorkspace.shared.open(AppLinks.bugReport) }
+                Button("Informativa sulla privacy") { NSWorkspace.shared.open(AppLinks.privacy) }
+            }
+            // Azioni rapide anche dalla barra dei menu, con scorciatoie.
+            CommandMenu("Trasferimenti") {
+                Button("Aggiungi link eD2k…") { QuickActionRouter.shared.pending = .addLink }
+                    .keyboardShortcut("l")
+                Divider()
+                Button("Metti in pausa tutti i download") { QuickActionRouter.shared.pending = .pauseAll }
+                    .keyboardShortcut("p", modifiers: [.command, .option])
+                Button("Riprendi tutti i download") { QuickActionRouter.shared.pending = .resumeAll }
+                    .keyboardShortcut("r", modifiers: [.command, .option])
+                Divider()
+                Button("Rimuovi completati") { Task { await state.clearCompleted() } }
+                    .disabled(!state.connected)
+            }
         }
         // App menu → Impostazioni… (⌘,): aspetto, blocco Touch ID, profili.
         Settings {
@@ -33,16 +58,39 @@ struct AmuleRemoteApp: App {
 
 struct ContentView: View {
     @EnvironmentObject var state: AppState
+    @ObservedObject private var router = QuickActionRouter.shared
 
     var body: some View {
         Group {
             if state.locked {
                 LockScreenView()
-            } else if state.connected {
+            } else if state.sessionActive {
                 MainSplitView()
             } else {
                 ConnectionView()
             }
+        }
+        // Clic e tasti azzerano il timer di inattività (e riconnettono da offline).
+        .onAppear {
+            MacActivityMonitor.start { state.markActivity() }
+            consumeQuickAction()
+            // Collaudo/screenshot: `-appSettings` apre subito la finestra Impostazioni.
+            if ProcessInfo.processInfo.arguments.contains("-appSettings") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                }
+            }
+        }
+        // Azioni rapide dal Dock o dal menu Trasferimenti.
+        .onChange(of: router.pending) { _, _ in consumeQuickAction() }
+        .onChange(of: state.locked) { _, _ in consumeQuickAction() }
+        .alert("aMule Remote", isPresented: Binding(
+            get: { state.infoMessage != nil },
+            set: { if !$0 { state.infoMessage = nil } }
+        )) {
+            Button("OK", role: .cancel) { state.infoMessage = nil }
+        } message: {
+            Text(state.infoMessage ?? "")
         }
         .alert("Errore", isPresented: Binding(
             get: { state.lastError != nil },
@@ -69,6 +117,12 @@ struct ContentView: View {
             Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni di sistema. Attivale da Impostazioni di Sistema → Notifiche → aMule Remote.")
         }
         .modifier(AppLocaleModifier(language: state.appLanguage))
+    }
+
+    private func consumeQuickAction() {
+        guard let action = router.pending, !state.locked else { return }
+        router.pending = nil
+        Task { await state.perform(action) }
     }
 }
 
@@ -115,14 +169,19 @@ struct MainSplitView: View {
                 ConnectionFooter()
             }
         } detail: {
-            switch state.selectedSection ?? .downloads {
-            case .downloads: DownloadsView()
-            case .search: SearchView()
-            case .servers: ServersView()
-            case .shared: SharedFilesView()
-            case .stats: StatsView()
-            case .log: LogView()
-            case .prefs: PrefsView()
+            VStack(spacing: 0) {
+                OfflineBanner()
+                Group {
+                    switch state.selectedSection ?? .downloads {
+                    case .downloads: DownloadsView()
+                    case .search: SearchView()
+                    case .servers: ServersView()
+                    case .shared: SharedFilesView()
+                    case .stats: StatsView()
+                    case .log: LogView()
+                    case .prefs: PrefsView()
+                    }
+                }
             }
         }
     }
@@ -218,6 +277,22 @@ struct ConnectionView: View {
                 }
                 .padding(12)
                 .background(Color.orange.opacity(0.15), in: RoundedRectangle(cornerRadius: 10))
+                .frame(maxWidth: 460)
+            }
+
+            if state.cloudProfilesAvailable > 0 {
+                HStack(spacing: 10) {
+                    Image(systemName: "icloud.and.arrow.down")
+                        .foregroundStyle(.blue)
+                    Text("Trovati \(state.cloudProfilesAvailable) profili server su iCloud.")
+                        .font(.callout)
+                    Spacer()
+                    Button("Ripristina") { state.restoreProfilesFromCloud() }
+                        .buttonStyle(.borderedProminent)
+                        .controlSize(.small)
+                }
+                .padding(12)
+                .background(Color.blue.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
                 .frame(maxWidth: 460)
             }
 

@@ -12,7 +12,11 @@ final class NotificationPresenter: NSObject, UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        #if os(tvOS)
+        [.badge]   // tvOS non mostra banner né suoni alle app
+        #else
         [.banner, .list, .sound]
+        #endif
     }
 }
 
@@ -24,7 +28,16 @@ enum Notifier {
 
     static func requestPermission() async {
         _ = try? await UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .sound, .badge])
+            .requestAuthorization(options: Notifier.authOptions)
+    }
+
+    /// tvOS ammette solo il badge; le altre piattaforme avvisi, suono e badge.
+    static var authOptions: UNAuthorizationOptions {
+        #if os(tvOS)
+        [.badge]
+        #else
+        [.alert, .sound, .badge]
+        #endif
     }
 
     /// Chiede il consenso se non ancora deciso; ritorna true se le notifiche
@@ -35,7 +48,7 @@ enum Notifier {
         let settings = await center.notificationSettings()
         switch settings.authorizationStatus {
         case .notDetermined:
-            return (try? await center.requestAuthorization(options: [.alert, .sound, .badge])) ?? false
+            return (try? await center.requestAuthorization(options: Notifier.authOptions)) ?? false
         case .denied:
             return false
         default:
@@ -51,12 +64,17 @@ enum Notifier {
     }
 
     static func post(id: String, title: String, body: String) {
+        #if os(tvOS)
+        // tvOS non mostra notifiche alle app (solo badge): nessun avviso.
+        _ = (id, title, body)
+        #else
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = .default
         let request = UNNotificationRequest(identifier: id, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request)
+        #endif
     }
 
     // MARK: - Riconnessione automatica lato server

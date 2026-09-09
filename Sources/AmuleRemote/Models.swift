@@ -238,7 +238,7 @@ struct DownloadItem: Identifiable, Hashable, Codable {
 
 // MARK: - Uploads
 
-struct UploadItem: Identifiable, Hashable {
+struct UploadItem: Identifiable, Hashable, Codable {
     var id: String
     var userName: String
     var software: String
@@ -316,7 +316,7 @@ struct SearchSession: Identifiable, Equatable {
 
 // MARK: - Servers
 
-struct ServerItem: Identifiable, Hashable {
+struct ServerItem: Identifiable, Hashable, Codable {
     var ip: UInt32
     var port: UInt16
     var name: String
@@ -354,7 +354,7 @@ struct ServerItem: Identifiable, Hashable {
 
 // MARK: - Shared files
 
-struct SharedFileItem: Identifiable, Hashable {
+struct SharedFileItem: Identifiable, Hashable, Codable {
     var hash: Data
     var name: String
     var size: UInt64
@@ -393,7 +393,7 @@ struct SharedFileItem: Identifiable, Hashable {
 
 // MARK: - Stats / connection state
 
-struct StatsSnapshot {
+struct StatsSnapshot: Codable {
     var ulSpeed: Double = 0
     var dlSpeed: Double = 0
     var ulSpeedLimit: UInt64 = 0
@@ -435,7 +435,7 @@ struct StatsSnapshot {
     }
 }
 
-struct ConnState {
+struct ConnState: Codable {
     var ed2kConnected = false
     var ed2kConnecting = false
     var kadOK = false

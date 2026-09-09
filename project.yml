@@ -1,9 +1,12 @@
-# XcodeGen spec (iOS + watchOS + macOS App Store + visionOS).
+# XcodeGen spec (iOS + watchOS + macOS App Store + visionOS + tvOS).
 # Regenerate the project with:  xcodegen generate
 name: AmuleRemoteiOS
 options:
   bundleIdPrefix: com.sdimambro
   developmentLanguage: it
+# Sorgenti condivisi elencati UNO A UNO (la cartella Sources/AmuleRemote
+# contiene anche l'interfaccia macOS, che non va compilata altrove).
+fileGroups: []
 targets:
   AmuleRemoteiOS:
     type: application
@@ -25,10 +28,23 @@ targets:
       - path: Sources/AmuleRemote/BackgroundMonitor.swift
       - path: Sources/AmuleRemote/IconColor.swift
       - path: Sources/AmuleRemote/PasswordField.swift
+      - path: Sources/AmuleRemote/OfflineCache.swift
+      - path: Sources/AmuleRemote/OfflineBanner.swift
+      - path: Sources/AmuleRemote/CloudSync.swift
+      - path: Sources/AmuleRemote/QuickActions.swift
+      - path: Sources/AmuleRemote/AboutView.swift
       - path: Localizable.xcstrings
       - path: iOS
     dependencies:
       - target: AmuleRemoteWatch
+    # iCloud Key-Value Storage (identificatore FISSO condiviso con il DMG Developer ID,
+    # che ha bundle id com.sdimambro.amule-remote) + gruppo keychain condiviso.
+    entitlements:
+      path: SupportFiles/iOS.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)com.sdimambro.amule-remote-ios
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
     settings:
       base:
         PRODUCT_NAME: aMule Remote
@@ -46,8 +62,8 @@ targets:
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
         TARGETED_DEVICE_FAMILY: "1,2"
-        CURRENT_PROJECT_VERSION: 17
-        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: 18
+        MARKETING_VERSION: "1.3"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
@@ -68,6 +84,9 @@ targets:
       properties:
         com.apple.security.app-sandbox: true
         com.apple.security.network.client: true
+        com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)com.sdimambro.amule-remote-ios
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
     settings:
       base:
         PRODUCT_NAME: aMule Remote
@@ -76,9 +95,10 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Simone Di Mambro — MIT License"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 17
-        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: 18
+        MARKETING_VERSION: "1.3"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
@@ -98,8 +118,8 @@ targets:
         INFOPLIST_FILE: SupportFiles/Watch-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 17
-        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: 18
+        MARKETING_VERSION: "1.3"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
@@ -126,12 +146,23 @@ targets:
       - path: Sources/AmuleRemote/BackgroundMonitor.swift
       - path: Sources/AmuleRemote/IconColor.swift
       - path: Sources/AmuleRemote/PasswordField.swift
+      - path: Sources/AmuleRemote/OfflineCache.swift
+      - path: Sources/AmuleRemote/OfflineBanner.swift
+      - path: Sources/AmuleRemote/CloudSync.swift
+      - path: Sources/AmuleRemote/QuickActions.swift
+      - path: Sources/AmuleRemote/AboutView.swift
       - path: Localizable.xcstrings
       - path: iOS
         excludes:
           - "WatchBridge.swift"
           - "Assets.xcassets"
       - path: Vision
+    entitlements:
+      path: SupportFiles/Vision.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)com.sdimambro.amule-remote-ios
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
     settings:
       base:
         PRODUCT_NAME: aMule Remote
@@ -143,8 +174,59 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
-        CURRENT_PROJECT_VERSION: 17
-        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: 18
+        MARKETING_VERSION: "1.3"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
+  # Target tvOS (Apple TV): stesso motore EC, interfaccia per il telecomando
+  # (cartella TV/). Stesso bundle id → stessa scheda App Store (acquisto universale).
+  AmuleRemoteTV:
+    type: application
+    platform: tvOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources/AmuleRemote/ECCodes.swift
+      - path: Sources/AmuleRemote/ECPacket.swift
+      - path: Sources/AmuleRemote/ECClient.swift
+      - path: Sources/AmuleRemote/Models.swift
+      - path: Sources/AmuleRemote/RemotePrefs.swift
+      - path: Sources/AmuleRemote/Keychain.swift
+      - path: Sources/AmuleRemote/AppState.swift
+      - path: Sources/AmuleRemote/DemoMode.swift
+      - path: Sources/AmuleRemote/Profiles.swift
+      - path: Sources/AmuleRemote/AppTheme.swift
+      - path: Sources/AmuleRemote/BiometricLock.swift
+      - path: Sources/AmuleRemote/Notifier.swift
+      - path: Sources/AmuleRemote/BackgroundMonitor.swift
+      - path: Sources/AmuleRemote/IconColor.swift
+      - path: Sources/AmuleRemote/PasswordField.swift
+      - path: Sources/AmuleRemote/OfflineCache.swift
+      - path: Sources/AmuleRemote/OfflineBanner.swift
+      - path: Sources/AmuleRemote/CloudSync.swift
+      - path: Sources/AmuleRemote/QuickActions.swift
+      - path: Sources/AmuleRemote/AboutView.swift
+      - path: Localizable.xcstrings
+      - path: TV
+    entitlements:
+      path: SupportFiles/TV.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)com.sdimambro.amule-remote-ios
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
+    settings:
+      base:
+        PRODUCT_NAME: aMule Remote
+        PRODUCT_BUNDLE_IDENTIFIER: com.sdimambro.amule-remote-ios
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
+        ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME: LaunchImage
+        TARGETED_DEVICE_FAMILY: "3"
+        CURRENT_PROJECT_VERSION: 18
+        MARKETING_VERSION: "1.3"
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: X5SR67A8AL
+        TVOS_DEPLOYMENT_TARGET: "17.0"

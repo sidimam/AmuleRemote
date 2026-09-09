@@ -4,6 +4,10 @@ import SwiftUI
 struct AmuleRemoteiOSApp: App {
     @StateObject private var state = AppState()
     @Environment(\.scenePhase) private var scenePhase
+    #if os(iOS)
+    // Azioni rapide dal menu dell'icona in Home (QuickActions.swift).
+    @UIApplicationDelegateAdaptor(QuickActionAppDelegate.self) private var appDelegate
+    #endif
 
     init() {
         // La registrazione del BGTask deve avvenire prima della fine del lancio.
@@ -35,8 +39,18 @@ struct AmuleRemoteiOSApp: App {
             switch phase {
             case .background:
                 state.lockNow()
+                // In background la connessione EC si chiude ma i dati restano
+                // in cache (stato Offline); al ritorno riparte da sola.
+                Task { await state.enterOffline() }
+                #if os(iOS)
+                HomeScreenShortcuts.install()
+                #endif
                 if state.backgroundChecksEnabled && !state.demoMode {
                     BackgroundRefresh.schedule()
+                }
+            case .active:
+                if state.offline && !state.locked {
+                    Task { await state.resumeFromOffline() }
                 }
             default:
                 break
@@ -47,12 +61,15 @@ struct AmuleRemoteiOSApp: App {
 
 struct iOSRootView: View {
     @EnvironmentObject var state: AppState
+    @ObservedObject private var router = QuickActionRouter.shared
 
     var body: some View {
         Group {
             if state.locked {
                 LockScreenView()
-            } else if state.connected {
+            } else if state.sessionActive {
+              VStack(spacing: 0) {
+                OfflineBanner()
                 // La tab selezionata segue `selectedSection` (stessa proprietà della
                 // barra laterale macOS): così `-section search|servers|stats` funziona
                 // anche qui, utile per screenshot e collaudo.
@@ -83,9 +100,22 @@ struct iOSRootView: View {
                 // Observe touches to reset the inactivity timer WITHOUT
                 // intercepting them (a DragGesture here would swallow taps).
                 .background(ActivityObserver { state.markActivity() })
+              }
             } else {
                 iOSConnectionView()
             }
+        }
+        // Azioni rapide (menu dell'icona): eseguite appena l'app è sbloccata.
+        .onChange(of: router.pending) { _, _ in consumeQuickAction() }
+        .onChange(of: state.locked) { _, _ in consumeQuickAction() }
+        .onAppear { consumeQuickAction() }
+        .alert("aMule Remote", isPresented: Binding(
+            get: { state.infoMessage != nil },
+            set: { if !$0 { state.infoMessage = nil } }
+        )) {
+            Button("OK", role: .cancel) { state.infoMessage = nil }
+        } message: {
+            Text(state.infoMessage ?? "")
         }
         .alert("Errore", isPresented: Binding(
             get: { state.lastError != nil },
@@ -112,6 +142,12 @@ struct iOSRootView: View {
             Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni del dispositivo. Attivale da Impostazioni → aMule Remote → Notifiche.")
         }
         .modifier(AppLocaleModifier(language: state.appLanguage))
+    }
+
+    private func consumeQuickAction() {
+        guard let action = router.pending, !state.locked else { return }
+        router.pending = nil
+        Task { await state.perform(action) }
     }
 }
 
@@ -152,6 +188,22 @@ struct iOSConnectionView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .listRowBackground(Color.clear)
+                }
+
+                if state.cloudProfilesAvailable > 0 {
+                    Section {
+                        HStack(spacing: 10) {
+                            Image(systemName: "icloud.and.arrow.down")
+                                .foregroundStyle(.blue)
+                            Text("Trovati \(state.cloudProfilesAvailable) profili server su iCloud.")
+                                .font(.callout)
+                            Spacer()
+                            Button("Ripristina") { state.restoreProfilesFromCloud() }
+                                .buttonStyle(.borderedProminent)
+                                .controlSize(.small)
+                        }
+                    }
+                    .listRowBackground(Color.blue.opacity(0.12))
                 }
 
                 if !state.profiles.isEmpty {

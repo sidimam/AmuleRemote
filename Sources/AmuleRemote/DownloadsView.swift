@@ -140,6 +140,12 @@ struct DownloadsView: View {
                 }
             }
         }
+        .onChange(of: state.addLinkRequested) { _, requested in
+            if requested { showAddLink = true; state.addLinkRequested = false }
+        }
+        .onAppear {
+            if state.addLinkRequested { showAddLink = true; state.addLinkRequested = false }
+        }
         .sheet(isPresented: $showAddLink) {
             VStack(spacing: 16) {
                 Text("Aggiungi link eD2k").font(.headline)

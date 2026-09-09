@@ -1,8 +1,19 @@
 import SwiftUI
+#if !os(tvOS)
 import LocalAuthentication
+#endif
 
 /// Autenticazione locale (Face ID / Touch ID / Optic ID, con fallback al
 /// codice del dispositivo). Usata per il blocco opzionale dell'app.
+/// Su tvOS LocalAuthentication non esiste: il blocco non è disponibile.
+#if os(tvOS)
+enum BiometricAuth {
+    static var biometryLabel: String { "codice di sblocco" }
+    static var biometryIcon: String { "lock.open" }
+    static var isAvailable: Bool { false }
+    static func authenticate(reason: String) async -> Bool { true }
+}
+#else
 enum BiometricAuth {
     /// Nome della biometria disponibile, per le etichette dell'interfaccia.
     static var biometryLabel: String {
@@ -43,6 +54,7 @@ enum BiometricAuth {
         return (try? await ctx.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)) ?? false
     }
 }
+#endif
 
 /// Schermata mostrata al posto dell'app quando il blocco biometrico è attivo.
 struct LockScreenView: View {

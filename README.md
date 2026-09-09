@@ -1,6 +1,6 @@
 # aMule Remote
 
-Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch** companion) to remotely control an **amuled** server — for example the aMule container on your Unraid box, a NAS or a Raspberry Pi — over the **EC (External Connections)** protocol, the same one used by aMuleGUI and amulecmd. EC protocol 0x0204, compatible with aMule 2.3.x.
+Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple Watch** companion) to remotely control an **amuled** server — for example the aMule container on your Unraid box, a NAS or a Raspberry Pi — over the **EC (External Connections)** protocol, the same one used by aMuleGUI and amulecmd. EC protocol 0x0204, compatible with aMule 2.3.x.
 
 > 📖 Detailed guides in the **[Wiki](https://github.com/sidimam/AmuleRemote/wiki)** · 🔒 [Privacy policy](https://sidimam.github.io/AmuleRemote/)
 
@@ -10,7 +10,7 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
   </a>
   &nbsp;&nbsp;
   <a href="https://apps.apple.com/app/amule-remote/id6800020841">
-    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store (iPhone, iPad, Mac, Apple Vision Pro)" height="44">
+    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store (iPhone, iPad, Mac, Apple Vision Pro, Apple TV)" height="44">
   </a>
 </p>
 <p align="center">
@@ -20,6 +20,10 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
   &nbsp;
   <a href="https://github.com/sidimam/homebrew-tap">
     <img src="https://img.shields.io/badge/Homebrew-sidimam%2Ftap%2Famule--remote-fbb040?style=flat-square&logo=homebrew&logoColor=white" alt="Homebrew cask">
+  </a>
+  &nbsp;
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License">
   </a>
 </p>
 
@@ -31,8 +35,18 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
   - **Homebrew** — `brew install --cask sidimam/tap/amule-remote` (same notarized DMG, updated with `brew upgrade`). Cask source: [sidimam/homebrew-tap](https://github.com/sidimam/homebrew-tap).
   - **Mac App Store** — the sandboxed build lives on the [same App Store page](https://apps.apple.com/app/amule-remote/id6800020841) as the iOS app (universal purchase).
 - **Apple Vision Pro**: on the App Store in the countries where Vision Pro is sold.
+- **Apple TV** *(1.3)*: on the App Store (same universal purchase), for tvOS 17 or later.
 
 ## Features
+
+### New in 1.3 (build 18)
+
+- **Offline mode with local cache** — after the chosen idle period (or when the app goes to the background) the connection is closed, but the last data stays on screen with an *Offline · data updated at HH:MM* banner; the connection **resumes by itself** at the first tap/click, when the app returns to the foreground or when it is reopened (the cached snapshot appears instantly while reconnecting). No more "Disconnected for inactivity" bounce to the login screen. The setting is now called **"Go offline after inactivity"** and works on the Mac too (off by default there).
+- **iCloud sync of server profiles** *(opt-in)* — profiles are shared between your devices through iCloud Key-Value Storage and their passwords through the **iCloud Keychain**; a new device offers to *Restore N profiles from iCloud* on the connection screen. Works on every build: iPhone, iPad, Mac (DMG/Homebrew and Mac App Store), Vision Pro and Apple TV — the Developer ID DMG ships with an iCloud provisioning profile.
+- **Quick actions** — long-press the app icon on iPhone/iPad (Add eD2k link, Pause all, Resume all, Search); on the Mac the same actions live in the **Dock menu** and in a new **Transfers** menu with shortcuts (⌘L, ⌥⌘P, ⌥⌘R). visionOS and tvOS have no icon menu: Siri and Shortcuts remain available there.
+- **Apple TV app** — new `AmuleRemoteTV` target designed for the remote and the big screen: large rows, every row is a button that opens an action sheet, Play/Pause on the Siri Remote pauses/resumes the highlighted download, native tvOS search bar (dictation and the iPhone "Apple TV Keyboard" work out of the box), single-column connection screen, iCloud profile restore so you never type on the TV.
+- **About section** on every platform (More → About, Settings ⌘, About panel, TV Settings): version, author, **MIT license** text, links to the **wiki**, **report a problem** (pre-filled GitHub issue), source code and privacy policy. The Mac Help menu links to the same pages.
+- **Project license**: the repository is now under the [MIT License](LICENSE); GitHub issue templates added.
 
 - **Transfers**: download queue with progress, speed, sources, ETA, status and **download age** (days in queue); pause / resume / stop / delete; priority (low/normal/high/auto); category assignment; add `ed2k://` links; multi-selection with an action bar; "Remove completed"; active uploads panel (Mac).
 - **Search**: **local** and **global (server)**, tabbed (several searches at once), with filters (file type, extension, min/max size, availability) and an automatic 120 s timeout. Double-click / tap a result to download it. Results already in your transfers are highlighted in **red**, files you already downloaded in **green**.
@@ -43,8 +57,11 @@ Native **macOS, iOS, iPadOS and visionOS** app (SwiftUI, with an **Apple Watch**
 - **Server profiles**: several named amuled servers, one **default** proposed at launch, quick switching; passwords always in the Keychain.
 - **Notifications** *(1.2)*: a single master switch that asks for permission and sends a test notification; separate toggles for **completed downloads**, **eD2k/Kad disconnections** and **checks while disconnected**, with a **configurable interval** (1 min – 1 h). Checks keep running after the idle disconnect on every platform; on iOS they also run in the background (Background App Refresh, never more often than every 15 minutes). eD2k/Kad drops are reported only when the server's auto-reconnect is off. Notifications also reach Apple Watch.
 - **Appearance**: light / dark / system theme; **7 app icon colors** *(1.2)* on iPhone, iPad and Vision Pro (with dark and tinted variants) and a matching Dock icon on the Mac.
-- **Face ID / Touch ID lock** (optional) and **auto-disconnect after inactivity** (configurable) on every platform.
+- **Face ID / Touch ID lock** (optional) and **offline after inactivity** (configurable, with cached data and automatic reconnection) on every platform.
 - **Apple Watch app**: speeds, eD2k/Kad status and the download queue, mirrored from the iPhone.
+- **Apple TV app** *(1.3)*: transfers, search, servers, statistics and settings on the big screen, driven by the Siri Remote.
+- **iCloud sync** *(1.3, optional)*: server profiles and passwords shared between your devices.
+- **Quick actions** *(1.3)*: app-icon menu on iPhone/iPad, Dock menu and Transfers menu on the Mac.
 - **Siri and Shortcuts** *(iOS)*: "aMule status", "Pause / Resume downloads", "Add eD2k link" — they work even when the app is closed.
 - **`ed2k://` links from the system**: the app is registered as the handler for the `ed2k` scheme — a click in Safari or Mail opens the app and queues the download after confirmation.
 - **7 languages**: English, Italian, Spanish, French, German, Simplified Chinese and Arabic (RTL), with an in-app selector and a "System" option.
@@ -90,7 +107,7 @@ The Xcode project is generated from `project.yml` with [XcodeGen](https://github
 xcodegen generate
 ```
 
-Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro) and `AmuleRemoteMac` (sandboxed Mac App Store build). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemote/wiki/Building-and-signing)**.
+Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro), `AmuleRemoteTV` (Apple TV) and `AmuleRemoteMac` (sandboxed Mac App Store build). Every target carries the iCloud Key-Value Storage entitlement and a shared keychain access group (profile sync); the DMG build gets the same entitlements at signing time (`SupportFiles/MacDirect.entitlements` + a Developer ID provisioning profile embedded in the bundle). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemote/wiki/Building-and-signing)**.
 
 ## Signing and distribution
 
@@ -99,7 +116,9 @@ Since build 15 the macOS app published in the Releases is signed with a **Develo
 Reference process:
 
 ```bash
+cp YourDeveloperID.provisionprofile "aMule Remote.app/Contents/embedded.provisionprofile"   # iCloud sync
 codesign --force --deep --options runtime --timestamp \
+  --entitlements SupportFiles/MacDirect.entitlements \
   --sign "Developer ID Application: YOUR NAME (TEAMID)" "aMule Remote.app"
 ditto -c -k --keepParent "aMule Remote.app" notarize.zip
 xcrun notarytool submit notarize.zip --key AuthKey.p8 --key-id KEYID --issuer ISSUER --wait
@@ -110,7 +129,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.2 (build 17)**. Release tags follow the pattern `v1.2-build17`.
+Marketing version and build number are kept aligned across all platforms. Current: **1.3 (build 18)**. Release tags follow the pattern `v1.3-build18`.
 
 ## Protocol verification
 
@@ -118,4 +137,13 @@ The EC implementation (MD5-salted handshake, framing, nested tags, every operati
 
 ## Privacy
 
-aMule Remote collects no data at all: it only talks to the amuled server you configure. Server address and password are stored in the device Keychain. Full text: [Privacy policy](https://sidimam.github.io/AmuleRemote/).
+aMule Remote collects no data at all: it only talks to the amuled server you configure. Server address and password are stored in the device Keychain; with the optional iCloud sync they travel only through your own iCloud account (Key-Value Storage and iCloud Keychain). Full text: [Privacy policy](https://sidimam.github.io/AmuleRemote/).
+
+## Support
+
+- 📖 [Wiki](https://github.com/sidimam/AmuleRemote/wiki) — setup guides, features, FAQ.
+- 🐞 [Report a problem](https://github.com/sidimam/AmuleRemote/issues/new/choose) — the in-app *Report a problem* link pre-fills version, build and platform.
+
+## License
+
+aMule Remote is free software released under the **[MIT License](LICENSE)** — Copyright © 2026 Simone Di Mambro. The EC (External Connections) protocol belongs to the [aMule project](https://amule-org.github.io).

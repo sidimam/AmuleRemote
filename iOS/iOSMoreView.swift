@@ -90,8 +90,15 @@ struct iOSMoreView: View {
                         Text("10 minuti").tag(600)
                         Text("30 minuti").tag(1800)
                     } label: {
-                        Label("Disconnetti dopo inattività", systemImage: "zzz")
+                        Label("Vai offline dopo inattività", systemImage: "zzz")
                     }
+                    Toggle(isOn: Binding(
+                        get: { state.iCloudSyncEnabled },
+                        set: { state.setCloudSync($0) }
+                    )) {
+                        Label("Sincronizza profili con iCloud", systemImage: "icloud")
+                    }
+                    .disabled(!CloudSync.isAvailable)
                     Toggle(isOn: Binding(
                         get: { state.biometricLockEnabled },
                         set: { newValue in Task { await state.setBiometricLock(newValue) } }
@@ -102,7 +109,7 @@ struct iOSMoreView: View {
                 } header: {
                     Text("Impostazioni app")
                 } footer: {
-                    Text("Con il blocco attivo, all'apertura (e al ritorno in primo piano) l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Per risparmiare batteria e dati, l'app si disconnette dal server dopo il periodo di inattività scelto. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).")
+                    Text("Dopo il periodo di inattività scelto (e quando l'app va in background) la connessione al server si chiude per risparmiare batteria e dati, ma i dati restano visibili in stato Offline: la connessione riparte da sola al primo tocco o al ritorno in primo piano. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi. Con il blocco attivo, all'apertura l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).")
                 }
 
                 Section {
@@ -158,13 +165,7 @@ struct iOSMoreView: View {
                     }
                 }
 
-                Section("Informazioni app") {
-                    LabeledContent {
-                        Text(appVersionString())
-                    } label: {
-                        Label("aMule Remote", systemImage: "app.badge")
-                    }
-                }
+                AppInfoSection()
             }
             .navigationTitle("Altro")
         }

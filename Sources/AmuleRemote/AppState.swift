@@ -41,8 +41,22 @@ final class AppState: ObservableObject {
     @Published var password: String = ""
 
     // Profili server (default = quello proposto all'avvio e usato in background).
-    @Published var profiles: [ServerProfile] { didSet { ProfileStore.save(profiles) } }
-    @Published var defaultProfileID: UUID? { didSet { ProfileStore.defaultID = defaultProfileID } }
+    @Published var profiles: [ServerProfile] {
+        didSet {
+            ProfileStore.save(profiles)
+            if profiles != oldValue { pushProfilesToCloud() }
+        }
+    }
+    @Published var defaultProfileID: UUID? {
+        didSet {
+            ProfileStore.defaultID = defaultProfileID
+            if defaultProfileID != oldValue { pushProfilesToCloud() }
+        }
+    }
+    // Sincronizzazione iCloud dei profili (opzionale, spenta di default; CloudSync.swift).
+    @Published var iCloudSyncEnabled: Bool { didSet { UserDefaults.standard.set(iCloudSyncEnabled, forKey: CloudSync.enabledKey) } }
+    /// Profili trovati su iCloud da un dispositivo senza profili (banner "Ripristina").
+    @Published var cloudProfilesAvailable = 0
 
     // Aspetto: chiaro / scuro / sistema.
     @Published var themeMode: ThemeMode {
@@ -93,6 +107,19 @@ final class AppState: ObservableObject {
     // connection (e.g. amuled stopped) — instead of a raw network-error alert.
     @Published var connectionLostMessage: String?
 
+    // Stato "Offline": dopo l'inattività (o quando l'app va in background) la
+    // connessione EC viene chiusa, ma i dati restano in vista dall'ultimo
+    // snapshot su disco; al ritorno dell'utente la connessione riparte da sola.
+    @Published var offline = false
+    @Published var offlineSince: Date?
+    @Published var offlineError: String?
+    /// Messaggio informativo non bloccante (es. esito di un'azione rapida).
+    @Published var infoMessage: String?
+    /// Richiesta di aprire "Aggiungi link eD2k" (azioni rapide / menu).
+    @Published var addLinkRequested = false
+    /// La finestra principale va mostrata: connesso, oppure offline con dati in cache.
+    var sessionActive: Bool { connected || offline }
+
     @Published var selectedSection: AppSection? = .downloads
 
     // Data
@@ -115,6 +142,7 @@ final class AppState: ObservableObject {
     @Published var prefsLoaded = false
 
     private var pollTask: Task<Void, Never>?
+    private var pollCounter = 0
 
     // MARK: - Idle auto-disconnect
     private var idleTask: Task<Void, Never>?
@@ -123,27 +151,30 @@ final class AppState: ObservableObject {
     /// Call on any user interaction to reset the inactivity timer.
     func markActivity() {
         lastActivity = ContinuousClock.now
+        // Offline: il primo tocco/clic dell'utente fa ripartire la connessione.
+        if offline && !connecting {
+            Task { await resumeFromOffline() }
+        }
     }
 
     private func startIdleWatcher() {
         idleTask?.cancel()
-        // Idle auto-disconnect is an iOS/iPadOS feature; on macOS the window
-        // stays connected (we don't track pointer activity there).
-        #if !os(iOS)
+        // Su tvOS e watchOS non c'è un timer di inattività: l'app va offline
+        // quando passa in background (scenePhase). Su iOS/iPadOS/visionOS il
+        // tocco e su macOS clic/tasti azzerano il timer (markActivity).
+        #if os(tvOS) || os(watchOS)
         return
         #else
         guard idleTimeout > 0 else { return }
         idleTask = Task { [weak self] in
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
-                guard let self, self.connected, self.idleTimeout > 0 else { continue }
+                guard let self, self.connected, !self.demoMode, self.idleTimeout > 0 else { continue }
                 let elapsed = ContinuousClock.now - self.lastActivity
                 if elapsed > .seconds(self.idleTimeout) {
-                    self.lastError = "Disconnesso per inattività (\(self.idleTimeout)s)."
-                    await self.disconnect()
-                    // Il monitoraggio continua anche da disconnessi: controlli
-                    // periodici leggeri con notifiche di completamenti e cadute.
-                    self.startOfflineMonitor()
+                    // Non più una disconnessione: l'app passa in stato Offline
+                    // con i dati in cache e si riconnette da sola al ritorno.
+                    await self.enterOffline()
                 }
             }
         }
@@ -165,7 +196,14 @@ final class AppState: ObservableObject {
         host = defaults.string(forKey: "host") ?? ""
         port = defaults.object(forKey: "port") as? Int ?? 4712
         autoConnect = defaults.bool(forKey: "autoConnect")
+        // Su Mac e Apple TV il timer parte disattivato (la finestra resta in
+        // vista per monitorare); su iPhone/iPad/Vision 120 s come sempre.
+        #if os(macOS) || os(tvOS)
+        idleTimeout = defaults.object(forKey: "idleTimeout") as? Int ?? 0
+        #else
         idleTimeout = defaults.object(forKey: "idleTimeout") as? Int ?? 120
+        #endif
+        iCloudSyncEnabled = CloudSync.isAvailable && defaults.bool(forKey: CloudSync.enabledKey)
         themeMode = ThemeMode(rawValue: defaults.string(forKey: "themeMode") ?? "") ?? .system
         appLanguage = AppLanguage(rawValue: defaults.string(forKey: "appLanguage") ?? "") ?? .system
         biometricLockEnabled = defaults.bool(forKey: "biometricLock")
@@ -204,10 +242,21 @@ final class AppState: ObservableObject {
         if !host.isEmpty {
             password = Keychain.loadPassword(account: "\(host):\(port)") ?? ""
         }
+        // Riapertura: se c'è uno snapshot dell'ultimo server, l'app parte
+        // subito in stato Offline con i dati in cache e si riconnette da sola
+        // (con il blocco attivo, dopo lo sblocco).
+        if autoConnect, !host.isEmpty, !password.isEmpty,
+           let snap = OfflineCache.load(server: "\(host):\(port)") {
+            applySnapshot(snap)
+            offline = true
+            offlineSince = snap.savedAt
+        }
         // Con il blocco attivo la connessione automatica parte dopo lo sblocco.
         if !locked && autoConnect && !host.isEmpty && !password.isEmpty {
             Task { await connect() }
         }
+        // iCloud: osserva i cambiamenti (e propone il ripristino sui dispositivi nuovi).
+        startCloudSync()
 
         // Avvio diretto in modalità demo (per screenshot e collaudo):
         // argomento di lancio -demo, con -section <search|servers|shared|stats|prefs>
@@ -245,7 +294,7 @@ final class AppState: ObservableObject {
 
     /// Cambio rapido: disconnette dal server corrente e connette al profilo scelto.
     func switchProfile(to p: ServerProfile) async {
-        if connected || demoMode { await disconnect() }
+        if connected || demoMode || offline { await disconnect() }
         applyProfile(p)
         if !password.isEmpty {
             await connect()
@@ -253,6 +302,8 @@ final class AppState: ObservableObject {
     }
 
     func upsertProfile(_ p: ServerProfile) {
+        var p = p
+        p.updatedAt = Date()
         if let i = profiles.firstIndex(where: { $0.id == p.id }) {
             profiles[i] = p
         } else {
@@ -264,6 +315,12 @@ final class AppState: ObservableObject {
     func deleteProfile(_ p: ServerProfile) {
         profiles.removeAll { $0.id == p.id }
         if defaultProfileID == p.id { defaultProfileID = profiles.first?.id }
+        // Tombstone: la cancellazione si propaga via iCloud agli altri dispositivi.
+        var deleted = deletedProfileIDs
+        deleted.insert(p.id)
+        deletedProfileIDs = deleted
+        pushProfilesToCloud()
+        OfflineCache.delete(server: p.address)
     }
 
     func setDefaultProfile(_ p: ServerProfile) {
@@ -302,7 +359,7 @@ final class AppState: ObservableObject {
     /// Dopo una connessione riuscita, un server nuovo entra da solo nei profili.
     private func autoCreateProfileIfNeeded() {
         guard currentProfile == nil, !host.isEmpty else { return }
-        let p = ServerProfile(name: host, host: host, port: port)
+        let p = ServerProfile(name: host, host: host, port: port, updatedAt: Date())
         profiles.append(p)
         if defaultProfileID == nil { defaultProfileID = p.id }
     }
@@ -340,7 +397,9 @@ final class AppState: ObservableObject {
         guard locked else { return }
         guard await BiometricAuth.authenticate(reason: "Sblocca aMule Remote") else { return }
         locked = false
-        if autoConnect && !connected && !host.isEmpty && !password.isEmpty {
+        if offline {
+            await resumeFromOffline()
+        } else if autoConnect && !connected && !host.isEmpty && !password.isEmpty {
             await connect()
         }
     }
@@ -381,6 +440,9 @@ final class AppState: ObservableObject {
             try await client.connect(host: host, port: UInt16(clamping: port), password: password)
             serverVersion = await client.serverVersion
             connected = true
+            offline = false
+            offlineSince = nil
+            offlineError = nil
             stopOfflineMonitor()
             lastNetState = nil
             Keychain.savePassword(password, account: "\(host):\(port)")
@@ -395,7 +457,13 @@ final class AppState: ObservableObject {
             await Notifier.requestPermission()
             pushWatchSnapshot()
         } catch {
-            lastError = error.localizedDescription
+            if offline {
+                // Riconnessione automatica fallita: si resta offline con i dati
+                // in cache, senza alert; il banner mostra il motivo.
+                offlineError = error.localizedDescription
+            } else {
+                lastError = error.localizedDescription
+            }
             connected = false
         }
         connecting = false
@@ -423,9 +491,74 @@ final class AppState: ObservableObject {
             await client.disconnectNow()
         }
         connected = false
+        offline = false
+        offlineSince = nil
+        offlineError = nil
         serverVersion = ""
         lastNetState = nil
         pushWatchSnapshot()
+    }
+
+    // MARK: - Stato Offline (cache locale + riconnessione automatica)
+
+    /// Snapshot dei dati correnti, salvato su disco per server.
+    func saveSnapshot() {
+        guard connected, !demoMode, !host.isEmpty else { return }
+        let snap = OfflineSnapshot(savedAt: Date(), serverVersion: serverVersion, stats: stats,
+                                   connState: connState, downloads: downloads, uploads: uploads,
+                                   servers: servers, sharedFiles: sharedFiles, logText: logText)
+        OfflineCache.save(snap, server: "\(host):\(port)")
+    }
+
+    func applySnapshot(_ snap: OfflineSnapshot) {
+        serverVersion = snap.serverVersion
+        stats = snap.stats
+        connState = snap.connState
+        downloads = snap.downloads
+        uploads = snap.uploads
+        servers = snap.servers
+        sharedFiles = snap.sharedFiles
+        logText = snap.logText
+    }
+
+    /// Chiude la connessione EC ma tiene i dati in vista (stato Offline):
+    /// dopo il periodo di inattività o quando l'app va in background.
+    func enterOffline() async {
+        guard connected, !demoMode else { return }
+        saveSnapshot()
+        pollTask?.cancel()
+        pollTask = nil
+        idleTask?.cancel()
+        idleTask = nil
+        await client.disconnectNow()
+        connected = false
+        offline = true
+        offlineSince = Date()
+        offlineError = nil
+        lastNetState = nil
+        // I controlli con notifiche continuano come dopo una disconnessione.
+        startOfflineMonitor()
+        pushWatchSnapshot()
+    }
+
+    /// Riconnessione automatica (ritorno in primo piano, tocco, "Riconnetti").
+    func resumeFromOffline() async {
+        guard offline, !connecting, !host.isEmpty, !password.isEmpty else { return }
+        await connect()
+    }
+
+    /// Mette in pausa tutti i download attivi; ritorna quanti.
+    func pauseAll() async -> Int {
+        let items = downloads.filter { !$0.isPaused && !$0.isComplete }
+        for item in items { await pause(item) }
+        return items.count
+    }
+
+    /// Riprende tutti i download in pausa; ritorna quanti.
+    func resumeAll() async -> Int {
+        let items = downloads.filter { $0.isPaused }
+        for item in items { await resume(item) }
+        return items.count
     }
 
     // MARK: - Monitor offline (tutte le piattaforme)
@@ -479,6 +612,12 @@ final class AppState: ObservableObject {
     }
 
     private func handle(_ error: Error) {
+        // Offline (socket chiuso di proposito): nessun alert, un'azione
+        // dell'utente fa semplicemente ripartire la connessione.
+        if offline {
+            if !connecting { Task { await resumeFromOffline() } }
+            return
+        }
         // Already showing the "server stopped" banner: ignore the follow-up
         // errors from other in-flight requests in the same failure cascade.
         if connectionLostMessage != nil { return }
@@ -534,6 +673,9 @@ final class AppState: ObservableObject {
         if searchSessions.contains(where: { $0.inProgress }) { await refreshSearch() }
         if selectedSection == .log { await refreshLog() }
         pushWatchSnapshot()
+        // Snapshot su disco ogni ~30 s (10 giri): pronto per l'apertura successiva.
+        pollCounter += 1
+        if pollCounter % 10 == 0 { saveSnapshot() }
     }
 
     func refreshAll() async {

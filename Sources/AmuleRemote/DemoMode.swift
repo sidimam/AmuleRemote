@@ -19,6 +19,9 @@ extension AppState {
         demoMode = true
         connected = true
         connecting = false
+        offline = false
+        offlineSince = nil
+        offlineError = nil
         lastError = nil
         connectionLostMessage = nil
         serverVersion = "2.3.3 (demo)"

@@ -1,6 +1,46 @@
 {
   "sourceLanguage": "it",
   "strings": {
+    "%@. Software libero con licenza MIT. Il protocollo EC (External Connections) appartiene al progetto aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. برنامج حر بترخيص MIT. بروتوكول EC (External Connections) يعود إلى مشروع aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Freie Software unter MIT-Lizenz. Das EC-Protokoll (External Connections) gehört dem aMule-Projekt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Free software under the MIT License. The EC (External Connections) protocol belongs to the aMule project."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Software libre con licencia MIT. El protocolo EC (External Connections) pertenece al proyecto aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Logiciel libre sous licence MIT. Le protocole EC (External Connections) appartient au projet aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@。基于 MIT 许可证的自由软件。EC（External Connections）协议归 aMule 项目所有。"
+          }
+        }
+      }
+    },
     "%lld errori": {
       "localizations": {
         "ar": {
@@ -1241,6 +1281,46 @@
         }
       }
     },
+    "Aggiungi link eD2k…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة رابط eD2k…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k-Link hinzufügen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add eD2k link…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir enlace eD2k…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter un lien eD2k…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加 eD2k 链接…"
+          }
+        }
+      }
+    },
     "Aggiungi server": {
       "localizations": {
         "ar": {
@@ -1397,6 +1477,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加来自服务器的服务器"
+          }
+        }
+      }
+    },
+    "Aggiungi un link eD2k o cerca un file.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أضف رابط eD2k أو ابحث عن ملف."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge einen eD2k-Link hinzu oder suche eine Datei."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add an eD2k link or search for a file."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade un enlace eD2k o busca un archivo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez un lien eD2k ou recherchez un fichier."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加 eD2k 链接或搜索文件。"
           }
         }
       }
@@ -1997,6 +2117,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "仅自动连接静态服务器"
+          }
+        }
+      }
+    },
+    "Autore": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المؤلف"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autor"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Author"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autor"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auteur"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作者"
           }
         }
       }
@@ -3241,6 +3401,46 @@
         }
       }
     },
+    "Codice sorgente": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الشيفرة المصدرية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellcode"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source code"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código fuente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code source"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "源代码"
+          }
+        }
+      }
+    },
     "Colore icona": {
       "localizations": {
         "ar": {
@@ -3717,6 +3917,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用打开时按所选间隔检查；在后台由 iOS 决定频率，并以该值为下限（不低于 15 分钟，以保护电池）。图标颜色适用于 iPhone 和 iPad；Apple Watch 保留原始图标。"
+          }
+        }
+      }
+    },
+    "Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مع مزامنة iCloud تتم مشاركة ملفات تعريف الخادم وكلمات مرورها (سلسلة مفاتيح iCloud) بين أجهزتك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit der iCloud-Synchronisierung werden die Serverprofile und ihre Passwörter (iCloud-Schlüsselbund) auf allen deinen Geräten geteilt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With iCloud sync your server profiles and their passwords (iCloud Keychain) are shared across your devices."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con la sincronización de iCloud, los perfiles de servidor y sus contraseñas (Llavero de iCloud) se comparten entre tus dispositivos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avec la synchronisation iCloud, les profils de serveur et leurs mots de passe (trousseau iCloud) sont partagés entre vos appareils."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "启用 iCloud 同步后，服务器配置及其密码（iCloud 钥匙串）会在你的所有设备间共享。"
           }
         }
       }
@@ -4681,6 +4921,46 @@
         }
       }
     },
+    "Dati aggiornati alle %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم تحديث البيانات في %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daten aktualisiert um %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data updated at %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datos actualizados a las %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Données mises à jour à %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数据更新于 %@"
+          }
+        }
+      }
+    },
     "Descrizione": {
       "localizations": {
         "ar": {
@@ -5117,6 +5397,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "网页服务器域名"
+          }
+        }
+      }
+    },
+    "Dopo il periodo di inattività scelto (e quando l'app va in background) la connessione al server si chiude per risparmiare batteria e dati, ma i dati restano visibili in stato Offline: la connessione riparte da sola al primo tocco o al ritorno in primo piano. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi. Con il blocco attivo, all'apertura l'app chiede %@ prima di mostrare i contenuti. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد فترة الخمول المحددة (وعند انتقال التطبيق إلى الخلفية) يُغلق الاتصال بالخادم لتوفير البطارية والبيانات، لكن البيانات تبقى ظاهرة في وضع عدم الاتصال: يُستأنف الاتصال تلقائيًا عند أول لمسة أو عند العودة إلى المقدمة. مع مزامنة iCloud تتم مشاركة ملفات تعريف الخادم وكلمات مرورها (سلسلة مفاتيح iCloud) بين أجهزتك. مع تفعيل القفل يطلب التطبيق %@ عند الفتح قبل عرض المحتوى. يُطبَّق لون الأيقونة على iPhone وiPad وApple Vision Pro؛ وتبقى الأيقونة الأصلية على Apple Watch (قيد في watchOS)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach der gewählten Inaktivitätszeit (und wenn die App in den Hintergrund geht) wird die Serververbindung geschlossen, um Akku und Daten zu sparen; die Daten bleiben jedoch im Offline-Modus sichtbar: Die Verbindung wird beim ersten Tippen oder bei der Rückkehr in den Vordergrund automatisch wiederhergestellt. Mit der iCloud-Synchronisierung werden die Serverprofile und ihre Passwörter (iCloud-Schlüsselbund) auf allen deinen Geräten geteilt. Bei aktiver Sperre fragt die App beim Öffnen nach %@, bevor Inhalte angezeigt werden. Die Symbolfarbe gilt für iPhone, iPad und Apple Vision Pro; auf der Apple Watch bleibt das Originalsymbol (watchOS-Einschränkung)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the chosen idle period (and when the app goes to the background) the server connection is closed to save battery and data, but the data stays visible in Offline mode: the connection resumes by itself at the first tap or when the app returns to the foreground. With iCloud sync your server profiles and their passwords (iCloud Keychain) are shared across your devices. With the lock on, the app asks for %@ before showing its content. The icon color applies to iPhone, iPad and Apple Vision Pro; Apple Watch keeps the original icon (a watchOS limitation)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras el periodo de inactividad elegido (y cuando la app pasa a segundo plano) la conexión con el servidor se cierra para ahorrar batería y datos, pero los datos siguen visibles en modo Sin conexión: la conexión se reanuda sola al primer toque o al volver a primer plano. Con la sincronización de iCloud, los perfiles de servidor y sus contraseñas (Llavero de iCloud) se comparten entre tus dispositivos. Con el bloqueo activo, al abrir la app pide %@ antes de mostrar el contenido. El color del icono se aplica a iPhone, iPad y Apple Vision Pro; en Apple Watch permanece el icono original (límite de watchOS)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après la période d'inactivité choisie (et quand l'app passe en arrière-plan) la connexion au serveur est fermée pour économiser batterie et données, mais les données restent visibles en mode Hors ligne : la connexion reprend d'elle-même au premier toucher ou au retour au premier plan. Avec la synchronisation iCloud, les profils de serveur et leurs mots de passe (trousseau iCloud) sont partagés entre vos appareils. Avec le verrouillage actif, l'app demande %@ à l'ouverture avant d'afficher le contenu. La couleur de l'icône s'applique à l'iPhone, l'iPad et l'Apple Vision Pro ; l'Apple Watch garde l'icône d'origine (limite de watchOS)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在所选的闲置时间后（以及 App 进入后台时），与服务器的连接会关闭以节省电量和流量，但数据会以离线状态继续显示：首次点按或回到前台时连接会自动恢复。启用 iCloud 同步后，服务器配置及其密码（iCloud 钥匙串）会在你的所有设备间共享。启用锁定后，App 在打开时会先要求 %@ 再显示内容。图标颜色适用于 iPhone、iPad 和 Apple Vision Pro；Apple Watch 保留原始图标（watchOS 的限制）。"
+          }
+        }
+      }
+    },
+    "Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede %@ (o la password del Mac) prima di mostrare i contenuti.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد فترة الخمول المحددة (بدون نقر أو ضغط مفتاح) يُغلق الاتصال بالخادم، لكن البيانات تبقى ظاهرة في وضع عدم الاتصال: يُستأنف تلقائيًا عند أول نقرة أو عبر «إعادة الاتصال». تغيير اللغة فوري للواجهة؛ أما الإشعارات والتنسيقات فتتبع عند التشغيل التالي. يغيّر اللون أيقونة Dock؛ وتبقى أيقونة Finder الأصلية. مع تفعيل القفل يطلب التطبيق %@ (أو كلمة مرور Mac) عند التشغيل قبل عرض المحتوى."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach der gewählten Inaktivitätszeit (kein Klick, keine Taste) wird die Serververbindung geschlossen; die Daten bleiben jedoch im Offline-Modus sichtbar: Beim ersten Klick oder mit „Erneut verbinden“ geht es automatisch weiter. Der Sprachwechsel wirkt sofort auf die Oberfläche; Mitteilungen und Formate folgen beim nächsten Start. Die Farbe ändert das Dock-Symbol; das Finder-Symbol bleibt das Original. Bei aktiver Sperre fragt die App beim Start nach %@ (oder dem Mac-Passwort), bevor Inhalte angezeigt werden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the chosen idle period (no click or key press) the server connection is closed, but the data stays visible in Offline mode: it resumes by itself at the first click or with “Reconnect”. The language change is immediate for the interface; notifications and formats follow at the next launch. The color changes the Dock icon; the Finder icon stays the original. With the lock on, the app asks for %@ (or the Mac password) at launch before showing its content."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras el periodo de inactividad elegido (sin clics ni teclas) la conexión con el servidor se cierra, pero los datos siguen visibles en modo Sin conexión: se reanuda sola al primer clic o con «Reconectar». El cambio de idioma es inmediato para la interfaz; notificaciones y formatos se adaptan en el próximo inicio. El color cambia el icono del Dock; el del Finder sigue siendo el original. Con el bloqueo activo, al iniciar la app pide %@ (o la contraseña del Mac) antes de mostrar el contenido."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après la période d'inactivité choisie (ni clic ni touche) la connexion au serveur est fermée, mais les données restent visibles en mode Hors ligne : elle reprend d'elle-même au premier clic ou avec « Reconnecter ». Le changement de langue est immédiat pour l'interface ; notifications et formats suivent au prochain lancement. La couleur change l'icône du Dock ; celle du Finder reste l'originale. Avec le verrouillage actif, l'app demande %@ (ou le mot de passe du Mac) au lancement avant d'afficher le contenu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在所选的闲置时间后（无点击或按键），与服务器的连接会关闭，但数据会以离线状态继续显示：首次点击或点按“重新连接”时会自动恢复。界面语言即时切换；通知和格式在下次启动时生效。颜色会更改 Dock 图标；Finder 中的图标保持原样。启用锁定后，App 启动时会先要求 %@（或 Mac 密码）再显示内容。"
           }
         }
       }
@@ -6281,6 +6641,46 @@
         }
       }
     },
+    "File: %llu": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الملفات: %llu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien: %llu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Files: %llu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivos: %llu"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichiers : %llu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文件：%llu"
+          }
+        }
+      }
+    },
     "Filtra anche indirizzi LAN": {
       "localizations": {
         "ar": {
@@ -6921,6 +7321,46 @@
         }
       }
     },
+    "Fonti: %llu/%llu": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المصادر: %llu/%llu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellen: %llu/%llu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources: %llu/%llu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuentes: %llu/%llu"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources : %llu/%llu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "来源：%llu/%llu"
+          }
+        }
+      }
+    },
     "Generale": {
       "localizations": {
         "ar": {
@@ -7077,6 +7517,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "石墨色"
+          }
+        }
+      }
+    },
+    "Guida (wiki)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الدليل (ويكي)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anleitung (Wiki)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide (wiki)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guía (wiki)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide (wiki)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指南（wiki）"
+          }
+        }
+      }
+    },
+    "Guida di aMule Remote (wiki)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دليل aMule Remote (ويكي)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote Anleitung (Wiki)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote Guide (wiki)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guía de aMule Remote (wiki)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide d'aMule Remote (wiki)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote 指南（wiki）"
           }
         }
       }
@@ -7921,6 +8441,46 @@
         }
       }
     },
+    "Impostazioni": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإعدادات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
+          }
+        }
+      }
+    },
     "Impostazioni aMule (remoto)": {
       "localizations": {
         "ar": {
@@ -8037,6 +8597,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "高级设置"
+          }
+        }
+      }
+    },
+    "Incolla o detta il link: con un iPhone vicino puoi usare la notifica «Tastiera Apple TV».": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الصق الرابط أو أملِه: مع وجود iPhone قريب يمكنك استخدام إشعار «لوحة مفاتيح Apple TV»."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge den Link ein oder diktiere ihn: Mit einem iPhone in der Nähe kannst du die Mitteilung „Apple TV-Tastatur“ verwenden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paste or dictate the link: with an iPhone nearby you can use the “Apple TV Keyboard” notification."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pega o dicta el enlace: con un iPhone cerca puedes usar la notificación «Teclado del Apple TV»."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collez ou dictez le lien : avec un iPhone à proximité, utilisez la notification « Clavier Apple TV »."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "粘贴或口述链接：附近有 iPhone 时可使用“Apple TV 键盘”通知。"
           }
         }
       }
@@ -8161,6 +8761,46 @@
         }
       }
     },
+    "Informativa sulla privacy": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سياسة الخصوصية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutzrichtlinie"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy policy"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Politique de confidentialité"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "隐私政策"
+          }
+        }
+      }
+    },
     "Informazioni app": {
       "localizations": {
         "ar": {
@@ -8197,6 +8837,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "关于"
+          }
+        }
+      }
+    },
+    "Informazioni su aMule Remote": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حول aMule Remote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über aMule Remote"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About aMule Remote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de aMule Remote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À propos d'aMule Remote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关于 aMule Remote"
           }
         }
       }
@@ -8681,6 +9361,46 @@
         }
       }
     },
+    "La sincronizzazione iCloud richiede la build firmata ufficiale (DMG dal sito, Homebrew o Mac App Store): questa copia non ha il profilo iCloud.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تتطلب مزامنة iCloud الإصدار الرسمي الموقّع (DMG من الموقع أو Homebrew أو Mac App Store): هذه النسخة لا تحتوي على ملف تعريف iCloud."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die iCloud-Synchronisierung erfordert den offiziellen signierten Build (DMG von der Website, Homebrew oder Mac App Store): Diese Kopie hat kein iCloud-Profil."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud sync requires the official signed build (DMG from the website, Homebrew or Mac App Store): this copy has no iCloud profile."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sincronización de iCloud requiere la compilación oficial firmada (DMG del sitio, Homebrew o Mac App Store): esta copia no tiene el perfil de iCloud."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La synchronisation iCloud nécessite la version officielle signée (DMG du site, Homebrew ou Mac App Store) : cette copie n'a pas le profil iCloud."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 同步需要官方签名版本（网站 DMG、Homebrew 或 Mac App Store）：此副本没有 iCloud 配置文件。"
+          }
+        }
+      }
+    },
     "Le notifiche di aMule Remote sono disattivate nelle Impostazioni del dispositivo. Attivale da Impostazioni → aMule Remote → Notifiche.": {
       "localizations": {
         "ar": {
@@ -8757,6 +9477,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote 的通知已在系统设置中关闭。请在“系统设置 → 通知 → aMule Remote”中开启。"
+          }
+        }
+      }
+    },
+    "Licenza": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الترخيص"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lizenz"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "License"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licencia"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licence"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "许可证"
           }
         }
       }
@@ -9521,6 +10281,46 @@
         }
       }
     },
+    "Metti in pausa tutti i download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إيقاف كل التنزيلات مؤقتًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Downloads pausieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause all downloads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar todas las descargas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mettre en pause tous les téléchargements"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停所有下载"
+          }
+        }
+      }
+    },
     "Modifica profilo": {
       "localizations": {
         "ar": {
@@ -9801,6 +10601,46 @@
         }
       }
     },
+    "Nessun download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد تنزيلات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Downloads"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No downloads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin descargas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有下载"
+          }
+        }
+      }
+    },
     "Nessun file in coda.": {
       "localizations": {
         "ar": {
@@ -9877,6 +10717,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote 中未配置服务器。"
+          }
+        }
+      }
+    },
+    "Nessun risultato": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد نتائج"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Ergebnisse"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No results"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin resultados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun résultat"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有结果"
           }
         }
       }
@@ -10681,6 +11561,46 @@
         }
       }
     },
+    "Offline": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير متصل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin conexión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hors ligne"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "离线"
+          }
+        }
+      }
+    },
     "Overhead down": {
       "localizations": {
         "ar": {
@@ -11001,6 +11921,46 @@
         }
       }
     },
+    "Pausa tutti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إيقاف الكل مؤقتًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle pausieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause all"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tout mettre en pause"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部暂停"
+          }
+        }
+      }
+    },
     "Ping": {
       "localizations": {
         "ar": {
@@ -11037,6 +11997,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ping"
+          }
+        }
+      }
+    },
+    "Ping: %llu": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping: %llu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping: %llu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping: %llu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping: %llu"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping : %llu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping：%llu"
           }
         }
       }
@@ -11641,6 +12641,46 @@
         }
       }
     },
+    "Priorità…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأولوية…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorität…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priority…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioridad…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "优先级…"
+          }
+        }
+      }
+    },
     "Profili": {
       "localizations": {
         "ar": {
@@ -11717,6 +12757,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "服务器配置"
+          }
+        }
+      }
+    },
+    "Profili trovati sul tuo account iCloud: nessuna digitazione necessaria.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على ملفات تعريف في حساب iCloud الخاص بك: لا حاجة للكتابة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile in deinem iCloud-Account gefunden: keine Eingabe nötig."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profiles found on your iCloud account: no typing needed."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfiles encontrados en tu cuenta de iCloud: no hace falta escribir nada."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profils trouvés sur votre compte iCloud : aucune saisie nécessaire."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在你的 iCloud 账户中找到配置：无需输入。"
           }
         }
       }
@@ -11957,6 +13037,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "代理、界面和事件不在 aMule 的 EC 协议中开放：无法远程配置（aMuleGUI 也不行）——请在服务器的 amule.conf 中设置。"
+          }
+        }
+      }
+    },
+    "Quando l'app lascia lo schermo la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola alla riapertura. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عند مغادرة التطبيق للشاشة يُغلق الاتصال بالخادم، لكن البيانات تبقى ظاهرة في وضع عدم الاتصال: يُستأنف تلقائيًا عند إعادة الفتح. مع مزامنة iCloud تتم مشاركة ملفات تعريف الخادم وكلمات مرورها (سلسلة مفاتيح iCloud) بين أجهزتك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn die App den Bildschirm verlässt, wird die Serververbindung geschlossen; die Daten bleiben jedoch im Offline-Modus sichtbar: Beim erneuten Öffnen geht es automatisch weiter. Mit der iCloud-Synchronisierung werden die Serverprofile und ihre Passwörter (iCloud-Schlüsselbund) auf allen deinen Geräten geteilt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When the app leaves the screen the server connection is closed, but the data stays visible in Offline mode: it resumes by itself when the app reopens. With iCloud sync your server profiles and their passwords (iCloud Keychain) are shared across your devices."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando la app sale de la pantalla la conexión con el servidor se cierra, pero los datos siguen visibles en modo Sin conexión: se reanuda sola al reabrirla. Con la sincronización de iCloud, los perfiles de servidor y sus contraseñas (Llavero de iCloud) se comparten entre tus dispositivos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quand l'app quitte l'écran, la connexion au serveur est fermée, mais les données restent visibles en mode Hors ligne : elle reprend d'elle-même à la réouverture. Avec la synchronisation iCloud, les profils de serveur et leurs mots de passe (trousseau iCloud) sont partagés entre vos appareils."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 离开屏幕时会关闭与服务器的连接，但数据会以离线状态继续显示：重新打开时自动恢复。启用 iCloud 同步后，服务器配置及其密码（iCloud 钥匙串）会在你的所有设备间共享。"
           }
         }
       }
@@ -12481,6 +13601,86 @@
         }
       }
     },
+    "Riconnessione in corso…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ إعادة الاتصال…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung wird wiederhergestellt…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnecting…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconectando…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnexion…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在重新连接…"
+          }
+        }
+      }
+    },
+    "Riconnetti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعادة الاتصال"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut verbinden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnect"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconectar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnecter"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重新连接"
+          }
+        }
+      }
+    },
     "Riconnetti automaticamente": {
       "localizations": {
         "ar": {
@@ -12921,6 +14121,86 @@
         }
       }
     },
+    "Riprendi tutti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استئناف الكل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume all"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tout reprendre"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部继续"
+          }
+        }
+      }
+    },
+    "Riprendi tutti i download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استئناف كل التنزيلات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Downloads fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume all downloads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudar todas las descargas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reprendre tous les téléchargements"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续所有下载"
+          }
+        }
+      }
+    },
     "Ripresi %lld download.": {
       "localizations": {
         "ar": {
@@ -12961,6 +14241,86 @@
         }
       }
     },
+    "Ripristina": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "恢复"
+          }
+        }
+      }
+    },
+    "Ripristina %lld profili server da iCloud": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة %lld من ملفات تعريف الخادم من iCloud"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Serverprofile aus iCloud wiederherstellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore %lld server profiles from iCloud"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar %lld perfiles de servidor desde iCloud"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer %lld profils de serveur depuis iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从 iCloud 恢复 %lld 个服务器配置"
+          }
+        }
+      }
+    },
     "Riscansione automatica delle cartelle condivise": {
       "localizations": {
         "ar": {
@@ -12997,6 +14357,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "自动重新扫描共享文件夹"
+          }
+        }
+      }
+    },
+    "Risultati (%lld)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النتائج (%lld)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ergebnisse (%lld)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Results (%lld)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultados (%lld)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résultats (%lld)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "结果（%lld）"
           }
         }
       }
@@ -13241,6 +14641,46 @@
         }
       }
     },
+    "Scrivi il testo nella barra di ricerca e premi Cerca. I risultati già in download sono in rosso, quelli già scaricati in verde.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اكتب النص في شريط البحث واضغط بحث. النتائج التي يجري تنزيلها تظهر بالأحمر، والملفات المنزّلة سابقًا بالأخضر."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gib den Text in die Suchleiste ein und drücke Suchen. Bereits laufende Downloads erscheinen rot, bereits heruntergeladene Dateien grün."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type in the search bar and press Search. Results already downloading are shown in red, files you already downloaded in green."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe en la barra de búsqueda y pulsa Buscar. Los resultados ya en descarga aparecen en rojo, los ya descargados en verde."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saisissez le texte dans la barre de recherche et appuyez sur Rechercher. Les résultats déjà en téléchargement sont en rouge, ceux déjà téléchargés en vert."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在搜索栏输入文字并按“搜索”。正在下载的结果显示为红色，已下载的显示为绿色。"
+          }
+        }
+      }
+    },
     "Scuro": {
       "localizations": {
         "ar": {
@@ -13277,6 +14717,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "深色"
+          }
+        }
+      }
+    },
+    "Segnala un problema": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإبلاغ عن مشكلة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Problem melden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report a problem"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informar de un problema"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signaler un problème"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报告问题"
           }
         }
       }
@@ -13721,6 +15201,46 @@
         }
       }
     },
+    "Sincronizza profili con iCloud": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مزامنة ملفات التعريف مع iCloud"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile mit iCloud synchronisieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync profiles with iCloud"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizar perfiles con iCloud"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchroniser les profils avec iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通过 iCloud 同步配置"
+          }
+        }
+      }
+    },
     "Sistema": {
       "localizations": {
         "ar": {
@@ -14161,6 +15681,46 @@
         }
       }
     },
+    "Suggerimento: con un iPhone vicino puoi digitare dalla notifica «Tastiera Apple TV» o dettare con Siri. Server e password vengono salvati nel Portachiavi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تلميح: مع وجود iPhone قريب يمكنك الكتابة من إشعار «لوحة مفاتيح Apple TV» أو الإملاء عبر Siri. يُحفظ الخادم وكلمة المرور في سلسلة المفاتيح."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipp: Mit einem iPhone in der Nähe kannst du über die Mitteilung „Apple TV-Tastatur“ tippen oder mit Siri diktieren. Server und Passwort werden im Schlüsselbund gesichert."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tip: with an iPhone nearby you can type from the “Apple TV Keyboard” notification or dictate with Siri. Server and password are saved in the Keychain."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consejo: con un iPhone cerca puedes escribir desde la notificación «Teclado del Apple TV» o dictar con Siri. El servidor y la contraseña se guardan en el Llavero."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astuce : avec un iPhone à proximité, tapez depuis la notification « Clavier Apple TV » ou dictez avec Siri. Le serveur et le mot de passe sont enregistrés dans le trousseau."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "提示：附近有 iPhone 时，可通过“Apple TV 键盘”通知输入或用 Siri 口述。服务器和密码保存在钥匙串中。"
+          }
+        }
+      }
+    },
     "Supporta offuscamento protocollo": {
       "localizations": {
         "ar": {
@@ -14237,6 +15797,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "清空日志"
+          }
+        }
+      }
+    },
+    "Telecomando per un server aMule (amuled) tramite il protocollo EC.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جهاز تحكم عن بُعد لخادم aMule (amuled) عبر بروتوكول EC."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fernsteuerung für einen aMule-Server (amuled) über das EC-Protokoll."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remote control for an aMule server (amuled) over the EC protocol."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Control remoto de un servidor aMule (amuled) mediante el protocolo EC."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Télécommande pour un serveur aMule (amuled) via le protocole EC."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通过 EC 协议远程控制 aMule 服务器（amuled）。"
           }
         }
       }
@@ -14637,6 +16237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已传输"
+          }
+        }
+      }
+    },
+    "Trovati %lld profili server su iCloud.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على %lld من ملفات تعريف الخادم في iCloud."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Serverprofile in iCloud gefunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld server profiles found on iCloud."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se han encontrado %lld perfiles de servidor en iCloud."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld profils de serveur trouvés sur iCloud."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 iCloud 上找到 %lld 个服务器配置。"
           }
         }
       }
@@ -15117,6 +16757,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "eD2k 用户"
+          }
+        }
+      }
+    },
+    "Utenti: %llu": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المستخدمون: %llu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benutzer: %llu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: %llu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usuarios: %llu"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisateurs : %llu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用户：%llu"
+          }
+        }
+      }
+    },
+    "Vai offline dopo inattività": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الانتقال إلى عدم الاتصال بعد الخمول"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Inaktivität offline gehen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go offline after inactivity"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasar a Sin conexión tras inactividad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passer hors ligne après inactivité"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "闲置后进入离线状态"
           }
         }
       }
@@ -15637,6 +17357,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote"
+          }
+        }
+      }
+    },
+    "aMule Remote è software libero distribuito con licenza MIT: puoi usarlo, copiarlo, modificarlo e ridistribuirlo liberamente, conservando la nota di copyright.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote برنامج حر صادر بترخيص MIT: يمكنك استخدامه ونسخه وتعديله وإعادة توزيعه بحرية مع الاحتفاظ بإشعار حقوق النشر."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote ist freie Software unter der MIT-Lizenz: Du darfst sie frei verwenden, kopieren, verändern und weitergeben, solange der Copyright-Hinweis erhalten bleibt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote is free software released under the MIT License: you may use, copy, modify and redistribute it freely, keeping the copyright notice."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote es software libre publicado con licencia MIT: puedes usarlo, copiarlo, modificarlo y redistribuirlo libremente, conservando el aviso de copyright."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote est un logiciel libre publié sous licence MIT : vous pouvez l'utiliser, le copier, le modifier et le redistribuer librement, en conservant la mention de copyright."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote 是基于 MIT 许可证发布的自由软件：你可以自由使用、复制、修改和再分发，但需保留版权声明。"
           }
         }
       }

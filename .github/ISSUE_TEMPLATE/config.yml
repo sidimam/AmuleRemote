@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation (wiki)
+    url: https://github.com/sidimam/AmuleRemote/wiki
+    about: Setup guides, FAQ and troubleshooting before opening an issue.
+  - name: Privacy policy
+    url: https://sidimam.github.io/AmuleRemote/
+    about: What the app does (and does not do) with your data.

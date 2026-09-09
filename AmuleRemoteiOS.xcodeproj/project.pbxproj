@@ -8,56 +8,87 @@
 
 /* Begin PBXBuildFile section */
 		070DDBAB9D232A35FB6FCEC4 /* dockicon-grafite-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DB0A307797A4A5DE25E74 /* dockicon-grafite-light.png */; };
+		088237C5EF267DE428924682 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
 		14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
+		163B388D306AE2C4B150BBDC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		180C02AC9FF79E6505308384 /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		1C698A130A329EF455342187 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
+		1C7F6492D5F8B13812B3F0C0 /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		1CA280B1B5323420701F312A /* SharedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */; };
 		1CCEF848A87496F1E4E709CC /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */; };
+		1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		209FEFDFDE97690DF3DC15D4 /* iOSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */; };
 		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		264B58B4B812C8B1F162C3B9 /* dockicon-blu-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */; };
 		28AC7C76BD852E2FE67FF930 /* iOSProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */; };
+		2C0DF3825B40FC22D83BDA4C /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		2F958933CB1A367BCD60A9BA /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC625A305C1514549A27A8 /* WatchApp.swift */; };
+		305590CE2A7B41F10BF22C2F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
 		30751EF34BBB4CE3A20C260A /* dockicon-teal-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DF9A0991D3FA0C7915728D /* dockicon-teal-dark.png */; };
 		31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
+		32C1C839063128D884BE014C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
+		32E6CC60346D0E78269D96ED /* MacQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */; };
+		3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		3562AC0E0C9D1CD953BC316F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		3764F3A410DA7C6D4F574A21 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		38657191093502102E2FA2A4 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		396B39035171EBCA28FFD5ED /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8850B14BB238F5A57DC21 /* ServersView.swift */; };
 		3A0CF17282965CFA44112880 /* dockicon-rosso-light.png in Resources */ = {isa = PBXBuildFile; fileRef = C0FE2B7558ED81B116E2BC9A /* dockicon-rosso-light.png */; };
+		40B0E9DEF7EE6749F0A5D51A /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
 		42355E6510044C517132DE99 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
+		4423DCF13E6E95033078C623 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		454C654A795466B72794ADE5 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
+		458C35D2EA02381FEA9BC6A2 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		46A2F1A13D6ADB665A288156 /* dockicon-light.png in Resources */ = {isa = PBXBuildFile; fileRef = E55C9CA8CC39A0DD286C4DCE /* dockicon-light.png */; };
 		478E72F31849701B72F522F7 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		492D8DA12766A935F2FC003D /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
+		4CE24F9CA599579A84AFC96A /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
 		4EC2E38CA1828C272C32C20A /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
+		515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		52121A80F6D552C4C7F0A7EB /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		539C3117226998164F3B6B7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		56909C55FC9960A412AFAAD3 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		5695CBE51E4E7634C3C16FA5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		59CA1A6A5D5617ABA92CEC7D /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */; };
 		5A9D9154D865D5BC96925E30 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
+		5B7A2C2F14D33B14BFD9BCAF /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		5BAF81001B517064060D9F20 /* DoubleClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2EF766E5910207B0F2075 /* DoubleClick.swift */; };
+		5EA45A53EDEAEBD991517E21 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
 		5FF3177FF6A41930D452CB63 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770A0330425FF2AF50F9674E /* Assets.xcassets */; };
 		60C04FEAE35F7A017B2435E1 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
+		6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */; };
 		68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647DE5C537E5A0C773834631 /* Assets.xcassets */; };
+		6AAF1018977A15D416DF5F2B /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		6BD2922D60BFCCCE3CE26CDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
+		6F82CCAA66F9B0829CF914FC /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
+		6F89322952C832E4CB4543FA /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		75D33DC3A8823C3EDC4B76A1 /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
+		763977EBAEB57BDE3DC3A7FA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		7761B10AF19B7B98E6D42669 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		77B385C63B672287AB4C8AEA /* TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D5CA347E8AF613A236479 /* TVApp.swift */; };
 		799E5AE0457FF93BAB77069E /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */; };
 		7AB3366EE257BB614E2AC3F1 /* dockicon-grafite-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 645B17724222F05100E7330F /* dockicon-grafite-dark.png */; };
 		7BBFE143CEAD8CC5A36A5DF2 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		7F189B00E9DC903D3FDDD281 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
+		80CF84B93FA6B72C518D0EFA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		81A795F18D8E42170A530A1D /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		83AEE912BC4D8DE4C5DF7C97 /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */; };
 		849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		8CC5EE7521F0BD2011CC66DA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		8D5CBF8C738F62892C65D4B7 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		8D810F8E33B493D9934487BD /* dockicon-arancione-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5670D40F6B79A3BCE8DF5F51 /* dockicon-arancione-dark.png */; };
+		8DCE159A5EDC4848CC5288B3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		9243006520DB7ACFEF8327F7 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		934AFF7CBC868BB8946618E2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		93EDE95C6B21D8BF230EA234 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
+		9BD1BF26D579F9C0B265DF2C /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		9E347A1AC9F26FEBB63C78FF /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381850FEA6813713EBD5EEDA /* PrefsView.swift */; };
 		9F908B4F51A526CB0B49B426 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		9FB5C87B99D13D043D004337 /* iOSProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */; };
@@ -66,6 +97,7 @@
 		A3985EB258467946D1B8474E /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		A3E175D7CB8E977F93FC3D89 /* dockicon-arancione-light.png in Resources */ = {isa = PBXBuildFile; fileRef = EE40D254A6F3716A95384A5D /* dockicon-arancione-light.png */; };
 		A9A8AF3245BF5F3F30AA2F85 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
+		A9E795E327D07B2F96B6FADC /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		ACDB0F7A4E5ED1C739CF02CC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		AF1D99BE8447EBAF818B83B3 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		B085745BA3A3AB6B7C428E05 /* dockicon-blu-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */; };
@@ -80,22 +112,32 @@
 		C007DE4B670174FC343D4B6E /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		C082A73001BD7407432C52FD /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
 		C4020A6D93EC8DD93C3FE618 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C85E4775F68A1C7AFD60B /* WatchBridge.swift */; };
+		C44D498FF55365325986EBA2 /* HomeScreenQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */; };
 		C47B19D59778A8272BBB7D56 /* dockicon-rosso-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9498E719CB1C03BEAB0C2F93 /* dockicon-rosso-dark.png */; };
 		C4CD865BF5E0C960B52FB3FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2164F6EDEDCFD1D0C965996A /* Assets.xcassets */; };
 		C6D40A0FAF0AA99693B72022 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		CF661B0CD953B2818A8A1C57 /* dockicon-viola-light.png in Resources */ = {isa = PBXBuildFile; fileRef = DB44797CE405547C02DD1EC5 /* dockicon-viola-light.png */; };
 		CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
+		CFE85AC909676E7E804A9047 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		D24FE39E7BA5136C8EC4241A /* AmuleRemoteWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D6A599D387DBB96CF704DF88 /* dockicon-viola-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B6BF751A8EEFFEF7E6FC86 /* dockicon-viola-dark.png */; };
+		D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA26428923CCABF5A1E61 /* TVViews.swift */; };
 		D7F9466743A66A2DD4F750D5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		DB7BB2EE150D551364A52EDA /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		DDBDA2C933CD99B43593FC45 /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99667C4E61A222834A82A3E0 /* DownloadsView.swift */; };
+		DE0AAD934BF8A9CB0831B8D1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
+		DE6C8D71CFAFC70594E2AC49 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		DF30C57A7AC30A5B1460ECB8 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
+		E1DB2B9BBB6FA4A8C4A6C542 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		E2DF9A298DE1E269890B680C /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
+		E311639104C25FCC85693DF7 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
+		E429740ADEF000EF8F64FE2A /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
 		E87EA1444A347DEF9CB9297F /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		ED52DED4EF8715D95F4EEF45 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		ED8F218EA5D117B9974A0013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DCF91E12F21E3B65E0323 /* Assets.xcassets */; };
 		EFADB45731066719D326CCAD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B7DCA306F2F002062FBC2 /* SearchView.swift */; };
+		F737A8A7A9198B8346B2494D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F0FF267CE6A349E7920DC3 /* Assets.xcassets */; };
 		FD81C23752468B5076F2F576 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2F9F562AFEB163A2DEAE4 /* App.swift */; };
@@ -137,14 +179,19 @@
 		247B7DCA306F2F002062FBC2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		306B40E1F956585F27596B33 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		381850FEA6813713EBD5EEDA /* PrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsView.swift; sourceTree = "<group>"; };
+		396A0F9A60D90DEE8210E823 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCodes.swift; sourceTree = "<group>"; };
 		3A7DCF91E12F21E3B65E0323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1CA26428923CCABF5A1E61 /* TVViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViews.swift; sourceTree = "<group>"; };
 		4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmuleRemoteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-blu-light.png"; sourceTree = "<group>"; };
 		551D61B3C316A758F472D362 /* ECPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECPacket.swift; sourceTree = "<group>"; };
 		5670D40F6B79A3BCE8DF5F51 /* dockicon-arancione-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-arancione-dark.png"; sourceTree = "<group>"; };
 		59C2EF766E5910207B0F2075 /* DoubleClick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleClick.swift; sourceTree = "<group>"; };
 		5AA34F0092F1EE95CE096FF9 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCache.swift; sourceTree = "<group>"; };
+		61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacQuickActions.swift; sourceTree = "<group>"; };
 		645B17724222F05100E7330F /* dockicon-grafite-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-grafite-dark.png"; sourceTree = "<group>"; };
 		647DE5C537E5A0C773834631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECClient.swift; sourceTree = "<group>"; };
@@ -155,18 +202,23 @@
 		6EC813EA1F5EF0E980C60AEC /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
 		768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTransfersView.swift; sourceTree = "<group>"; };
+		770A0330425FF2AF50F9674E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMonitor.swift; sourceTree = "<group>"; };
 		7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSProfilesView.swift; sourceTree = "<group>"; };
 		7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSServersView.swift; sourceTree = "<group>"; };
 		8390595FF34396F6925227C7 /* RemotePrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePrefs.swift; sourceTree = "<group>"; };
 		88BC625A305C1514549A27A8 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
+		8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenQuickActions.swift; sourceTree = "<group>"; };
+		91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActions.swift; sourceTree = "<group>"; };
 		9498E719CB1C03BEAB0C2F93 /* dockicon-rosso-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-rosso-dark.png"; sourceTree = "<group>"; };
 		95166171560B398567C99D70 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		97EC007336CE595512BF2AEE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		99667C4E61A222834A82A3E0 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
+		9C958CD81D7880196E4714C6 /* CloudSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
 		9F5B6700651A1B859099CEF3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		A0057868BEEA6E79E67442F6 /* IconColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconColor.swift; sourceTree = "<group>"; };
+		AD7D5CA347E8AF613A236479 /* TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVApp.swift; sourceTree = "<group>"; };
 		B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-blu-dark.png"; sourceTree = "<group>"; };
 		B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
 		B2D4006EF6572D7CC660ED72 /* dockicon-teal-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-teal-light.png"; sourceTree = "<group>"; };
@@ -181,6 +233,7 @@
 		DB44797CE405547C02DD1EC5 /* dockicon-viola-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-viola-light.png"; sourceTree = "<group>"; };
 		DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMoreView.swift; sourceTree = "<group>"; };
 		E132072E8826878AB6544D9F /* BiometricLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLock.swift; sourceTree = "<group>"; };
+		E310199070467FC92D2D5EDB /* OfflineBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineBanner.swift; sourceTree = "<group>"; };
 		E55C9CA8CC39A0DD286C4DCE /* dockicon-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-light.png"; sourceTree = "<group>"; };
 		EE40D254A6F3716A95384A5D /* dockicon-arancione-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-arancione-light.png"; sourceTree = "<group>"; };
 		EEFA29040CB7283195E2EA96 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
@@ -192,10 +245,21 @@
 			children = (
 				7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */,
 				6B0EFC7AF54BC2089C9EBAED /* AmuleRemoteMac.app */,
+				3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */,
 				C069B9C7826CF96CE9B18054 /* AmuleRemoteVision.app */,
 				4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0785C3BCFB085CCDD156326A /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				770A0330425FF2AF50F9674E /* Assets.xcassets */,
+				AD7D5CA347E8AF613A236479 /* TVApp.swift */,
+				4E1CA26428923CCABF5A1E61 /* TVViews.swift */,
+			);
+			path = TV;
 			sourceTree = "<group>";
 		};
 		26888F84055ABC55BD2701BA = {
@@ -205,6 +269,7 @@
 				964F1EA71FA6A67C47E8FD83 /* AmuleRemote */,
 				2ABA5F5625B8B3D952A3BA99 /* iOS */,
 				F72C3CDE43D4A908C4930A61 /* Mac */,
+				0785C3BCFB085CCDD156326A /* TV */,
 				7E3E388AC43A08E0187D8F40 /* Vision */,
 				5E6B68ADC85F9F0D59A0DED7 /* Watch */,
 				017D5B5241F4C336DCB9682B /* Products */,
@@ -217,6 +282,7 @@
 				0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */,
 				17F0FF267CE6A349E7920DC3 /* Assets.xcassets */,
 				B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */,
+				8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */,
 				EEFA29040CB7283195E2EA96 /* iOSApp.swift */,
 				DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */,
 				7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */,
@@ -269,11 +335,13 @@
 		964F1EA71FA6A67C47E8FD83 /* AmuleRemote */ = {
 			isa = PBXGroup;
 			children = (
+				396A0F9A60D90DEE8210E823 /* AboutView.swift */,
 				BCB2F9F562AFEB163A2DEAE4 /* App.swift */,
 				306B40E1F956585F27596B33 /* AppState.swift */,
 				95166171560B398567C99D70 /* AppTheme.swift */,
 				772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */,
 				E132072E8826878AB6544D9F /* BiometricLock.swift */,
+				9C958CD81D7880196E4714C6 /* CloudSync.swift */,
 				74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */,
 				59C2EF766E5910207B0F2075 /* DoubleClick.swift */,
 				99667C4E61A222834A82A3E0 /* DownloadsView.swift */,
@@ -282,12 +350,16 @@
 				551D61B3C316A758F472D362 /* ECPacket.swift */,
 				A0057868BEEA6E79E67442F6 /* IconColor.swift */,
 				9F5B6700651A1B859099CEF3 /* Keychain.swift */,
+				61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */,
 				653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */,
 				D6123B9A396E3E5945D43C29 /* Models.swift */,
 				5AA34F0092F1EE95CE096FF9 /* Notifier.swift */,
+				E310199070467FC92D2D5EDB /* OfflineBanner.swift */,
+				5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */,
 				CA9A93451AA66E5B49685657 /* PasswordField.swift */,
 				381850FEA6813713EBD5EEDA /* PrefsView.swift */,
 				6EC813EA1F5EF0E980C60AEC /* Profiles.swift */,
+				91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */,
 				8390595FF34396F6925227C7 /* RemotePrefs.swift */,
 				247B7DCA306F2F002062FBC2 /* SearchView.swift */,
 				06B8850B14BB238F5A57DC21 /* ServersView.swift */,
@@ -345,6 +417,24 @@
 			productReference = 4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		91C462D9FB6EBF8FA6BC5647 /* AmuleRemoteTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549DFA20232A7863E8261D52 /* Build configuration list for PBXNativeTarget "AmuleRemoteTV" */;
+			buildPhases = (
+				0291A2297CB0D2C049A01EDB /* Sources */,
+				656A5E1AF65A749C0702F537 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmuleRemoteTV;
+			packageProductDependencies = (
+			);
+			productName = AmuleRemoteTV;
+			productReference = 3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A1686C4644C73D596405737A /* AmuleRemoteiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CDB10529E34A0C53D7D8F4 /* Build configuration list for PBXNativeTarget "AmuleRemoteiOS" */;
@@ -400,6 +490,10 @@
 						DevelopmentTeam = X5SR67A8AL;
 						ProvisioningStyle = Automatic;
 					};
+					91C462D9FB6EBF8FA6BC5647 = {
+						DevelopmentTeam = X5SR67A8AL;
+						ProvisioningStyle = Automatic;
+					};
 					A1686C4644C73D596405737A = {
 						DevelopmentTeam = X5SR67A8AL;
 						ProvisioningStyle = Automatic;
@@ -428,6 +522,7 @@
 				0EBF093A35C97F49B9BD5A86 /* AmuleRemoteMac */,
 				444A247705A2DAFBCD9CFDEE /* AmuleRemoteWatch */,
 				A4CD5E6F439B63615D6AC436 /* AmuleRemoteVision */,
+				91C462D9FB6EBF8FA6BC5647 /* AmuleRemoteTV */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +534,15 @@
 			files = (
 				FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */,
 				3562AC0E0C9D1CD953BC316F /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		656A5E1AF65A749C0702F537 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */,
+				8DCE159A5EDC4848CC5288B3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,15 +590,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0291A2297CB0D2C049A01EDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */,
+				E1DB2B9BBB6FA4A8C4A6C542 /* AppState.swift in Sources */,
+				5B7A2C2F14D33B14BFD9BCAF /* AppTheme.swift in Sources */,
+				93EDE95C6B21D8BF230EA234 /* BackgroundMonitor.swift in Sources */,
+				088237C5EF267DE428924682 /* BiometricLock.swift in Sources */,
+				1C7F6492D5F8B13812B3F0C0 /* CloudSync.swift in Sources */,
+				163B388D306AE2C4B150BBDC /* DemoMode.swift in Sources */,
+				515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */,
+				4423DCF13E6E95033078C623 /* ECCodes.swift in Sources */,
+				3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */,
+				9BD1BF26D579F9C0B265DF2C /* IconColor.swift in Sources */,
+				6F89322952C832E4CB4543FA /* Keychain.swift in Sources */,
+				80CF84B93FA6B72C518D0EFA /* Models.swift in Sources */,
+				305590CE2A7B41F10BF22C2F /* Notifier.swift in Sources */,
+				56909C55FC9960A412AFAAD3 /* OfflineBanner.swift in Sources */,
+				3764F3A410DA7C6D4F574A21 /* OfflineCache.swift in Sources */,
+				763977EBAEB57BDE3DC3A7FA /* PasswordField.swift in Sources */,
+				458C35D2EA02381FEA9BC6A2 /* Profiles.swift in Sources */,
+				40B0E9DEF7EE6749F0A5D51A /* QuickActions.swift in Sources */,
+				5EA45A53EDEAEBD991517E21 /* RemotePrefs.swift in Sources */,
+				77B385C63B672287AB4C8AEA /* TVApp.swift in Sources */,
+				D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3FF46B2EB5E626128E60C478 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C1C839063128D884BE014C /* AboutView.swift in Sources */,
 				FD81C23752468B5076F2F576 /* App.swift in Sources */,
 				934AFF7CBC868BB8946618E2 /* AppState.swift in Sources */,
 				C6D40A0FAF0AA99693B72022 /* AppTheme.swift in Sources */,
 				ED52DED4EF8715D95F4EEF45 /* BackgroundMonitor.swift in Sources */,
 				9F908B4F51A526CB0B49B426 /* BiometricLock.swift in Sources */,
+				F737A8A7A9198B8346B2494D /* CloudSync.swift in Sources */,
 				ACDB0F7A4E5ED1C739CF02CC /* DemoMode.swift in Sources */,
 				5BAF81001B517064060D9F20 /* DoubleClick.swift in Sources */,
 				DDBDA2C933CD99B43593FC45 /* DownloadsView.swift in Sources */,
@@ -503,12 +638,16 @@
 				AF1D99BE8447EBAF818B83B3 /* ECPacket.swift in Sources */,
 				C007DE4B670174FC343D4B6E /* IconColor.swift in Sources */,
 				D7F9466743A66A2DD4F750D5 /* Keychain.swift in Sources */,
+				32E6CC60346D0E78269D96ED /* MacQuickActions.swift in Sources */,
 				1CCEF848A87496F1E4E709CC /* MacSettingsView.swift in Sources */,
 				5695CBE51E4E7634C3C16FA5 /* Models.swift in Sources */,
 				492D8DA12766A935F2FC003D /* Notifier.swift in Sources */,
+				E311639104C25FCC85693DF7 /* OfflineBanner.swift in Sources */,
+				CFE85AC909676E7E804A9047 /* OfflineCache.swift in Sources */,
 				9243006520DB7ACFEF8327F7 /* PasswordField.swift in Sources */,
 				9E347A1AC9F26FEBB63C78FF /* PrefsView.swift in Sources */,
 				B72E507703DED5F21A14ED95 /* Profiles.swift in Sources */,
+				E2DF9A298DE1E269890B680C /* QuickActions.swift in Sources */,
 				4EC2E38CA1828C272C32C20A /* RemotePrefs.swift in Sources */,
 				EFADB45731066719D326CCAD /* SearchView.swift in Sources */,
 				396B39035171EBCA28FFD5ED /* ServersView.swift in Sources */,
@@ -528,22 +667,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0AAD934BF8A9CB0831B8D1 /* AboutView.swift in Sources */,
 				83AEE912BC4D8DE4C5DF7C97 /* AppIntentsSupport.swift in Sources */,
 				B9DCBCD74A1D67B6E299EE97 /* AppState.swift in Sources */,
 				478E72F31849701B72F522F7 /* AppTheme.swift in Sources */,
 				38657191093502102E2FA2A4 /* BackgroundMonitor.swift in Sources */,
 				A332EDE97E79AA443E2F7A41 /* BackgroundRefresh.swift in Sources */,
 				5A9D9154D865D5BC96925E30 /* BiometricLock.swift in Sources */,
+				2C0DF3825B40FC22D83BDA4C /* CloudSync.swift in Sources */,
 				52121A80F6D552C4C7F0A7EB /* DemoMode.swift in Sources */,
 				6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */,
 				14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */,
 				DB7BB2EE150D551364A52EDA /* ECPacket.swift in Sources */,
+				C44D498FF55365325986EBA2 /* HomeScreenQuickActions.swift in Sources */,
 				08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */,
 				7F189B00E9DC903D3FDDD281 /* Keychain.swift in Sources */,
 				5FF3177FF6A41930D452CB63 /* Models.swift in Sources */,
 				454C654A795466B72794ADE5 /* Notifier.swift in Sources */,
+				6F82CCAA66F9B0829CF914FC /* OfflineBanner.swift in Sources */,
+				A9E795E327D07B2F96B6FADC /* OfflineCache.swift in Sources */,
 				60C04FEAE35F7A017B2435E1 /* PasswordField.swift in Sources */,
 				A378482C8ACBBE1297B4CA68 /* Profiles.swift in Sources */,
+				E429740ADEF000EF8F64FE2A /* QuickActions.swift in Sources */,
 				7BBFE143CEAD8CC5A36A5DF2 /* RemotePrefs.swift in Sources */,
 				B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */,
 				C082A73001BD7407432C52FD /* iOSMoreView.swift in Sources */,
@@ -558,22 +703,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC5EE7521F0BD2011CC66DA /* AboutView.swift in Sources */,
 				799E5AE0457FF93BAB77069E /* AppIntentsSupport.swift in Sources */,
 				849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */,
 				B44C82A6454C67721178DD99 /* AppTheme.swift in Sources */,
 				E87EA1444A347DEF9CB9297F /* BackgroundMonitor.swift in Sources */,
 				59CA1A6A5D5617ABA92CEC7D /* BackgroundRefresh.swift in Sources */,
 				A3985EB258467946D1B8474E /* BiometricLock.swift in Sources */,
+				6AAF1018977A15D416DF5F2B /* CloudSync.swift in Sources */,
 				15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */,
 				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
 				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
+				6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */,
 				180C02AC9FF79E6505308384 /* IconColor.swift in Sources */,
 				BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */,
 				7761B10AF19B7B98E6D42669 /* Models.swift in Sources */,
 				B6AEC3B49B30ABBEB3F70725 /* Notifier.swift in Sources */,
+				DE6C8D71CFAFC70594E2AC49 /* OfflineBanner.swift in Sources */,
+				81A795F18D8E42170A530A1D /* OfflineCache.swift in Sources */,
 				A9A8AF3245BF5F3F30AA2F85 /* PasswordField.swift in Sources */,
 				8D5CBF8C738F62892C65D4B7 /* Profiles.swift in Sources */,
+				4CE24F9CA599579A84AFC96A /* QuickActions.swift in Sources */,
 				CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */,
 				C4020A6D93EC8DD93C3FE618 /* WatchBridge.swift in Sources */,
 				5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */,
@@ -602,9 +753,10 @@
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -618,7 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = iphoneos;
@@ -627,17 +779,43 @@
 			};
 			name = Release;
 		};
+		1D0AF4615701EE48E9A6600A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
+				PRODUCT_NAME = "aMule Remote";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
 		201ACEC09D310593E4BF862D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = watchos;
@@ -654,8 +832,9 @@
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -665,7 +844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = xros;
@@ -681,9 +860,10 @@
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -697,7 +877,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = iphoneos;
@@ -713,18 +893,19 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Simone Di Mambro — MIT License";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
@@ -737,12 +918,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = watchos;
@@ -759,8 +940,9 @@
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -770,7 +952,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = xros;
@@ -848,24 +1030,51 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Simone Di Mambro — MIT License";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
+		};
+		BE341E8681A77EA963706D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 18;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
+				PRODUCT_NAME = "aMule Remote";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
 		};
 		F14048FA814C8CBEB81C89BB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -929,6 +1138,15 @@
 			buildConfigurations = (
 				BA3F4BE4D317BB215D0AFDAB /* Debug */,
 				5314B231AFA2099E6084DC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		549DFA20232A7863E8261D52 /* Build configuration list for PBXNativeTarget "AmuleRemoteTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0AF4615701EE48E9A6600A /* Debug */,
+				BE341E8681A77EA963706D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
