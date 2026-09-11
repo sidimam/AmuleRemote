@@ -3,7 +3,6 @@ import SwiftUI
 struct iOSTransfersView: View {
     @EnvironmentObject var state: AppState
     @State private var showAddLink = false
-    @State private var newLink = ""
     @State private var selection = Set<Data>()
     @State private var editMode: EditMode = .inactive
     @State private var confirmDelete = false
@@ -69,6 +68,9 @@ struct iOSTransfersView: View {
                                 Button("Copia link eD2k") {
                                     UIPasteboard.general.string = item.ed2kLink
                                 }
+                                ShareLink(item: item.ed2kLink) {
+                                    Label("Condividi link eD2k", systemImage: "square.and.arrow.up")
+                                }
                             }
                             Divider()
                             Button("Elimina", role: .destructive) {
@@ -131,14 +133,9 @@ struct iOSTransfersView: View {
             .onAppear {
                 if state.addLinkRequested { showAddLink = true; state.addLinkRequested = false }
             }
-            .alert("Aggiungi link eD2k", isPresented: $showAddLink) {
-                TextField("ed2k://|file|…", text: $newLink)
-                Button("Annulla", role: .cancel) { newLink = "" }
-                Button("Aggiungi") {
-                    let l = newLink
-                    newLink = ""
-                    Task { await state.addEd2kLink(l) }
-                }
+            .sheet(isPresented: $showAddLink) {
+                AddLinkSheet().environmentObject(state)
+                    .presentationDetents([.medium, .large])
             }
             .confirmationDialog("Eliminare \(selectedItems.count) file dal server?",
                                 isPresented: $confirmDelete, titleVisibility: .visible) {
@@ -171,6 +168,14 @@ struct iOSTransfersView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            ShareLink(item: selectedItems.map(\.ed2kLink).filter { !$0.isEmpty }.joined(separator: "\n")) {
+                VStack(spacing: 3) {
+                    Image(systemName: "square.and.arrow.up")
+                    Text("Condividi").font(.caption2)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .disabled(!selectedItems.contains { !$0.ed2kLink.isEmpty })
             Button(role: .destructive) {
                 confirmDelete = true
             } label: {

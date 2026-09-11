@@ -16,6 +16,33 @@ enum TVInk {
     static func secondary(_ focused: Bool) -> Color { focused ? Color.black.opacity(0.62) : Color.secondary }
 }
 
+/// Pulsante d'azione fuori dalle List (barre in testa alle sezioni, fogli).
+/// Con `.tint` lo stile di sistema tvOS disegna platter e testo dello stesso
+/// colore quando il pulsante non è evidenziato (etichetta invisibile): il
+/// colore del testo va reso esplicito, primario a riposo e bianco sul platter
+/// di tinta quando evidenziato.
+struct TVActionButton: View {
+    let title: LocalizedStringKey
+    var icon: String? = nil
+    var role: ButtonRole? = nil
+    let action: () -> Void
+    @FocusState private var focused: Bool
+
+    var body: some View {
+        Button(role: role, action: action) {
+            Group {
+                if let icon {
+                    Label(title, systemImage: icon)
+                } else {
+                    Text(title)
+                }
+            }
+            .foregroundStyle(focused ? Color.white : Color.primary)
+        }
+        .focused($focused)
+    }
+}
+
 /// Riga "interruttore" per Form tvOS: un pulsante con On/Off disegnato da noi,
 /// così anche il valore resta leggibile sulla riga evidenziata (il Toggle di
 /// sistema lo scrive in bianco su bianco).
@@ -159,19 +186,19 @@ struct TVTransfersView: View {
                 TVStatusBar(title: String(localized: "Trasferimenti (\(state.downloads.count))"))
                 // Poche azioni, grandi: aggiungi link, pausa/riprendi tutto, pulizia.
                 HStack(spacing: 20) {
-                    Button { showAddLink = true } label: { Label("Aggiungi link eD2k", systemImage: "plus.circle") }
+                    TVActionButton(title: "Aggiungi link eD2k", icon: "plus.circle") { showAddLink = true }
                     if anyActive {
-                        Button {
+                        TVActionButton(title: "Pausa tutti", icon: "pause.circle") {
                             Task { let n = await state.pauseAll(); state.infoMessage = String(localized: "Messi in pausa \(n) download.") }
-                        } label: { Label("Pausa tutti", systemImage: "pause.circle") }
+                        }
                     } else {
-                        Button {
+                        TVActionButton(title: "Riprendi tutti", icon: "play.circle") {
                             Task { let n = await state.resumeAll(); state.infoMessage = String(localized: "Ripresi \(n) download.") }
-                        } label: { Label("Riprendi tutti", systemImage: "play.circle") }
+                        }
                         .disabled(!state.downloads.contains { $0.isPaused })
                     }
-                    Button { Task { await state.clearCompleted() } } label: {
-                        Label("Rimuovi completati", systemImage: "text.badge.checkmark")
+                    TVActionButton(title: "Rimuovi completati", icon: "text.badge.checkmark") {
+                        Task { await state.clearCompleted() }
                     }
                     .disabled(!state.downloads.contains { $0.isComplete })
                     Spacer()
@@ -247,18 +274,12 @@ struct TVAddLinkSheet: View {
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-            TextField("ed2k://|file|…", text: $link)
-                .textContentType(.URL)
-                .keyboardType(.URL)
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
-                .submitLabel(.done)
+            TVTextField(placeholder: "ed2k://|file|…", text: $link, keyboard: .URL, contentType: .URL, returnKey: .done) { add() }
                 .focused($fieldFocused)
-                .onSubmit { add() }
                 .frame(maxWidth: 1200)
             HStack(spacing: 24) {
-                Button("Annulla", role: .cancel) { link = ""; dismiss() }
-                Button { add() } label: { Label("Aggiungi", systemImage: "plus.circle") }
+                TVActionButton(title: "Annulla", role: .cancel) { link = ""; dismiss() }
+                TVActionButton(title: "Aggiungi", icon: "plus.circle") { add() }
                     .disabled(link.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
@@ -333,6 +354,13 @@ struct TVSearchView: View {
         NavigationStack {
             List {
                 Section {
+                    // Campo nativo + pulsante: la barra .searchable di sistema
+                    // perdeva i caratteri con la tastiera remota dell'iPhone.
+                    HStack(spacing: 20) {
+                        TVTextField(placeholder: String(localized: "Cerca file…"), text: $query, returnKey: .search) { search() }
+                        TVActionButton(title: "Cerca", icon: "magnifyingglass") { search() }
+                            .disabled(query.trimmingCharacters(in: .whitespaces).isEmpty)
+                    }
                     Picker("Tipo ricerca", selection: $type) {
                         ForEach(ECSearchType.allCases) { t in Text(t.label).tag(t) }
                     }
@@ -340,7 +368,7 @@ struct TVSearchView: View {
                     if let s = session, s.inProgress {
                         HStack {
                             ProgressView(value: s.progress)
-                            Button { Task { await state.stopSearch() } } label: { Label("Ferma", systemImage: "stop.fill") }
+                            TVActionButton(title: "Ferma", icon: "stop.fill") { Task { await state.stopSearch() } }
                         }
                     }
                 }
@@ -369,8 +397,6 @@ struct TVSearchView: View {
                     }
                 }
             }
-            .searchable(text: $query, prompt: Text("Cerca file…"))
-            .onSubmit(of: .search) { search() }
             .confirmationDialog(selected?.name ?? "", isPresented: Binding(
                 get: { selected != nil }, set: { if !$0 { selected = nil } }
             ), titleVisibility: .visible) {
@@ -405,16 +431,16 @@ struct TVServersView: View {
                 TVStatusBar(title: String(localized: "Server (\(state.servers.count))"))
                 HStack(spacing: 20) {
                     if state.connState.ed2kConnected || state.connState.ed2kConnecting {
-                        Button { Task { await state.disconnectFromServer() } } label: { Label("Disconnetti", systemImage: "bolt.slash") }
+                        TVActionButton(title: "Disconnetti", icon: "bolt.slash") { Task { await state.disconnectFromServer() } }
                     } else {
-                        Button { Task { await state.connectToAnyServer() } } label: { Label("Connetti", systemImage: "bolt") }
+                        TVActionButton(title: "Connetti", icon: "bolt") { Task { await state.connectToAnyServer() } }
                     }
                     if state.connState.kadRunning {
-                        Button { Task { await state.kadStop() } } label: { Label("Kad: Ferma", systemImage: "stop.circle") }
+                        TVActionButton(title: "Kad: Ferma", icon: "stop.circle") { Task { await state.kadStop() } }
                     } else {
-                        Button { Task { await state.kadStart() } } label: { Label("Kad: Avvia", systemImage: "play.circle") }
+                        TVActionButton(title: "Kad: Avvia", icon: "play.circle") { Task { await state.kadStart() } }
                     }
-                    Button { Task { await state.refreshServers() } } label: { Label("Ricarica dal server", systemImage: "arrow.clockwise") }
+                    TVActionButton(title: "Ricarica dal server", icon: "arrow.clockwise") { Task { await state.refreshServers() } }
                     Spacer()
                 }
                 .font(.callout)
@@ -544,6 +570,9 @@ struct TVSettingsView: View {
                     TVPickerRow(title: "Lingua", icon: "globe",
                                 options: AppLanguage.allCases.map { (value: $0, label: $0.label, icon: nil) },
                                 selection: $state.appLanguage)
+                    TVPickerRow(title: "Colore app", icon: "paintpalette",
+                                options: AppIconColor.all.map { (value: $0.key, label: String(localized: $0.labelText), icon: "circle.fill") },
+                                selection: $state.iconColor)
                     TVToggleRow(title: "Sincronizza profili con iCloud", icon: "icloud", isOn: Binding(
                         get: { state.iCloudSyncEnabled },
                         set: { state.setCloudSync($0) }))

@@ -4,13 +4,6 @@ import Network
 struct iOSMoreView: View {
     @EnvironmentObject var state: AppState
 
-    /// Binding di un sotto-toggle notifiche che appare spento (e non toccabile)
-    /// finché l'interruttore principale delle notifiche è disattivato.
-    private func gated(_ source: Binding<Bool>) -> Binding<Bool> {
-        Binding(get: { state.notificationsEnabled && source.wrappedValue },
-                set: { source.wrappedValue = $0 })
-    }
-
     var body: some View {
         NavigationStack {
             List {
@@ -79,7 +72,7 @@ struct iOSMoreView: View {
                         Label("Lingua", systemImage: "globe")
                     }
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Colore icona", systemImage: "paintpalette")
+                        Label("Colore app", systemImage: "paintpalette")
                         IconColorPicker(selection: $state.iconColor)
                     }
                     Picker(selection: $state.idleTimeout) {
@@ -99,6 +92,7 @@ struct iOSMoreView: View {
                         Label("Sincronizza profili con iCloud", systemImage: "icloud")
                     }
                     .disabled(!CloudSync.isAvailable)
+                    NotificationsSettingsRow()
                     Toggle(isOn: Binding(
                         get: { state.biometricLockEnabled },
                         set: { newValue in Task { await state.setBiometricLock(newValue) } }
@@ -109,42 +103,7 @@ struct iOSMoreView: View {
                 } header: {
                     Text("Impostazioni app")
                 } footer: {
-                    Text("Dopo il periodo di inattività scelto (e quando l'app va in background) la connessione al server si chiude per risparmiare batteria e dati, ma i dati restano visibili in stato Offline: la connessione riparte da sola al primo tocco o al ritorno in primo piano. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi. Con il blocco attivo, all'apertura l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Il colore dell'icona si applica a iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).")
-                }
-
-                Section {
-                    Toggle(isOn: Binding(
-                        get: { state.notificationsEnabled },
-                        set: { v in Task { await state.setNotificationsEnabled(v) } }
-                    )) {
-                        Label("Notifiche", systemImage: "bell.badge")
-                    }
-                    Toggle(isOn: gated($state.notifyDownloadsEnabled)) {
-                        Label("Download completati", systemImage: "checkmark.circle")
-                    }
-                    .disabled(!state.notificationsEnabled)
-                    Toggle(isOn: gated($state.notifyNetworkEnabled)) {
-                        Label("Disconnessioni eD2k / Kad", systemImage: "wifi.slash")
-                    }
-                    .disabled(!state.notificationsEnabled)
-                    Toggle(isOn: gated($state.backgroundChecksEnabled)) {
-                        Label("Controlli in background", systemImage: "clock.arrow.circlepath")
-                    }
-                    .disabled(!state.notificationsEnabled)
-                    Picker(selection: $state.checkInterval) {
-                        Text("1 minuto").tag(60)
-                        Text("5 minuti").tag(300)
-                        Text("15 minuti").tag(900)
-                        Text("30 minuti").tag(1800)
-                        Text("1 ora").tag(3600)
-                    } label: {
-                        Label("Intervallo controlli", systemImage: "timer")
-                    }
-                    .disabled(!state.notificationsEnabled)
-                } header: {
-                    Text("Notifiche")
-                } footer: {
-                    Text("Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Con i controlli in background l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad (queste ultime non se sul server è attiva la riconnessione automatica). Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Le notifiche arrivano anche su Apple Watch.")
+                    Text("Dopo il periodo di inattività scelto (e quando l'app va in background) la connessione al server si chiude per risparmiare batteria e dati, ma i dati restano visibili in stato Offline: la connessione riparte da sola al primo tocco o al ritorno in primo piano. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi. Le notifiche (download avviati e completati, server non raggiungibile, cadute e riconnessioni eD2k/Kad) si gestiscono nelle Impostazioni di sistema: la riga Notifiche ti porta lì. Con il blocco attivo, all'apertura l'app chiede \(BiometricAuth.biometryLabel) prima di mostrare i contenuti. Il colore dell'app tinge pulsanti e link su tutti i dispositivi e cambia l'icona su iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).")
                 }
 
                 Section("Connessione") {

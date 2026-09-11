@@ -12,6 +12,19 @@ struct AppIconColor: Identifiable, Equatable {
 
     var id: String { key }
 
+    /// Stesso testo di `label`, come risorsa localizzabile (per String(localized:)).
+    var labelText: String.LocalizationValue {
+        switch key {
+        case "blu": return "Blu"
+        case "rosso": return "Rosso"
+        case "arancione": return "Arancione"
+        case "viola": return "Viola"
+        case "teal": return "Verde acqua"
+        case "grafite": return "Grafite"
+        default: return "Verde (originale)"
+        }
+    }
+
     static let all: [AppIconColor] = [
         .init(key: "default", label: "Verde (originale)", tint: Color(red: 0.24, green: 0.62, blue: 0.34)),
         .init(key: "blu", label: "Blu", tint: Color(red: 0.18, green: 0.44, blue: 0.89)),
@@ -21,6 +34,12 @@ struct AppIconColor: Identifiable, Equatable {
         .init(key: "teal", label: "Verde acqua", tint: Color(red: 0.05, green: 0.64, blue: 0.65)),
         .init(key: "grafite", label: "Grafite", tint: Color(red: 0.35, green: 0.40, blue: 0.45)),
     ]
+
+    /// Tinta dell'interfaccia (pulsanti, link, evidenziazioni) coerente con il
+    /// colore icona scelto: il verde originale per «default».
+    static func tint(for key: String) -> Color {
+        all.first { $0.key == key }?.tint ?? all[0].tint
+    }
 
     /// Applica il colore scelto: icone alternative su iOS/iPadOS/visionOS,
     /// icona del Dock su macOS. watchOS non offre alcuna API per cambiare

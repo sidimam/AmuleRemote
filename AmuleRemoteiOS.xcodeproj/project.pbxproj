@@ -11,6 +11,7 @@
 		088237C5EF267DE428924682 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
+		0C971943035FCFCC1EF06162 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		163B388D306AE2C4B150BBDC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
@@ -21,6 +22,7 @@
 		1CCEF848A87496F1E4E709CC /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */; };
 		1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		209FEFDFDE97690DF3DC15D4 /* iOSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */; };
+		22F95D2F0B731B79F34C02B9 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		264B58B4B812C8B1F162C3B9 /* dockicon-blu-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */; };
 		28AC7C76BD852E2FE67FF930 /* iOSProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */; };
@@ -29,6 +31,7 @@
 		305590CE2A7B41F10BF22C2F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
 		30751EF34BBB4CE3A20C260A /* dockicon-teal-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DF9A0991D3FA0C7915728D /* dockicon-teal-dark.png */; };
 		31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */; };
+		32A2FA80544E2EF3CD7EAD2B /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */; };
 		32C1C839063128D884BE014C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		32E6CC60346D0E78269D96ED /* MacQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */; };
 		3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
@@ -50,8 +53,11 @@
 		515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		52121A80F6D552C4C7F0A7EB /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		539C3117226998164F3B6B7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		5605F447F1F572E3671B63CD /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
 		56909C55FC9960A412AFAAD3 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		5695CBE51E4E7634C3C16FA5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		57412AC6CDAF62C061D3E9ED /* TVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6660C752665C7609E8D696 /* TVTextField.swift */; };
+		57675248A0A1B6DAFC829A2C /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */; };
 		59CA1A6A5D5617ABA92CEC7D /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */; };
 		5A9D9154D865D5BC96925E30 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		5B7A2C2F14D33B14BFD9BCAF /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
@@ -61,6 +67,7 @@
 		5FF3177FF6A41930D452CB63 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770A0330425FF2AF50F9674E /* Assets.xcassets */; };
 		60C04FEAE35F7A017B2435E1 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
+		6414D2968D7D7DDBC20BDC59 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */; };
 		68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647DE5C537E5A0C773834631 /* Assets.xcassets */; };
 		6AAF1018977A15D416DF5F2B /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
@@ -69,18 +76,19 @@
 		6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		6F82CCAA66F9B0829CF914FC /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		6F89322952C832E4CB4543FA /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
+		734A83C4509309AF899C5040 /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
 		75D33DC3A8823C3EDC4B76A1 /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		763977EBAEB57BDE3DC3A7FA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		7761B10AF19B7B98E6D42669 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		77B385C63B672287AB4C8AEA /* TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D5CA347E8AF613A236479 /* TVApp.swift */; };
-		799E5AE0457FF93BAB77069E /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */; };
 		7AB3366EE257BB614E2AC3F1 /* dockicon-grafite-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 645B17724222F05100E7330F /* dockicon-grafite-dark.png */; };
 		7BBFE143CEAD8CC5A36A5DF2 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		7F189B00E9DC903D3FDDD281 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		80CF84B93FA6B72C518D0EFA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		81A795F18D8E42170A530A1D /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
-		83AEE912BC4D8DE4C5DF7C97 /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */; };
 		849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		84A99605DF4FF445F903FFB2 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
+		8C6BDBCF27C8071510B5DB60 /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
 		8CC5EE7521F0BD2011CC66DA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		8D5CBF8C738F62892C65D4B7 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		8D810F8E33B493D9934487BD /* dockicon-arancione-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5670D40F6B79A3BCE8DF5F51 /* dockicon-arancione-dark.png */; };
@@ -88,11 +96,13 @@
 		9243006520DB7ACFEF8327F7 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		934AFF7CBC868BB8946618E2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
 		93EDE95C6B21D8BF230EA234 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
+		94979D35617A2A755DB10D04 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		9BD1BF26D579F9C0B265DF2C /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		9E347A1AC9F26FEBB63C78FF /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381850FEA6813713EBD5EEDA /* PrefsView.swift */; };
 		9F908B4F51A526CB0B49B426 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		9FB5C87B99D13D043D004337 /* iOSProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */; };
 		A332EDE97E79AA443E2F7A41 /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */; };
+		A36F788BA7E9870193C0028F /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		A378482C8ACBBE1297B4CA68 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		A3985EB258467946D1B8474E /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		A3E175D7CB8E977F93FC3D89 /* dockicon-arancione-light.png in Resources */ = {isa = PBXBuildFile; fileRef = EE40D254A6F3716A95384A5D /* dockicon-arancione-light.png */; };
@@ -103,10 +113,12 @@
 		B085745BA3A3AB6B7C428E05 /* dockicon-blu-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */; };
 		B44C82A6454C67721178DD99 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
+		B59E2EB9B93C76BCB4831EF7 /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */; };
 		B6AEC3B49B30ABBEB3F70725 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
 		B72E507703DED5F21A14ED95 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		B762E1AC28F1572AA19D5518 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		B9DCBCD74A1D67B6E299EE97 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
+		BC5A594425D169ECE64B9294 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		BDAD23C995BCD0980F20298E /* dockicon-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A92DA5518934C6994978A4 /* dockicon-dark.png */; };
 		BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		C007DE4B670174FC343D4B6E /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
@@ -117,6 +129,7 @@
 		C4CD865BF5E0C960B52FB3FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2164F6EDEDCFD1D0C965996A /* Assets.xcassets */; };
 		C6D40A0FAF0AA99693B72022 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
+		CB19CE097600FACC2D2CB807 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		CF661B0CD953B2818A8A1C57 /* dockicon-viola-light.png in Resources */ = {isa = PBXBuildFile; fileRef = DB44797CE405547C02DD1EC5 /* dockicon-viola-light.png */; };
 		CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		CFE85AC909676E7E804A9047 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
@@ -125,6 +138,7 @@
 		D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA26428923CCABF5A1E61 /* TVViews.swift */; };
 		D7F9466743A66A2DD4F750D5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		DB7BB2EE150D551364A52EDA /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
+		DBFCA9CE5D7242A9952BD0D1 /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */; };
 		DDBDA2C933CD99B43593FC45 /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99667C4E61A222834A82A3E0 /* DownloadsView.swift */; };
 		DE0AAD934BF8A9CB0831B8D1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		DE6C8D71CFAFC70594E2AC49 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
@@ -171,7 +185,6 @@
 
 /* Begin PBXFileReference section */
 		06B8850B14BB238F5A57DC21 /* ServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersView.swift; sourceTree = "<group>"; };
-		0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentsSupport.swift; sourceTree = "<group>"; };
 		11DF9A0991D3FA0C7915728D /* dockicon-teal-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-teal-dark.png"; sourceTree = "<group>"; };
 		17F0FF267CE6A349E7920DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2164F6EDEDCFD1D0C965996A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,7 +195,9 @@
 		396A0F9A60D90DEE8210E823 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCodes.swift; sourceTree = "<group>"; };
 		3A7DCF91E12F21E3B65E0323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C0138CE1474C832386B3B9B /* Walkthrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
 		3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkSheet.swift; sourceTree = "<group>"; };
 		4E1CA26428923CCABF5A1E61 /* TVViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViews.swift; sourceTree = "<group>"; };
 		4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmuleRemoteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-blu-light.png"; sourceTree = "<group>"; };
@@ -190,12 +205,14 @@
 		5670D40F6B79A3BCE8DF5F51 /* dockicon-arancione-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-arancione-dark.png"; sourceTree = "<group>"; };
 		59C2EF766E5910207B0F2075 /* DoubleClick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleClick.swift; sourceTree = "<group>"; };
 		5AA34F0092F1EE95CE096FF9 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		5C6660C752665C7609E8D696 /* TVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTextField.swift; sourceTree = "<group>"; };
 		5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCache.swift; sourceTree = "<group>"; };
 		61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacQuickActions.swift; sourceTree = "<group>"; };
 		645B17724222F05100E7330F /* dockicon-grafite-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-grafite-dark.png"; sourceTree = "<group>"; };
 		647DE5C537E5A0C773834631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECClient.swift; sourceTree = "<group>"; };
 		653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentsSupport.swift; sourceTree = "<group>"; };
 		68B6BF751A8EEFFEF7E6FC86 /* dockicon-viola-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-viola-dark.png"; sourceTree = "<group>"; };
 		6B0EFC7AF54BC2089C9EBAED /* AmuleRemoteMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmuleRemoteMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5DB0A307797A4A5DE25E74 /* dockicon-grafite-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-grafite-light.png"; sourceTree = "<group>"; };
@@ -220,6 +237,7 @@
 		A0057868BEEA6E79E67442F6 /* IconColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconColor.swift; sourceTree = "<group>"; };
 		AD7D5CA347E8AF613A236479 /* TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVApp.swift; sourceTree = "<group>"; };
 		B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-blu-dark.png"; sourceTree = "<group>"; };
+		B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
 		B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
 		B2D4006EF6572D7CC660ED72 /* dockicon-teal-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-teal-light.png"; sourceTree = "<group>"; };
 		BA2C85E4775F68A1C7AFD60B /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
@@ -257,6 +275,7 @@
 			children = (
 				770A0330425FF2AF50F9674E /* Assets.xcassets */,
 				AD7D5CA347E8AF613A236479 /* TVApp.swift */,
+				5C6660C752665C7609E8D696 /* TVTextField.swift */,
 				4E1CA26428923CCABF5A1E61 /* TVViews.swift */,
 			);
 			path = TV;
@@ -279,7 +298,6 @@
 		2ABA5F5625B8B3D952A3BA99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0DF5769921C4E84C098EE14B /* AppIntentsSupport.swift */,
 				17F0FF267CE6A349E7920DC3 /* Assets.xcassets */,
 				B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */,
 				8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */,
@@ -336,7 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				396A0F9A60D90DEE8210E823 /* AboutView.swift */,
+				461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */,
 				BCB2F9F562AFEB163A2DEAE4 /* App.swift */,
+				674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */,
 				306B40E1F956585F27596B33 /* AppState.swift */,
 				95166171560B398567C99D70 /* AppTheme.swift */,
 				772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */,
@@ -364,6 +384,8 @@
 				247B7DCA306F2F002062FBC2 /* SearchView.swift */,
 				06B8850B14BB238F5A57DC21 /* ServersView.swift */,
 				CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */,
+				B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */,
+				3C0138CE1474C832386B3B9B /* Walkthrough.swift */,
 			);
 			name = AmuleRemote;
 			path = Sources/AmuleRemote;
@@ -595,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */,
+				DBFCA9CE5D7242A9952BD0D1 /* AppIntentsSupport.swift in Sources */,
 				E1DB2B9BBB6FA4A8C4A6C542 /* AppState.swift in Sources */,
 				5B7A2C2F14D33B14BFD9BCAF /* AppTheme.swift in Sources */,
 				93EDE95C6B21D8BF230EA234 /* BackgroundMonitor.swift in Sources */,
@@ -614,8 +637,11 @@
 				458C35D2EA02381FEA9BC6A2 /* Profiles.swift in Sources */,
 				40B0E9DEF7EE6749F0A5D51A /* QuickActions.swift in Sources */,
 				5EA45A53EDEAEBD991517E21 /* RemotePrefs.swift in Sources */,
+				BC5A594425D169ECE64B9294 /* SystemSettings.swift in Sources */,
 				77B385C63B672287AB4C8AEA /* TVApp.swift in Sources */,
+				57412AC6CDAF62C061D3E9ED /* TVTextField.swift in Sources */,
 				D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */,
+				94979D35617A2A755DB10D04 /* Walkthrough.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +650,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C1C839063128D884BE014C /* AboutView.swift in Sources */,
+				5605F447F1F572E3671B63CD /* AddLinkSheet.swift in Sources */,
 				FD81C23752468B5076F2F576 /* App.swift in Sources */,
+				32A2FA80544E2EF3CD7EAD2B /* AppIntentsSupport.swift in Sources */,
 				934AFF7CBC868BB8946618E2 /* AppState.swift in Sources */,
 				C6D40A0FAF0AA99693B72022 /* AppTheme.swift in Sources */,
 				ED52DED4EF8715D95F4EEF45 /* BackgroundMonitor.swift in Sources */,
@@ -652,6 +680,8 @@
 				EFADB45731066719D326CCAD /* SearchView.swift in Sources */,
 				396B39035171EBCA28FFD5ED /* ServersView.swift in Sources */,
 				1CA280B1B5323420701F312A /* SharedFilesView.swift in Sources */,
+				6414D2968D7D7DDBC20BDC59 /* SystemSettings.swift in Sources */,
+				CB19CE097600FACC2D2CB807 /* Walkthrough.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +698,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE0AAD934BF8A9CB0831B8D1 /* AboutView.swift in Sources */,
-				83AEE912BC4D8DE4C5DF7C97 /* AppIntentsSupport.swift in Sources */,
+				8C6BDBCF27C8071510B5DB60 /* AddLinkSheet.swift in Sources */,
+				B59E2EB9B93C76BCB4831EF7 /* AppIntentsSupport.swift in Sources */,
 				B9DCBCD74A1D67B6E299EE97 /* AppState.swift in Sources */,
 				478E72F31849701B72F522F7 /* AppTheme.swift in Sources */,
 				38657191093502102E2FA2A4 /* BackgroundMonitor.swift in Sources */,
@@ -690,6 +721,8 @@
 				A378482C8ACBBE1297B4CA68 /* Profiles.swift in Sources */,
 				E429740ADEF000EF8F64FE2A /* QuickActions.swift in Sources */,
 				7BBFE143CEAD8CC5A36A5DF2 /* RemotePrefs.swift in Sources */,
+				84A99605DF4FF445F903FFB2 /* SystemSettings.swift in Sources */,
+				22F95D2F0B731B79F34C02B9 /* Walkthrough.swift in Sources */,
 				B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */,
 				C082A73001BD7407432C52FD /* iOSMoreView.swift in Sources */,
 				28AC7C76BD852E2FE67FF930 /* iOSProfilesView.swift in Sources */,
@@ -704,7 +737,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC5EE7521F0BD2011CC66DA /* AboutView.swift in Sources */,
-				799E5AE0457FF93BAB77069E /* AppIntentsSupport.swift in Sources */,
+				734A83C4509309AF899C5040 /* AddLinkSheet.swift in Sources */,
+				57675248A0A1B6DAFC829A2C /* AppIntentsSupport.swift in Sources */,
 				849DD20A2E4D9BB4119466EF /* AppState.swift in Sources */,
 				B44C82A6454C67721178DD99 /* AppTheme.swift in Sources */,
 				E87EA1444A347DEF9CB9297F /* BackgroundMonitor.swift in Sources */,
@@ -726,6 +760,8 @@
 				8D5CBF8C738F62892C65D4B7 /* Profiles.swift in Sources */,
 				4CE24F9CA599579A84AFC96A /* QuickActions.swift in Sources */,
 				CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */,
+				A36F788BA7E9870193C0028F /* SystemSettings.swift in Sources */,
+				0C971943035FCFCC1EF06162 /* Walkthrough.swift in Sources */,
 				C4020A6D93EC8DD93C3FE618 /* WatchBridge.swift in Sources */,
 				5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */,
 				31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */,
@@ -756,7 +792,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -770,7 +806,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = iphoneos;
@@ -786,7 +822,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
@@ -795,7 +831,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = appletvos;
@@ -810,12 +846,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = watchos;
@@ -834,7 +870,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -844,7 +880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = xros;
@@ -863,7 +899,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -877,7 +913,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = iphoneos;
@@ -893,7 +929,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
@@ -905,7 +941,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
@@ -918,12 +954,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = watchos;
@@ -942,7 +978,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -952,7 +988,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = xros;
@@ -1030,7 +1066,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
@@ -1042,7 +1078,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
@@ -1057,7 +1093,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
@@ -1066,7 +1102,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = appletvos;

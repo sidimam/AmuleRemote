@@ -22,10 +22,8 @@ enum BackgroundRefresh {
 
     static func schedule() {
         let request = BGAppRefreshTaskRequest(identifier: taskID)
-        // Intervallo scelto dall'utente (Impostazioni avanzate); iOS impone
-        // comunque un minimo pratico di ~15 minuti e decide la cadenza reale.
-        let chosen = UserDefaults.standard.object(forKey: "checkInterval") as? Int ?? 900
-        request.earliestBeginDate = Date(timeIntervalSinceNow: Double(max(chosen, 900)))
+        // iOS impone un minimo pratico di ~15 minuti e decide la cadenza reale.
+        request.earliestBeginDate = Date(timeIntervalSinceNow: BackgroundMonitor.backgroundInterval)
         try? BGTaskScheduler.shared.submit(request)
     }
 

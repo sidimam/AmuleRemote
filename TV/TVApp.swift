@@ -16,6 +16,7 @@ struct AmuleRemoteTVApp: App {
             TVRootView()
                 .environmentObject(state)
                 .preferredColorScheme(state.themeMode.colorScheme)
+                .tint(AppIconColor.tint(for: state.iconColor))
                 .modifier(AppLocaleModifier(language: state.appLanguage))
         }
         .onChange(of: scenePhase) { _, phase in
@@ -90,6 +91,13 @@ struct TVRootView: View {
         } message: {
             Text(state.infoMessage ?? "")
         }
+        // Presentazione (funzionalità, iCloud) al primo avvio.
+        .fullScreenCover(isPresented: $state.showWalkthrough) {
+            WalkthroughView()
+                .environmentObject(state)
+                .tint(AppIconColor.tint(for: state.iconColor))
+                .modifier(AppLocaleModifier(language: state.appLanguage))
+        }
     }
 }
 
@@ -98,6 +106,7 @@ struct TVRootView: View {
 struct TVConnectionView: View {
     @EnvironmentObject var state: AppState
     @State private var portText = ""
+    @State private var showPassword = false
     @FocusState private var focused: Field?
 
     private enum Field { case host, port, password, autoConnect, connect, demo, restore }
@@ -162,26 +171,28 @@ struct TVConnectionView: View {
                 }
 
                 Section {
-                    TextField("Host o IP (es. unraid.local)", text: $state.host)
-                        .textContentType(.URL)
-                        .keyboardType(.URL)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .submitLabel(.next)
+                    // Campi nativi (TVTextField): il TextField SwiftUI azzerava il
+                    // testo provvisorio della tastiera remota dell'iPhone.
+                    TVTextField(placeholder: String(localized: "Host o IP (es. unraid.local)"), text: $state.host,
+                                keyboard: .URL, contentType: .URL, returnKey: .next) { focused = .port }
                         .focused($focused, equals: .host)
-                        .onSubmit { focused = .port }
-                    TextField("Porta EC", text: $portText)
-                        .keyboardType(.numberPad)
-                        .submitLabel(.next)
+                    TVTextField(placeholder: String(localized: "Porta EC"), text: $portText,
+                                keyboard: .numberPad, returnKey: .next) { focused = .password }
                         .focused($focused, equals: .port)
                         .onChange(of: portText) { _, v in
                             if let p = Int(v.filter(\.isNumber)), p > 0 { state.port = p }
                         }
-                        .onSubmit { focused = .password }
-                    PasswordField("Password", text: $state.password)
-                        .submitLabel(.go)
+                    HStack(spacing: 16) {
+                        TVTextField(placeholder: String(localized: "Password"), text: $state.password,
+                                    isSecure: !showPassword, contentType: .password, returnKey: .go) {
+                            if !state.host.isEmpty && !state.password.isEmpty { Task { await state.connect() } }
+                        }
                         .focused($focused, equals: .password)
-                        .onSubmit { if !state.host.isEmpty && !state.password.isEmpty { Task { await state.connect() } } }
+                        Button { showPassword.toggle() } label: {
+                            Image(systemName: showPassword ? "eye.slash" : "eye")
+                        }
+                        .accessibilityLabel(showPassword ? Text("Nascondi password") : Text("Mostra password"))
+                    }
                     TVToggleRow(title: "Connetti automaticamente all'avvio", icon: "bolt.badge.clock", isOn: $state.autoConnect)
                 } header: {
                     Text("Server")

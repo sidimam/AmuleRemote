@@ -1,6 +1,246 @@
 {
   "sourceLanguage": "it",
   "strings": {
+    "%@ non è più connesso alla rete Kad.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ لم يعد متصلاً بشبكة Kad."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist nicht mehr mit dem Kad-Netzwerk verbunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is no longer connected to the Kad network."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ya no está conectado a la red Kad."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ n'est plus connecté au réseau Kad."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已断开 Kad 网络连接。"
+          }
+        }
+      }
+    },
+    "%@ non è più connesso alla rete eD2k.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ لم يعد متصلاً بشبكة eD2k."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist nicht mehr mit dem eD2k-Netzwerk verbunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is no longer connected to the eD2k network."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ya no está conectado a la red eD2k."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ n'est plus connecté au réseau eD2k."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已断开 eD2k 网络连接。"
+          }
+        }
+      }
+    },
+    "%@ risponde di nuovo.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ يستجيب من جديد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ antwortet wieder."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is responding again."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vuelve a responder."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ répond de nouveau."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已恢复响应。"
+          }
+        }
+      }
+    },
+    "%@ è di nuovo connesso alla rete Kad.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ متصل من جديد بشبكة Kad."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist wieder mit dem Kad-Netzwerk verbunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is connected to the Kad network again."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vuelve a estar conectado a la red Kad."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ est de nouveau connecté au réseau Kad."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已重新连接到 Kad 网络。"
+          }
+        }
+      }
+    },
+    "%@ è di nuovo connesso alla rete eD2k (%@).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ متصل من جديد بشبكة eD2k (%@)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist wieder mit dem eD2k-Netzwerk verbunden (%@)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is connected to the eD2k network again (%@)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vuelve a estar conectado a la red eD2k (%@)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ est de nouveau connecté au réseau eD2k (%@)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已重新连接到 eD2k 网络（%@）。"
+          }
+        }
+      }
+    },
+    "%@ è di nuovo connesso alla rete eD2k.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ متصل من جديد بشبكة eD2k."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist wieder mit dem eD2k-Netzwerk verbunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is connected to the eD2k network again."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vuelve a estar conectado a la red eD2k."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ est de nouveau connecté au réseau eD2k."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 已重新连接到 eD2k 网络。"
+          }
+        }
+      }
+    },
     "%@. Software libero con licenza MIT. Il protocollo EC (External Connections) appartiene al progetto aMule.": {
       "localizations": {
         "ar": {
@@ -37,6 +277,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@。基于 MIT 许可证的自由软件。EC（External Connections）协议归 aMule 项目所有。"
+          }
+        }
+      }
+    },
+    "%@: %@ di %@, %@, fonti %llu/%llu.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ من %@، %@، المصادر %llu/%llu."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ von %@, %@, Quellen %llu/%llu."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ of %@, %@, sources %llu/%llu."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ de %@, %@, fuentes %llu/%llu."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ : %@ de %@, %@, sources %llu/%llu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@：已完成 %@（共 %@），%@，来源 %llu/%llu。"
           }
         }
       }
@@ -161,6 +441,46 @@
         }
       }
     },
+    "%lld file in coda.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ملفات في القائمة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Dateien in der Warteschlange."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld files in the queue."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivos en cola."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fichiers en file."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "队列中有 %lld 个文件。"
+          }
+        }
+      }
+    },
     "%lld fonti (%lld complete)": {
       "localizations": {
         "ar": {
@@ -197,6 +517,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 个来源（%lld 个完整）"
+          }
+        }
+      }
+    },
+    "%lld link riconosciuti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم التعرف على %lld روابط"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Links erkannt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld links found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld enlaces reconocidos"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld liens reconnus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已识别 %lld 个链接"
+          }
+        }
+      }
+    },
+    "%lld risultati per «%@».": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld نتائج لـ «%@»."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Ergebnisse für „%@“."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld results for “%@”."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld resultados para «%@»."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld résultats pour « %@ »."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@”的结果：%lld 个。"
           }
         }
       }
@@ -801,6 +1201,46 @@
         }
       }
     },
+    "Accoda uno o più link ed2k:// sul server aMule (anche un testo che li contiene).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يضيف رابطًا واحدًا أو أكثر من روابط ed2k:// إلى قائمة خادم aMule (أو نصًا يحتويها)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reiht einen oder mehrere ed2k://-Links auf dem aMule-Server ein (auch ein Text, der sie enthält)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Queues one or more ed2k:// links on the aMule server (any text containing them works too)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encola uno o varios enlaces ed2k:// en el servidor aMule (también un texto que los contenga)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met en file un ou plusieurs liens ed2k:// sur le serveur aMule (un texte qui les contient convient aussi)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将一个或多个 ed2k:// 链接加入 aMule 服务器队列（也可传入包含链接的文本）。"
+          }
+        }
+      }
+    },
     "Aggiorna": {
       "localizations": {
         "ar": {
@@ -1241,6 +1681,46 @@
         }
       }
     },
+    "Aggiungi link dagli Appunti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة روابط من الحافظة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Links aus der Zwischenablage hinzufügen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add links from the Clipboard"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir enlaces del Portapapeles"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter les liens du Presse-papiers"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从剪贴板添加链接"
+          }
+        }
+      }
+    },
     "Aggiungi link eD2k": {
       "localizations": {
         "ar": {
@@ -1561,6 +2041,46 @@
         }
       }
     },
+    "Aggiunti %lld link ai download.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إضافة %lld روابط إلى التنزيلات."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Links zu den Downloads hinzugefügt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld links added to the downloads."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld enlaces añadidos a las descargas."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld liens ajoutés aux téléchargements."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已将 %lld 个链接添加到下载。"
+          }
+        }
+      }
+    },
     "Aggiunto ai download: %@": {
       "localizations": {
         "ar": {
@@ -1637,6 +2157,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "立即分配完整大小"
+          }
+        }
+      }
+    },
+    "Alta": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عالية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoch"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haute"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高"
           }
         }
       }
@@ -1841,6 +2401,46 @@
         }
       }
     },
+    "Apri le Impostazioni": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "افتح الإعدادات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen öffnen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir les Réglages"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开设置"
+          }
+        }
+      }
+    },
     "Arancione": {
       "localizations": {
         "ar": {
@@ -1961,6 +2561,46 @@
         }
       }
     },
+    "Attiva la sincronizzazione iCloud": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تفعيل مزامنة iCloud"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud-Synchronisierung aktivieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on iCloud sync"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar la sincronización de iCloud"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer la synchronisation iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启 iCloud 同步"
+          }
+        }
+      }
+    },
     "Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Con i controlli in background l'app verifica il server anche da disconnessa (timeout o caduta della connessione) e ti avvisa di download completati e disconnessioni eD2k/Kad (queste ultime non se sul server è attiva la riconnessione automatica). Con l'app aperta i controlli seguono l'intervallo scelto; in background la cadenza la decide iOS usando questo valore come minimo (mai sotto i 15 minuti, a tutela della batteria). Le notifiche arrivano anche su Apple Watch.": {
       "localizations": {
         "ar": {
@@ -2037,6 +2677,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "断开（超时或服务器掉线）后，只要应用保持打开，就会按所选间隔继续检查服务器，并通知已完成的下载和 eD2k/Kad 掉线（后者仅在服务器未启用自动重连时）。开启通知以接收提醒：首次开启时，应用会请求权限并发送一条测试通知。"
+          }
+        }
+      }
+    },
+    "Attive": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مفعّلة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiv"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activées"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已开启"
           }
         }
       }
@@ -2121,6 +2801,46 @@
         }
       }
     },
+    "Automatica": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تلقائية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatisch"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatique"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动"
+          }
+        }
+      }
+    },
     "Autore": {
       "localizations": {
         "ar": {
@@ -2161,6 +2881,46 @@
         }
       }
     },
+    "Avanti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التالي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suivant"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步"
+          }
+        }
+      }
+    },
     "Avanzamento": {
       "localizations": {
         "ar": {
@@ -2197,6 +2957,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "进度"
+          }
+        }
+      }
+    },
+    "Avanzamento, velocità e stato del download il cui nome contiene il testo indicato.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تقدم وسرعة وحالة التنزيل الذي يحتوي اسمه على النص المحدد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortschritt, Geschwindigkeit und Status des Downloads, dessen Name den angegebenen Text enthält."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progress, speed and state of the download whose name contains the given text."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avance, velocidad y estado de la descarga cuyo nombre contiene el texto indicado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avancement, vitesse et état du téléchargement dont le nom contient le texte indiqué."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名称包含指定文本的下载的进度、速度和状态。"
           }
         }
       }
@@ -2321,6 +3121,126 @@
         }
       }
     },
+    "Avvia o ferma la rete Kad": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدء شبكة Kad أو إيقافها"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad-Netzwerk starten oder stoppen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start or stop the Kad network"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar o detener la red Kad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démarrer ou arrêter le réseau Kad"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "启动或停止 Kad 网络"
+          }
+        }
+      }
+    },
+    "Avvia o ferma la rete Kademlia sul server aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يبدأ شبكة Kademlia على خادم aMule أو يوقفها."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startet oder stoppt das Kademlia-Netzwerk auf dem aMule-Server."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starts or stops the Kademlia network on the aMule server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia o detiene la red Kademlia en el servidor aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démarre ou arrête le réseau Kademlia sur le serveur aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 aMule 服务器上启动或停止 Kademlia 网络。"
+          }
+        }
+      }
+    },
+    "Avvia una ricerca sul server aMule e restituisce i nomi dei primi risultati (attende fino a 15 secondi).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يبدأ بحثًا على خادم aMule ويُعيد أسماء النتائج الأولى (ينتظر حتى 15 ثانية)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startet eine Suche auf dem aMule-Server und liefert die Namen der ersten Ergebnisse (wartet bis zu 15 Sekunden)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starts a search on the aMule server and returns the names of the first results (waits up to 15 seconds)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia una búsqueda en el servidor aMule y devuelve los nombres de los primeros resultados (espera hasta 15 segundos)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lance une recherche sur le serveur aMule et renvoie les noms des premiers résultats (attend jusqu'à 15 secondes)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 aMule 服务器上发起搜索并返回前几个结果的名称（最多等待 15 秒）。"
+          }
+        }
+      }
+    },
     "Avvia webserver automaticamente": {
       "localizations": {
         "ar": {
@@ -2357,6 +3277,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "自动启动网页服务器"
+          }
+        }
+      }
+    },
+    "Azioni rapide e Siri": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإجراءات السريعة وSiri"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schnellaktionen und Siri"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick actions and Siri"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acciones rápidas y Siri"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actions rapides et Siri"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快捷操作与 Siri"
           }
         }
       }
@@ -2481,6 +3441,86 @@
         }
       }
     },
+    "Bassa": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "منخفضة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niedrig"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baja"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basse"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "低"
+          }
+        }
+      }
+    },
+    "Benvenuto in aMule Remote": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مرحبًا بك في aMule Remote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Willkommen bei aMule Remote"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to aMule Remote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bienvenido a aMule Remote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bienvenue dans aMule Remote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "欢迎使用 aMule Remote"
+          }
+        }
+      }
+    },
     "Blocca tutti i messaggi": {
       "localizations": {
         "ar": {
@@ -2597,6 +3637,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "文件缓冲（KB）："
+          }
+        }
+      }
+    },
+    "Cambia la priorità (bassa, normale, alta, automatica) del download il cui nome contiene il testo indicato.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يغيّر أولوية التنزيل (منخفضة، عادية، عالية، تلقائية) الذي يحتوي اسمه على النص المحدد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ändert die Priorität (niedrig, normal, hoch, automatisch) des Downloads, dessen Name den angegebenen Text enthält."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changes the priority (low, normal, high, auto) of the download whose name contains the given text."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambia la prioridad (baja, normal, alta, automática) de la descarga cuyo nombre contiene el texto indicado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change la priorité (basse, normale, haute, automatique) du téléchargement dont le nom contient le texte indiqué."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更改名称包含指定文本的下载的优先级（低、普通、高、自动）。"
           }
         }
       }
@@ -3081,6 +4161,46 @@
         }
       }
     },
+    "Cerca file su aMule": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البحث عن ملفات في aMule"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien auf aMule suchen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search files on aMule"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar archivos en aMule"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher des fichiers sur aMule"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 aMule 上搜索文件"
+          }
+        }
+      }
+    },
     "Cerca file…": {
       "localizations": {
         "ar": {
@@ -3117,6 +4237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索文件…"
+          }
+        }
+      }
+    },
+    "Cerco un backup su iCloud…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ البحث عن نسخة احتياطية في iCloud…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche nach einem Backup in iCloud…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for a backup on iCloud…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscando una copia en iCloud…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche d'une sauvegarde sur iCloud…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在 iCloud 中查找备份…"
           }
         }
       }
@@ -3197,6 +4357,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "浅色"
+          }
+        }
+      }
+    },
+    "Chiede al server aMule di connettersi a un server eD2k (connessione automatica).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يطلب من خادم aMule الاتصال بخادم eD2k (اتصال تلقائي)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fordert den aMule-Server auf, sich mit einem eD2k-Server zu verbinden (automatische Verbindung)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Asks the aMule server to connect to an eD2k server (automatic connection)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pide al servidor aMule que se conecte a un servidor eD2k (conexión automática)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demande au serveur aMule de se connecter à un serveur eD2k (connexion automatique)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请求 aMule 服务器连接到 eD2k 服务器（自动连接）。"
           }
         }
       }
@@ -3361,6 +4561,46 @@
         }
       }
     },
+    "Coda dei download con avanzamento, velocità, fonti e tempo stimato; pausa, riprendi, ferma, priorità, categorie ed eliminazione anche in selezione multipla. Ricerca locale e globale a schede, con i risultati già in coda in rosso e quelli già scaricati in verde.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة التنزيلات مع التقدم والسرعة والمصادر والوقت المتبقي؛ إيقاف مؤقت واستئناف وإيقاف وأولوية وفئات وحذف، حتى في التحديد المتعدد. بحث محلي وعالمي بعلامات تبويب، مع النتائج الموجودة في القائمة بالأحمر والمنزّلة سابقًا بالأخضر."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Warteschlange mit Fortschritt, Geschwindigkeit, Quellen und Restzeit; Pause, Fortsetzen, Stopp, Priorität, Kategorien und Löschen, auch in Mehrfachauswahl. Lokale und globale Suche in Tabs, bereits eingereihte Ergebnisse rot, bereits geladene grün."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download queue with progress, speed, sources and ETA; pause, resume, stop, priority, categories and delete, also in multi-selection. Tabbed local and global search, with results already queued in red and already downloaded in green."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cola de descargas con avance, velocidad, fuentes y tiempo estimado; pausar, reanudar, detener, prioridad, categorías y eliminar, también en selección múltiple. Búsqueda local y global por pestañas, con los resultados ya en cola en rojo y los ya descargados en verde."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File des téléchargements avec avancement, vitesse, sources et temps estimé ; pause, reprise, arrêt, priorité, catégories et suppression, aussi en sélection multiple. Recherche locale et globale à onglets, avec les résultats déjà en file en rouge et ceux déjà téléchargés en vert."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载队列显示进度、速度、来源和预计时间；可暂停、继续、停止、设定优先级、分类和删除，也支持多选。标签式本地和全局搜索，已在队列中的结果显示为红色，已下载的显示为绿色。"
+          }
+        }
+      }
+    },
     "Coda upload": {
       "localizations": {
         "ar": {
@@ -3437,6 +4677,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "源代码"
+          }
+        }
+      }
+    },
+    "Colore app": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لون التطبيق"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App-Farbe"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App color"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color de la app"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couleur de l'app"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 颜色"
           }
         }
       }
@@ -3961,6 +5241,46 @@
         }
       }
     },
+    "Condividi": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشاركة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teilen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享"
+          }
+        }
+      }
+    },
     "Condividi file nascosti": {
       "localizations": {
         "ar": {
@@ -3997,6 +5317,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "共享隐藏文件"
+          }
+        }
+      }
+    },
+    "Condividi link eD2k": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشاركة رابط eD2k"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k-Link teilen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share eD2k link"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir enlace eD2k"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager le lien eD2k"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享 eD2k 链接"
+          }
+        }
+      }
+    },
+    "Condividi link eD2k (%lld)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشاركة روابط eD2k (%lld)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k-Links teilen (%lld)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share eD2k links (%lld)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir enlaces eD2k (%lld)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager les liens eD2k (%lld)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享 eD2k 链接（%lld）"
           }
         }
       }
@@ -4157,6 +5557,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "连接 amuled 服务器（External Connections）"
+          }
+        }
+      }
+    },
+    "Connessione al server interrotta": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "انقطع الاتصال بالخادم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serververbindung unterbrochen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server connection lost"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conexión con el servidor interrumpida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connexion au serveur interrompue"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "服务器连接已中断"
+          }
+        }
+      }
+    },
+    "Connessione eD2k richiesta.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم طلب اتصال eD2k."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k-Verbindung angefordert."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k connection requested."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conexión eD2k solicitada."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connexion eD2k demandée."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已请求 eD2k 连接。"
           }
         }
       }
@@ -4441,6 +5921,46 @@
         }
       }
     },
+    "Connetti aMule alla rete eD2k": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "توصيل aMule بشبكة eD2k"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule mit dem eD2k-Netzwerk verbinden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect aMule to the eD2k network"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar aMule a la red eD2k"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecter aMule au réseau eD2k"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将 aMule 连接到 eD2k 网络"
+          }
+        }
+      }
+    },
     "Connetti all'avvio": {
       "localizations": {
         "ar": {
@@ -4597,6 +6117,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "允许访客访问"
+          }
+        }
+      }
+    },
+    "Consenti le notifiche": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "السماح بالإشعارات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen erlauben"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow notifications"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permitir notificaciones"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autoriser les notifications"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "允许通知"
           }
         }
       }
@@ -5241,6 +6801,46 @@
         }
       }
     },
+    "Disattivate": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "معطّلة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactivadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désactivées"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已关闭"
+          }
+        }
+      }
+    },
     "Disconnessioni eD2k / Kad": {
       "localizations": {
         "ar": {
@@ -5281,6 +6881,86 @@
         }
       }
     },
+    "Disconnesso dalla rete eD2k.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الفصل عن شبكة eD2k."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vom eD2k-Netzwerk getrennt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnected from the eD2k network."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desconectado de la red eD2k."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déconnecté du réseau eD2k."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已断开 eD2k 网络。"
+          }
+        }
+      }
+    },
+    "Disconnette il server aMule dal server eD2k corrente.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يفصل خادم aMule عن خادم eD2k الحالي."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trennt den aMule-Server vom aktuellen eD2k-Server."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnects the aMule server from the current eD2k server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desconecta el servidor aMule del servidor eD2k actual."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déconnecte le serveur aMule du serveur eD2k actuel."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开 aMule 服务器与当前 eD2k 服务器的连接。"
+          }
+        }
+      }
+    },
     "Disconnetti": {
       "localizations": {
         "ar": {
@@ -5317,6 +6997,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "断开连接"
+          }
+        }
+      }
+    },
+    "Disconnetti aMule dalla rete eD2k": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فصل aMule عن شبكة eD2k"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule vom eD2k-Netzwerk trennen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnect aMule from the eD2k network"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desconectar aMule de la red eD2k"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déconnecter aMule du réseau eD2k"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "断开 aMule 与 eD2k 网络的连接"
           }
         }
       }
@@ -5441,6 +7161,46 @@
         }
       }
     },
+    "Dopo il periodo di inattività scelto (e quando l'app va in background) la connessione al server si chiude per risparmiare batteria e dati, ma i dati restano visibili in stato Offline: la connessione riparte da sola al primo tocco o al ritorno in primo piano. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi. Le notifiche (download avviati e completati, server non raggiungibile, cadute e riconnessioni eD2k/Kad) si gestiscono nelle Impostazioni di sistema: la riga Notifiche ti porta lì. Con il blocco attivo, all'apertura l'app chiede %@ prima di mostrare i contenuti. Il colore dell'app tinge pulsanti e link su tutti i dispositivi e cambia l'icona su iPhone, iPad e Apple Vision Pro; su Apple Watch resta l'icona originale (limite di watchOS).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد فترة الخمول المحددة (وعند انتقال التطبيق إلى الخلفية) يُغلق الاتصال بالخادم لتوفير البطارية والبيانات، لكن البيانات تبقى ظاهرة في وضع عدم الاتصال: يُستأنف الاتصال تلقائيًا عند أول لمسة أو عند العودة إلى المقدمة. مع مزامنة iCloud تتم مشاركة ملفات تعريف الخادم وكلمات مرورها (سلسلة مفاتيح iCloud) بين أجهزتك. تُدار الإشعارات (بدء التنزيلات وإكمالها، وعدم الوصول إلى الخادم، وانقطاع eD2k/Kad وإعادة اتصالهما) في إعدادات النظام: يأخذك صف الإشعارات إلى هناك. مع تفعيل القفل يطلب التطبيق %@ عند الفتح قبل عرض المحتوى. يلوّن لون التطبيق الأزرار والروابط على كل الأجهزة ويغيّر الأيقونة على iPhone وiPad وApple Vision Pro؛ وتبقى الأيقونة الأصلية على Apple Watch (قيد في watchOS)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach der gewählten Inaktivitätszeit (und wenn die App in den Hintergrund geht) wird die Serververbindung geschlossen, um Akku und Daten zu sparen; die Daten bleiben jedoch im Offline-Modus sichtbar: Die Verbindung wird beim ersten Tippen oder bei der Rückkehr in den Vordergrund automatisch wiederhergestellt. Mit der iCloud-Synchronisierung werden die Serverprofile und ihre Passwörter (iCloud-Schlüsselbund) auf allen deinen Geräten geteilt. Mitteilungen (gestartete und abgeschlossene Downloads, nicht erreichbarer Server, eD2k/Kad-Abbrüche und -Wiederverbindungen) werden in den Systemeinstellungen verwaltet: Die Zeile Mitteilungen führt dich dorthin. Bei aktiver Sperre fragt die App beim Öffnen nach %@, bevor Inhalte angezeigt werden. Die App-Farbe färbt Tasten und Links auf allen Geräten und ändert das Symbol auf iPhone, iPad und Apple Vision Pro; auf der Apple Watch bleibt das Originalsymbol (watchOS-Einschränkung)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the chosen idle period (and when the app goes to the background) the server connection is closed to save battery and data, but the data stays visible in Offline mode: the connection resumes by itself at the first tap or when the app returns to the foreground. With iCloud sync your server profiles and their passwords (iCloud Keychain) are shared across your devices. Notifications (downloads started and completed, server unreachable, eD2k/Kad drops and reconnections) are managed in the system Settings: the Notifications row takes you there. With the lock on, the app asks for %@ before showing its content. The app color tints buttons and links on every device and changes the icon on iPhone, iPad and Apple Vision Pro; Apple Watch keeps the original icon (a watchOS limitation)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras el periodo de inactividad elegido (y cuando la app pasa a segundo plano) la conexión con el servidor se cierra para ahorrar batería y datos, pero los datos siguen visibles en modo Sin conexión: la conexión se reanuda sola al primer toque o al volver a primer plano. Con la sincronización de iCloud, los perfiles de servidor y sus contraseñas (Llavero de iCloud) se comparten entre tus dispositivos. Las notificaciones (descargas iniciadas y completadas, servidor no accesible, caídas y reconexiones eD2k/Kad) se gestionan en los Ajustes del sistema: la fila Notificaciones te lleva allí. Con el bloqueo activo, al abrir la app pide %@ antes de mostrar el contenido. El color de la app tiñe botones y enlaces en todos los dispositivos y cambia el icono en iPhone, iPad y Apple Vision Pro; en Apple Watch permanece el icono original (límite de watchOS)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après la période d'inactivité choisie (et quand l'app passe en arrière-plan) la connexion au serveur est fermée pour économiser batterie et données, mais les données restent visibles en mode Hors ligne : la connexion reprend d'elle-même au premier toucher ou au retour au premier plan. Avec la synchronisation iCloud, les profils de serveur et leurs mots de passe (trousseau iCloud) sont partagés entre vos appareils. Les notifications (téléchargements démarrés et terminés, serveur injoignable, coupures et reconnexions eD2k/Kad) se gèrent dans les Réglages du système : la ligne Notifications vous y amène. Avec le verrouillage actif, l'app demande %@ à l'ouverture avant d'afficher le contenu. La couleur de l'app teinte boutons et liens sur tous les appareils et change l'icône sur iPhone, iPad et Apple Vision Pro ; l'Apple Watch garde l'icône d'origine (limite de watchOS)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在所选的闲置时间后（以及 App 进入后台时），与服务器的连接会关闭以节省电量和流量，但数据会以离线状态继续显示：首次点按或回到前台时连接会自动恢复。启用 iCloud 同步后，服务器配置及其密码（iCloud 钥匙串）会在你的所有设备间共享。通知（下载开始与完成、服务器不可达、eD2k/Kad 断开与重连）在系统“设置”中管理：点按“通知”一行即可前往。启用锁定后，App 在打开时会先要求 %@ 再显示内容。App 颜色会为所有设备上的按钮和链接着色，并更改 iPhone、iPad 和 Apple Vision Pro 上的图标；Apple Watch 保留原始图标（watchOS 的限制）。"
+          }
+        }
+      }
+    },
     "Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede %@ (o la password del Mac) prima di mostrare i contenuti.": {
       "localizations": {
         "ar": {
@@ -5477,6 +7237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "在所选的闲置时间后（无点击或按键），与服务器的连接会关闭，但数据会以离线状态继续显示：首次点击或点按“重新连接”时会自动恢复。界面语言即时切换；通知和格式在下次启动时生效。颜色会更改 Dock 图标；Finder 中的图标保持原样。启用锁定后，App 启动时会先要求 %@（或 Mac 密码）再显示内容。"
+          }
+        }
+      }
+    },
+    "Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore tinge pulsanti e link dell'app e cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede %@ (o la password del Mac) prima di mostrare i contenuti.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد فترة الخمول المحددة (بدون نقر أو ضغط مفتاح) يُغلق الاتصال بالخادم، لكن البيانات تبقى ظاهرة في وضع عدم الاتصال: يُستأنف تلقائيًا عند أول نقرة أو عبر «إعادة الاتصال». تغيير اللغة فوري للواجهة؛ أما الإشعارات والتنسيقات فتتبع عند التشغيل التالي. يلوّن اللون أزرار التطبيق وروابطه ويغيّر أيقونة Dock؛ وتبقى أيقونة Finder الأصلية. مع تفعيل القفل يطلب التطبيق %@ (أو كلمة مرور Mac) عند التشغيل قبل عرض المحتوى."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach der gewählten Inaktivitätszeit (kein Klick, keine Taste) wird die Serververbindung geschlossen; die Daten bleiben jedoch im Offline-Modus sichtbar: Beim ersten Klick oder mit „Erneut verbinden“ geht es automatisch weiter. Der Sprachwechsel wirkt sofort auf die Oberfläche; Mitteilungen und Formate folgen beim nächsten Start. Die Farbe färbt Tasten und Links der App und ändert das Dock-Symbol; das Finder-Symbol bleibt das Original. Bei aktiver Sperre fragt die App beim Start nach %@ (oder dem Mac-Passwort), bevor Inhalte angezeigt werden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the chosen idle period (no click or key press) the server connection is closed, but the data stays visible in Offline mode: it resumes by itself at the first click or with “Reconnect”. The language change is immediate for the interface; notifications and formats follow at the next launch. The color tints the app's buttons and links and changes the Dock icon; the Finder icon stays the original. With the lock on, the app asks for %@ (or the Mac password) at launch before showing its content."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras el periodo de inactividad elegido (sin clics ni teclas) la conexión con el servidor se cierra, pero los datos siguen visibles en modo Sin conexión: se reanuda sola al primer clic o con «Reconectar». El cambio de idioma es inmediato para la interfaz; notificaciones y formatos se adaptan en el próximo inicio. El color tiñe botones y enlaces de la app y cambia el icono del Dock; el del Finder sigue siendo el original. Con el bloqueo activo, al iniciar la app pide %@ (o la contraseña del Mac) antes de mostrar el contenido."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après la période d'inactivité choisie (ni clic ni touche) la connexion au serveur est fermée, mais les données restent visibles en mode Hors ligne : elle reprend d'elle-même au premier clic ou avec « Reconnecter ». Le changement de langue est immédiat pour l'interface ; notifications et formats suivent au prochain lancement. La couleur teinte les boutons et liens de l'app et change l'icône du Dock ; celle du Finder reste l'originale. Avec le verrouillage actif, l'app demande %@ (ou le mot de passe du Mac) au lancement avant d'afficher le contenu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在所选的闲置时间后（无点击或按键），与服务器的连接会关闭，但数据会以离线状态继续显示：首次点击或点按“重新连接”时会自动恢复。界面语言即时切换；通知和格式在下次启动时生效。颜色会为 App 的按钮和链接着色并更改 Dock 图标；Finder 中的图标保持原样。启用锁定后，App 启动时会先要求 %@（或 Mac 密码）再显示内容。"
           }
         }
       }
@@ -5721,6 +7521,86 @@
         }
       }
     },
+    "Download a %@.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التنزيل بسرعة %@."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download mit %@."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloading at %@."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando a %@."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargement à %@."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载速度 %@。"
+          }
+        }
+      }
+    },
+    "Download avviato": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدأ التنزيل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download gestartet"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download started"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga iniciada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargement démarré"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载已开始"
+          }
+        }
+      }
+    },
     "Download completati": {
       "localizations": {
         "ar": {
@@ -5797,6 +7677,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成的下载（Incoming）："
+          }
+        }
+      }
+    },
+    "Download completati rimossi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إزالة التنزيلات المكتملة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abgeschlossene Downloads entfernt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed downloads removed."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargas completadas eliminadas."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargements terminés retirés."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已移除已完成的下载。"
+          }
+        }
+      }
+    },
+    "Download completato ✅": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اكتمل التنزيل ✅"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download abgeschlossen ✅"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download completed ✅"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga completada ✅"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargement terminé ✅"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载完成 ✅"
           }
         }
       }
@@ -8081,6 +10041,46 @@
         }
       }
     },
+    "Il backup è unico per tutti i tuoi dispositivi. Puoi comunque attivare la sincronizzazione più tardi dalle impostazioni dell'app.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النسخة الاحتياطية واحدة لكل أجهزتك. يمكنك تفعيل المزامنة لاحقًا من إعدادات التطبيق."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Backup ist für alle deine Geräte dasselbe. Du kannst die Synchronisierung auch später in den App-Einstellungen aktivieren."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The backup is shared by all your devices. You can still turn on sync later from the app settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La copia es única para todos tus dispositivos. Puedes activar la sincronización más tarde desde los ajustes de la app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sauvegarde est unique pour tous vos appareils. Vous pourrez activer la synchronisation plus tard dans les réglages de l'app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "备份在你的所有设备间通用。你也可以稍后在 App 设置中开启同步。"
+          }
+        }
+      }
+    },
     "Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio.": {
       "localizations": {
         "ar": {
@@ -8401,6 +10401,46 @@
         }
       }
     },
+    "Il telecomando per il tuo server aMule (amuled) su NAS, Unraid, Raspberry Pi o PC di casa: l'app non scarica nulla sul dispositivo, controlla il server che già possiedi tramite il protocollo EC (External Connections).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جهاز التحكم عن بُعد بخادم aMule (amuled) على NAS أو Unraid أو Raspberry Pi أو حاسوب المنزل: لا يُنزّل التطبيق شيئًا إلى الجهاز، بل يتحكم بالخادم الذي تملكه عبر بروتوكول EC (External Connections)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Fernbedienung für deinen aMule-Server (amuled) auf NAS, Unraid, Raspberry Pi oder Heim-PC: Die App lädt nichts auf das Gerät, sie steuert den Server, den du schon hast, über das EC-Protokoll (External Connections)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The remote control for your aMule server (amuled) on a NAS, Unraid, Raspberry Pi or home PC: the app downloads nothing to the device, it controls the server you already own through the EC (External Connections) protocol."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El control remoto de tu servidor aMule (amuled) en un NAS, Unraid, Raspberry Pi o PC de casa: la app no descarga nada en el dispositivo, controla el servidor que ya tienes mediante el protocolo EC (External Connections)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La télécommande de votre serveur aMule (amuled) sur NAS, Unraid, Raspberry Pi ou PC de la maison : l'app ne télécharge rien sur l'appareil, elle pilote le serveur que vous possédez déjà via le protocole EC (External Connections)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的 aMule 服务器（amuled）的遥控器，无论它运行在 NAS、Unraid、Raspberry Pi 还是家用电脑上：App 不会向设备下载任何内容，而是通过 EC（External Connections）协议控制你已有的服务器。"
+          }
+        }
+      }
+    },
     "Illimitato": {
       "localizations": {
         "ar": {
@@ -8437,6 +10477,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "不限"
+          }
+        }
+      }
+    },
+    "Impossibile connettersi a %@. Controlla che amuled sia acceso e raggiungibile.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن الاتصال بـ %@. تحقق من أن amuled يعمل ويمكن الوصول إليه."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung zu %@ nicht möglich. Prüfe, ob amuled läuft und erreichbar ist."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot connect to %@. Check that amuled is running and reachable."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se puede conectar con %@. Comprueba que amuled esté encendido y accesible."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de se connecter à %@. Vérifiez qu'amuled est allumé et joignable."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接到 %@。请检查 amuled 是否已启动并可访问。"
+          }
+        }
+      }
+    },
+    "Imposta la priorità di un download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعيين أولوية تنزيل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorität eines Downloads festlegen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set a download's priority"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Establecer la prioridad de una descarga"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Définir la priorité d'un téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置某个下载的优先级"
           }
         }
       }
@@ -8601,6 +10721,46 @@
         }
       }
     },
+    "In pausa: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متوقف مؤقتًا: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausiert: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pausa: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pause : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已暂停：%@"
+          }
+        }
+      }
+    },
     "Incolla o detta il link: con un iPhone vicino puoi usare la notifica «Tastiera Apple TV».": {
       "localizations": {
         "ar": {
@@ -8637,6 +10797,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "粘贴或口述链接：附近有 iPhone 时可使用“Apple TV 键盘”通知。"
+          }
+        }
+      }
+    },
+    "Incolla uno o più link ed2k:// (anche uno per riga, o un testo che li contiene): l'app li riconosce da sola.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الصق رابطًا واحدًا أو أكثر من روابط ed2k:// (واحد في كل سطر أو نص يحتويها): يتعرّف التطبيق عليها تلقائيًا."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge einen oder mehrere ed2k://-Links ein (einer pro Zeile oder ein Text, der sie enthält): Die App erkennt sie von selbst."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paste one or more ed2k:// links (one per line, or any text that contains them): the app picks them out by itself."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pega uno o varios enlaces ed2k:// (uno por línea o un texto que los contenga): la app los reconoce sola."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collez un ou plusieurs liens ed2k:// (un par ligne, ou un texte qui les contient) : l'app les reconnaît d'elle-même."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "粘贴一个或多个 ed2k:// 链接（每行一个，或包含链接的文本）：App 会自动识别。"
+          }
+        }
+      }
+    },
+    "Indietro": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رجوع"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zurück"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atrás"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retour"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "返回"
           }
         }
       }
@@ -8881,6 +11121,46 @@
         }
       }
     },
+    "Inizia": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ابدأ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los geht's"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get started"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commencer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始使用"
+          }
+        }
+      }
+    },
     "Integrità e recupero": {
       "localizations": {
         "ar": {
@@ -9117,6 +11397,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kad"
+          }
+        }
+      }
+    },
+    "Kad disconnesso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad غير متصل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad getrennt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad disconnected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad desconectado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad déconnecté"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad 已断开"
+          }
+        }
+      }
+    },
+    "Kad riconnesso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إعادة الاتصال بـ Kad"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad wieder verbunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad reconnected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad reconectado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad reconnecté"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad 已重新连接"
           }
         }
       }
@@ -9361,6 +11721,46 @@
         }
       }
     },
+    "La connessione con %@ si è chiusa. L'app si riconnetterà da sola.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "انقطع الاتصال بـ %@. سيعيد التطبيق الاتصال تلقائيًا."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Verbindung zu %@ wurde geschlossen. Die App verbindet sich von selbst neu."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The connection to %@ was closed. The app will reconnect by itself."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La conexión con %@ se ha cerrado. La app se reconectará sola."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La connexion à %@ s'est fermée. L'app se reconnectera d'elle-même."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "与 %@ 的连接已关闭。App 会自动重新连接。"
+          }
+        }
+      }
+    },
     "La sincronizzazione iCloud richiede la build firmata ufficiale (DMG dal sito, Homebrew o Mac App Store): questa copia non ha il profilo iCloud.": {
       "localizations": {
         "ar": {
@@ -9397,6 +11797,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "iCloud 同步需要官方签名版本（网站 DMG、Homebrew 或 Mac App Store）：此副本没有 iCloud 配置文件。"
+          }
+        }
+      }
+    },
+    "Le notifiche (download avviati e completati, server non raggiungibile, cadute e riconnessioni eD2k/Kad) si gestiscono in Impostazioni di Sistema → Notifiche: la riga Notifiche ti porta lì.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تُدار الإشعارات (بدء التنزيلات وإكمالها، وعدم الوصول إلى الخادم، وانقطاع eD2k/Kad وإعادة اتصالهما) في إعدادات النظام → الإشعارات: يأخذك صف الإشعارات إلى هناك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen (gestartete und abgeschlossene Downloads, nicht erreichbarer Server, eD2k/Kad-Abbrüche und -Wiederverbindungen) werden in den Systemeinstellungen → Mitteilungen verwaltet: Die Zeile Mitteilungen führt dich dorthin."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications (downloads started and completed, server unreachable, eD2k/Kad drops and reconnections) are managed in System Settings → Notifications: the Notifications row takes you there."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones (descargas iniciadas y completadas, servidor no accesible, caídas y reconexiones eD2k/Kad) se gestionan en Ajustes del Sistema → Notificaciones: la fila Notificaciones te lleva allí."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications (téléchargements démarrés et terminés, serveur injoignable, coupures et reconnexions eD2k/Kad) se gèrent dans Réglages Système → Notifications : la ligne Notifications vous y amène."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知（下载开始与完成、服务器不可达、eD2k/Kad 断开与重连）在“系统设置 → 通知”中管理：点按“通知”一行即可前往。"
           }
         }
       }
@@ -9477,6 +11917,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote 的通知已在系统设置中关闭。请在“系统设置 → 通知 → aMule Remote”中开启。"
+          }
+        }
+      }
+    },
+    "Le notifiche sono disattivate nelle Impostazioni di sistema.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإشعارات معطّلة في إعدادات النظام."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen sind in den Systemeinstellungen deaktiviert."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications are turned off in the system Settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones están desactivadas en los Ajustes del sistema."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications sont désactivées dans les Réglages du système."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知已在系统“设置”中关闭。"
           }
         }
       }
@@ -10121,6 +12601,46 @@
         }
       }
     },
+    "Menu, Dock e scorciatoie": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "القوائم وDock والاختصارات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menüs, Dock und Kurzbefehle"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menus, Dock and shortcuts"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menús, Dock y atajos"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menus, Dock et raccourcis"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "菜单、程序坞与快捷键"
+          }
+        }
+      }
+    },
     "Messi in pausa %lld download.": {
       "localizations": {
         "ar": {
@@ -10157,6 +12677,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已暂停 %lld 个下载。"
+          }
+        }
+      }
+    },
+    "Mette in pausa il download il cui nome contiene il testo indicato.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يوقف مؤقتًا التنزيل الذي يحتوي اسمه على النص المحدد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausiert den Download, dessen Name den angegebenen Text enthält."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pauses the download whose name contains the given text."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa la descarga cuyo nombre contiene el texto indicado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met en pause le téléchargement dont le nom contient le texte indiqué."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停名称包含指定文本的下载。"
           }
         }
       }
@@ -10317,6 +12877,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "暂停所有下载"
+          }
+        }
+      }
+    },
+    "Metti in pausa un download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إيقاف تنزيل مؤقتًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einen Download pausieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause a download"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar una descarga"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mettre en pause un téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停某个下载"
           }
         }
       }
@@ -10601,6 +13201,86 @@
         }
       }
     },
+    "Nel menu Trasferimenti e nel menu del Dock trovi Aggiungi link (anche dagli Appunti), Metti in pausa tutti e Riprendi tutti, con le scorciatoie ⌘L, ⌥⌘P e ⌥⌘R. Le Impostazioni (⌘,) raccolgono aspetto, lingua, profili e sincronizzazione iCloud.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "في قائمة التحويلات وقائمة Dock تجد إضافة رابط (من الحافظة أيضًا) وإيقاف الكل مؤقتًا واستئناف الكل، مع الاختصارات ⌘L و⌥⌘P و⌥⌘R. تجمع الإعدادات (⌘,) المظهر واللغة وملفات التعريف ومزامنة iCloud."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Menü Transfers und im Dock-Menü findest du Link hinzufügen (auch aus der Zwischenablage), Alle pausieren und Alle fortsetzen mit den Kurzbefehlen ⌘L, ⌥⌘P und ⌥⌘R. Die Einstellungen (⌘,) bündeln Aussehen, Sprache, Profile und iCloud-Synchronisierung."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Transfers menu and the Dock menu offer Add link (also from the Clipboard), Pause all and Resume all, with the ⌘L, ⌥⌘P and ⌥⌘R shortcuts. Settings (⌘,) gather appearance, language, profiles and iCloud sync."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el menú Transferencias y en el menú del Dock encontrarás Añadir enlace (también del Portapapeles), Pausar todo y Reanudar todo, con los atajos ⌘L, ⌥⌘P y ⌥⌘R. Los Ajustes (⌘,) reúnen aspecto, idioma, perfiles y sincronización de iCloud."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le menu Transferts et le menu du Dock proposent Ajouter un lien (aussi depuis le Presse-papiers), Tout mettre en pause et Tout reprendre, avec les raccourcis ⌘L, ⌥⌘P et ⌥⌘R. Les Réglages (⌘,) regroupent apparence, langue, profils et synchronisation iCloud."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在“传输”菜单和程序坞菜单中可以添加链接（也可从剪贴板）、全部暂停和全部继续，快捷键为 ⌘L、⌥⌘P 和 ⌥⌘R。设置（⌘,）汇集了外观、语言、配置和 iCloud 同步。"
+          }
+        }
+      }
+    },
+    "Nessun backup su iCloud. Attivando la sincronizzazione, i profili server e le loro password (Portachiavi iCloud) saranno condivisi tra tutti i tuoi dispositivi tramite il tuo account iCloud: nessun dato passa da terzi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد نسخة احتياطية في iCloud. بتفعيل المزامنة تُشارك ملفات تعريف الخادم وكلمات مرورها (سلسلة مفاتيح iCloud) بين كل أجهزتك عبر حساب iCloud الخاص بك: لا تمر أي بيانات عبر أطراف ثالثة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Backup in iCloud. Mit aktivierter Synchronisierung werden deine Serverprofile und ihre Passwörter (iCloud-Schlüsselbund) über deinen eigenen iCloud-Account auf allen Geräten geteilt: Keine Daten laufen über Dritte."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No backup on iCloud. Turning sync on shares your server profiles and their passwords (iCloud Keychain) across all your devices through your own iCloud account: no data goes through third parties."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay copia en iCloud. Al activar la sincronización, los perfiles de servidor y sus contraseñas (Llavero de iCloud) se compartirán entre todos tus dispositivos a través de tu cuenta de iCloud: ningún dato pasa por terceros."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune sauvegarde sur iCloud. En activant la synchronisation, vos profils de serveur et leurs mots de passe (trousseau iCloud) seront partagés entre tous vos appareils via votre compte iCloud : aucune donnée ne passe par des tiers."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 中没有备份。开启同步后，服务器配置及其密码（iCloud 钥匙串）将通过你自己的 iCloud 账户在所有设备间共享：数据不会经过第三方。"
+          }
+        }
+      }
+    },
     "Nessun download": {
       "localizations": {
         "ar": {
@@ -10641,6 +13321,46 @@
         }
       }
     },
+    "Nessun download contiene «%@».": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يحتوي أي تنزيل على «%@»."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Download enthält „%@“."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No download contains “%@”."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ninguna descarga contiene «%@»."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun téléchargement ne contient « %@ »."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有下载包含“%@”。"
+          }
+        }
+      }
+    },
     "Nessun file in coda.": {
       "localizations": {
         "ar": {
@@ -10677,6 +13397,126 @@
           "stringUnit": {
             "state": "translated",
             "value": "队列中没有文件。"
+          }
+        }
+      }
+    },
+    "Nessun link ed2k:// negli Appunti.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يوجد رابط ed2k:// في الحافظة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein ed2k://-Link in der Zwischenablage."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ed2k:// link in the Clipboard."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay ningún enlace ed2k:// en el Portapapeles."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun lien ed2k:// dans le Presse-papiers."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "剪贴板中没有 ed2k:// 链接。"
+          }
+        }
+      }
+    },
+    "Nessun link ed2k:// nel testo": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يوجد رابط ed2k:// في النص"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein ed2k://-Link im Text"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ed2k:// link in the text"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún enlace ed2k:// en el texto"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun lien ed2k:// dans le texte"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本中没有 ed2k:// 链接"
+          }
+        }
+      }
+    },
+    "Nessun link ed2k:// nel testo.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يوجد رابط ed2k:// في النص."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein ed2k://-Link im Text."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ed2k:// link in the text."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún enlace ed2k:// en el texto."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun lien ed2k:// dans le texte."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本中没有 ed2k:// 链接。"
           }
         }
       }
@@ -10757,6 +13597,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有结果"
+          }
+        }
+      }
+    },
+    "Nessun risultato per «%@».": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد نتائج لـ «%@»."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Ergebnisse für „%@“."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No results for “%@”."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin resultados para «%@»."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun résultat pour « %@ »."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有“%@”的结果。"
           }
         }
       }
@@ -11081,6 +13961,46 @@
         }
       }
     },
+    "Nome (o parte)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الاسم (أو جزء منه)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (oder Teil davon)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (or part of it)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre (o parte)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nom (ou une partie)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名称（或部分）"
+          }
+        }
+      }
+    },
     "Nome (opzionale)": {
       "localizations": {
         "ar": {
@@ -11201,6 +14121,86 @@
         }
       }
     },
+    "Non richieste": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم تُطلب"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht angefragt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not requested"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No solicitadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non demandées"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未请求"
+          }
+        }
+      }
+    },
+    "Normale": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عادية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normale"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "普通"
+          }
+        }
+      }
+    },
     "Notifiche": {
       "localizations": {
         "ar": {
@@ -11317,6 +14317,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "未允许通知"
+          }
+        }
+      }
+    },
+    "Numero di download in coda": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عدد التنزيلات في القائمة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzahl Downloads in der Warteschlange"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of queued downloads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Número de descargas en cola"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre de téléchargements en file"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "队列中的下载数量"
           }
         }
       }
@@ -11597,6 +14637,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "离线"
+          }
+        }
+      }
+    },
+    "Ogni riga è un pulsante: selezionala per le azioni. Play/Pausa sul telecomando mette in pausa o riprende il download evidenziato. Con un iPhone vicino puoi digitare dalla notifica «Tastiera Apple TV» o dettare con Siri.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "كل صف هو زر: حدده لعرض الإجراءات. زر التشغيل/الإيقاف المؤقت في جهاز التحكم يوقف التنزيل المحدد أو يستأنفه. مع وجود iPhone قريب يمكنك الكتابة من إشعار «لوحة مفاتيح Apple TV» أو الإملاء عبر Siri."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jede Zeile ist eine Taste: Wähle sie für die Aktionen. Wiedergabe/Pause auf der Fernbedienung pausiert oder setzt den markierten Download fort. Mit einem iPhone in der Nähe kannst du über die Mitteilung „Apple TV-Tastatur“ tippen oder mit Siri diktieren."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every row is a button: select it for the actions. Play/Pause on the remote pauses or resumes the highlighted download. With an iPhone nearby you can type from the “Apple TV Keyboard” notification or dictate with Siri."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada fila es un botón: selecciónala para ver las acciones. Reproducir/Pausa en el mando pausa o reanuda la descarga resaltada. Con un iPhone cerca puedes escribir desde la notificación «Teclado del Apple TV» o dictar con Siri."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque ligne est un bouton : sélectionnez-la pour les actions. Lecture/Pause sur la télécommande met en pause ou reprend le téléchargement surligné. Avec un iPhone à proximité, tapez depuis la notification « Clavier Apple TV » ou dictez avec Siri."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每一行都是按钮：选中即可操作。遥控器上的播放/暂停可暂停或继续高亮的下载。附近有 iPhone 时，可通过“Apple TV 键盘”通知输入或用 Siri 口述。"
+          }
+        }
+      }
+    },
+    "Operazione fallita": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فشلت العملية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorgang fehlgeschlagen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Operation failed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Operación fallida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opération échouée"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "操作失败"
           }
         }
       }
@@ -12441,6 +15561,46 @@
         }
       }
     },
+    "Priorità aggiornata: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم تحديث الأولوية: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorität aktualisiert: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priority updated: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioridad actualizada: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité mise à jour : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "优先级已更新：%@"
+          }
+        }
+      }
+    },
     "Priorità alta per anteprime": {
       "localizations": {
         "ar": {
@@ -12761,6 +15921,46 @@
         }
       }
     },
+    "Profili server e stato Offline": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات تعريف الخادم ووضع عدم الاتصال"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverprofile und Offline-Modus"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server profiles and Offline mode"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfiles de servidor y modo Sin conexión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profils de serveur et mode Hors ligne"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "服务器配置与离线模式"
+          }
+        }
+      }
+    },
     "Profili trovati sul tuo account iCloud: nessuna digitazione necessaria.": {
       "localizations": {
         "ar": {
@@ -13001,6 +16201,46 @@
         }
       }
     },
+    "Provala senza server": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جرّبه بدون خادم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Server ausprobieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try it without a server"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pruébala sin servidor"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essayez-la sans serveur"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无需服务器即可试用"
+          }
+        }
+      }
+    },
     "Proxy, Interfaccia ed Eventi non sono esposti dal protocollo EC di aMule: non sono configurabili da remoto (nemmeno da aMuleGUI) — vanno impostati nel file amule.conf sul server.": {
       "localizations": {
         "ar": {
@@ -13041,6 +16281,86 @@
         }
       }
     },
+    "Puoi attivarla anche più tardi dalle impostazioni dell'app.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يمكنك تفعيلها لاحقًا أيضًا من إعدادات التطبيق."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du kannst sie auch später in den App-Einstellungen aktivieren."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can also turn it on later from the app settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También puedes activarla más tarde desde los ajustes de la app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous pourrez aussi l'activer plus tard dans les réglages de l'app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你也可以稍后在 App 设置中开启。"
+          }
+        }
+      }
+    },
+    "Puoi decidere anche più tardi dalla riga «Notifiche» nelle impostazioni dell'app.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يمكنك أن تقرر لاحقًا أيضًا من صف «الإشعارات» في إعدادات التطبيق."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du kannst dich auch später über die Zeile „Mitteilungen“ in den App-Einstellungen entscheiden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can also decide later from the “Notifications” row in the app settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También puedes decidirlo más tarde desde la fila «Notificaciones» en los ajustes de la app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous pourrez aussi décider plus tard depuis la ligne « Notifications » des réglages de l'app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你也可以稍后在 App 设置的“通知”一行中决定。"
+          }
+        }
+      }
+    },
     "Quando l'app lascia lo schermo la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola alla riapertura. Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi.": {
       "localizations": {
         "ar": {
@@ -13077,6 +16397,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "App 离开屏幕时会关闭与服务器的连接，但数据会以离线状态继续显示：重新打开时自动恢复。启用 iCloud 同步后，服务器配置及其密码（iCloud 钥匙串）会在你的所有设备间共享。"
+          }
+        }
+      }
+    },
+    "Quanti file sono nella coda download del server aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عدد الملفات في قائمة تنزيلات خادم aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie viele Dateien in der Download-Warteschlange des aMule-Servers stehen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many files are in the download queue of the aMule server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuántos archivos hay en la cola de descargas del servidor aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combien de fichiers sont dans la file de téléchargement du serveur aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 服务器下载队列中的文件数量。"
           }
         }
       }
@@ -13157,6 +16517,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "设为默认"
+          }
+        }
+      }
+    },
+    "Rete Kad avviata.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم بدء شبكة Kad."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad-Netzwerk gestartet."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad network started."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Kad iniciada."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réseau Kad démarré."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad 网络已启动。"
+          }
+        }
+      }
+    },
+    "Rete Kad fermata.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم إيقاف شبكة Kad."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad-Netzwerk gestoppt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad network stopped."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Kad detenida."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réseau Kad arrêté."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kad 网络已停止。"
           }
         }
       }
@@ -13397,6 +16837,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索"
+          }
+        }
+      }
+    },
+    "Ricerca fallita": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فشل البحث"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche fehlgeschlagen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search failed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Búsqueda fallida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche échouée"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索失败"
+          }
+        }
+      }
+    },
+    "Ricerca globale (server)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بحث عالمي (الخادم)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Globale Suche (Server)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Global search (server)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Búsqueda global (servidor)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche globale (serveur)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全局搜索（服务器）"
           }
         }
       }
@@ -13721,6 +17241,46 @@
         }
       }
     },
+    "Riepilogo": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الملخص"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zusammenfassung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summary"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résumé"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "摘要"
+          }
+        }
+      }
+    },
     "Rimuovi": {
       "localizations": {
         "ar": {
@@ -13841,6 +17401,46 @@
         }
       }
     },
+    "Rimuovi i download completati": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إزالة التنزيلات المكتملة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abgeschlossene Downloads entfernen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove completed downloads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar las descargas completadas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirer les téléchargements terminés"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除已完成的下载"
+          }
+        }
+      }
+    },
     "Rimuovi server": {
       "localizations": {
         "ar": {
@@ -13917,6 +17517,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "移除失效服务器"
+          }
+        }
+      }
+    },
+    "Riprende il download il cui nome contiene il testo indicato.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستأنف التنزيل الذي يحتوي اسمه على النص المحدد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setzt den Download fort, dessen Name den angegebenen Text enthält."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumes the download whose name contains the given text."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanuda la descarga cuyo nombre contiene el texto indicado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reprend le téléchargement dont le nom contient le texte indiqué."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续名称包含指定文本的下载。"
           }
         }
       }
@@ -14201,6 +17841,46 @@
         }
       }
     },
+    "Riprendi un download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استئناف تنزيل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einen Download fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume a download"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudar una descarga"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reprendre un téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续某个下载"
+          }
+        }
+      }
+    },
     "Ripresi %lld download.": {
       "localizations": {
         "ar": {
@@ -14237,6 +17917,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已恢复 %lld 个下载。"
+          }
+        }
+      }
+    },
+    "Ripreso: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الاستئناف: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortgesetzt: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumed: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudado: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repris : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已继续：%@"
           }
         }
       }
@@ -14321,6 +18041,46 @@
         }
       }
     },
+    "Ripristina da iCloud": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة من iCloud"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus iCloud wiederherstellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore from iCloud"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar desde iCloud"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer depuis iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从 iCloud 恢复"
+          }
+        }
+      }
+    },
     "Riscansione automatica delle cartelle condivise": {
       "localizations": {
         "ar": {
@@ -14401,6 +18161,46 @@
         }
       }
     },
+    "Rivedi la presentazione": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعادة عرض التقديم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einführung erneut ansehen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the introduction again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volver a ver la presentación"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revoir la présentation"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再看一次介绍"
+          }
+        }
+      }
+    },
     "Rosso": {
       "localizations": {
         "ar": {
@@ -14437,6 +18237,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "红色"
+          }
+        }
+      }
+    },
+    "Salta": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تخطي"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Überspringen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跳过"
+          }
+        }
+      }
+    },
+    "Salta la presentazione": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تخطي التقديم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einführung überspringen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip the introduction"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir la presentación"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passer la présentation"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跳过介绍"
           }
         }
       }
@@ -14517,6 +18397,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "保存来源（source seeds）"
+          }
+        }
+      }
+    },
+    "Salva più server con un nome e passa dall'uno all'altro in un tocco. Dopo un po' di inattività, o quando l'app va in background, la connessione si chiude per risparmiare batteria e dati: gli ultimi dati restano visibili e la connessione riparte da sola quando torni.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احفظ عدة خوادم بأسماء وانتقل بينها بلمسة. بعد فترة من الخمول، أو عند انتقال التطبيق إلى الخلفية، يُغلق الاتصال لتوفير البطارية والبيانات: تبقى آخر البيانات ظاهرة ويُستأنف الاتصال تلقائيًا عند عودتك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichere mehrere Server mit Namen und wechsle mit einem Tipp. Nach einer Weile Inaktivität oder wenn die App in den Hintergrund geht, wird die Verbindung geschlossen, um Akku und Daten zu sparen: Die letzten Daten bleiben sichtbar, und die Verbindung wird bei deiner Rückkehr automatisch wiederhergestellt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save several servers with a name and switch between them in a tap. After a while of inactivity, or when the app goes to the background, the connection is closed to save battery and data: the last data stays visible and the connection resumes by itself when you come back."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda varios servidores con un nombre y cambia entre ellos con un toque. Tras un rato de inactividad, o cuando la app pasa a segundo plano, la conexión se cierra para ahorrar batería y datos: los últimos datos siguen visibles y la conexión se reanuda sola cuando vuelves."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrez plusieurs serveurs avec un nom et passez de l'un à l'autre d'un geste. Après un moment d'inactivité, ou quand l'app passe en arrière-plan, la connexion se ferme pour économiser batterie et données : les dernières données restent visibles et la connexion reprend d'elle-même à votre retour."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "为多个服务器命名保存，一键切换。闲置一段时间或 App 进入后台后，连接会关闭以节省电量和流量：最近的数据仍然可见，回来时连接会自动恢复。"
           }
         }
       }
@@ -15041,6 +18961,126 @@
         }
       }
     },
+    "Server aMule di nuovo raggiungibile": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يمكن الوصول إلى خادم aMule من جديد"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule-Server wieder erreichbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule server reachable again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Servidor aMule accesible de nuevo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serveur aMule de nouveau joignable"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 服务器已恢复"
+          }
+        }
+      }
+    },
+    "Server aMule non raggiungibile": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن الوصول إلى خادم aMule"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule-Server nicht erreichbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule server unreachable"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Servidor aMule no accesible"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serveur aMule injoignable"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接 aMule 服务器"
+          }
+        }
+      }
+    },
+    "Server aMule non raggiungibile (%@).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن الوصول إلى خادم aMule (%@)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule-Server nicht erreichbar (%@)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule server unreachable (%@)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Servidor aMule no accesible (%@)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serveur aMule injoignable (%@)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接 aMule 服务器（%@）。"
+          }
+        }
+      }
+    },
     "Server attualmente connesso": {
       "localizations": {
         "ar": {
@@ -15237,6 +19277,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "通过 iCloud 同步配置"
+          }
+        }
+      }
+    },
+    "Sincronizzazione attiva: i profili server e le password ti seguono su iPhone, iPad, Mac, Apple Vision Pro e Apple TV.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المزامنة مفعّلة: ملفات تعريف الخادم وكلمات المرور تتبعك على iPhone وiPad وMac وApple Vision Pro وApple TV."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierung aktiv: Deine Serverprofile und Passwörter begleiten dich auf iPhone, iPad, Mac, Apple Vision Pro und Apple TV."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync is on: your server profiles and passwords follow you on iPhone, iPad, Mac, Apple Vision Pro and Apple TV."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronización activa: los perfiles de servidor y las contraseñas te siguen en iPhone, iPad, Mac, Apple Vision Pro y Apple TV."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisation active : vos profils de serveur et mots de passe vous suivent sur iPhone, iPad, Mac, Apple Vision Pro et Apple TV."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同步已开启：服务器配置和密码会跟随你到 iPhone、iPad、Mac、Apple Vision Pro 和 Apple TV。"
+          }
+        }
+      }
+    },
+    "Sincronizzazione iCloud": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مزامنة iCloud"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud-Synchronisierung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud sync"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronización de iCloud"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisation iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 同步"
           }
         }
       }
@@ -15681,6 +19801,86 @@
         }
       }
     },
+    "Stato di un download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حالة تنزيل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status eines Downloads"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status of a download"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado de una descarga"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "État d'un téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "某个下载的状态"
+          }
+        }
+      }
+    },
+    "Su iPhone e iPad puoi sceglierle subito o nel Riepilogo programmato: lo decidi nella finestra di iOS e, in ogni momento, in Impostazioni → aMule Remote → Notifiche.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "على iPhone وiPad يمكنك استلامها فورًا أو في الملخص المجدول: تقرر ذلك في نافذة iOS وفي أي وقت من الإعدادات → aMule Remote → الإشعارات."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf iPhone und iPad kannst du sie sofort oder in der geplanten Zusammenfassung erhalten: Das entscheidest du im iOS-Dialog und jederzeit unter Einstellungen → aMule Remote → Mitteilungen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On iPhone and iPad you can get them right away or in the Scheduled Summary: you decide in the iOS dialog and, at any time, in Settings → aMule Remote → Notifications."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En iPhone y iPad puedes recibirlas al momento o en el Resumen programado: lo decides en la ventana de iOS y, en cualquier momento, en Ajustes → aMule Remote → Notificaciones."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sur iPhone et iPad, recevez-les immédiatement ou dans le Résumé programmé : vous le décidez dans la fenêtre d'iOS et, à tout moment, dans Réglages → aMule Remote → Notifications."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 iPhone 和 iPad 上，你可以立即接收或在定时摘要中接收：在 iOS 弹窗中决定，也可随时在“设置 → aMule Remote → 通知”中更改。"
+          }
+        }
+      }
+    },
     "Suggerimento: con un iPhone vicino puoi digitare dalla notifica «Tastiera Apple TV» o dettare con Siri. Server e password vengono salvati nel Portachiavi.": {
       "localizations": {
         "ar": {
@@ -15717,6 +19917,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "提示：附近有 iPhone 时，可通过“Apple TV 键盘”通知输入或用 Siri 口述。服务器和密码保存在钥匙串中。"
+          }
+        }
+      }
+    },
+    "Sul Mac le trovi in Impostazioni di Sistema → Notifiche → aMule Remote.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "على Mac تجدها في إعدادات النظام → الإشعارات → aMule Remote."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf dem Mac findest du sie unter Systemeinstellungen → Mitteilungen → aMule Remote."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the Mac you find them in System Settings → Notifications → aMule Remote."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el Mac las encuentras en Ajustes del Sistema → Notificaciones → aMule Remote."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sur Mac, vous les trouvez dans Réglages Système → Notifications → aMule Remote."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Mac 上可在“系统设置 → 通知 → aMule Remote”中找到。"
+          }
+        }
+      }
+    },
+    "Sulla schermata di connessione trovi «Prova la modalità demo»: l'app si riempie di dati di esempio (contenuti liberi) e ogni funzione è simulata in locale. Utile per esplorarla prima di configurare amuled.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "في شاشة الاتصال تجد «جرّب الوضع التجريبي»: يمتلئ التطبيق ببيانات نموذجية (محتوى حر) وتُحاكى كل الوظائف محليًا. مفيد لاستكشافه قبل إعداد amuled."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf dem Verbindungsbildschirm findest du „Demomodus ausprobieren“: Die App füllt sich mit Beispieldaten (freie Inhalte), und jede Funktion wird lokal simuliert. Praktisch, um sie vor der Einrichtung von amuled zu erkunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the connection screen you will find “Try the demo mode”: the app fills up with sample data (free content) and every feature is simulated locally. Handy to explore it before setting up amuled."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En la pantalla de conexión encontrarás «Prueba el modo demo»: la app se llena de datos de ejemplo (contenido libre) y cada función se simula en local. Útil para explorarla antes de configurar amuled."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sur l'écran de connexion vous trouverez « Essayer le mode démo » : l'app se remplit de données d'exemple (contenus libres) et chaque fonction est simulée en local. Pratique pour l'explorer avant de configurer amuled."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在连接页面可以找到“试用演示模式”：App 会填充示例数据（自由内容），所有功能在本地模拟。适合在配置 amuled 之前先熟悉一下。"
           }
         }
       }
@@ -15797,6 +20077,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "清空日志"
+          }
+        }
+      }
+    },
+    "Telecomando Siri Remote": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جهاز Siri Remote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siri Remote"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siri Remote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siri Remote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siri Remote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siri Remote 遥控器"
           }
         }
       }
@@ -15961,6 +20281,86 @@
         }
       }
     },
+    "Testo da cercare": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النص المطلوب البحث عنه"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchtext"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text to search"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto a buscar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte à rechercher"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "要搜索的文本"
+          }
+        }
+      }
+    },
+    "Tieni premuta l'icona dell'app per aggiungere un link, mettere in pausa o riprendere tutti i download e cercare. Con Siri e Comandi rapidi controlli aMule anche ad app chiusa. I link ed2k:// toccati in Safari o Mail si aprono direttamente nell'app.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اضغط مطولًا على أيقونة التطبيق لإضافة رابط أو إيقاف كل التنزيلات مؤقتًا أو استئنافها أو البحث. مع Siri والاختصارات تتحكم بـ aMule حتى والتطبيق مغلق. روابط ed2k:// التي تلمسها في Safari أو البريد تُفتح مباشرة في التطبيق."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halte das App-Symbol gedrückt, um einen Link hinzuzufügen, alle Downloads zu pausieren oder fortzusetzen und zu suchen. Mit Siri und Kurzbefehlen steuerst du aMule auch bei geschlossener App. In Safari oder Mail angetippte ed2k://-Links öffnen sich direkt in der App."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Long-press the app icon to add a link, pause or resume all downloads and search. With Siri and Shortcuts you control aMule even when the app is closed. ed2k:// links tapped in Safari or Mail open straight in the app."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado el icono de la app para añadir un enlace, pausar o reanudar todas las descargas y buscar. Con Siri y Atajos controlas aMule incluso con la app cerrada. Los enlaces ed2k:// tocados en Safari o Mail se abren directamente en la app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maintenez l'icône de l'app pour ajouter un lien, mettre en pause ou reprendre tous les téléchargements et rechercher. Avec Siri et Raccourcis vous pilotez aMule même app fermée. Les liens ed2k:// touchés dans Safari ou Mail s'ouvrent directement dans l'app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "长按 App 图标即可添加链接、暂停或继续所有下载以及搜索。通过 Siri 和快捷指令，即使 App 关闭也能控制 aMule。在 Safari 或邮件中点按的 ed2k:// 链接会直接在 App 中打开。"
+          }
+        }
+      }
+    },
     "Tipo di file": {
       "localizations": {
         "ar": {
@@ -16037,6 +20437,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索类型"
+          }
+        }
+      }
+    },
+    "Toglie dalla coda del server aMule i file già completati.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يزيل الملفات المكتملة من قائمة خادم aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entfernt bereits abgeschlossene Dateien aus der Warteschlange des aMule-Servers."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Removes the already completed files from the aMule server queue."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quita de la cola del servidor aMule los archivos ya completados."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retire de la file du serveur aMule les fichiers déjà terminés."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从 aMule 服务器队列中移除已完成的文件。"
           }
         }
       }
@@ -16201,6 +20641,46 @@
         }
       }
     },
+    "Trasferimenti e ricerca": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحويلات والبحث"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transfers und Suche"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transfers and search"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transferencias y búsqueda"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transferts et recherche"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "传输与搜索"
+          }
+        }
+      }
+    },
     "Trasferiti": {
       "localizations": {
         "ar": {
@@ -16277,6 +20757,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "在 iCloud 上找到 %lld 个服务器配置。"
+          }
+        }
+      }
+    },
+    "Trovato un backup con %lld profili server (ultimo aggiornamento %@). Vuoi ripristinarlo su questo dispositivo?": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على نسخة احتياطية تحتوي على %lld من ملفات تعريف الخادم (آخر تحديث %@). هل تريد استعادتها على هذا الجهاز؟"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup mit %lld Serverprofilen gefunden (letzte Aktualisierung %@). Auf diesem Gerät wiederherstellen?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a backup with %lld server profiles (last updated %@). Restore it on this device?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se ha encontrado una copia con %lld perfiles de servidor (última actualización %@). ¿Restaurarla en este dispositivo?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une sauvegarde avec %lld profils de serveur a été trouvée (dernière mise à jour %@). La restaurer sur cet appareil ?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找到包含 %lld 个服务器配置的备份（最后更新 %@）。要在此设备上恢复吗？"
+          }
+        }
+      }
+    },
+    "Trovato un backup con %lld profili server. Vuoi ripristinarlo su questo dispositivo?": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على نسخة احتياطية تحتوي على %lld من ملفات تعريف الخادم. هل تريد استعادتها على هذا الجهاز؟"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup mit %lld Serverprofilen gefunden. Auf diesem Gerät wiederherstellen?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a backup with %lld server profiles. Restore it on this device?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se ha encontrado una copia con %lld perfiles de servidor. ¿Restaurarla en este dispositivo?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une sauvegarde avec %lld profils de serveur a été trouvée. La restaurer sur cet appareil ?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找到包含 %lld 个服务器配置的备份。要在此设备上恢复吗？"
           }
         }
       }
@@ -16477,6 +21037,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "上传"
+          }
+        }
+      }
+    },
+    "Upload a %@.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الرفع بسرعة %@."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload mit %@."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uploading at %@."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subiendo a %@."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoi à %@."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上传速度 %@。"
           }
         }
       }
@@ -16877,6 +21477,166 @@
           "stringUnit": {
             "state": "translated",
             "value": "速度"
+          }
+        }
+      }
+    },
+    "Velocità di download": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة التنزيل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Geschwindigkeit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download speed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de descarga"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse de téléchargement"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载速度"
+          }
+        }
+      }
+    },
+    "Velocità di download attuale del server aMule, in kB/s (numero utilizzabile nelle automazioni).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة التنزيل الحالية لخادم aMule بوحدة kB/s (رقم يمكن استخدامه في الأتمتة)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuelle Download-Geschwindigkeit des aMule-Servers in kB/s (als Zahl in Automationen nutzbar)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current download speed of the aMule server, in kB/s (a number you can use in automations)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de descarga actual del servidor aMule, en kB/s (número utilizable en automatizaciones)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse de téléchargement actuelle du serveur aMule, en ko/s (nombre utilisable dans les automatisations)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 服务器当前的下载速度（kB/s，可在自动化中使用的数值）。"
+          }
+        }
+      }
+    },
+    "Velocità di upload": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة الرفع"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload-Geschwindigkeit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload speed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de subida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse d'envoi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上传速度"
+          }
+        }
+      }
+    },
+    "Velocità di upload attuale del server aMule, in kB/s.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة الرفع الحالية لخادم aMule بوحدة kB/s."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuelle Upload-Geschwindigkeit des aMule-Servers in kB/s."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current upload speed of the aMule server, in kB/s."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de subida actual del servidor aMule, en kB/s."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse d'envoi actuelle du serveur aMule, en ko/s."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 服务器当前的上传速度（kB/s）。"
           }
         }
       }
@@ -17361,6 +22121,46 @@
         }
       }
     },
+    "aMule Remote ti avvisa quando un download parte o finisce, quando il server aMule non risponde e quando le reti eD2k e Kad cadono o si riconnettono. Nessun filtro da configurare nell'app: quanto e come riceverle lo decidi nelle Impostazioni di sistema.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُخطرك aMule Remote عند بدء تنزيل أو انتهائه، وعندما لا يستجيب خادم aMule، وعندما تنقطع شبكتا eD2k وKad أو تُعيدان الاتصال. لا شيء لضبطه داخل التطبيق: تقرر كمية الإشعارات وطريقة استلامها في إعدادات النظام."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote meldet dir, wenn ein Download startet oder endet, wenn der aMule-Server nicht antwortet und wenn die eD2k- und Kad-Netzwerke abbrechen oder sich wieder verbinden. Nichts in der App zu konfigurieren: Wie viel und wie du sie erhältst, entscheidest du in den Systemeinstellungen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote lets you know when a download starts or finishes, when the aMule server stops responding and when the eD2k and Kad networks drop or reconnect. Nothing to configure in the app: how much and how you receive them is decided in the system Settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote te avisa cuando una descarga empieza o termina, cuando el servidor aMule no responde y cuando las redes eD2k y Kad se caen o se reconectan. Nada que configurar en la app: cuánto y cómo recibirlas lo decides en los Ajustes del sistema."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule Remote vous prévient quand un téléchargement démarre ou se termine, quand le serveur aMule ne répond plus et quand les réseaux eD2k et Kad se coupent ou se reconnectent. Rien à configurer dans l'app : la fréquence et la forme se décident dans les Réglages du système."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当下载开始或完成、aMule 服务器无响应、eD2k 和 Kad 网络断开或重连时，aMule Remote 会通知你。App 内无需任何设置：接收多少、如何接收，都在系统“设置”中决定。"
+          }
+        }
+      }
+    },
     "aMule Remote è software libero distribuito con licenza MIT: puoi usarlo, copiarlo, modificarlo e ridistribuirlo liberamente, conservando la nota di copyright.": {
       "localizations": {
         "ar": {
@@ -17521,6 +22321,86 @@
         }
       }
     },
+    "eD2k disconnesso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k غير متصل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k getrennt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k disconnected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k desconectado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k déconnecté"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k 已断开"
+          }
+        }
+      }
+    },
+    "eD2k riconnesso": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إعادة الاتصال بـ eD2k"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k wieder verbunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k reconnected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k reconectado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k reconnecté"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eD2k 已重新连接"
+          }
+        }
+      }
+    },
     "eD2k: %@": {
       "localizations": {
         "ar": {
@@ -17677,6 +22557,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "如 unraid.local 或 192.168.1.10"
+          }
+        }
+      }
+    },
+    "fonti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المصادر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sources"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fuentes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sources"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "来源"
           }
         }
       }

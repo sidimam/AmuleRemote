@@ -82,6 +82,7 @@ enum AppLinks {
 /// Sezione "Informazioni app" comune a iOS/iPadOS, visionOS, Mac (Impostazioni)
 /// e Apple TV: versione, autore, licenza, guida, segnalazione problemi, privacy.
 struct AppInfoSection: View {
+    @EnvironmentObject var state: AppState
     @State private var showLicense = false
     #if os(tvOS)
     // tvOS: le righe sono focalizzabili (per scorrere col telecomando) e il
@@ -148,6 +149,21 @@ struct AppInfoSection: View {
             linkRow("Segnala un problema", "ladybug", AppLinks.bugReport, shown: AppLinks.issues)
             linkRow("Codice sorgente", "chevron.left.forwardslash.chevron.right", AppLinks.repository)
             linkRow("Informativa sulla privacy", "hand.raised", AppLinks.privacy)
+            #if os(tvOS)
+            Button { state.showWalkthrough = true } label: {
+                Label("Rivedi la presentazione", systemImage: "sparkles").foregroundStyle(ink("walkthrough"))
+            }
+            .focused($focus, equals: "walkthrough")
+            #else
+            Button { state.showWalkthrough = true } label: {
+                Label("Rivedi la presentazione", systemImage: "sparkles")
+            }
+            #if os(macOS)
+            .buttonStyle(.plain)
+            #else
+            .foregroundStyle(.primary)
+            #endif
+            #endif
         } header: {
             Text("Informazioni app")
         } footer: {

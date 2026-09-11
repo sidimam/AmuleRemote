@@ -39,6 +39,17 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 
 ## Features
 
+### New in 1.4 (build 19)
+
+- **Guided introduction (walkthrough)** on every platform — iPhone, iPad, Mac, Apple Vision Pro and Apple TV — at the first launch after the update: what the app does, transfers and search, server profiles and Offline mode, the platform's quick actions, the demo mode, then **iCloud sync** and **notifications**. It can be replayed at any time from *About → Show the introduction again*.
+- **iCloud backup restore from the walkthrough** — the app looks for an existing backup in your iCloud account and offers to restore the server profiles (and their passwords, via the iCloud Keychain) on the new device. The backup is **one for all your platforms**: iPhone, iPad, Mac (DMG, Homebrew and Mac App Store), Vision Pro and Apple TV. Skipped it? You can turn sync on later from the app settings.
+- **Notifications, simplified** — no more toggles inside the app: the walkthrough (or the single **Notifications ›** row in the settings) asks for the system consent, and from then on you decide *how* to receive them in the system Settings (on iPhone/iPad also in the *Scheduled Summary*). The app sends every useful alert: **download started**, **download completed**, **aMule server unreachable / reachable again**, **connection to the server lost**, **eD2k and Kad drops and reconnections** (drops only when the server's auto-reconnect is off). Checks run every 5 minutes in the foreground and about every 15 minutes in the background on iOS.
+- **App color** — the icon color setting is now called *App color* and also tints buttons, links, toggles and the selected tab on **every** platform (Apple TV included, which gets its own color picker); the icon still changes on iPhone, iPad and Vision Pro, plus the Dock icon on the Mac.
+- **Shortcuts and Siri everywhere** — the App Intents now ship on iOS/iPadOS, macOS, visionOS and tvOS: aMule status, **download / upload speed** and **queue count** as numbers, **status / pause / resume / priority of a single download** (by name), remove completed, **add one or more eD2k links**, **search** (returns the result names), connect / disconnect the eD2k server, start / stop Kad. Six ready-made App Shortcuts appear in the Shortcuts app.
+- **Clipboard integration** — the *Add link* sheet accepts several `ed2k://` links at once (one per line, or any text that contains them, e.g. a page copied from a browser or a Notes entry) with a native **Paste** button; on the Mac the sheet pre-fills from the clipboard and the Dock menu gets *Add links from the Clipboard*. Downloads can be **shared** as eD2k links (context menu and selection bar) to Notes, Messages, Mail or any other app.
+- **Apple TV keyboard fixed** — typing with the Siri Remote or the iPhone "Apple TV Keyboard" no longer replaces the previous character or makes the cursor jump: the connection form and the search field use a native text field that commits the text only when editing ends.
+- **iPhone Duo** — layouts are adaptive (no fixed frames) and were checked on iPhone, iPad and every simulator available in Xcode 26.6; no dedicated iPhone Duo simulator exists yet, so nothing device-specific was added.
+
 ### New in 1.3 (build 18)
 
 - **Offline mode with local cache** — after the chosen idle period (or when the app goes to the background) the connection is closed, but the last data stays on screen with an *Offline · data updated at HH:MM* banner; the connection **resumes by itself** at the first tap/click, when the app returns to the foreground or when it is reopened (the cached snapshot appears instantly while reconnecting). No more "Disconnected for inactivity" bounce to the login screen. The setting is now called **"Go offline after inactivity"** and works on the Mac too (off by default there).
@@ -55,14 +66,15 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 - **Statistics** and the server **log** in real time; **connection test** (EC port and optional web server) on iOS.
 - **aMule preferences** *(Mac)*: the full remote `amule.conf` editor — General, Connection, Servers, Files, Security, Message filters, Tweaks (core + Kademlia), Remote control (web server).
 - **Server profiles**: several named amuled servers, one **default** proposed at launch, quick switching; passwords always in the Keychain.
-- **Notifications** *(1.2)*: a single master switch that asks for permission and sends a test notification; separate toggles for **completed downloads**, **eD2k/Kad disconnections** and **checks while disconnected**, with a **configurable interval** (1 min – 1 h). Checks keep running after the idle disconnect on every platform; on iOS they also run in the background (Background App Refresh, never more often than every 15 minutes). eD2k/Kad drops are reported only when the server's auto-reconnect is off. Notifications also reach Apple Watch.
-- **Appearance**: light / dark / system theme; **7 app icon colors** *(1.2)* on iPhone, iPad and Vision Pro (with dark and tinted variants) and a matching Dock icon on the Mac.
+- **Notifications** *(reworked in 1.4)*: consent asked by the walkthrough or by the **Notifications ›** row, everything else is decided in the system Settings (immediate or Scheduled Summary on iOS). Alerts for **download started / completed**, **server unreachable / reachable again**, **connection lost**, **eD2k / Kad drops and reconnections** (drops only when the server's auto-reconnect is off). Checks every 5 minutes in the foreground and about every 15 minutes in the background on iOS (Background App Refresh). Notifications also reach Apple Watch.
+- **Appearance**: light / dark / system theme; **7 app colors** *(1.2, extended in 1.4)* that tint the whole interface on every platform and change the icon on iPhone, iPad and Vision Pro (with dark and tinted variants) plus the Dock icon on the Mac.
 - **Face ID / Touch ID lock** (optional) and **offline after inactivity** (configurable, with cached data and automatic reconnection) on every platform.
 - **Apple Watch app**: speeds, eD2k/Kad status and the download queue, mirrored from the iPhone.
-- **Apple TV app** *(1.3)*: transfers, search, servers, statistics and settings on the big screen, driven by the Siri Remote.
+- **Apple TV app** *(1.3)*: transfers, search, servers, statistics and settings on the big screen, driven by the Siri Remote (typing from the iPhone keyboard fixed in 1.4).
 - **iCloud sync** *(1.3, optional)*: server profiles and passwords shared between your devices.
-- **Quick actions** *(1.3)*: app-icon menu on iPhone/iPad, Dock menu and Transfers menu on the Mac.
-- **Siri and Shortcuts** *(iOS)*: "aMule status", "Pause / Resume downloads", "Add eD2k link" — they work even when the app is closed.
+- **Quick actions** *(1.3)*: app-icon menu on iPhone/iPad, Dock menu and Transfers menu on the Mac; **clipboard** paste of several eD2k links and **share** of eD2k links *(1.4)*.
+- **Guided introduction** *(1.4)*: a walkthrough on every platform that presents the features, offers the iCloud backup restore and asks the notification consent; replayable from About.
+- **Siri and Shortcuts** *(iOS, macOS, visionOS, tvOS)*: status, speeds, queue count, single-download status / pause / resume / priority, pause / resume all, remove completed, add eD2k links, search, eD2k connect / disconnect, Kad start / stop — they work even when the app is closed.
 - **`ed2k://` links from the system**: the app is registered as the handler for the `ed2k` scheme — a click in Safari or Mail opens the app and queues the download after confirmation.
 - **7 languages**: English, Italian, Spanish, French, German, Simplified Chinese and Arabic (RTL), with an in-app selector and a "System" option.
 - **Demo mode**: explore the whole app with sample data and no server ("Try the demo mode" on the connection screen, or `DEMO` as host and password).
@@ -107,7 +119,7 @@ The Xcode project is generated from `project.yml` with [XcodeGen](https://github
 xcodegen generate
 ```
 
-Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro), `AmuleRemoteTV` (Apple TV) and `AmuleRemoteMac` (sandboxed Mac App Store build). Every target carries the iCloud Key-Value Storage entitlement and a shared keychain access group (profile sync); the DMG build gets the same entitlements at signing time (`SupportFiles/MacDirect.entitlements` + a Developer ID provisioning profile embedded in the bundle). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS and visionOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemote/wiki/Building-and-signing)**.
+Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision` (Apple Vision Pro), `AmuleRemoteTV` (Apple TV) and `AmuleRemoteMac` (sandboxed Mac App Store build). Every target carries the iCloud Key-Value Storage entitlement and a shared keychain access group (profile sync); the DMG build gets the same entitlements at signing time (`SupportFiles/MacDirect.entitlements` + a Developer ID provisioning profile embedded in the bundle). Shared sources in `Sources/AmuleRemote` are listed one by one in `project.yml`: a new shared file must be added there to be compiled into the iOS, visionOS and tvOS apps. See **[Wiki → Building and signing](https://github.com/sidimam/AmuleRemote/wiki/Building-and-signing)**.
 
 ## Signing and distribution
 
@@ -129,7 +141,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.3 (build 18)**. Release tags follow the pattern `v1.3-build18`.
+Marketing version and build number are kept aligned across all platforms. Current: **1.4 (build 19)**. Release tags follow the pattern `v1.4-build19`.
 
 ## Protocol verification
 

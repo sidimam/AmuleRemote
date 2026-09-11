@@ -34,6 +34,7 @@ struct AmuleRemoteiOSApp: App {
             iOSRootView()
                 .environmentObject(state)
                 .preferredColorScheme(state.themeMode.colorScheme)
+                .tint(AppIconColor.tint(for: state.iconColor))
         }
         .onChange(of: scenePhase) { _, phase in
             switch phase {
@@ -45,10 +46,11 @@ struct AmuleRemoteiOSApp: App {
                 #if os(iOS)
                 HomeScreenShortcuts.install()
                 #endif
-                if state.backgroundChecksEnabled && !state.demoMode {
+                if !state.demoMode {
                     BackgroundRefresh.schedule()
                 }
             case .active:
+                Task { await state.refreshNotificationStatus() }
                 if state.offline && !state.locked {
                     Task { await state.resumeFromOffline() }
                 }
@@ -136,10 +138,12 @@ struct iOSRootView: View {
             Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
         }
         .onOpenURL { state.handleIncomingURL($0) }
-        .alert("Notifiche non consentite", isPresented: $state.notificationsDenied) {
-            Button("OK", role: .cancel) { state.notificationsDenied = false }
-        } message: {
-            Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni del dispositivo. Attivale da Impostazioni → aMule Remote → Notifiche.")
+        // Presentazione (funzionalità, iCloud, notifiche) al primo avvio.
+        .fullScreenCover(isPresented: $state.showWalkthrough) {
+            WalkthroughView()
+                .environmentObject(state)
+                .tint(AppIconColor.tint(for: state.iconColor))
+                .modifier(AppLocaleModifier(language: state.appLanguage))
         }
         .modifier(AppLocaleModifier(language: state.appLanguage))
     }

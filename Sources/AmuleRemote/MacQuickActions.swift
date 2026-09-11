@@ -8,7 +8,7 @@ import SwiftUI
 final class MacAppDelegate: NSObject, NSApplicationDelegate {
     func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
         let menu = NSMenu()
-        for action in QuickAction.allCases where action != .search {
+        for action in [QuickAction.addLink, .addFromClipboard, .pauseAll, .resumeAll] {
             let item = NSMenuItem(title: action.title, action: #selector(run(_:)), keyEquivalent: "")
             item.target = self
             item.representedObject = action.rawValue

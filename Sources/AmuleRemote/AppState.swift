@@ -78,16 +78,15 @@ final class AppState: ObservableObject {
     @Published var biometricLockEnabled: Bool { didSet { UserDefaults.standard.set(biometricLockEnabled, forKey: "biometricLock") } }
     @Published var locked = false
 
-    // Notifiche — interruttore principale (parte disattivato): tutte le altre
-    // notifiche funzionano solo se questo è attivo.
-    @Published var notificationsEnabled: Bool { didSet { UserDefaults.standard.set(notificationsEnabled, forKey: "notificationsEnabled") } }
-    @Published var notifyDownloadsEnabled: Bool { didSet { UserDefaults.standard.set(notifyDownloadsEnabled, forKey: "notifyDownloads") } }
-    @Published var notifyNetworkEnabled: Bool { didSet { UserDefaults.standard.set(notifyNetworkEnabled, forKey: "notifyNetwork") } }
-    @Published var backgroundChecksEnabled: Bool { didSet { UserDefaults.standard.set(backgroundChecksEnabled, forKey: "backgroundChecks") } }
-    /// Intervallo (secondi) dei controlli quando l'app non è connessa:
-    /// timer offline (app aperta, tutte le piattaforme) e minimo richiesto
-    /// per il Background App Refresh su iOS (dove comunque decide il sistema).
-    @Published var checkInterval: Int { didSet { UserDefaults.standard.set(checkInterval, forKey: "checkInterval") } }
+    // Notifiche (dalla 1.4): nessun interruttore nell'app, si gestiscono nelle
+    // Impostazioni di sistema. Qui solo lo stato del permesso, per la riga
+    // «Notifiche» e per il walkthrough.
+    @Published var notificationStatus: UNAuthorizationStatus = .notDetermined
+
+    // Walkthrough (presentazione + iCloud + notifiche): al primo avvio e al
+    // primo avvio dopo un aggiornamento che lo rinnova.
+    static let walkthroughVersion = 1
+    @Published var showWalkthrough = false
     /// Colore dell'icona dell'app ("default" oppure il nome del colore).
     @Published var iconColor: String {
         didSet {
@@ -207,11 +206,6 @@ final class AppState: ObservableObject {
         themeMode = ThemeMode(rawValue: defaults.string(forKey: "themeMode") ?? "") ?? .system
         appLanguage = AppLanguage(rawValue: defaults.string(forKey: "appLanguage") ?? "") ?? .system
         biometricLockEnabled = defaults.bool(forKey: "biometricLock")
-        notificationsEnabled = defaults.bool(forKey: "notificationsEnabled")   // default: disattivate
-        notifyDownloadsEnabled = defaults.object(forKey: "notifyDownloads") as? Bool ?? true
-        notifyNetworkEnabled = defaults.object(forKey: "notifyNetwork") as? Bool ?? true
-        backgroundChecksEnabled = defaults.object(forKey: "backgroundChecks") as? Bool ?? true
-        checkInterval = defaults.object(forKey: "checkInterval") as? Int ?? 900
         iconColor = defaults.string(forKey: "iconColor") ?? "default"
         profiles = ProfileStore.load()
         defaultProfileID = ProfileStore.defaultID
@@ -251,12 +245,20 @@ final class AppState: ObservableObject {
             offline = true
             offlineSince = snap.savedAt
         }
+        let launchArgs = ProcessInfo.processInfo.arguments
         // Con il blocco attivo la connessione automatica parte dopo lo sblocco.
-        if !locked && autoConnect && !host.isEmpty && !password.isEmpty {
+        // Con -demo (screenshot/collaudo) la connessione automatica non parte:
+        // fallendo, butterebbe fuori dalla demo.
+        if !locked && autoConnect && !host.isEmpty && !password.isEmpty && !launchArgs.contains("-demo") {
             Task { await connect() }
         }
         // iCloud: osserva i cambiamenti (e propone il ripristino sui dispositivi nuovi).
         startCloudSync()
+        // Walkthrough: prima volta o versione rinnovata. Con -demo si salta
+        // (screenshot/collaudo) a meno di -walkthrough esplicito.
+        let seen = defaults.integer(forKey: "walkthroughVersion")
+        showWalkthrough = (seen < Self.walkthroughVersion && !launchArgs.contains("-demo")) || launchArgs.contains("-walkthrough")
+        Task { await refreshNotificationStatus() }
 
         // Avvio diretto in modalità demo (per screenshot e collaudo):
         // argomento di lancio -demo, con -section <search|servers|shared|stats|prefs>
@@ -364,32 +366,66 @@ final class AppState: ObservableObject {
         if defaultProfileID == nil { defaultProfileID = p.id }
     }
 
-    // MARK: - Notifiche (interruttore principale)
+    // MARK: - Notifiche (permesso di sistema)
 
-    /// Mostrato quando l'utente attiva le notifiche ma il consenso di sistema
-    /// è negato: va cambiato dalle Impostazioni del dispositivo.
-    @Published var notificationsDenied = false
-
-    /// Attiva/disattiva l'interruttore principale delle notifiche.
-    /// All'attivazione chiede il consenso e invia una notifica di prova; se il
-    /// consenso è negato, l'interruttore torna spento e si segnala all'utente.
-    func setNotificationsEnabled(_ enabled: Bool) async {
-        // Aggiornamento ottimistico: l'interruttore risponde subito.
-        notificationsEnabled = enabled
-        guard enabled else { return }
-        let granted = await Notifier.requestPermissionGranted()
-        if granted {
-            Notifier.postTest()
-        } else {
-            // Consenso negato a livello di sistema: torna spento e avvisa.
-            notificationsEnabled = false
-            notificationsDenied = true
-        }
+    /// Rilegge lo stato del permesso (all'avvio e al ritorno in primo piano).
+    func refreshNotificationStatus() async {
+        notificationStatus = await Notifier.authorizationStatus()
     }
 
-    // Flag effettivi: una notifica parte solo se l'interruttore principale è on.
-    var effectiveNotifyDownloads: Bool { notificationsEnabled && notifyDownloadsEnabled }
-    var effectiveNotifyNetwork: Bool { notificationsEnabled && notifyNetworkEnabled }
+    /// Chiede il consenso di sistema (walkthrough o riga «Notifiche»); con il
+    /// consenso appena concesso manda la notifica di prova. Ritorna true se
+    /// le notifiche sono autorizzate.
+    func requestNotificationConsent() async -> Bool {
+        let before = await Notifier.authorizationStatus()
+        let granted = await Notifier.requestPermissionGranted()
+        await refreshNotificationStatus()
+        if granted && before == .notDetermined { Notifier.postTest() }
+        return granted
+    }
+
+    /// Chiusura del walkthrough: non si ripresenta finché non cambia versione.
+    func finishWalkthrough() {
+        UserDefaults.standard.set(Self.walkthroughVersion, forKey: "walkthroughVersion")
+        // Scrittura immediata: se l'app viene chiusa subito dopo, il flag resta.
+        UserDefaults.standard.synchronize()
+        showWalkthrough = false
+    }
+
+    // MARK: - Backup iCloud (walkthrough)
+
+    /// Riepilogo del backup presente su iCloud: numero di profili e data
+    /// dell'ultima modifica (nil se non c'è nulla o iCloud non è disponibile).
+    func cloudBackupSummary() -> (count: Int, latest: Date?)? {
+        guard CloudSync.isAvailable, let remote = CloudSync.pull() else { return nil }
+        let usable = remote.profiles.filter { !remote.deleted.contains($0.id) }
+        guard !usable.isEmpty else { return nil }
+        return (usable.count, usable.compactMap(\.updatedAt).max())
+    }
+
+    // MARK: - Link eD2k da testo/Appunti
+
+    /// Tutti i link ed2k:// contenuti in un testo (uno per riga, incollati
+    /// insieme, dentro una nota…), senza doppioni e nell'ordine di apparizione.
+    nonisolated static func extractEd2kLinks(_ text: String) -> [String] {
+        let pattern = #"ed2k://\|file\|[^\s|]+\|\d+\|[0-9A-Fa-f]{32}\|(?:[^\s]*?\|)?/?"#
+        guard let re = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) else { return [] }
+        let ns = text as NSString
+        var seen = Set<String>(), out: [String] = []
+        for m in re.matches(in: text, range: NSRange(location: 0, length: ns.length)) {
+            var link = ns.substring(with: m.range)
+            if !link.hasSuffix("/") { link += "/" }
+            if seen.insert(link.lowercased()).inserted { out.append(link) }
+        }
+        return out
+    }
+
+    /// Accoda tutti i link trovati nel testo; ritorna quanti.
+    func addEd2kLinks(from text: String) async -> Int {
+        let links = Self.extractEd2kLinks(text)
+        for link in links { await addEd2kLink(link) }
+        return links.count
+    }
 
     // MARK: - Blocco biometrico
 
@@ -454,7 +490,7 @@ final class AppState: ObservableObject {
             startIdleWatcher()
             await refreshAll()
             await refreshServerReconnectFlag()
-            await Notifier.requestPermission()
+            queueLoadedOnce = false
             pushWatchSnapshot()
         } catch {
             if offline {
@@ -562,25 +598,22 @@ final class AppState: ObservableObject {
     }
 
     // MARK: - Monitor offline (tutte le piattaforme)
-    // Dopo la disconnessione (timeout di inattività o caduta del server)
-    // l'app continua a controllare il server a intervalli configurabili
-    // (checkInterval) finché resta aperta, notificando download completati e
-    // cadute di rete. Su iOS, in background, subentra il Background App
-    // Refresh (BackgroundRefresh.swift).
+    // Da offline o disconnessi (inattività, background, server caduto) l'app
+    // continua a controllare il server ogni 5 minuti finché resta aperta e
+    // manda le notifiche del caso (se il sistema le consente). Su iOS, in
+    // background, subentra il Background App Refresh (BackgroundRefresh.swift).
     private var offlineMonitorTask: Task<Void, Never>?
 
     func startOfflineMonitor() {
-        guard notificationsEnabled, backgroundChecksEnabled, !demoMode, !host.isEmpty, !password.isEmpty else { return }
+        guard !demoMode, !host.isEmpty, !password.isEmpty else { return }
         let h = host, p = port, pw = password
         offlineMonitorTask?.cancel()
         offlineMonitorTask = Task { [weak self] in
             while !Task.isCancelled {
-                let interval = await MainActor.run { self?.checkInterval ?? 900 }
-                try? await Task.sleep(nanoseconds: UInt64(max(interval, 60)) * 1_000_000_000)
+                try? await Task.sleep(nanoseconds: BackgroundMonitor.foregroundInterval * 1_000_000_000)
                 guard let self, !Task.isCancelled, !self.connected else { return }
-                await BackgroundMonitor.checkOnce(host: h, port: p, password: pw,
-                                                  notifyDownloads: self.effectiveNotifyDownloads,
-                                                  notifyNetwork: self.effectiveNotifyNetwork)
+                guard await Notifier.isAuthorized() else { continue }
+                await BackgroundMonitor.checkOnce(host: h, port: p, password: pw)
             }
         }
     }
@@ -642,6 +675,7 @@ final class AppState: ObservableObject {
 
         if isNetworkDrop, connected {
             connectionLostMessage = "Server interrotto: la connessione al server aMule è stata chiusa."
+            Notifier.postServerConnectionLost(host: host)
             Task {
                 await disconnect()
                 // La connessione è caduta da sola: il monitoraggio continua
@@ -714,18 +748,9 @@ final class AppState: ObservableObject {
             // Persistito anche per i controlli in background.
             Notifier.recordNetState(server: server, ed2k: current.ed2k, kad: current.kad)
         }
-        guard effectiveNotifyNetwork, let prev = lastNetState else { return }
-        // Con la riconnessione automatica attiva lato server il drop è
-        // transitorio: per scelta dell'utente non va notificato.
-        guard !Notifier.serverReconnectEnabled(server: server) else { return }
-        if prev.ed2k && !current.ed2k {
-            Notifier.post(id: "ed2k-drop", title: "eD2k disconnesso",
-                          body: "\(host) non è più connesso alla rete eD2k.")
-        }
-        if prev.kad && !current.kad {
-            Notifier.post(id: "kad-drop", title: "Kad disconnesso",
-                          body: "\(host) non è più connesso alla rete Kad.")
-        }
+        guard let prev = lastNetState else { return }
+        Notifier.notifyNetworkTransition(server: server, host: host, serverName: connState.serverName,
+                                         previous: prev, current: current)
     }
 
     /// Legge dal server il flag "Riconnetti automaticamente" (solo la sezione
@@ -830,6 +855,15 @@ final class AppState: ObservableObject {
                     notifyDownloadCompleted(done)
                 }
             }
+            // Download avviati: hash nuovi rispetto al giro precedente (non al
+            // primo caricamento dopo la connessione, che porterebbe tutta la coda).
+            if queueLoadedOnce {
+                let known = Set(downloads.map(\.hash))
+                for f in fresh where !known.contains(f.hash) && !f.isComplete {
+                    Notifier.postDownloadStarted(server: "\(host):\(port)", name: f.name, hashHex: hexString(f.hash))
+                }
+            }
+            queueLoadedOnce = true
             // Remember progress for the files still in the queue.
             for f in fresh { lastProgress[f.hash] = f.progress }
 
@@ -874,14 +908,15 @@ final class AppState: ObservableObject {
         }
     }
 
+    /// Primo caricamento della coda dopo la connessione già avvenuto (per non
+    /// notificare come «avviati» i file già presenti).
+    private var queueLoadedOnce = false
+
     /// Local notification on download completion; iOS mirrors it to Apple Watch.
     /// Il registro per-server evita doppioni tra polling in foreground e
     /// controlli in background sullo stesso completamento.
     private func notifyDownloadCompleted(_ item: DownloadItem) {
-        let hex = hexString(item.hash)
-        guard Notifier.markCompletedOnce(server: "\(host):\(port)", hashHex: hex) else { return }
-        guard effectiveNotifyDownloads else { return }
-        Notifier.post(id: "dl-\(hex)", title: "Download completato ✅", body: item.name)
+        Notifier.postDownloadCompleted(server: "\(host):\(port)", name: item.name, hashHex: hexString(item.hash))
     }
 
     private func partfileCommand(_ op: ECOp, hash: Data, children: [ECTag] = []) async {

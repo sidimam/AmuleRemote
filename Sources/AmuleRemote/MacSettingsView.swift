@@ -18,12 +18,6 @@ struct MacSettingsView: View {
 struct MacGeneralSettings: View {
     @EnvironmentObject var state: AppState
 
-    /// Sotto-toggle notifiche: appare spento finché il master è disattivato.
-    private func gated(_ source: Binding<Bool>) -> Binding<Bool> {
-        Binding(get: { state.notificationsEnabled && source.wrappedValue },
-                set: { source.wrappedValue = $0 })
-    }
-
     var body: some View {
         // Stesse righe, stesse icone e stesso ordine della sezione
         // "Impostazioni app" / "Notifiche" di iOS e iPadOS.
@@ -46,7 +40,7 @@ struct MacGeneralSettings: View {
                 LabeledContent {
                     IconColorPicker(selection: $state.iconColor)
                 } label: {
-                    Label("Colore icona", systemImage: "paintpalette")
+                    Label("Colore app", systemImage: "paintpalette")
                 }
                 Picker(selection: $state.idleTimeout) {
                     Text("Mai").tag(0)
@@ -65,6 +59,7 @@ struct MacGeneralSettings: View {
                     Label("Sincronizza profili con iCloud", systemImage: "icloud")
                 }
                 .disabled(!CloudSync.isAvailable)
+                NotificationsSettingsRow()
                 Toggle(isOn: Binding(
                     get: { state.biometricLockEnabled },
                     set: { newValue in Task { await state.setBiometricLock(newValue) } }
@@ -76,7 +71,8 @@ struct MacGeneralSettings: View {
                 Text("Impostazioni app")
             } footer: {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
+                    Text("Dopo il periodo di inattività scelto (nessun clic né tasto) la connessione al server si chiude, ma i dati restano visibili in stato Offline: riparte da sola al primo clic o con «Riconnetti». Il cambio lingua è immediato per l'interfaccia; notifiche e formati si adeguano al prossimo avvio. Il colore tinge pulsanti e link dell'app e cambia l'icona nel Dock; quella nel Finder resta l'originale. Con il blocco attivo, all'avvio l'app chiede \(BiometricAuth.biometryLabel) (o la password del Mac) prima di mostrare i contenuti.")
+                    Text("Le notifiche (download avviati e completati, server non raggiungibile, cadute e riconnessioni eD2k/Kad) si gestiscono in Impostazioni di Sistema → Notifiche: la riga Notifiche ti porta lì.")
                     if CloudSync.isAvailable {
                         Text("Con la sincronizzazione iCloud i profili server e le loro password (Portachiavi iCloud) sono condivisi tra i tuoi dispositivi.")
                     } else {
@@ -85,43 +81,6 @@ struct MacGeneralSettings: View {
                 }
                 .font(.caption)
                 .foregroundStyle(.secondary)
-            }
-
-            Section {
-                Toggle(isOn: Binding(
-                    get: { state.notificationsEnabled },
-                    set: { v in Task { await state.setNotificationsEnabled(v) } }
-                )) {
-                    Label("Notifiche", systemImage: "bell.badge")
-                }
-                Toggle(isOn: gated($state.notifyDownloadsEnabled)) {
-                    Label("Download completati", systemImage: "checkmark.circle")
-                }
-                .disabled(!state.notificationsEnabled)
-                Toggle(isOn: gated($state.notifyNetworkEnabled)) {
-                    Label("Disconnessioni eD2k / Kad", systemImage: "wifi.slash")
-                }
-                .disabled(!state.notificationsEnabled)
-                Toggle(isOn: gated($state.backgroundChecksEnabled)) {
-                    Label("Controlli anche da disconnesso", systemImage: "clock.arrow.circlepath")
-                }
-                .disabled(!state.notificationsEnabled)
-                Picker(selection: $state.checkInterval) {
-                    Text("1 minuto").tag(60)
-                    Text("5 minuti").tag(300)
-                    Text("15 minuti").tag(900)
-                    Text("30 minuti").tag(1800)
-                    Text("1 ora").tag(3600)
-                } label: {
-                    Label("Intervallo controlli", systemImage: "timer")
-                }
-                .disabled(!state.notificationsEnabled)
-            } header: {
-                Text("Notifiche")
-            } footer: {
-                Text("Attiva le notifiche per ricevere gli avvisi: alla prima attivazione l'app chiede il permesso e invia una notifica di prova. Dopo una disconnessione (timeout o server caduto) l'app continua a controllare il server all'intervallo scelto finché resta aperta, notificando download completati e cadute eD2k/Kad (queste ultime solo se sul server la riconnessione automatica è spenta).")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
             }
 
             AppInfoSection()

@@ -39,7 +39,7 @@ enum HomeScreenShortcuts {
     /// Registra le voci del menu dell'icona, localizzate nella lingua corrente
     /// dell'app (rifatto a ogni passaggio in background così segue i cambi lingua).
     @MainActor static func install() {
-        UIApplication.shared.shortcutItems = QuickAction.allCases.map { action in
+        UIApplication.shared.shortcutItems = QuickAction.homeScreenCases.map { action in
             UIApplicationShortcutItem(type: action.rawValue,
                                       localizedTitle: action.title,
                                       localizedSubtitle: nil,

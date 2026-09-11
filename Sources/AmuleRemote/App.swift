@@ -17,6 +17,7 @@ struct AmuleRemoteApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(state)
+                .tint(AppIconColor.tint(for: state.iconColor))
                 .frame(minWidth: 980, minHeight: 620)
         }
         // Dimensione del primo avvio (e canvas naturale per gli screenshot
@@ -38,6 +39,8 @@ struct AmuleRemoteApp: App {
             CommandMenu("Trasferimenti") {
                 Button("Aggiungi link eD2k…") { QuickActionRouter.shared.pending = .addLink }
                     .keyboardShortcut("l")
+                Button("Aggiungi link dagli Appunti") { QuickActionRouter.shared.pending = .addFromClipboard }
+                    .keyboardShortcut("l", modifiers: [.command, .shift])
                 Divider()
                 Button("Metti in pausa tutti i download") { QuickActionRouter.shared.pending = .pauseAll }
                     .keyboardShortcut("p", modifiers: [.command, .option])
@@ -52,6 +55,7 @@ struct AmuleRemoteApp: App {
         Settings {
             MacSettingsView()
                 .environmentObject(state)
+                .tint(AppIconColor.tint(for: state.iconColor))
         }
     }
 }
@@ -111,10 +115,12 @@ struct ContentView: View {
             Text(AppState.ed2kLinkName(state.pendingEd2kLink ?? ""))
         }
         .onOpenURL { state.handleIncomingURL($0) }
-        .alert("Notifiche non consentite", isPresented: $state.notificationsDenied) {
-            Button("OK", role: .cancel) { state.notificationsDenied = false }
-        } message: {
-            Text("Le notifiche di aMule Remote sono disattivate nelle Impostazioni di sistema. Attivale da Impostazioni di Sistema → Notifiche → aMule Remote.")
+        // Presentazione (funzionalità, iCloud, notifiche) al primo avvio.
+        .sheet(isPresented: $state.showWalkthrough) {
+            WalkthroughView()
+                .environmentObject(state)
+                .tint(AppIconColor.tint(for: state.iconColor))
+                .modifier(AppLocaleModifier(language: state.appLanguage))
         }
         .modifier(AppLocaleModifier(language: state.appLanguage))
     }

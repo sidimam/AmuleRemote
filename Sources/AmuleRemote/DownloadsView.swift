@@ -4,7 +4,6 @@ struct DownloadsView: View {
     @EnvironmentObject var state: AppState
     @State private var selection = Set<Data>()
     @State private var showAddLink = false
-    @State private var newLink = ""
     @State private var confirmDelete = false
     @State private var sortOrder = [KeyPathComparator(\DownloadItem.name)]
 
@@ -147,24 +146,7 @@ struct DownloadsView: View {
             if state.addLinkRequested { showAddLink = true; state.addLinkRequested = false }
         }
         .sheet(isPresented: $showAddLink) {
-            VStack(spacing: 16) {
-                Text("Aggiungi link eD2k").font(.headline)
-                TextField("ed2k://|file|…", text: $newLink)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(width: 440)
-                HStack {
-                    Button("Annulla") { showAddLink = false }
-                    Button("Aggiungi") {
-                        let link = newLink
-                        showAddLink = false
-                        newLink = ""
-                        Task { await state.addEd2kLink(link) }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(newLink.isEmpty)
-                }
-            }
-            .padding(24)
+            AddLinkSheet().environmentObject(state)
         }
         .confirmationDialog("Eliminare i download selezionati?", isPresented: $confirmDelete) {
             Button("Elimina \(selectedItems.count) file", role: .destructive) {
@@ -316,6 +298,12 @@ struct DownloadsView: View {
             Button("Copia link eD2k") {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(item.ed2kLink, forType: .string)
+            }
+        }
+        let links = items.map(\.ed2kLink).filter { !$0.isEmpty }
+        if !links.isEmpty {
+            ShareLink(item: links.joined(separator: "\n")) {
+                Label(links.count > 1 ? "Condividi link eD2k (\(links.count))" : "Condividi link eD2k", systemImage: "square.and.arrow.up")
             }
         }
         Button("Elimina…", role: .destructive) {
