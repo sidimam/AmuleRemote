@@ -2,13 +2,14 @@
 
 All notable changes to aMule Remote. The same notes appear in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases), in the App Store "What's New" of every platform, in the [wiki → Features](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the [Homebrew tap](https://github.com/sidimam/homebrew-tap).
 
-## 1.4 (build 20) — 2026-09-11
+## 1.4.1 (build 21) — 2026-09-11
 
-Same feature set as build 19, republished on every platform with three fixes found on a real Apple TV:
+Same feature set as 1.4, republished on every platform with the fixes found on a real Apple TV. A new version number was needed because Apple had already approved 1.4 (build 19) on Apple TV and Apple Vision Pro before the fixed build could replace it; build 20 was never published on the stores.
 
 - **Apple TV: iCloud sync now actually works** — the tvOS builds of 1.3 and 1.4 (build 19) were archived without code signing and therefore shipped **without the iCloud Key-Value Storage and keychain entitlements**: the walkthrough could never find a backup and *Sync profiles with iCloud* did nothing. The tvOS archive is now signed with the App Store profile at archive time and the entitlements are verified before upload.
 - **Walkthrough: more patient iCloud backup search** on every platform — iCloud delivers the Key-Value store asynchronously after a first install or a reinstall; the search now waits up to about 30 seconds, reacts to the store's change notification and offers **Search again** with a hint about using the same iCloud account.
 - **Apple TV: App color picker** shows each option with a dot of its own color (they were drawn in the text color).
+- **Walkthrough presentation** deferred by one run-loop turn, so it cannot be dropped at launch when data is already present in the Keychain or on iCloud (reinstall).
 
 ## 1.4 (build 19) — 2026-09-11
 

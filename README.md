@@ -39,9 +39,9 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 
 ## Features
 
-### New in 1.4 (build 20)
+### New in 1.4 / 1.4.1 (build 21)
 
-> Build 20 replaces build 19 on every platform: it fixes the Apple TV build, which shipped without the iCloud entitlements (sync and backup restore never worked on tvOS), makes the walkthrough's iCloud backup search more patient with a *Search again* button, and draws real color dots in the Apple TV color picker. See [CHANGELOG.md](CHANGELOG.md).
+> 1.4.1 (build 21) replaces 1.4 on every platform, same day: it fixes the Apple TV build, which shipped without the iCloud entitlements (sync and backup restore never worked on tvOS), makes the walkthrough's iCloud backup search more patient with a *Search again* button, and draws real color dots in the Apple TV color picker. See [CHANGELOG.md](CHANGELOG.md).
 
 - **Guided introduction (walkthrough)** on every platform — iPhone, iPad, Mac, Apple Vision Pro and Apple TV — at the first launch after the update: what the app does, transfers and search, server profiles and Offline mode, the platform's quick actions, the demo mode, then **iCloud sync** and **notifications**. It can be replayed at any time from *About → Show the introduction again*.
 - **iCloud backup restore from the walkthrough** — the app looks for an existing backup in your iCloud account and offers to restore the server profiles (and their passwords, via the iCloud Keychain) on the new device. The backup is **one for all your platforms**: iPhone, iPad, Mac (DMG, Homebrew and Mac App Store), Vision Pro and Apple TV. Skipped it? You can turn sync on later from the app settings.
@@ -145,7 +145,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.4 (build 20)**. Release tags follow the pattern `v1.4-build20`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
+Marketing version and build number are kept aligned across all platforms. Current: **1.4.1 (build 21)**. Release tags follow the pattern `v1.4.1-build21`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
 
 ## Protocol verification
 

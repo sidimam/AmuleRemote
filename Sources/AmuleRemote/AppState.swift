@@ -257,7 +257,13 @@ final class AppState: ObservableObject {
         // Walkthrough: prima volta o versione rinnovata. Con -demo si salta
         // (screenshot/collaudo) a meno di -walkthrough esplicito.
         let seen = defaults.integer(forKey: "walkthroughVersion")
-        showWalkthrough = (seen < Self.walkthroughVersion && !launchArgs.contains("-demo")) || launchArgs.contains("-walkthrough")
+        if (seen < Self.walkthroughVersion && !launchArgs.contains("-demo")) || launchArgs.contains("-walkthrough") {
+            // Presentazione differita al giro di run loop successivo: impostare
+            // isPresented durante la primissima costruzione della vista radice
+            // può far cadere in silenzio il fullScreenCover/sheet (es. dopo una
+            // reinstallazione con dati già presenti nel Portachiavi o su iCloud).
+            DispatchQueue.main.async { [weak self] in self?.showWalkthrough = true }
+        }
         Task { await refreshNotificationStatus() }
 
         // Avvio diretto in modalità demo (per screenshot e collaudo):
