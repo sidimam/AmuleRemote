@@ -2121,6 +2121,46 @@
         }
       }
     },
+    "Al primo avvio iCloud può impiegare qualche secondo a consegnare i dati.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عند التشغيل الأول قد يستغرق iCloud بضع ثوانٍ لتسليم البيانات."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim ersten Start kann iCloud einige Sekunden brauchen, um die Daten zu liefern."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At the first launch iCloud may take a few seconds to deliver the data."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el primer inicio iCloud puede tardar unos segundos en entregar los datos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Au premier lancement, iCloud peut mettre quelques secondes à livrer les données."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首次启动时，iCloud 可能需要几秒钟才能送达数据。"
+          }
+        }
+      }
+    },
     "Alloca subito la dimensione completa": {
       "localizations": {
         "ar": {
@@ -4157,6 +4197,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索"
+          }
+        }
+      }
+    },
+    "Cerca di nuovo": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البحث مجددًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut suchen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar de nuevo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher à nouveau"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再次搜索"
           }
         }
       }
@@ -18637,6 +18717,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "深色"
+          }
+        }
+      }
+    },
+    "Se su un altro dispositivo la sincronizzazione è già attiva, controlla che questo usi lo stesso account iCloud e cerca di nuovo. Puoi attivarla anche più tardi dalle impostazioni dell'app.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إذا كانت المزامنة مفعّلة بالفعل على جهاز آخر، فتحقق من أن هذا الجهاز يستخدم حساب iCloud نفسه ثم ابحث مجددًا. يمكنك تفعيلها لاحقًا أيضًا من إعدادات التطبيق."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn die Synchronisierung auf einem anderen Gerät bereits aktiv ist, prüfe, ob dieses Gerät denselben iCloud-Account verwendet, und suche erneut. Du kannst sie auch später in den App-Einstellungen aktivieren."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If sync is already on on another device, check that this one uses the same iCloud account and search again. You can also turn it on later from the app settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si la sincronización ya está activa en otro dispositivo, comprueba que este use la misma cuenta de iCloud y busca de nuevo. También puedes activarla más tarde desde los ajustes de la app."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si la synchronisation est déjà active sur un autre appareil, vérifiez que celui-ci utilise le même compte iCloud et recherchez à nouveau. Vous pourrez aussi l'activer plus tard dans les réglages de l'app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "如果另一台设备已开启同步，请确认此设备使用同一个 iCloud 账户后再次搜索。你也可以稍后在 App 设置中开启。"
           }
         }
       }

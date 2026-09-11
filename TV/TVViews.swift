@@ -72,13 +72,16 @@ struct TVPickerRow<T: Hashable>: View {
     let icon: String?
     let options: [(value: T, label: String, icon: String?)]
     @Binding var selection: T
+    /// Colore da mostrare come pallino accanto all'opzione (es. «Colore app»):
+    /// disegnato con il proprio colore, non con quello del testo.
+    var color: ((T) -> Color?)? = nil
     @FocusState private var focused: Bool
 
     private var currentLabel: String { options.first { $0.value == selection }?.label ?? "" }
 
     var body: some View {
         NavigationLink {
-            TVOptionList(title: title, options: options, selection: $selection)
+            TVOptionList(title: title, options: options, selection: $selection, color: color)
         } label: {
             HStack {
                 if let icon {
@@ -87,6 +90,7 @@ struct TVPickerRow<T: Hashable>: View {
                     Text(title).foregroundStyle(TVInk.primary(focused))
                 }
                 Spacer()
+                if let c = color?(selection) { TVColorDot(color: c) }
                 // La freccia la disegna già il NavigationLink.
                 Text(currentLabel).foregroundStyle(TVInk.secondary(focused))
             }
@@ -95,10 +99,24 @@ struct TVPickerRow<T: Hashable>: View {
     }
 }
 
+/// Pallino colorato con bordo chiaro, leggibile sia sulla riga scura sia sul
+/// platter bianco della riga evidenziata.
+struct TVColorDot: View {
+    let color: Color
+    var body: some View {
+        Circle()
+            .fill(color)
+            .frame(width: 28, height: 28)
+            .overlay(Circle().strokeBorder(Color.white.opacity(0.9), lineWidth: 2))
+            .shadow(color: .black.opacity(0.25), radius: 1)
+    }
+}
+
 struct TVOptionList<T: Hashable>: View {
     let title: LocalizedStringKey
     let options: [(value: T, label: String, icon: String?)]
     @Binding var selection: T
+    var color: ((T) -> Color?)? = nil
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedIndex: Int?
 
@@ -110,8 +128,11 @@ struct TVOptionList<T: Hashable>: View {
                     selection = opt.value
                     dismiss()
                 } label: {
-                    HStack {
-                        if let icon = opt.icon {
+                    HStack(spacing: 18) {
+                        if let c = color?(opt.value) {
+                            TVColorDot(color: c)
+                            Text(opt.label).foregroundStyle(TVInk.primary(focused))
+                        } else if let icon = opt.icon {
                             Label(opt.label, systemImage: icon).foregroundStyle(TVInk.primary(focused))
                         } else {
                             Text(opt.label).foregroundStyle(TVInk.primary(focused))
@@ -571,8 +592,9 @@ struct TVSettingsView: View {
                                 options: AppLanguage.allCases.map { (value: $0, label: $0.label, icon: nil) },
                                 selection: $state.appLanguage)
                     TVPickerRow(title: "Colore app", icon: "paintpalette",
-                                options: AppIconColor.all.map { (value: $0.key, label: String(localized: $0.labelText), icon: "circle.fill") },
-                                selection: $state.iconColor)
+                                options: AppIconColor.all.map { (value: $0.key, label: String(localized: $0.labelText), icon: nil) },
+                                selection: $state.iconColor,
+                                color: { AppIconColor.tint(for: $0) })
                     TVToggleRow(title: "Sincronizza profili con iCloud", icon: "icloud", isOn: Binding(
                         get: { state.iCloudSyncEnabled },
                         set: { state.setCloudSync($0) }))

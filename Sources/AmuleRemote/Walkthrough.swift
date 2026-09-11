@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 /// Presentazione dell'app (walkthrough) mostrata al primo avvio e al primo
 /// avvio dopo un aggiornamento che la rinnova, su iPhone/iPad, Mac, Apple
@@ -13,6 +14,7 @@ struct WalkthroughView: View {
     @State private var backup: (count: Int, latest: Date?)? = nil
     @State private var backupChecked = false
     @State private var cloudDone = false
+    @State private var searchRound = 0   // «Cerca di nuovo» riavvia il .task
     @State private var notificationsRequested = false
     #if os(tvOS)
     @FocusState private var focus: String?
@@ -204,6 +206,10 @@ struct WalkthroughView: View {
             } else if !backupChecked {
                 ProgressView("Cerco un backup su iCloud…")
                     .font(bodyFont)
+                Text("Al primo avvio iCloud può impiegare qualche secondo a consegnare i dati.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
             } else if let b = backup {
                 Text(b.latest != nil
                      ? "Trovato un backup con \(b.count) profili server (ultimo aggiornamento \(b.latest!.formatted(date: .abbreviated, time: .shortened))). Vuoi ripristinarlo su questo dispositivo?"
@@ -250,19 +256,43 @@ struct WalkthroughView: View {
                 #else
                 .buttonStyle(.borderedProminent)
                 #endif
-                Text("Puoi attivarla anche più tardi dalle impostazioni dell'app.")
+                Button {
+                    backupChecked = false
+                    searchRound += 1
+                } label: {
+                    #if os(tvOS)
+                    Label("Cerca di nuovo", systemImage: "arrow.clockwise").foregroundStyle(navInk("retry"))
+                    #else
+                    Label("Cerca di nuovo", systemImage: "arrow.clockwise")
+                    #endif
+                }
+                #if os(tvOS)
+                .focused($focus, equals: "retry")
+                #else
+                .buttonStyle(.bordered)
+                #endif
+                Text("Se su un altro dispositivo la sincronizzazione è già attiva, controlla che questo usi lo stesso account iCloud e cerca di nuovo. Puoi attivarla anche più tardi dalle impostazioni dell'app.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
             }
         }
-        .task {
+        // Il KVS al primo avvio (o dopo una reinstallazione) arriva in modo
+        // asincrono: si riprova per circa 30 s e la notifica di cambiamento
+        // accorcia l'attesa. «Cerca di nuovo» riavvia la ricerca.
+        .task(id: searchRound) {
             guard !backupChecked else { return }
-            // Il KVS al primo avvio può arrivare dopo qualche secondo: si riprova.
-            for attempt in 0..<4 {
+            for attempt in 0..<15 {
                 if let b = state.cloudBackupSummary() { backup = b; break }
-                if attempt < 3 { try? await Task.sleep(nanoseconds: 1_500_000_000) }
+                if attempt < 14 { try? await Task.sleep(nanoseconds: 2_000_000_000) }
             }
             backupChecked = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: CloudSync.changeNotification)) { _ in
+            if backup == nil, let b = state.cloudBackupSummary() { backup = b; backupChecked = true }
+        }
+        .onChange(of: state.cloudProfilesAvailable) { _, n in
+            if n > 0, backup == nil, let b = state.cloudBackupSummary() { backup = b; backupChecked = true }
         }
     }
 

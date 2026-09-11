@@ -39,7 +39,9 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 
 ## Features
 
-### New in 1.4 (build 19)
+### New in 1.4 (build 20)
+
+> Build 20 replaces build 19 on every platform: it fixes the Apple TV build, which shipped without the iCloud entitlements (sync and backup restore never worked on tvOS), makes the walkthrough's iCloud backup search more patient with a *Search again* button, and draws real color dots in the Apple TV color picker. See [CHANGELOG.md](CHANGELOG.md).
 
 - **Guided introduction (walkthrough)** on every platform — iPhone, iPad, Mac, Apple Vision Pro and Apple TV — at the first launch after the update: what the app does, transfers and search, server profiles and Offline mode, the platform's quick actions, the demo mode, then **iCloud sync** and **notifications**. It can be replayed at any time from *About → Show the introduction again*.
 - **iCloud backup restore from the walkthrough** — the app looks for an existing backup in your iCloud account and offers to restore the server profiles (and their passwords, via the iCloud Keychain) on the new device. The backup is **one for all your platforms**: iPhone, iPad, Mac (DMG, Homebrew and Mac App Store), Vision Pro and Apple TV. Skipped it? You can turn sync on later from the app settings.
@@ -125,7 +127,7 @@ Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision`
 
 > App Store exports (`xcodebuild -exportArchive`, automatic signing) need an Apple Account signed in to Xcode, or an App Store Connect API key with the *Access to Cloud Managed Distribution Certificate* permission; otherwise use manual signing with a local Apple Distribution certificate and App Store profiles. Details in the wiki page above.
 
-Since build 15 the macOS app published in the Releases is signed with a **Developer ID Application** certificate and **notarized by Apple** (stapled): it installs and opens on any Mac without security warnings and without keychain prompts.
+Since build 15 the macOS app published in the Releases is signed with a **Developer ID Application** certificate and **notarized by Apple** (stapled): it installs and opens on any Mac without security warnings and without keychain prompts. Before signing, strip the extended attributes that cloud-synced folders add to the bundle (`xattr -cr "aMule Remote.app"`), otherwise codesign refuses the bundle. The tvOS archive must be **signed at archive time** (manual signing with the App Store profile: no registered Apple TV is needed), otherwise the exported app loses the iCloud entitlements — check every export with `codesign -d --entitlements :- <app>` before uploading.
 
 Reference process:
 
@@ -143,7 +145,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.4 (build 19)**. Release tags follow the pattern `v1.4-build19`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
+Marketing version and build number are kept aligned across all platforms. Current: **1.4 (build 20)**. Release tags follow the pattern `v1.4-build20`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
 
 ## Protocol verification
 
