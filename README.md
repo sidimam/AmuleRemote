@@ -123,6 +123,8 @@ Targets: `AmuleRemoteiOS` (iPhone/iPad), `AmuleRemoteWatch`, `AmuleRemoteVision`
 
 ## Signing and distribution
 
+> App Store exports (`xcodebuild -exportArchive`, automatic signing) need an Apple Account signed in to Xcode, or an App Store Connect API key with the *Access to Cloud Managed Distribution Certificate* permission; otherwise use manual signing with a local Apple Distribution certificate and App Store profiles. Details in the wiki page above.
+
 Since build 15 the macOS app published in the Releases is signed with a **Developer ID Application** certificate and **notarized by Apple** (stapled): it installs and opens on any Mac without security warnings and without keychain prompts.
 
 Reference process:
