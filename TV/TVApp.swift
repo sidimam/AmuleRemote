@@ -111,13 +111,14 @@ struct TVConnectionView: View {
 
     private enum Field { case host, port, password, autoConnect, connect, demo, restore }
 
+    @ScaledMetric(relativeTo: .largeTitle) private var iconPoints: CGFloat = 96
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     VStack(spacing: 12) {
                         Image(systemName: "network")
-                            .font(.system(size: 96))
+                            .font(.system(size: iconPoints))
                             .foregroundStyle(.tint)
                         Text("aMule Remote")
                             .font(.largeTitle.bold())
@@ -182,17 +183,16 @@ struct TVConnectionView: View {
                         .onChange(of: portText) { _, v in
                             if let p = Int(v.filter(\.isNumber)), p > 0 { state.port = p }
                         }
-                    HStack(spacing: 16) {
-                        TVTextField(placeholder: String(localized: "Password"), text: $state.password,
-                                    isSecure: !showPassword, contentType: .password, returnKey: .go) {
-                            if !state.host.isEmpty && !state.password.isEmpty { Task { await state.connect() } }
-                        }
-                        .focused($focused, equals: .password)
-                        Button { showPassword.toggle() } label: {
-                            Image(systemName: showPassword ? "eye.slash" : "eye")
-                        }
-                        .accessibilityLabel(showPassword ? Text("Nascondi password") : Text("Mostra password"))
+                    // Il campo password sta da solo nella riga: in una Form tvOS una
+                    // HStack con campo + pulsante diventa un'unica riga focalizzabile
+                    // e il tasto di selezione finiva sul pulsante «occhio», senza mai
+                    // aprire la tastiera (né quella remota dell'iPhone).
+                    TVTextField(placeholder: String(localized: "Password"), text: $state.password,
+                                isSecure: !showPassword, contentType: .password, returnKey: .go) {
+                        if !state.host.isEmpty && !state.password.isEmpty { Task { await state.connect() } }
                     }
+                    .focused($focused, equals: .password)
+                    TVToggleRow(title: "Mostra password", icon: showPassword ? "eye.slash" : "eye", isOn: $showPassword)
                     TVToggleRow(title: "Connetti automaticamente all'avvio", icon: "bolt.badge.clock", isOn: $state.autoConnect)
                 } header: {
                     Text("Server")

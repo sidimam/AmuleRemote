@@ -75,7 +75,7 @@ struct IconColorPicker: View {
                             .frame(width: 30, height: 30)
                         if selection == c.key {
                             Image(systemName: "checkmark")
-                                .font(.system(size: 13, weight: .bold))
+                                .font(.footnote.weight(.bold))
                                 .foregroundStyle(.white)
                         }
                     }

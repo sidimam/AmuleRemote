@@ -158,6 +158,7 @@ struct iOSRootView: View {
 struct iOSConnectionView: View {
     @EnvironmentObject var state: AppState
 
+    @ScaledMetric(relativeTo: .largeTitle) private var iconPoints: CGFloat = 48
     var body: some View {
         NavigationStack {
             Form {
@@ -181,7 +182,7 @@ struct iOSConnectionView: View {
                 Section {
                     VStack(spacing: 12) {
                         Image(systemName: "network")
-                            .font(.system(size: 48))
+                            .font(.system(size: iconPoints))
                             .foregroundStyle(.tint)
                         Text("aMule Remote")
                             .font(.title2.bold())

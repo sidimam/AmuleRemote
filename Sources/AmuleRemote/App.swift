@@ -266,6 +266,7 @@ struct ConnectionFooter: View {
 struct ConnectionView: View {
     @EnvironmentObject var state: AppState
 
+    @ScaledMetric(relativeTo: .largeTitle) private var iconPoints: CGFloat = 56
     var body: some View {
         VStack(spacing: 24) {
             if let msg = state.connectionLostMessage {
@@ -303,7 +304,7 @@ struct ConnectionView: View {
             }
 
             Image(systemName: "network")
-                .font(.system(size: 56))
+                .font(.system(size: iconPoints))
                 .foregroundStyle(.tint)
             Text("aMule Remote")
                 .font(.largeTitle.bold())

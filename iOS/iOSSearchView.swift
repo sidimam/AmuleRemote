@@ -95,7 +95,7 @@ struct iOSSearchView: View {
                                         Task { await state.closeSearchSession(session.id) }
                                     } label: {
                                         Image(systemName: "xmark")
-                                            .font(.system(size: 9, weight: .bold))
+                                            .font(.caption2.weight(.bold)).imageScale(.small)
                                     }
                                     .foregroundStyle(.secondary)
                                 }
@@ -151,6 +151,19 @@ struct iOSSearchView: View {
                                 .foregroundStyle(.secondary)
                             }
                         }
+                        // Il dialogo sta sulla riga: su iOS 26 viene reso come popover
+                        // ancorato alla vista che porta il modificatore, quindi deve
+                        // essere la riga toccata e non l'intera lista.
+                        .confirmationDialog(r.name,
+                                            isPresented: Binding(get: { downloadTarget?.hash == r.hash },
+                                                                 set: { if !$0 { downloadTarget = nil } }),
+                                            titleVisibility: .visible) {
+                            Button("Scarica") {
+                                Task { await state.downloadResult(r) }
+                                downloadTarget = nil
+                            }
+                            Button("Annulla", role: .cancel) { downloadTarget = nil }
+                        }
                     }
                 }
                 .listStyle(.plain)
@@ -181,16 +194,6 @@ struct iOSSearchView: View {
                 #endif
             }
             .sheet(isPresented: $showFilters) { filtersSheet }
-            .confirmationDialog(downloadTarget?.name ?? "",
-                                isPresented: Binding(get: { downloadTarget != nil },
-                                                     set: { if !$0 { downloadTarget = nil } }),
-                                titleVisibility: .visible) {
-                Button("Scarica") {
-                    if let t = downloadTarget { Task { await state.downloadResult(t) } }
-                    downloadTarget = nil
-                }
-                Button("Annulla", role: .cancel) { downloadTarget = nil }
-            }
         }
     }
 

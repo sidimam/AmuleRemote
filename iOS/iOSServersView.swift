@@ -88,6 +88,17 @@ struct iOSServersView: View {
                                 Task { await state.removeServer(s) }
                             } label: { Label("Rimuovi", systemImage: "trash") }
                         }
+                        // Dialogo sulla riga toccata (popover ancorato su iOS 26).
+                        .confirmationDialog("Connettere a \(s.name)?",
+                                            isPresented: Binding(get: { connectTarget?.id == s.id },
+                                                                 set: { if !$0 { connectTarget = nil } }),
+                                            titleVisibility: .visible) {
+                            Button("Connetti") {
+                                Task { await state.connectToServer(s) }
+                                connectTarget = nil
+                            }
+                            Button("Annulla", role: .cancel) { connectTarget = nil }
+                        }
                     }
                 }
                 .listStyle(.plain)
@@ -121,16 +132,6 @@ struct iOSServersView: View {
                         Image(systemName: "ellipsis.circle")
                     }
                 }
-            }
-            .confirmationDialog("Connettere a \(connectTarget?.name ?? "")?",
-                                isPresented: Binding(get: { connectTarget != nil },
-                                                     set: { if !$0 { connectTarget = nil } }),
-                                titleVisibility: .visible) {
-                Button("Connetti") {
-                    if let t = connectTarget { Task { await state.connectToServer(t) } }
-                    connectTarget = nil
-                }
-                Button("Annulla", role: .cancel) { connectTarget = nil }
             }
             .sheet(isPresented: $showAddServer) {
                 NavigationStack {

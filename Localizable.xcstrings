@@ -20961,6 +20961,86 @@
         }
       }
     },
+    "Trovato un backup con un profilo server (ultimo aggiornamento %@). Vuoi ripristinarlo su questo dispositivo?": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على نسخة احتياطية تحتوي على ملف تعريف خادم واحد (آخر تحديث %@). هل تريد استعادتها على هذا الجهاز؟"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup mit einem Serverprofil gefunden (letzte Aktualisierung %@). Auf diesem Gerät wiederherstellen?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a backup with one server profile (last updated %@). Restore it on this device?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se ha encontrado una copia con un perfil de servidor (última actualización %@). ¿Restaurarla en este dispositivo?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une sauvegarde avec un profil de serveur a été trouvée (dernière mise à jour %@). La restaurer sur cet appareil ?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找到包含 1 个服务器配置的备份（最后更新 %@）。要在此设备上恢复吗？"
+          }
+        }
+      }
+    },
+    "Trovato un backup con un profilo server. Vuoi ripristinarlo su questo dispositivo?": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على نسخة احتياطية تحتوي على ملف تعريف خادم واحد. هل تريد استعادتها على هذا الجهاز؟"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup mit einem Serverprofil gefunden. Auf diesem Gerät wiederherstellen?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a backup with one server profile. Restore it on this device?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se ha encontrado una copia con un perfil de servidor. ¿Restaurarla en este dispositivo?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une sauvegarde avec un profil de serveur a été trouvée. La restaurer sur cet appareil ?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找到包含 1 个服务器配置的备份。要在此设备上恢复吗？"
+          }
+        }
+      }
+    },
     "Tutti": {
       "localizations": {
         "ar": {

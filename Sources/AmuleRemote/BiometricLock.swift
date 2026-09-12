@@ -62,10 +62,11 @@ struct LockScreenView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var failed = false
 
+    @ScaledMetric(relativeTo: .largeTitle) private var iconPoints: CGFloat = 44
     var body: some View {
         VStack(spacing: 18) {
             Image(systemName: "lock.fill")
-                .font(.system(size: 44))
+                .font(.system(size: iconPoints))
                 .foregroundStyle(.tint)
             Text("aMule Remote")
                 .font(.title2.bold())

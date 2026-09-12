@@ -300,7 +300,7 @@ struct SearchView: View {
                     .foregroundStyle(.secondary)
                 Button(action: close) {
                     Image(systemName: "xmark")
-                        .font(.system(size: 8, weight: .bold))
+                        .font(.caption2.weight(.bold)).imageScale(.small)
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)

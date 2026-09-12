@@ -18,8 +18,10 @@ struct WalkthroughView: View {
     @State private var notificationsRequested = false
     #if os(tvOS)
     @FocusState private var focus: String?
-    /// tvOS: il pulsante evidenziato ha il platter del colore di tinta → testo bianco.
-    private func navInk(_ key: String) -> Color { focus == key ? .white : .primary }
+    /// tvOS: con `.tint` il pulsante NON evidenziato ha il platter del colore
+    /// di tinta (testo bianco), quello evidenziato ha il platter bianco (testo
+    /// nero). Verificato nel simulatore: l'inverso rendeva illeggibile «Inizia».
+    private func navInk(_ key: String) -> Color { focus == key ? .black : .white }
     #endif
 
     private struct Page: Identifiable {
@@ -93,6 +95,9 @@ struct WalkthroughView: View {
             }
             .padding(.horizontal, 24)
             .padding(.top, 20)
+            #if os(tvOS)
+            .focusSection()
+            #endif
 
             Spacer(minLength: 0)
 
@@ -101,6 +106,12 @@ struct WalkthroughView: View {
                     .id(pages[page].id)
                     .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity),
                                             removal: .move(edge: .leading).combined(with: .opacity)))
+                    #if os(tvOS)
+                    // Sezione di focus: dai pulsanti in basso (destra/sinistra) il
+                    // telecomando raggiunge i pulsanti centrali della pagina anche
+                    // se non sono allineati in orizzontale.
+                    .focusSection()
+                    #endif
             }
 
             Spacer(minLength: 0)
@@ -156,6 +167,9 @@ struct WalkthroughView: View {
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 28)
+            #if os(tvOS)
+            .focusSection()
+            #endif
         }
         #if os(macOS)
         .frame(width: 720, height: 560)
@@ -165,6 +179,10 @@ struct WalkthroughView: View {
         // presentazione si sovrappone alla schermata sottostante.
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background((colorScheme == .dark ? Color.black : Color.white).ignoresSafeArea())
+        // Focus iniziale su «Avanti», non su «Salta» (altrimenti il primo tasto
+        // di selezione del telecomando chiudeva la presentazione).
+        .onAppear { DispatchQueue.main.async { focus = "next" } }
+        .onChange(of: page) { _, _ in if focus != "next" && focus != "back" { focus = "next" } }
         #endif
         .interactiveDismissDisabled()
     }
@@ -173,7 +191,7 @@ struct WalkthroughView: View {
     private func pageView(_ p: Page) -> some View {
         VStack(spacing: 22) {
             Image(systemName: p.icon)
-                .font(.system(size: iconSize))
+                .font(.system(size: iconPoints))   // @ScaledMetric: segue la dimensione testo del dispositivo
                 .foregroundStyle(.tint)
                 .symbolRenderingMode(.hierarchical)
             Text(p.title)
@@ -194,6 +212,19 @@ struct WalkthroughView: View {
         .frame(maxWidth: maxTextWidth)
     }
 
+    /// Testo del backup trovato, con singolare e plurale separati.
+    private func backupText(_ b: (count: Int, latest: Date?)) -> LocalizedStringKey {
+        if let d = b.latest {
+            let when = d.formatted(date: .abbreviated, time: .shortened)
+            return b.count == 1
+                ? "Trovato un backup con un profilo server (ultimo aggiornamento \(when)). Vuoi ripristinarlo su questo dispositivo?"
+                : "Trovato un backup con \(b.count) profili server (ultimo aggiornamento \(when)). Vuoi ripristinarlo su questo dispositivo?"
+        }
+        return b.count == 1
+            ? "Trovato un backup con un profilo server. Vuoi ripristinarlo su questo dispositivo?"
+            : "Trovato un backup con \(b.count) profili server. Vuoi ripristinarlo su questo dispositivo?"
+    }
+
     // MARK: - iCloud: cerca il backup e propone ripristino o attivazione
 
     private var cloudBody: some View {
@@ -211,9 +242,7 @@ struct WalkthroughView: View {
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             } else if let b = backup {
-                Text(b.latest != nil
-                     ? "Trovato un backup con \(b.count) profili server (ultimo aggiornamento \(b.latest!.formatted(date: .abbreviated, time: .shortened))). Vuoi ripristinarlo su questo dispositivo?"
-                     : "Trovato un backup con \(b.count) profili server. Vuoi ripristinarlo su questo dispositivo?")
+                Text(backupText(b))
                     .font(bodyFont)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -287,6 +316,10 @@ struct WalkthroughView: View {
                 if attempt < 14 { try? await Task.sleep(nanoseconds: 2_000_000_000) }
             }
             backupChecked = true
+            #if os(tvOS)
+            // Porta il telecomando direttamente sul pulsante principale.
+            if !state.iCloudSyncEnabled && !cloudDone { focus = backup != nil ? "restore" : "enable" }
+            #endif
         }
         .onReceive(NotificationCenter.default.publisher(for: CloudSync.changeNotification)) { _ in
             if backup == nil, let b = state.cloudBackupSummary() { backup = b; backupChecked = true }
@@ -351,13 +384,16 @@ struct WalkthroughView: View {
 
     // MARK: - Metriche per piattaforma
 
-    private var iconSize: CGFloat {
+    /// Dimensione dell'icona: base per piattaforma, scalata con Dynamic Type
+    /// (relativa a .largeTitle) così cresce con il testo scelto dall'utente.
+    private static var baseIconPoints: CGFloat {
         #if os(tvOS)
         return 120
         #else
         return 64
         #endif
     }
+    @ScaledMetric(relativeTo: .largeTitle) private var iconPoints: CGFloat = WalkthroughView.baseIconPoints
     private var titleFont: Font {
         #if os(tvOS)
         return .largeTitle.bold()

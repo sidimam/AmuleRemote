@@ -2,6 +2,16 @@
 
 All notable changes to aMule Remote. The same notes appear in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases), in the App Store "What's New" of every platform, in the [wiki → Features](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the [Homebrew tap](https://github.com/sidimam/homebrew-tap).
 
+## 1.4.2 (build 22) — 2026-09-12
+
+Fixes found on a real Apple TV and iPhone right after 1.4.1, plus a rule for the whole app:
+
+- **Apple TV: «Restore from iCloud» reachable with the remote** — the walkthrough's centre buttons (Restore, Turn on sync, Search again) could not be reached from the bottom navigation buttons because they were not horizontally aligned; the page, the top and the bottom bars are now focus sections and the remote lands on the main button as soon as the backup search ends.
+- **Apple TV: the password field opens the keyboard** — the field shared its row with the show/hide button, so the row's select press toggled the eye icon and never opened the keyboard (nor the iPhone remote keyboard). The password field is now alone in its row, with a *Show password* row below.
+- **iPhone/iPad/Vision Pro: dialogs anchored to the tapped row** — the *Download* dialog of the search results and the *Connect to…* dialog of the server list were attached to the whole list, so on iOS 26 the popover pointed at the wrong row.
+- **System fonts everywhere** — every remaining fixed font size (icons, tiny badges, the walkthrough icon) now uses dynamic text styles, so the app follows the text size set on the device.
+- Singular form for “Found a backup with one server profile”.
+
 ## 1.4.1 (build 21) — 2026-09-11
 
 Same feature set as 1.4, republished on every platform with the fixes found on a real Apple TV. A new version number was needed because Apple had already approved 1.4 (build 19) on Apple TV and Apple Vision Pro before the fixed build could replace it; build 20 was never published on the stores.

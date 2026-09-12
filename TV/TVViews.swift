@@ -37,7 +37,9 @@ struct TVActionButton: View {
                     Text(title)
                 }
             }
-            .foregroundStyle(focused ? Color.white : Color.primary)
+            // Platter di tinta a riposo (testo bianco), platter bianco quando
+            // evidenziato (testo nero).
+            .foregroundStyle(focused ? Color.black : Color.white)
         }
         .focused($focused)
     }
