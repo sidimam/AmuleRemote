@@ -15,3 +15,6 @@ notarize.zip
 aMuleRemote-RecoveryKit/
 Manuale-Ripristino-*.docx
 Manuale-Ripristino-*.pdf
+
+# Clone della wiki GitHub (repo separato sidimam/AmuleRemote.wiki): vive qui, non dentro questo repo
+AmuleRemote.wiki/
