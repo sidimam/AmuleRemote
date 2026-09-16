@@ -33,6 +33,7 @@ enum SystemSettings {
         case .provisional: return "Riepilogo"
         case .denied: return "Disattivate"
         case .notDetermined: return "Non richieste"
+        case .ephemeral: return "Attive"
         @unknown default: return "Attive"
         }
     }

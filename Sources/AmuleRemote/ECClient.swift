@@ -38,7 +38,8 @@ actor ECClient {
 
         do {
             try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
-                var resumed = false
+                // Letto e scritto solo dalla coda seriale della connessione.
+                nonisolated(unsafe) var resumed = false
                 conn.stateUpdateHandler = { state in
                     switch state {
                     case .ready:

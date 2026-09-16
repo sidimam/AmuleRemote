@@ -2,6 +2,15 @@
 
 All notable changes to aMule Remote. The same notes appear in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases), in the App Store "What's New" of every platform, in the [wiki → Features](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the [Homebrew tap](https://github.com/sidimam/homebrew-tap).
 
+## 1.4.3 (build 23) — 2026-09-16
+
+Maintenance release built with **Xcode 27** (September 2026) and the 27.0 SDKs, published on every platform:
+
+- **Rebuilt with the iOS 27, iPadOS 27, macOS 27, tvOS 27, visionOS 27 and watchOS 27 SDKs** and verified on the new Xcode 27 simulators: iPhone 18 Pro / 18 Pro Max, iPhone 17e, iPhone Air, iPad Pro 13-inch (M5), Apple TV 4K (3rd generation), Apple Watch Series 12, Apple Vision Pro. Demo mode, walkthrough, search, servers, statistics and settings render correctly on the new systems; no layout change was needed.
+- **Notifications row**: the *ephemeral* permission state introduced by the new SDKs is now handled explicitly (shown as *Active*), so the row no longer relies on the fallback.
+- **Connection code hardened for Swift 6**: the EC connection hand-shake and the *Connection test* no longer mutate captured variables from the network queue (the compiler flagged them as future errors); behaviour is unchanged.
+- Xcode 27.0 ships **no iPhone Duo simulator**: the layouts remain adaptive and nothing device-specific was added.
+
 ## 1.4.2 (build 22) — 2026-09-12
 
 Fixes found on a real Apple TV and iPhone right after 1.4.1, plus a rule for the whole app:

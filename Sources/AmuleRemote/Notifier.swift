@@ -49,9 +49,9 @@ enum Notifier {
     /// True se il sistema consegna le nostre notifiche (autorizzate o provvisorie).
     static func isAuthorized() async -> Bool {
         switch await authorizationStatus() {
-        case .authorized, .provisional: return true
+        case .authorized, .provisional, .ephemeral: return true
         case .notDetermined, .denied: return false
-        @unknown default: return true   // .ephemeral (App Clip) e futuri stati «consentiti»
+        @unknown default: return true   // futuri stati «consentiti»
         }
     }
 

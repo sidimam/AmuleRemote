@@ -240,8 +240,8 @@ enum ServerTest {
         guard !host.isEmpty, let nwPort = NWEndpoint.Port(rawValue: port) else { return false }
         return await withCheckedContinuation { cont in
             let conn = NWConnection(host: NWEndpoint.Host(host), port: nwPort, using: .tcp)
-            var finished = false
-            func finish(_ v: Bool) {
+            nonisolated(unsafe) var finished = false
+            @Sendable func finish(_ v: Bool) {
                 if finished { return }
                 finished = true
                 conn.cancel()
