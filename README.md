@@ -39,9 +39,9 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 
 ## Features
 
-### New in 1.5 (build 25)
+### New in 1.5 (build 26)
 
-> **1.5 (build 25, 21 Oct 2026)** — hinge-aware layouts for the **iPhone Duo** (half-open deck, two-column layout when open and on iPad), **server lists** (curated server.met sources + custom URLs, preview and import), **Continuity** (Handoff and “Continue the search” across devices), the **Share Extension** *Add to aMule Remote*, **Control Center controls** and a **Speed widget**, iCloud backup of the app settings, walkthrough only on a fresh installation. Details in [CHANGELOG.md](CHANGELOG.md).
+> **1.5 (build 26, 21 Oct 2026)** — hinge-aware layouts for the **iPhone Duo** (half-open deck, two-column layout when open and on iPad), **server lists** (curated server.met sources + custom URLs, preview and import), **Continuity** (Handoff and “Continue the search” across devices), the **Share Extension** *Add to aMule Remote*, **Control Center controls** and a **Speed widget**, iCloud backup of the app settings, walkthrough only on a fresh installation. Details in [CHANGELOG.md](CHANGELOG.md).
 
 ### New in 1.4 / 1.4.1 / 1.4.2 / 1.4.3 / 1.4.4 (build 24)
 
@@ -151,7 +151,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.5 (build 25)**. Release tags follow the pattern `v1.5-build25`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
+Marketing version and build number are kept aligned across all platforms. Current: **1.5 (build 26)**. Release tags follow the pattern `v1.5-build26`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
 
 ## Protocol verification
 

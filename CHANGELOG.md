@@ -2,7 +2,7 @@
 
 All notable changes to aMule Remote. The same notes appear in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases), in the App Store "What's New" of every platform, in the [wiki → Features](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the [Homebrew tap](https://github.com/sidimam/homebrew-tap).
 
-## 1.5 (build 25) — 2026-10-21
+## 1.5 (build 26) — 2026-10-21
 
 ### iPhone Duo and iPad
 - **Hinge-aware layouts for iPhone Duo** — the app reads the hinge with `UIHingeInteraction` (iOS 27.1): half-open on a table (“mini laptop”) it shows the content above the fold and a control deck below (section switcher, status, search field, add link / pause all / resume all / connect); fully open, and on iPad, it uses a **two-column layout** with the sections in a sidebar; closed, the classic tab bar. A `-hinge closed|partial|open` launch argument forces a posture for testing, since the simulator cannot change it from the command line yet.
@@ -18,7 +18,7 @@ All notable changes to aMule Remote. The same notes appear in the [GitHub Releas
 ### Fixes and changes
 - Apple TV: generated launch screen instead of the deprecated launch image.
 - 59 new localized strings in the seven languages.
-- Release builds are signed per target (manual signing in the project), the extensions have their own App Store profiles.
+- Release builds are signed per target (manual signing in the project), the extensions have their own App Store profiles. Build 25 was archived with empty entitlements for the extensions (XcodeGen regenerates an entitlements file whenever `entitlements:` has no `properties`) and was never published; build 26 is the released one.
 - Known limits: the Share Extension and the widgets live in the App Store builds (the SwiftPM DMG for the Mac has no extensions); the hinge posture was verified with the forced `-hinge` modes and on the iPhone Duo simulator closed, since Xcode 27.1 offers no command-line posture control.
 
 ## 1.4.4 (build 24) — 2026-09-30

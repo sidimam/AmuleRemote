@@ -86,7 +86,7 @@ targets:
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
         TARGETED_DEVICE_FAMILY: "1,2"
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
@@ -132,7 +132,7 @@ targets:
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Simone Di Mambro — MIT License"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
@@ -161,7 +161,7 @@ targets:
         INFOPLIST_FILE: SupportFiles/Watch-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
@@ -231,7 +231,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
@@ -295,7 +295,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         TARGETED_DEVICE_FAMILY: "3"
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
@@ -325,6 +325,9 @@ targets:
       - path: Localizable.xcstrings
     entitlements:
       path: SupportFiles/Share.entitlements
+      properties:
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
     settings:
       base:
         PRODUCT_NAME: Aggiungi ad aMule Remote
@@ -332,7 +335,7 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_FILE: SupportFiles/Share-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: Aggiungi ad aMule Remote
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         SKIP_INSTALL: YES
@@ -359,6 +362,11 @@ targets:
       - path: Localizable.xcstrings
     entitlements:
       path: SupportFiles/ShareMac.entitlements
+      properties:
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
     settings:
       base:
         PRODUCT_NAME: Aggiungi ad aMule Remote
@@ -366,7 +374,7 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_FILE: SupportFiles/Share-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: Aggiungi ad aMule Remote
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         SKIP_INSTALL: YES
@@ -392,6 +400,9 @@ targets:
       - path: Localizable.xcstrings
     entitlements:
       path: SupportFiles/Widgets.entitlements
+      properties:
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)com.sdimambro.amule-remote-ios
     settings:
       base:
         PRODUCT_NAME: aMule Remote Widgets
@@ -399,7 +410,7 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_FILE: SupportFiles/Widgets-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
-        CURRENT_PROJECT_VERSION: 25
+        CURRENT_PROJECT_VERSION: 26
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         SKIP_INSTALL: YES
