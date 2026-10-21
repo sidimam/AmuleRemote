@@ -39,6 +39,7 @@ targets:
       - path: Sources/AmuleRemote/AddLinkSheet.swift
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
+      - path: Sources/AmuleRemote/Continuity.swift
       - path: Localizable.xcstrings
       - path: iOS
       - path: Icons/AppIcon.icon
@@ -182,6 +183,7 @@ targets:
       - path: Sources/AmuleRemote/AddLinkSheet.swift
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
+      - path: Sources/AmuleRemote/Continuity.swift
       - path: Localizable.xcstrings
       - path: iOS
         excludes:
@@ -242,6 +244,7 @@ targets:
       - path: Sources/AmuleRemote/AppIntentsSupport.swift
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
+      - path: Sources/AmuleRemote/Continuity.swift
       - path: Localizable.xcstrings
       - path: TV
     entitlements:
@@ -259,7 +262,7 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
-        ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME: LaunchImage
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
         TARGETED_DEVICE_FAMILY: "3"
         CURRENT_PROJECT_VERSION: 24
         MARKETING_VERSION: "1.4.4"

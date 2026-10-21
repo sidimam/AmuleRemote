@@ -19,6 +19,7 @@ struct AmuleRemoteApp: App {
                 .environmentObject(state)
                 .tint(AppIconColor.tint(for: state.iconColor))
                 .frame(minWidth: 980, minHeight: 620)
+                .continuity(state)
         }
         // Dimensione del primo avvio (e canvas naturale per gli screenshot
         // dell'App Store: 1280×800 logici = 2560×1600 px su Retina).

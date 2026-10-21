@@ -24,6 +24,10 @@
 	</dict>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Face ID protegge l'accesso all'app e ai tuoi server aMule.</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.sdimambro.amule-remote.browse</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

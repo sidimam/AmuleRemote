@@ -81,6 +81,9 @@ struct iOSSearchView: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
 
+                // Ricerca avviata su un altro dispositivo (Continuity).
+                ContinueSearchChip().padding(.bottom, 6)
+
                 // Session tabs
                 if !state.searchSessions.isEmpty {
                     ScrollView(.horizontal, showsIndicators: false) {

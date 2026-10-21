@@ -18,6 +18,7 @@
 		15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		163B388D306AE2C4B150BBDC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		164089C99E1501CC95224477 /* AppIcon-grafite.icon in Resources */ = {isa = PBXBuildFile; fileRef = 012CF40DF58171D0EB464651 /* AppIcon-grafite.icon */; };
+		17B3ECCEEDD3A43820FD3C2E /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
 		180C02AC9FF79E6505308384 /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
 		1C698A130A329EF455342187 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		1C7F6492D5F8B13812B3F0C0 /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
@@ -25,6 +26,7 @@
 		1CCEF848A87496F1E4E709CC /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */; };
 		1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		209FEFDFDE97690DF3DC15D4 /* iOSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */; };
+		20C257CB28B5B471B4884E7F /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
 		22F95D2F0B731B79F34C02B9 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		264B58B4B812C8B1F162C3B9 /* dockicon-blu-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */; };
@@ -40,6 +42,7 @@
 		32E6CC60346D0E78269D96ED /* MacQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */; };
 		3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		3562AC0E0C9D1CD953BC316F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		3600ECF6F874C6BE8C862881 /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
 		3764F3A410DA7C6D4F574A21 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		38657191093502102E2FA2A4 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		396B39035171EBCA28FFD5ED /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8850B14BB238F5A57DC21 /* ServersView.swift */; };
@@ -125,6 +128,7 @@
 		A9E795E327D07B2F96B6FADC /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		ACDB0F7A4E5ED1C739CF02CC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
 		AF1D99BE8447EBAF818B83B3 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
+		B009F50BFA981A1A92F82319 /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
 		B085745BA3A3AB6B7C428E05 /* dockicon-blu-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */; };
 		B44C82A6454C67721178DD99 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
@@ -279,6 +283,7 @@
 		CA9A93451AA66E5B49685657 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFilesView.swift; sourceTree = "<group>"; };
 		D6123B9A396E3E5945D43C29 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continuity.swift; sourceTree = "<group>"; };
 		DB44797CE405547C02DD1EC5 /* dockicon-viola-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-viola-light.png"; sourceTree = "<group>"; };
 		DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMoreView.swift; sourceTree = "<group>"; };
 		E132072E8826878AB6544D9F /* BiometricLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLock.swift; sourceTree = "<group>"; };
@@ -397,6 +402,7 @@
 				772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */,
 				E132072E8826878AB6544D9F /* BiometricLock.swift */,
 				9C958CD81D7880196E4714C6 /* CloudSync.swift */,
+				D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */,
 				74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */,
 				59C2EF766E5910207B0F2075 /* DoubleClick.swift */,
 				99667C4E61A222834A82A3E0 /* DownloadsView.swift */,
@@ -683,6 +689,7 @@
 				93EDE95C6B21D8BF230EA234 /* BackgroundMonitor.swift in Sources */,
 				088237C5EF267DE428924682 /* BiometricLock.swift in Sources */,
 				1C7F6492D5F8B13812B3F0C0 /* CloudSync.swift in Sources */,
+				3600ECF6F874C6BE8C862881 /* Continuity.swift in Sources */,
 				163B388D306AE2C4B150BBDC /* DemoMode.swift in Sources */,
 				515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */,
 				4423DCF13E6E95033078C623 /* ECCodes.swift in Sources */,
@@ -720,6 +727,7 @@
 				ED52DED4EF8715D95F4EEF45 /* BackgroundMonitor.swift in Sources */,
 				9F908B4F51A526CB0B49B426 /* BiometricLock.swift in Sources */,
 				F737A8A7A9198B8346B2494D /* CloudSync.swift in Sources */,
+				17B3ECCEEDD3A43820FD3C2E /* Continuity.swift in Sources */,
 				ACDB0F7A4E5ED1C739CF02CC /* DemoMode.swift in Sources */,
 				5BAF81001B517064060D9F20 /* DoubleClick.swift in Sources */,
 				DDBDA2C933CD99B43593FC45 /* DownloadsView.swift in Sources */,
@@ -770,6 +778,7 @@
 				A332EDE97E79AA443E2F7A41 /* BackgroundRefresh.swift in Sources */,
 				5A9D9154D865D5BC96925E30 /* BiometricLock.swift in Sources */,
 				2C0DF3825B40FC22D83BDA4C /* CloudSync.swift in Sources */,
+				20C257CB28B5B471B4884E7F /* Continuity.swift in Sources */,
 				52121A80F6D552C4C7F0A7EB /* DemoMode.swift in Sources */,
 				6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */,
 				14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */,
@@ -813,6 +822,7 @@
 				59CA1A6A5D5617ABA92CEC7D /* BackgroundRefresh.swift in Sources */,
 				A3985EB258467946D1B8474E /* BiometricLock.swift in Sources */,
 				6AAF1018977A15D416DF5F2B /* CloudSync.swift in Sources */,
+				B009F50BFA981A1A92F82319 /* Continuity.swift in Sources */,
 				15C930BC41A8AD1664386C4A /* DemoMode.swift in Sources */,
 				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
@@ -900,6 +910,7 @@
 				INFOPLIST_FILE = "SupportFiles/TV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1174,6 +1185,7 @@
 				INFOPLIST_FILE = "SupportFiles/TV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

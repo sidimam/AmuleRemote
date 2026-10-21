@@ -377,6 +377,7 @@ struct TVSearchView: View {
         NavigationStack {
             List {
                 Section {
+                    ContinueSearchChip()
                     // Campo nativo + pulsante: la barra .searchable di sistema
                     // perdeva i caratteri con la tastiera remota dell'iPhone.
                     HStack(spacing: 20) {

@@ -67,6 +67,28 @@ enum CloudSync {
         return Payload(profiles: profiles, defaultID: defaultID, deleted: deleted)
     }
 
+    // MARK: Impostazioni dell'app (dalla 1.5): aspetto, lingua, timeout offline, colore.
+
+    private static let settingsKey = "settings.v1"
+
+    struct Settings: Codable, Equatable {
+        var themeMode: String
+        var appLanguage: String
+        var idleTimeout: Int
+        var iconColor: String
+        var updatedAt: Date
+    }
+
+    static func pushSettings(_ settings: Settings) {
+        guard isAvailable, let data = try? JSONEncoder().encode(settings) else { return }
+        store.set(data, forKey: settingsKey)
+    }
+
+    static func pullSettings() -> Settings? {
+        guard isAvailable, let data = store.data(forKey: settingsKey) else { return nil }
+        return try? JSONDecoder().decode(Settings.self, from: data)
+    }
+
     /// Notifica di cambiamento arrivato da un altro dispositivo.
     static var changeNotification: Notification.Name {
         NSUbiquitousKeyValueStore.didChangeExternallyNotification
@@ -104,6 +126,7 @@ extension AppState {
         guard let remote = CloudSync.pull() else { return }
         if iCloudSyncEnabled {
             mergeFromCloud(remote)
+            applyCloudSettingsIfNewer()
         } else if profiles.isEmpty {
             // Dispositivo nuovo: proponi il ripristino dei profili trovati su iCloud.
             let usable = remote.profiles.filter { !remote.deleted.contains($0.id) }
@@ -150,6 +173,41 @@ extension AppState {
         CloudSync.push(.init(profiles: profiles, defaultID: defaultProfileID, deleted: deletedProfileIDs))
     }
 
+    /// Data dell'ultima modifica locale delle impostazioni sincronizzate.
+    private static let settingsUpdatedKey = "settingsUpdatedAt"
+    private static var applyingCloudSettings = false
+
+    private var currentCloudSettings: CloudSync.Settings {
+        CloudSync.Settings(themeMode: themeMode.rawValue, appLanguage: appLanguage.rawValue,
+                           idleTimeout: idleTimeout, iconColor: iconColor,
+                           updatedAt: UserDefaults.standard.object(forKey: Self.settingsUpdatedKey) as? Date ?? .distantPast)
+    }
+
+    /// Chiamata dai didSet di aspetto, lingua, timeout offline e colore app.
+    func pushSettingsToCloud() {
+        guard !Self.applyingCloudSettings else { return }
+        UserDefaults.standard.set(Date.now, forKey: Self.settingsUpdatedKey)
+        guard iCloudSyncEnabled else { return }
+        CloudSync.pushSettings(currentCloudSettings)
+    }
+
+    /// Applica le impostazioni presenti su iCloud se più recenti di quelle locali.
+    func applyCloudSettingsIfNewer() {
+        guard iCloudSyncEnabled, let remote = CloudSync.pullSettings() else { return }
+        let local = currentCloudSettings
+        guard remote.updatedAt > local.updatedAt else {
+            if remote != local { CloudSync.pushSettings(local) }
+            return
+        }
+        Self.applyingCloudSettings = true
+        defer { Self.applyingCloudSettings = false }
+        if let t = ThemeMode(rawValue: remote.themeMode), t != themeMode { themeMode = t }
+        if let l = AppLanguage(rawValue: remote.appLanguage), l != appLanguage { appLanguage = l }
+        if remote.idleTimeout != idleTimeout { idleTimeout = remote.idleTimeout }
+        if remote.iconColor != iconColor { iconColor = remote.iconColor }
+        UserDefaults.standard.set(remote.updatedAt, forKey: Self.settingsUpdatedKey)
+    }
+
     /// Attiva/disattiva la sincronizzazione: le password dei profili vengono
     /// riscritte come sincronizzate (Portachiavi iCloud) o solo locali.
     func setCloudSync(_ enabled: Bool) {
@@ -163,6 +221,7 @@ extension AppState {
             } else {
                 pushProfilesToCloud()
             }
+            applyCloudSettingsIfNewer()
         }
     }
 

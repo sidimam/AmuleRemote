@@ -122,6 +122,8 @@ struct iOSRootView: View {
                 iOSConnectionView()
             }
         }
+        // Handoff e stato condiviso via iCloud (Continuity.swift).
+        .continuity(state)
         // Azioni rapide (menu dell'icona): eseguite appena l'app è sbloccata.
         .onChange(of: router.pending) { _, _ in consumeQuickAction() }
         .onChange(of: state.locked) { _, _ in consumeQuickAction() }

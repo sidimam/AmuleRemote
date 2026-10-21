@@ -37,7 +37,7 @@ final class AppState: ObservableObject {
     @Published var port: Int { didSet { UserDefaults.standard.set(port, forKey: "port") } }
     @Published var autoConnect: Bool { didSet { UserDefaults.standard.set(autoConnect, forKey: "autoConnect") } }
     // Auto-disconnect after this many seconds of inactivity (0 = disabled).
-    @Published var idleTimeout: Int { didSet { UserDefaults.standard.set(idleTimeout, forKey: "idleTimeout") } }
+    @Published var idleTimeout: Int { didSet { UserDefaults.standard.set(idleTimeout, forKey: "idleTimeout"); pushSettingsToCloud() } }
     @Published var password: String = ""
 
     // Profili server (default = quello proposto all'avvio e usato in background).
@@ -63,6 +63,7 @@ final class AppState: ObservableObject {
         didSet {
             UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode")
             themeMode.applyToApplication()   // macOS: NSApp.appearance (fix transizioni)
+            pushSettingsToCloud()
         }
     }
 
@@ -71,6 +72,7 @@ final class AppState: ObservableObject {
         didSet {
             UserDefaults.standard.set(appLanguage.rawValue, forKey: "appLanguage")
             appLanguage.applySystemOverride()
+            pushSettingsToCloud()
         }
     }
 
@@ -92,6 +94,7 @@ final class AppState: ObservableObject {
         didSet {
             UserDefaults.standard.set(iconColor, forKey: "iconColor")
             AppIconColor.apply(iconColor)
+            pushSettingsToCloud()
         }
     }
 
