@@ -64,6 +64,8 @@ struct AmuleRemoteiOSApp: App {
 struct iOSRootView: View {
     @EnvironmentObject var state: AppState
     @ObservedObject private var router = QuickActionRouter.shared
+    @ObservedObject private var hinge = HingeMonitor.shared
+    @Environment(\.horizontalSizeClass) private var hSizeClass
 
     var body: some View {
         Group {
@@ -72,9 +74,19 @@ struct iOSRootView: View {
             } else if state.sessionActive {
               VStack(spacing: 0) {
                 OfflineBanner()
-                // La tab selezionata segue `selectedSection` (stessa proprietà della
-                // barra laterale macOS): così `-section search|servers|stats` funziona
-                // anche qui, utile per screenshot e collaudo.
+                // Layout per postura e larghezza (iPad, iPhone Duo):
+                // - cerniera a metà («mini computer»): contenuto sopra, comandi sotto;
+                // - larghezza regolare (iPad, Duo aperto): due colonne;
+                // - altrimenti la TabView classica. La sezione segue sempre
+                //   `selectedSection` (come la barra laterale macOS), così
+                //   `-section …`, azioni rapide e Handoff funzionano ovunque.
+                if hinge.isLaptopPosture {
+                    iOSHingeDeckLayout()
+                        .background(ActivityObserver { state.markActivity() })
+                } else if hSizeClass == .regular {
+                    iOSSplitLayout()
+                        .background(ActivityObserver { state.markActivity() })
+                } else {
                 TabView(selection: Binding(
                     get: {
                         switch state.selectedSection ?? .downloads {
@@ -102,7 +114,10 @@ struct iOSRootView: View {
                 // Observe touches to reset the inactivity timer WITHOUT
                 // intercepting them (a DragGesture here would swallow taps).
                 .background(ActivityObserver { state.markActivity() })
+                }
               }
+              // Stato della cerniera (iPhone Duo): invisibile, aggiorna HingeMonitor.
+              .background(HingeObserverView())
             } else {
                 iOSConnectionView()
             }

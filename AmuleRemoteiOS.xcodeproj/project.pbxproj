@@ -57,6 +57,7 @@
 		4F9DA791760BE09792799F6B /* AppIcon-arancione.icon in Resources */ = {isa = PBXBuildFile; fileRef = BACAB3C71E877E3F1198CFBC /* AppIcon-arancione.icon */; };
 		515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		52121A80F6D552C4C7F0A7EB /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
+		52913DB341AC5135A84DEB3A /* HingeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */; };
 		539C3117226998164F3B6B7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		5605F447F1F572E3671B63CD /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
 		56909C55FC9960A412AFAAD3 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
@@ -72,6 +73,7 @@
 		5FF3177FF6A41930D452CB63 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770A0330425FF2AF50F9674E /* Assets.xcassets */; };
 		60C04FEAE35F7A017B2435E1 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
+		60D580084261C31922F458EF /* iOSAdaptiveLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40241F28CDBD2157894C883 /* iOSAdaptiveLayout.swift */; };
 		6414D2968D7D7DDBC20BDC59 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */; };
 		68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647DE5C537E5A0C773834631 /* Assets.xcassets */; };
@@ -138,10 +140,12 @@
 		C51CF70231D89C4C85930ACF /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = C1B2F6372AF50AED41E10054 /* AppIcon.icon */; };
 		C6D40A0FAF0AA99693B72022 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
+		CAE0677ACA4DD4D60CB8BCBF /* iOSAdaptiveLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40241F28CDBD2157894C883 /* iOSAdaptiveLayout.swift */; };
 		CB19CE097600FACC2D2CB807 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		CF661B0CD953B2818A8A1C57 /* dockicon-viola-light.png in Resources */ = {isa = PBXBuildFile; fileRef = DB44797CE405547C02DD1EC5 /* dockicon-viola-light.png */; };
 		CF9C54F51F0E00479E8044C0 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		CFE85AC909676E7E804A9047 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
+		D00707AEE314938ED4DCC12F /* HingeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */; };
 		D24FE39E7BA5136C8EC4241A /* AmuleRemoteWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D6A599D387DBB96CF704DF88 /* dockicon-viola-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B6BF751A8EEFFEF7E6FC86 /* dockicon-viola-dark.png */; };
 		D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA26428923CCABF5A1E61 /* TVViews.swift */; };
@@ -261,6 +265,7 @@
 		C0FE2B7558ED81B116E2BC9A /* dockicon-rosso-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-rosso-light.png"; sourceTree = "<group>"; };
 		C1B2F6372AF50AED41E10054 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSearchView.swift; sourceTree = "<group>"; };
+		C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HingeMonitor.swift; sourceTree = "<group>"; };
 		CA9A93451AA66E5B49685657 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFilesView.swift; sourceTree = "<group>"; };
 		D6123B9A396E3E5945D43C29 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -271,6 +276,7 @@
 		E55C9CA8CC39A0DD286C4DCE /* dockicon-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-light.png"; sourceTree = "<group>"; };
 		EE40D254A6F3716A95384A5D /* dockicon-arancione-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-arancione-light.png"; sourceTree = "<group>"; };
 		EEFA29040CB7283195E2EA96 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		F40241F28CDBD2157894C883 /* iOSAdaptiveLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAdaptiveLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -317,7 +323,9 @@
 			children = (
 				17F0FF267CE6A349E7920DC3 /* Assets.xcassets */,
 				B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */,
+				C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */,
 				8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */,
+				F40241F28CDBD2157894C883 /* iOSAdaptiveLayout.swift */,
 				EEFA29040CB7283195E2EA96 /* iOSApp.swift */,
 				DBA4BCC241E346A03C7712E7 /* iOSMoreView.swift */,
 				7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */,
@@ -750,6 +758,7 @@
 				6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */,
 				14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */,
 				DB7BB2EE150D551364A52EDA /* ECPacket.swift in Sources */,
+				D00707AEE314938ED4DCC12F /* HingeMonitor.swift in Sources */,
 				C44D498FF55365325986EBA2 /* HomeScreenQuickActions.swift in Sources */,
 				08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */,
 				7F189B00E9DC903D3FDDD281 /* Keychain.swift in Sources */,
@@ -763,6 +772,7 @@
 				7BBFE143CEAD8CC5A36A5DF2 /* RemotePrefs.swift in Sources */,
 				84A99605DF4FF445F903FFB2 /* SystemSettings.swift in Sources */,
 				22F95D2F0B731B79F34C02B9 /* Walkthrough.swift in Sources */,
+				60D580084261C31922F458EF /* iOSAdaptiveLayout.swift in Sources */,
 				B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */,
 				C082A73001BD7407432C52FD /* iOSMoreView.swift in Sources */,
 				28AC7C76BD852E2FE67FF930 /* iOSProfilesView.swift in Sources */,
@@ -789,6 +799,7 @@
 				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
 				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
+				52913DB341AC5135A84DEB3A /* HingeMonitor.swift in Sources */,
 				6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */,
 				180C02AC9FF79E6505308384 /* IconColor.swift in Sources */,
 				BEED1FCB7FDFC43BC56A71F0 /* Keychain.swift in Sources */,
@@ -803,6 +814,7 @@
 				A36F788BA7E9870193C0028F /* SystemSettings.swift in Sources */,
 				0C971943035FCFCC1EF06162 /* Walkthrough.swift in Sources */,
 				C4020A6D93EC8DD93C3FE618 /* WatchBridge.swift in Sources */,
+				CAE0677ACA4DD4D60CB8BCBF /* iOSAdaptiveLayout.swift in Sources */,
 				5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */,
 				31CB8448642C1A06326F645D /* iOSMoreView.swift in Sources */,
 				9FB5C87B99D13D043D004337 /* iOSProfilesView.swift in Sources */,
