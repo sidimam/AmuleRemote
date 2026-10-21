@@ -724,7 +724,6 @@
 				TargetAttributes = {
 					0EBF093A35C97F49B9BD5A86 = {
 						DevelopmentTeam = X5SR67A8AL;
-						ProvisioningStyle = Automatic;
 					};
 					444A247705A2DAFBCD9CFDEE = {
 						DevelopmentTeam = X5SR67A8AL;
@@ -1282,7 +1281,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
@@ -1300,6 +1300,7 @@
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule Mac AppStore";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
 			};

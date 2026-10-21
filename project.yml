@@ -135,15 +135,15 @@ targets:
         CURRENT_PROJECT_VERSION: 25
         MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: X5SR67A8AL
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
       configs:
         Release:
           CODE_SIGN_STYLE: Manual
           CODE_SIGN_IDENTITY: Apple Distribution
           DEVELOPMENT_TEAM: X5SR67A8AL
           PROVISIONING_PROFILE_SPECIFIER: aMule Mac AppStore
-        CODE_SIGN_STYLE: Automatic
-        DEVELOPMENT_TEAM: X5SR67A8AL
-        MACOSX_DEPLOYMENT_TARGET: "14.0"
   AmuleRemoteWatch:
     type: application
     platform: watchOS
