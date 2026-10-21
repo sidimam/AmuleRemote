@@ -254,10 +254,19 @@ final class AppState: ObservableObject {
         }
         // iCloud: osserva i cambiamenti (e propone il ripristino sui dispositivi nuovi).
         startCloudSync()
-        // Walkthrough: prima volta o versione rinnovata. Con -demo si salta
+        // Walkthrough: SOLO al primo avvio di un'installazione nuova (nessun
+        // server configurato e nessun profilo), mai dopo un aggiornamento di
+        // un'app già configurata (regola dell'utente, 21 ott 2026): chi ha già
+        // un server non deve rivedere la presentazione, che resta disponibile
+        // da Informazioni app → «Rivedi la presentazione». Con -demo si salta
         // (screenshot/collaudo) a meno di -walkthrough esplicito.
         let seen = defaults.integer(forKey: "walkthroughVersion")
-        if (seen < Self.walkthroughVersion && !launchArgs.contains("-demo")) || launchArgs.contains("-walkthrough") {
+        let configured = !host.isEmpty || !profiles.isEmpty
+        if seen < Self.walkthroughVersion && configured {
+            // Aggiornamento di un'installazione già in uso: segna come vista.
+            defaults.set(Self.walkthroughVersion, forKey: "walkthroughVersion")
+        }
+        if (seen < Self.walkthroughVersion && !configured && !launchArgs.contains("-demo")) || launchArgs.contains("-walkthrough") {
             // Presentazione differita al giro di run loop successivo: impostare
             // isPresented durante la primissima costruzione della vista radice
             // può far cadere in silenzio il fullScreenCover/sheet (es. dopo una
