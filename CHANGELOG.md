@@ -2,9 +2,24 @@
 
 All notable changes to aMule Remote. The same notes appear in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases), in the App Store "What's New" of every platform, in the [wiki → Features](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the [Homebrew tap](https://github.com/sidimam/homebrew-tap).
 
-## Unreleased (1.5)
+## 1.5 (build 25) — 2026-10-21
 
-- **Walkthrough only on a fresh installation** — an update of an app that already has a server configured (or saved profiles) no longer shows the guided introduction; the flag is marked as seen silently. The introduction stays available from *About → Show the introduction again*.
+### iPhone Duo and iPad
+- **Hinge-aware layouts for iPhone Duo** — the app reads the hinge with `UIHingeInteraction` (iOS 27.1): half-open on a table (“mini laptop”) it shows the content above the fold and a control deck below (section switcher, status, search field, add link / pause all / resume all / connect); fully open, and on iPad, it uses a **two-column layout** with the sections in a sidebar; closed, the classic tab bar. A `-hinge closed|partial|open` launch argument forces a posture for testing, since the simulator cannot change it from the command line yet.
+
+### New
+- **Server lists (server.met)** in the settings (iPhone/iPad, Vision Pro, Mac ⌘, and Apple TV): a curated catalog of trusted sources (published on GitHub Pages, updated without new releases, bundled fallback), **custom URLs** for lists you find on the web, download and parsing done by the app (plain and gzip server.met), a **preview with selection** and import into aMule via EC, or “let the server download” for aMule hosts with web access. Sources verified on 21 Oct 2026: PeeRates, Gruk.org, server-met.de.
+- **Continuity** — Handoff of the current section, search and server profile between iPhone, iPad, Mac and Vision Pro (`NSUserActivity`); the latest search is shared through iCloud and offered as a **Continue the search “…” from <device>** chip in the Search view, Apple TV included.
+- **Share Extension «Add to aMule Remote»** (iOS/iPadOS and Mac App Store): share text, a URL or a web page from Notes, Safari, Messages or Mail; the extension extracts every `ed2k://` link and queues it on the current server profile, even with the app closed.
+- **Control Center / Action button controls** (iOS 18+): *Pause all*, *Resume all*, *Add eD2k link*; and a **Speed widget** for the Home Screen, Lock Screen and StandBy with download/upload speed, active and queued downloads.
+- **iCloud backup of the app settings** (appearance, language, offline timeout, app color) together with the server profiles, when iCloud sync is on.
+- **Walkthrough only on a fresh installation** — an update of an app that already has a server configured never shows the introduction again (replay it from *About*).
+
+### Fixes and changes
+- Apple TV: generated launch screen instead of the deprecated launch image.
+- 59 new localized strings in the seven languages.
+- Release builds are signed per target (manual signing in the project), the extensions have their own App Store profiles.
+- Known limits: the Share Extension and the widgets live in the App Store builds (the SwiftPM DMG for the Mac has no extensions); the hinge posture was verified with the forced `-hinge` modes and on the iPhone Duo simulator closed, since Xcode 27.1 offers no command-line posture control.
 
 ## 1.4.4 (build 24) — 2026-09-30
 

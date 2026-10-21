@@ -39,6 +39,10 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 
 ## Features
 
+### New in 1.5 (build 25)
+
+> **1.5 (build 25, 21 Oct 2026)** — hinge-aware layouts for the **iPhone Duo** (half-open deck, two-column layout when open and on iPad), **server lists** (curated server.met sources + custom URLs, preview and import), **Continuity** (Handoff and “Continue the search” across devices), the **Share Extension** *Add to aMule Remote*, **Control Center controls** and a **Speed widget**, iCloud backup of the app settings, walkthrough only on a fresh installation. Details in [CHANGELOG.md](CHANGELOG.md).
+
 ### New in 1.4 / 1.4.1 / 1.4.2 / 1.4.3 / 1.4.4 (build 24)
 
 > 1.4.4 (build 24, 30 Sep 2026) brings the **Liquid Glass app icon**: an Icon Composer document with the mule as a translucent glass layer over the colored background, in all seven app colors, with the automatic dark, clear and tinted variants on iOS/iPadOS 26+, macOS 26+ and watchOS 26+ (older systems keep the flat icon); the layouts were also reviewed for the **iPhone Duo** (no fixed frames, adaptive tab bar and lists at the Duo's logical sizes). 1.4.3 (build 23, 16 Sep 2026) is a maintenance release built with **Xcode 27** and the 27.0 SDKs (iOS/iPadOS, macOS, tvOS, visionOS, watchOS), verified on the new simulators (iPhone 18 Pro, iPhone 17e, iPhone Air, iPad Pro M5, Apple TV 4K, Apple Watch Series 12, Apple Vision Pro); it handles the new *ephemeral* notification permission state and hardens the connection code for Swift 6. 1.4.2 (build 22) fixes, on Apple TV, the unreachable *Restore from iCloud* button and the password field that never opened the keyboard; anchors the *Download* and *Connect* dialogs to the tapped row on iPhone/iPad/Vision Pro; and switches every remaining fixed font size to dynamic text styles. 1.4.1 (build 21) replaced 1.4 on every platform, same day: it fixes the Apple TV build, which shipped without the iCloud entitlements (sync and backup restore never worked on tvOS), makes the walkthrough's iCloud backup search more patient with a *Search again* button, and draws real color dots in the Apple TV color picker. See [CHANGELOG.md](CHANGELOG.md).
@@ -50,7 +54,7 @@ Native **macOS, iOS, iPadOS, visionOS and tvOS** app (SwiftUI, with an **Apple W
 - **Shortcuts and Siri everywhere** — the App Intents now ship on iOS/iPadOS, macOS (Mac App Store build; the SwiftPM-built DMG cannot export them), visionOS and tvOS: aMule status, **download / upload speed** and **queue count** as numbers, **status / pause / resume / priority of a single download** (by name), remove completed, **add one or more eD2k links**, **search** (returns the result names), connect / disconnect the eD2k server, start / stop Kad. Six ready-made App Shortcuts appear in the Shortcuts app.
 - **Clipboard integration** — the *Add link* sheet accepts several `ed2k://` links at once (one per line, or any text that contains them, e.g. a page copied from a browser or a Notes entry) with a native **Paste** button; on the Mac the sheet pre-fills from the clipboard and the Dock menu gets *Add links from the Clipboard*. Downloads can be **shared** as eD2k links (context menu and selection bar) to Notes, Messages, Mail or any other app.
 - **Apple TV keyboard fixed** — typing with the Siri Remote or the iPhone "Apple TV Keyboard" no longer replaces the previous character or makes the cursor jump: the connection form and the search field use a native text field that commits the text only when editing ends.
-- **iPhone Duo** *(reviewed in 1.4.4)* — layouts are adaptive (no fixed frames on iOS) and were checked at the Duo's logical sizes (outer 466×678 pt, inner 669×951 pt) on the closest simulators; Xcode 27.2 beta 2 lists the *iPhone Duo* device type but its runtime does not support it yet, so no device-specific code was added.
+- **iPhone Duo** *(1.5)* — hinge-aware layouts: closed, the classic tab bar on the outer display; half-open on a table, content above the fold and a control deck below; fully open (and on iPad), a two-column layout with the sections in a sidebar. The hinge is read with `UIHingeInteraction` (iOS 27.1); a `-hinge` launch argument forces a posture for testing.
 
 ### New in 1.3 (build 18)
 
@@ -147,7 +151,7 @@ xcrun stapler staple "aMule Remote.app"
 
 ## Versioning
 
-Marketing version and build number are kept aligned across all platforms. Current: **1.4.4 (build 24)**. Release tags follow the pattern `v1.4.4-build24`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
+Marketing version and build number are kept aligned across all platforms. Current: **1.5 (build 25)**. Release tags follow the pattern `v1.5-build25`. Every release has the same *What's new* in [CHANGELOG.md](CHANGELOG.md), in the GitHub release notes, in the App Store listing of every platform, in the [wiki](https://github.com/sidimam/AmuleRemote/wiki/Features) and in the Homebrew tap README.
 
 ## Protocol verification
 
