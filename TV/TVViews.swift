@@ -622,6 +622,11 @@ struct TVSettingsView: View {
                             .foregroundStyle(focus == .disconnect ? Color.red.opacity(0.85) : Color.red)
                     }
                     .focused($focus, equals: .disconnect)
+                    NavigationLink {
+                        ServerListsView()
+                    } label: {
+                        Label("Elenchi server (server.met)", systemImage: "list.bullet.rectangle")
+                    }
                 }
                 AppInfoSection()
             }

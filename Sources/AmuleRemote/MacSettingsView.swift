@@ -10,6 +10,8 @@ struct MacSettingsView: View {
                 .tabItem { Label("Generale", systemImage: "gearshape") }
             MacProfilesSettings()
                 .tabItem { Label("Profili", systemImage: "person.2") }
+            NavigationStack { ServerListsView() }
+                .tabItem { Label("Elenchi server", systemImage: "list.bullet.rectangle") }
         }
         .frame(width: 520, height: 620)
     }

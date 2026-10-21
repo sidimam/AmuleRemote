@@ -23,6 +23,11 @@ struct iOSMoreView: View {
                     } label: {
                         Label("Test connessione", systemImage: "stethoscope")
                     }
+                    NavigationLink {
+                        ServerListsView()
+                    } label: {
+                        Label("Elenchi server (server.met)", systemImage: "list.bullet.rectangle")
+                    }
                 }
 
                 if !state.profiles.isEmpty {

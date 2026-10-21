@@ -1,0 +1,23 @@
+{
+  "updated": "2026-10-21",
+  "sources": [
+    {
+      "id": "peerates",
+      "name": "PeeRates (servers.met)",
+      "url": "https://www.peerates.net/servers.met",
+      "note": "Elenco mantenuto da peerates.net; una ventina di server eD2k attivi."
+    },
+    {
+      "id": "gruk",
+      "name": "Gruk.org (server.met.gz)",
+      "url": "http://www.gruk.org/server.met.gz",
+      "note": "Elenco storico, compresso gzip; pochi server ma stabili."
+    },
+    {
+      "id": "server-met-de",
+      "name": "server-met.de (server.met.gz)",
+      "url": "http://www.server-met.de/dl.php?load=gz",
+      "note": "Elenco di server-met.de (reindirizza ad alldivx.de), compresso gzip."
+    }
+  ]
+}
