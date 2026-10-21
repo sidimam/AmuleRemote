@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037A159A68DF1B504C32551F /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		070DDBAB9D232A35FB6FCEC4 /* dockicon-grafite-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DB0A307797A4A5DE25E74 /* dockicon-grafite-light.png */; };
 		088237C5EF267DE428924682 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0057868BEEA6E79E67442F6 /* IconColor.swift */; };
+		0BC4FFA9544C4D2EEA8E2CF1 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		0BD4CBF8CA1B05DB7D81AA01 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
 		0C971943035FCFCC1EF06162 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		0D166992627B95F7A8BAF8EF /* ServerListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30097D0D0CCADD2EBBD56EB6 /* ServerListsView.swift */; };
@@ -25,8 +27,10 @@
 		1CA280B1B5323420701F312A /* SharedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */; };
 		1CCEF848A87496F1E4E709CC /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653393DA7C1B0BAF6AEA0E5E /* MacSettingsView.swift */; };
 		1CE1BFF63652786ACAFFC72E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
+		1E8FC557C10B4CD94BBE9E1D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		209FEFDFDE97690DF3DC15D4 /* iOSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */; };
 		20C257CB28B5B471B4884E7F /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
+		227D7FF9E5A37648A78B77D3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		22F95D2F0B731B79F34C02B9 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0138CE1474C832386B3B9B /* Walkthrough.swift */; };
 		23D94CAC46066C4A6BFDCC3E /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		264B58B4B812C8B1F162C3B9 /* dockicon-blu-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 5467EFA3BC20CF43FA1E72CB /* dockicon-blu-light.png */; };
@@ -43,17 +47,22 @@
 		3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		3562AC0E0C9D1CD953BC316F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		3600ECF6F874C6BE8C862881 /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
+		36349869280183E67F8A40A4 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		3764F3A410DA7C6D4F574A21 /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
+		37CE98F413726CEB3ACD2813 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		38657191093502102E2FA2A4 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		396B39035171EBCA28FFD5ED /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8850B14BB238F5A57DC21 /* ServersView.swift */; };
 		3A0CF17282965CFA44112880 /* dockicon-rosso-light.png in Resources */ = {isa = PBXBuildFile; fileRef = C0FE2B7558ED81B116E2BC9A /* dockicon-rosso-light.png */; };
 		3C52E971BDAB10B3D695C1C8 /* AppIcon-teal.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6B7EF22D88DA96826575C8CC /* AppIcon-teal.icon */; };
+		3D56F6C58BF2D937EF2CD76F /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		40B0E9DEF7EE6749F0A5D51A /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
+		40B2190B8A605918C5204E0C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		42355E6510044C517132DE99 /* iOSTransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */; };
 		4423DCF13E6E95033078C623 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		454C654A795466B72794ADE5 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
 		458C35D2EA02381FEA9BC6A2 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		46A2F1A13D6ADB665A288156 /* dockicon-light.png in Resources */ = {isa = PBXBuildFile; fileRef = E55C9CA8CC39A0DD286C4DCE /* dockicon-light.png */; };
+		46B42837F752D3F0CD24FB3A /* AmuleWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89AFCBAF019858156174721 /* AmuleWidgets.swift */; };
 		478E72F31849701B72F522F7 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		492D8DA12766A935F2FC003D /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F0092F1EE95CE096FF9 /* Notifier.swift */; };
 		4AD5F2ADD186770B4D564881 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = C1B2F6372AF50AED41E10054 /* AppIcon.icon */; };
@@ -66,6 +75,7 @@
 		52262622DC71FFC749698D9F /* ServerLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D2FB2EF77FBC441EAD8A59 /* ServerLists.swift */; };
 		52913DB341AC5135A84DEB3A /* HingeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */; };
 		539C3117226998164F3B6B7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		543BD07576A7403CBDAADB95 /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
 		5605F447F1F572E3671B63CD /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
 		56909C55FC9960A412AFAAD3 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		5695CBE51E4E7634C3C16FA5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
@@ -75,12 +85,14 @@
 		5A9D9154D865D5BC96925E30 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		5B7A2C2F14D33B14BFD9BCAF /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		5BAF81001B517064060D9F20 /* DoubleClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2EF766E5910207B0F2075 /* DoubleClick.swift */; };
+		5E9DBBF992BFDE68FE7BF160 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		5EA45A53EDEAEBD991517E21 /* RemotePrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390595FF34396F6925227C7 /* RemotePrefs.swift */; };
 		5EB97B01BFD76F8D15E9F42D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
 		5FF3177FF6A41930D452CB63 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
 		5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770A0330425FF2AF50F9674E /* Assets.xcassets */; };
 		60C04FEAE35F7A017B2435E1 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		60D580084261C31922F458EF /* iOSAdaptiveLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40241F28CDBD2157894C883 /* iOSAdaptiveLayout.swift */; };
+		61A2EDA58C3F2E2ACF250480 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
 		6414D2968D7D7DDBC20BDC59 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */; };
 		68DC0D6A23044D213F372E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647DE5C537E5A0C773834631 /* Assets.xcassets */; };
@@ -88,11 +100,15 @@
 		6AAF1018977A15D416DF5F2B /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		6BD2922D60BFCCCE3CE26CDE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		6C589A32CB12B487270BEBFD /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA6245E925677C4C028D0B /* ShareViewController.swift */; };
 		6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
 		6F82CCAA66F9B0829CF914FC /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		6F89322952C832E4CB4543FA /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
 		704BC10C8A78F44948E335C4 /* AppIcon-viola.icon in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D1C6515C0AC4EB9DE13D /* AppIcon-viola.icon */; };
 		734A83C4509309AF899C5040 /* AddLinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */; };
+		73C64C2A68EAED3C3F9114C9 /* ECCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */; };
+		73DDE7402772DD6EFA438E04 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
+		74F31B3162D050F6D6C2A4F2 /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
 		75D33DC3A8823C3EDC4B76A1 /* iOSServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */; };
 		763977EBAEB57BDE3DC3A7FA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		7761B10AF19B7B98E6D42669 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
@@ -118,18 +134,24 @@
 		9E347A1AC9F26FEBB63C78FF /* PrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381850FEA6813713EBD5EEDA /* PrefsView.swift */; };
 		9F908B4F51A526CB0B49B426 /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
 		9FB5C87B99D13D043D004337 /* iOSProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4338489A6FAF5CD23590B /* iOSProfilesView.swift */; };
+		A1E145C62DC83F5EF6C5CD7D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		A317D49ECF0551474FEA6A84 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97EC007336CE595512BF2AEE /* Localizable.xcstrings */; };
 		A332EDE97E79AA443E2F7A41 /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231B4752CAA6FC06511C771 /* BackgroundRefresh.swift */; };
 		A36F788BA7E9870193C0028F /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9CEAB05AD58B02767F83D /* SystemSettings.swift */; };
 		A378482C8ACBBE1297B4CA68 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC813EA1F5EF0E980C60AEC /* Profiles.swift */; };
 		A3985EB258467946D1B8474E /* BiometricLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132072E8826878AB6544D9F /* BiometricLock.swift */; };
+		A398EFB47F37BB16E69C38A4 /* AmuleRemoteShareMac.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 09E5EC16E6E2865218123C79 /* AmuleRemoteShareMac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A3C724AB4F18B5A6B995A77E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA6245E925677C4C028D0B /* ShareViewController.swift */; };
 		A3E175D7CB8E977F93FC3D89 /* dockicon-arancione-light.png in Resources */ = {isa = PBXBuildFile; fileRef = EE40D254A6F3716A95384A5D /* dockicon-arancione-light.png */; };
 		A4CA9144313CBF3C4356ABEB /* AppIcon-blu.icon in Resources */ = {isa = PBXBuildFile; fileRef = 194B0028342B8C550CE35578 /* AppIcon-blu.icon */; };
 		A9A8AF3245BF5F3F30AA2F85 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A93451AA66E5B49685657 /* PasswordField.swift */; };
 		A9E795E327D07B2F96B6FADC /* OfflineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36D1ECF3A1E4494D04B6A2 /* OfflineCache.swift */; };
 		ACDB0F7A4E5ED1C739CF02CC /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */; };
+		ADF4AF254BDEB9A3C4FB78D6 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		AF1D99BE8447EBAF818B83B3 /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
 		B009F50BFA981A1A92F82319 /* Continuity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F82FCB8FB3EA2DA5AF4DEE /* Continuity.swift */; };
 		B085745BA3A3AB6B7C428E05 /* dockicon-blu-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B0487AD54D35D7E850BC1368 /* dockicon-blu-dark.png */; };
+		B14DF44C4DA886E814C2A4D0 /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
 		B44C82A6454C67721178DD99 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95166171560B398567C99D70 /* AppTheme.swift */; };
 		B46C6D3AC8F06B45A0E1537B /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA29040CB7283195E2EA96 /* iOSApp.swift */; };
 		B59E2EB9B93C76BCB4831EF7 /* AppIntentsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BBD9364135CEC89A77330 /* AppIntentsSupport.swift */; };
@@ -168,16 +190,24 @@
 		DE0AAD934BF8A9CB0831B8D1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A0F9A60D90DEE8210E823 /* AboutView.swift */; };
 		DE6C8D71CFAFC70594E2AC49 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		DF30C57A7AC30A5B1460ECB8 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
+		DF45CF67DD927BC9EAE6C274 /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
 		E1DB2B9BBB6FA4A8C4A6C542 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B40E1F956585F27596B33 /* AppState.swift */; };
 		E2DF9A298DE1E269890B680C /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
 		E311639104C25FCC85693DF7 /* OfflineBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310199070467FC92D2D5EDB /* OfflineBanner.swift */; };
 		E429740ADEF000EF8F64FE2A /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */; };
 		E87EA1444A347DEF9CB9297F /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
+		E97A7645ACC08044F661B517 /* ECClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */; };
+		EA98DFC4AAC535B4746F92AF /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
 		ED52DED4EF8715D95F4EEF45 /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */; };
 		ED8F218EA5D117B9974A0013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DCF91E12F21E3B65E0323 /* Assets.xcassets */; };
 		EFADB45731066719D326CCAD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247B7DCA306F2F002062FBC2 /* SearchView.swift */; };
+		F00678B89EF6D3FD6A1A4DE3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B6700651A1B859099CEF3 /* Keychain.swift */; };
+		F48922E87C35AA25C81CAAC3 /* Ed2kLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C99AB8090B5934357EC2EA /* Ed2kLink.swift */; };
+		F505AA18321EB4861EFDE5AF /* AmuleRemoteShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 750978C30D3A7B0DE5A667F5 /* AmuleRemoteShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F737A8A7A9198B8346B2494D /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C958CD81D7880196E4714C6 /* CloudSync.swift */; };
 		F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D61B3C316A758F472D362 /* ECPacket.swift */; };
+		F8DF63582217B29036294847 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6123B9A396E3E5945D43C29 /* Models.swift */; };
+		FBC818355957F973234C94DD /* AmuleRemoteWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BF1DDFA07EDA58D6BEE975F /* AmuleRemoteWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FBFF7D5B5B2D690339D1AC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F0FF267CE6A349E7920DC3 /* Assets.xcassets */; };
 		FD81C23752468B5076F2F576 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2F9F562AFEB163A2DEAE4 /* App.swift */; };
 		FE3C47F5DC73D80BFB2F0B1A /* dockicon-teal-light.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D4006EF6572D7CC660ED72 /* dockicon-teal-light.png */; };
@@ -192,9 +222,53 @@
 			remoteGlobalIDString = 444A247705A2DAFBCD9CFDEE;
 			remoteInfo = AmuleRemoteWatch;
 		};
+		4AFCF99E80F4B17B0C37AE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D307B6EBB1710BF99E346017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A0DA431B3186395845CE00;
+			remoteInfo = AmuleRemoteWidgets;
+		};
+		AFB1DFBAF306AEC8830D04BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D307B6EBB1710BF99E346017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C5915C1CF8456DCCB8C2D3;
+			remoteInfo = AmuleRemoteShare;
+		};
+		F0EF6BE3FB6558D320C2D369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D307B6EBB1710BF99E346017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C3EA0C8085E84414CF2E87B;
+			remoteInfo = AmuleRemoteShareMac;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6AE9B2E6AF5732D7C184AC6E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F505AA18321EB4861EFDE5AF /* AmuleRemoteShare.appex in Embed Foundation Extensions */,
+				FBC818355957F973234C94DD /* AmuleRemoteWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7FF33E454F270BD7E2F4907 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A398EFB47F37BB16E69C38A4 /* AmuleRemoteShareMac.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8FCBBAC1E28E119490BC396 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +285,7 @@
 /* Begin PBXFileReference section */
 		012CF40DF58171D0EB464651 /* AppIcon-grafite.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = "AppIcon-grafite.icon"; sourceTree = "<group>"; };
 		06B8850B14BB238F5A57DC21 /* ServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersView.swift; sourceTree = "<group>"; };
+		09E5EC16E6E2865218123C79 /* AmuleRemoteShareMac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AmuleRemoteShareMac.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DF9A0991D3FA0C7915728D /* dockicon-teal-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-teal-dark.png"; sourceTree = "<group>"; };
 		17F0FF267CE6A349E7920DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		194B0028342B8C550CE35578 /* AppIcon-blu.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = "AppIcon-blu.icon"; sourceTree = "<group>"; };
@@ -225,6 +300,7 @@
 		3A7DCF91E12F21E3B65E0323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0138CE1474C832386B3B9B /* Walkthrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
 		3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AmuleRemoteTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42CA6245E925677C4C028D0B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		461EE6057F873CE83DD1F190 /* AddLinkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkSheet.swift; sourceTree = "<group>"; };
 		4E1CA26428923CCABF5A1E61 /* TVViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViews.swift; sourceTree = "<group>"; };
 		4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmuleRemoteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +323,7 @@
 		6C5DB0A307797A4A5DE25E74 /* dockicon-grafite-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-grafite-light.png"; sourceTree = "<group>"; };
 		6EC813EA1F5EF0E980C60AEC /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		74B521F9A7ECB30A39C8B0AA /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
+		750978C30D3A7B0DE5A667F5 /* AmuleRemoteShare.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = AmuleRemoteShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		768FA165F1F35E4E60B1C688 /* iOSTransfersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTransfersView.swift; sourceTree = "<group>"; };
 		770A0330425FF2AF50F9674E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772CC8B862151CD0D2AA7D34 /* BackgroundMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMonitor.swift; sourceTree = "<group>"; };
@@ -255,9 +332,11 @@
 		7F203F54CA7E0BC7E2307EB6 /* iOSServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSServersView.swift; sourceTree = "<group>"; };
 		8390595FF34396F6925227C7 /* RemotePrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePrefs.swift; sourceTree = "<group>"; };
 		88BC625A305C1514549A27A8 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
+		8BF1DDFA07EDA58D6BEE975F /* AmuleRemoteWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = AmuleRemoteWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB98EAA8580C5336B69B4BC /* HomeScreenQuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenQuickActions.swift; sourceTree = "<group>"; };
 		91AA8E1FDDDBA96C5673D8A5 /* QuickActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActions.swift; sourceTree = "<group>"; };
 		91D2FB2EF77FBC441EAD8A59 /* ServerLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLists.swift; sourceTree = "<group>"; };
+		92C99AB8090B5934357EC2EA /* Ed2kLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ed2kLink.swift; sourceTree = "<group>"; };
 		9498E719CB1C03BEAB0C2F93 /* dockicon-rosso-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dockicon-rosso-dark.png"; sourceTree = "<group>"; };
 		95166171560B398567C99D70 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		97EC007336CE595512BF2AEE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -280,6 +359,7 @@
 		C1B2F6372AF50AED41E10054 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		C1C7435FB8DF60F69CEC684E /* iOSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSearchView.swift; sourceTree = "<group>"; };
 		C27537CBC5FA6697242F19B4 /* HingeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HingeMonitor.swift; sourceTree = "<group>"; };
+		C89AFCBAF019858156174721 /* AmuleWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuleWidgets.swift; sourceTree = "<group>"; };
 		CA9A93451AA66E5B49685657 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		CAFA94D44D079A05624ECCAD /* SharedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFilesView.swift; sourceTree = "<group>"; };
 		D6123B9A396E3E5945D43C29 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -300,9 +380,12 @@
 			children = (
 				7E933D8028652D6D8039DC76 /* AmuleRemoteiOS.app */,
 				6B0EFC7AF54BC2089C9EBAED /* AmuleRemoteMac.app */,
+				750978C30D3A7B0DE5A667F5 /* AmuleRemoteShare.appex */,
+				09E5EC16E6E2865218123C79 /* AmuleRemoteShareMac.appex */,
 				3F6BDE285443512B9D7A869E /* AmuleRemoteTV.app */,
 				C069B9C7826CF96CE9B18054 /* AmuleRemoteVision.app */,
 				4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */,
+				8BF1DDFA07EDA58D6BEE975F /* AmuleRemoteWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +409,11 @@
 				A50FF5965E4DE88AF1E81D91 /* Icons */,
 				2ABA5F5625B8B3D952A3BA99 /* iOS */,
 				F72C3CDE43D4A908C4930A61 /* Mac */,
+				2CF617A1ECEB17AA9B71A7CA /* ShareExtension */,
 				0785C3BCFB085CCDD156326A /* TV */,
 				7E3E388AC43A08E0187D8F40 /* Vision */,
 				5E6B68ADC85F9F0D59A0DED7 /* Watch */,
+				FB7CABEEEE038EBBFB42FC04 /* Widgets */,
 				017D5B5241F4C336DCB9682B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -350,6 +435,14 @@
 				BA2C85E4775F68A1C7AFD60B /* WatchBridge.swift */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		2CF617A1ECEB17AA9B71A7CA /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				42CA6245E925677C4C028D0B /* ShareViewController.swift */,
+			);
+			path = ShareExtension;
 			sourceTree = "<group>";
 		};
 		5E6B68ADC85F9F0D59A0DED7 /* Watch */ = {
@@ -409,6 +502,7 @@
 				651FA7E6D56FFBBDB6FAEF9A /* ECClient.swift */,
 				3A69BF7F2262AFB41F2A5905 /* ECCodes.swift */,
 				551D61B3C316A758F472D362 /* ECPacket.swift */,
+				92C99AB8090B5934357EC2EA /* Ed2kLink.swift */,
 				A0057868BEEA6E79E67442F6 /* IconColor.swift */,
 				9F5B6700651A1B859099CEF3 /* Keychain.swift */,
 				61FA5EA974EFAE08EC98AD1F /* MacQuickActions.swift */,
@@ -457,6 +551,14 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
+		FB7CABEEEE038EBBFB42FC04 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				C89AFCBAF019858156174721 /* AmuleWidgets.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,10 +568,12 @@
 			buildPhases = (
 				3FF46B2EB5E626128E60C478 /* Sources */,
 				FDBD8C08D1968B923037EA6D /* Resources */,
+				D7FF33E454F270BD7E2F4907 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F9C8027595D3D6DE45C45022 /* PBXTargetDependency */,
 			);
 			name = AmuleRemoteMac;
 			packageProductDependencies = (
@@ -477,6 +581,24 @@
 			productName = AmuleRemoteMac;
 			productReference = 6B0EFC7AF54BC2089C9EBAED /* AmuleRemoteMac.app */;
 			productType = "com.apple.product-type.application";
+		};
+		24C5915C1CF8456DCCB8C2D3 /* AmuleRemoteShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18E0DF7C667CA99F0A99AF6F /* Build configuration list for PBXNativeTarget "AmuleRemoteShare" */;
+			buildPhases = (
+				227C91C524B8515D6C7C163E /* Sources */,
+				FCF1CB5814B75BA194E9FBBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmuleRemoteShare;
+			packageProductDependencies = (
+			);
+			productName = AmuleRemoteShare;
+			productReference = 750978C30D3A7B0DE5A667F5 /* AmuleRemoteShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		444A247705A2DAFBCD9CFDEE /* AmuleRemoteWatch */ = {
 			isa = PBXNativeTarget;
@@ -495,6 +617,24 @@
 			productName = AmuleRemoteWatch;
 			productReference = 4E416DD2951A934715AFDF79 /* AmuleRemoteWatch.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5C3EA0C8085E84414CF2E87B /* AmuleRemoteShareMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B234BD2A8FE1C473D1A10217 /* Build configuration list for PBXNativeTarget "AmuleRemoteShareMac" */;
+			buildPhases = (
+				8C55E47F80E123E0179F752E /* Sources */,
+				8498F1FE61CAB21523222880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmuleRemoteShareMac;
+			packageProductDependencies = (
+			);
+			productName = AmuleRemoteShareMac;
+			productReference = 09E5EC16E6E2865218123C79 /* AmuleRemoteShareMac.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		91C462D9FB6EBF8FA6BC5647 /* AmuleRemoteTV */ = {
 			isa = PBXNativeTarget;
@@ -520,12 +660,15 @@
 			buildPhases = (
 				D17C615FDDE7EAC5178AB3B2 /* Sources */,
 				10E4D0D03DCC551425AA62E0 /* Resources */,
+				6AE9B2E6AF5732D7C184AC6E /* Embed Foundation Extensions */,
 				D8FCBBAC1E28E119490BC396 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D18A2A52041E9A38B2D15F49 /* PBXTargetDependency */,
+				1B8624349214AF7D85A83D92 /* PBXTargetDependency */,
+				E82746071B9AE330F84EA4C4 /* PBXTargetDependency */,
 			);
 			name = AmuleRemoteiOS;
 			packageProductDependencies = (
@@ -552,6 +695,24 @@
 			productReference = C069B9C7826CF96CE9B18054 /* AmuleRemoteVision.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F7A0DA431B3186395845CE00 /* AmuleRemoteWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58E6A992C9E2504DAE8C85F8 /* Build configuration list for PBXNativeTarget "AmuleRemoteWidgets" */;
+			buildPhases = (
+				4ABDD9DC0D24D2E5794918F0 /* Sources */,
+				336E58A5DACABFE3DB4C1FAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmuleRemoteWidgets;
+			packageProductDependencies = (
+			);
+			productName = AmuleRemoteWidgets;
+			productReference = 8BF1DDFA07EDA58D6BEE975F /* AmuleRemoteWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -567,19 +728,15 @@
 					};
 					444A247705A2DAFBCD9CFDEE = {
 						DevelopmentTeam = X5SR67A8AL;
-						ProvisioningStyle = Automatic;
 					};
 					91C462D9FB6EBF8FA6BC5647 = {
 						DevelopmentTeam = X5SR67A8AL;
-						ProvisioningStyle = Automatic;
 					};
 					A1686C4644C73D596405737A = {
 						DevelopmentTeam = X5SR67A8AL;
-						ProvisioningStyle = Automatic;
 					};
 					A4CD5E6F439B63615D6AC436 = {
 						DevelopmentTeam = X5SR67A8AL;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -602,6 +759,9 @@
 				444A247705A2DAFBCD9CFDEE /* AmuleRemoteWatch */,
 				A4CD5E6F439B63615D6AC436 /* AmuleRemoteVision */,
 				91C462D9FB6EBF8FA6BC5647 /* AmuleRemoteTV */,
+				24C5915C1CF8456DCCB8C2D3 /* AmuleRemoteShare */,
+				5C3EA0C8085E84414CF2E87B /* AmuleRemoteShareMac */,
+				F7A0DA431B3186395845CE00 /* AmuleRemoteWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -623,12 +783,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		336E58A5DACABFE3DB4C1FAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A317D49ECF0551474FEA6A84 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		656A5E1AF65A749C0702F537 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5FF5D07430AF0910C6196AEA /* Assets.xcassets in Resources */,
 				8DCE159A5EDC4848CC5288B3 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8498F1FE61CAB21523222880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73DDE7402772DD6EFA438E04 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +824,14 @@
 			files = (
 				ED8F218EA5D117B9974A0013 /* Assets.xcassets in Resources */,
 				539C3117226998164F3B6B7E /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF1CB5814B75BA194E9FBBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E8FC557C10B4CD94BBE9E1D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +878,7 @@
 				515D29BB59F5DCE5C83D9CF4 /* ECClient.swift in Sources */,
 				4423DCF13E6E95033078C623 /* ECCodes.swift in Sources */,
 				3397FBFB96588EAD3A8EC620 /* ECPacket.swift in Sources */,
+				F48922E87C35AA25C81CAAC3 /* Ed2kLink.swift in Sources */,
 				9BD1BF26D579F9C0B265DF2C /* IconColor.swift in Sources */,
 				6F89322952C832E4CB4543FA /* Keychain.swift in Sources */,
 				80CF84B93FA6B72C518D0EFA /* Models.swift in Sources */,
@@ -711,6 +896,20 @@
 				57412AC6CDAF62C061D3E9ED /* TVTextField.swift in Sources */,
 				D729EC5F83CC9348BF5E3043 /* TVViews.swift in Sources */,
 				94979D35617A2A755DB10D04 /* Walkthrough.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C91C524B8515D6C7C163E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E97A7645ACC08044F661B517 /* ECClient.swift in Sources */,
+				61A2EDA58C3F2E2ACF250480 /* ECCodes.swift in Sources */,
+				ADF4AF254BDEB9A3C4FB78D6 /* ECPacket.swift in Sources */,
+				543BD07576A7403CBDAADB95 /* Ed2kLink.swift in Sources */,
+				40B2190B8A605918C5204E0C /* Keychain.swift in Sources */,
+				A1E145C62DC83F5EF6C5CD7D /* Models.swift in Sources */,
+				A3C724AB4F18B5A6B995A77E /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +933,7 @@
 				DF30C57A7AC30A5B1460ECB8 /* ECClient.swift in Sources */,
 				1C698A130A329EF455342187 /* ECCodes.swift in Sources */,
 				AF1D99BE8447EBAF818B83B3 /* ECPacket.swift in Sources */,
+				B14DF44C4DA886E814C2A4D0 /* Ed2kLink.swift in Sources */,
 				C007DE4B670174FC343D4B6E /* IconColor.swift in Sources */,
 				D7F9466743A66A2DD4F750D5 /* Keychain.swift in Sources */,
 				32E6CC60346D0E78269D96ED /* MacQuickActions.swift in Sources */,
@@ -754,6 +954,33 @@
 				1CA280B1B5323420701F312A /* SharedFilesView.swift in Sources */,
 				6414D2968D7D7DDBC20BDC59 /* SystemSettings.swift in Sources */,
 				CB19CE097600FACC2D2CB807 /* Walkthrough.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABDD9DC0D24D2E5794918F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B42837F752D3F0CD24FB3A /* AmuleWidgets.swift in Sources */,
+				36349869280183E67F8A40A4 /* ECClient.swift in Sources */,
+				73C64C2A68EAED3C3F9114C9 /* ECCodes.swift in Sources */,
+				37CE98F413726CEB3ACD2813 /* ECPacket.swift in Sources */,
+				F00678B89EF6D3FD6A1A4DE3 /* Keychain.swift in Sources */,
+				F8DF63582217B29036294847 /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C55E47F80E123E0179F752E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BC4FFA9544C4D2EEA8E2CF1 /* ECClient.swift in Sources */,
+				037A159A68DF1B504C32551F /* ECCodes.swift in Sources */,
+				3D56F6C58BF2D937EF2CD76F /* ECPacket.swift in Sources */,
+				74F31B3162D050F6D6C2A4F2 /* Ed2kLink.swift in Sources */,
+				5E9DBBF992BFDE68FE7BF160 /* Keychain.swift in Sources */,
+				227D7FF9E5A37648A78B77D3 /* Models.swift in Sources */,
+				6C589A32CB12B487270BEBFD /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +1010,7 @@
 				6E97472A1F9C65C5C646DCFA /* ECClient.swift in Sources */,
 				14E0FE9DF04072E9074D7B7A /* ECCodes.swift in Sources */,
 				DB7BB2EE150D551364A52EDA /* ECPacket.swift in Sources */,
+				DF45CF67DD927BC9EAE6C274 /* Ed2kLink.swift in Sources */,
 				D00707AEE314938ED4DCC12F /* HingeMonitor.swift in Sources */,
 				C44D498FF55365325986EBA2 /* HomeScreenQuickActions.swift in Sources */,
 				08C45CEA9A137611BE2EC3DE /* IconColor.swift in Sources */,
@@ -827,6 +1055,7 @@
 				6BCFD51692CE71ABD95DE81B /* ECClient.swift in Sources */,
 				C6D8AD0B4DDC7664F5E4896B /* ECCodes.swift in Sources */,
 				F7CC302C393B60CE3EF8FDAD /* ECPacket.swift in Sources */,
+				EA98DFC4AAC535B4746F92AF /* Ed2kLink.swift in Sources */,
 				52913DB341AC5135A84DEB3A /* HingeMonitor.swift in Sources */,
 				6896CDC5A0219E15F4641CA9 /* HomeScreenQuickActions.swift in Sources */,
 				180C02AC9FF79E6505308384 /* IconColor.swift in Sources */,
@@ -857,10 +1086,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B8624349214AF7D85A83D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C5915C1CF8456DCCB8C2D3 /* AmuleRemoteShare */;
+			targetProxy = AFB1DFBAF306AEC8830D04BD /* PBXContainerItemProxy */;
+		};
 		D18A2A52041E9A38B2D15F49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 444A247705A2DAFBCD9CFDEE /* AmuleRemoteWatch */;
 			targetProxy = 3D24D8FE1A2AE095517F32A4 /* PBXContainerItemProxy */;
+		};
+		E82746071B9AE330F84EA4C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A0DA431B3186395845CE00 /* AmuleRemoteWidgets */;
+			targetProxy = 4AFCF99E80F4B17B0C37AE07 /* PBXContainerItemProxy */;
+		};
+		F9C8027595D3D6DE45C45022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C3EA0C8085E84414CF2E87B /* AmuleRemoteShareMac */;
+			targetProxy = F0EF6BE3FB6558D320C2D369 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -872,9 +1116,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -888,14 +1132,39 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule iOS AppStore";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		13754C3D2157EBA567D3FF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Widgets.entitlements;
+				CURRENT_PROJECT_VERSION = 25;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.widgets";
+				PRODUCT_NAME = "aMule Remote Widgets";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		1D0AF4615701EE48E9A6600A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -904,7 +1173,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/TV-Info.plist";
@@ -915,7 +1184,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = appletvos;
@@ -930,12 +1199,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = watchos;
@@ -953,8 +1222,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -964,9 +1234,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule iOS AppStore";
 				SDKROOT = xros;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 7;
@@ -983,7 +1254,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -997,7 +1268,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = iphoneos;
@@ -1013,7 +1284,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Mac-Info.plist";
@@ -1026,7 +1297,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
@@ -1038,20 +1309,50 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Watch-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.watchkitapp";
 				PRODUCT_NAME = "aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule Watch AppStore";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		7EF4A8558955700305BE605D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/ShareMac.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 25;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Share-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aggiungi ad aMule Remote";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.share";
+				PRODUCT_NAME = "Aggiungi ad aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule Share Mac AppStore";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
 		};
@@ -1063,7 +1364,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/iOS-Info.plist";
@@ -1073,13 +1374,37 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = xros;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 7;
 				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		A10790C4010C15520A7F824B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Share.entitlements;
+				CURRENT_PROJECT_VERSION = 25;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Share-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aggiungi ad aMule Remote";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.share";
+				PRODUCT_NAME = "Aggiungi ad aMule Remote";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1151,7 +1476,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/Mac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/Mac-Info.plist";
@@ -1164,7 +1489,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
 				SDKROOT = macosx;
@@ -1178,8 +1503,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SupportFiles/TV.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = X5SR67A8AL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SupportFiles/TV-Info.plist";
@@ -1190,13 +1516,94 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios";
 				PRODUCT_NAME = "aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule tvOS AppStore";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		CC4B2E25A8299E9A9B22EAAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Widgets.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "aMule Remote";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.widgets";
+				PRODUCT_NAME = "aMule Remote Widgets";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule Widgets AppStore";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E0BBFED05086ACD391F7F9B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/ShareMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 25;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Share-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aggiungi ad aMule Remote";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.share";
+				PRODUCT_NAME = "Aggiungi ad aMule Remote";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		EB91379E14E0A5752C7454A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SupportFiles/Share.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
+				DEVELOPMENT_TEAM = X5SR67A8AL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SupportFiles/Share-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aggiungi ad aMule Remote";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdimambro.amule-remote-ios.share";
+				PRODUCT_NAME = "Aggiungi ad aMule Remote";
+				PROVISIONING_PROFILE_SPECIFIER = "aMule Share iOS AppStore";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1266,11 +1673,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		18E0DF7C667CA99F0A99AF6F /* Build configuration list for PBXNativeTarget "AmuleRemoteShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10790C4010C15520A7F824B /* Debug */,
+				EB91379E14E0A5752C7454A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		549DFA20232A7863E8261D52 /* Build configuration list for PBXNativeTarget "AmuleRemoteTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D0AF4615701EE48E9A6600A /* Debug */,
 				BE341E8681A77EA963706D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		58E6A992C9E2504DAE8C85F8 /* Build configuration list for PBXNativeTarget "AmuleRemoteWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13754C3D2157EBA567D3FF18 /* Debug */,
+				CC4B2E25A8299E9A9B22EAAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1289,6 +1714,15 @@
 			buildConfigurations = (
 				AC5E7B776AC98CA2CAF7EA44 /* Debug */,
 				F14048FA814C8CBEB81C89BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B234BD2A8FE1C473D1A10217 /* Build configuration list for PBXNativeTarget "AmuleRemoteShareMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0BBFED05086ACD391F7F9B1 /* Debug */,
+				7EF4A8558955700305BE605D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

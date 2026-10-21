@@ -1,6 +1,31 @@
 import Foundation
 import Security
 
+/// Politica di sincronizzazione iCloud letta anche dalle estensioni (Share,
+/// widget), che non compilano CloudSync/AppState: stessa chiave UserDefaults
+/// e stesso controllo dell'entitlement KVS usati da CloudSync.
+enum KeychainSyncPolicy {
+    static let enabledKey = "iCloudSyncEnabled"
+    static var enabled: Bool { available && UserDefaults.standard.bool(forKey: enabledKey) }
+    static var available: Bool {
+        #if os(macOS)
+        guard let task = SecTaskCreateFromSelf(nil) else { return false }
+        return SecTaskCopyValueForEntitlement(task, "com.apple.developer.ubiquity-kvstore-identifier" as CFString, nil) != nil
+        #else
+        return true
+        #endif
+    }
+}
+
+/// Profilo corrente condiviso con le estensioni (Share, widget) tramite il
+/// gruppo keychain: le estensioni non leggono gli UserDefaults dell'app.
+struct SharedProfile: Codable, Equatable {
+    var host: String
+    var port: Int
+    var name: String
+    var address: String { "\(host):\(port)" }
+}
+
 enum Keychain {
     // Storia dei service name:
     //  - "aMule Remote": voci create dalle build firmate col certificato
@@ -20,7 +45,7 @@ enum Keychain {
     /// voce è marcata `kSecAttrSynchronizable`, così viaggia nel Portachiavi
     /// iCloud insieme ai profili (stesso account "host:port" su ogni dispositivo).
     static func savePassword(_ password: String, account: String) {
-        savePassword(password, account: account, synchronizable: CloudSync.isEnabled)
+        savePassword(password, account: account, synchronizable: KeychainSyncPolicy.enabled)
     }
 
     /// Ritorna true se la voce è stata scritta nella variante richiesta. Se la
@@ -30,7 +55,7 @@ enum Keychain {
     @discardableResult
     static func savePassword(_ password: String, account: String, synchronizable: Bool) -> Bool {
         let data = Data(password.utf8)
-        if synchronizable && CloudSync.isAvailable {
+        if synchronizable && KeychainSyncPolicy.available {
             var add = syncQuery(account: account)
             add[kSecValueData as String] = data
             add[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock
@@ -45,11 +70,50 @@ enum Keychain {
         add[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock
         SecItemDelete(localQuery(account: account) as CFDictionary)
         let ok = SecItemAdd(add as CFDictionary, nil) == errSecSuccess
-        if ok && !synchronizable && CloudSync.isAvailable {
+        if ok && !synchronizable && KeychainSyncPolicy.available {
             // Passaggio sincronizzata → locale riuscito: via la copia iCloud.
             SecItemDelete(syncQuery(account: account) as CFDictionary)
         }
         return ok && !synchronizable
+    }
+
+    // MARK: Profilo corrente per le estensioni
+
+    private static let sharedService = "aMule Remote Shared"
+    private static let sharedAccount = "currentProfile"
+
+    private static func sharedQuery() -> [String: Any] {
+        var q: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: sharedService,
+            kSecAttrAccount as String: sharedAccount,
+            kSecAttrAccessGroup as String: sharedAccessGroup,
+            kSecAttrSynchronizable as String: false,
+        ]
+        #if os(macOS)
+        q[kSecUseDataProtectionKeychain as String] = true
+        #endif
+        return q
+    }
+
+    /// Scritto dall'app a ogni cambio di profilo/connessione; letto dalle estensioni.
+    static func saveSharedProfile(host: String, port: Int, name: String) {
+        guard !host.isEmpty, host.uppercased() != "DEMO" else { return }
+        guard let data = try? JSONEncoder().encode(SharedProfile(host: host, port: port, name: name)) else { return }
+        var add = sharedQuery()
+        add[kSecValueData as String] = data
+        add[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock
+        SecItemDelete(sharedQuery() as CFDictionary)
+        SecItemAdd(add as CFDictionary, nil)
+    }
+
+    static func loadSharedProfile() -> SharedProfile? {
+        var q = sharedQuery()
+        q[kSecReturnData as String] = true
+        q[kSecMatchLimit as String] = kSecMatchLimitOne
+        var out: CFTypeRef?
+        guard SecItemCopyMatching(q as CFDictionary, &out) == errSecSuccess, let data = out as? Data else { return nil }
+        return try? JSONDecoder().decode(SharedProfile.self, from: data)
     }
 
     static func loadPassword(account: String) -> String? {
@@ -70,7 +134,7 @@ enum Keychain {
 
     static func deletePassword(account: String) {
         SecItemDelete(localQuery(account: account) as CFDictionary)
-        if CloudSync.isAvailable {
+        if KeychainSyncPolicy.available {
             SecItemDelete(syncQuery(account: account) as CFDictionary)
         }
     }

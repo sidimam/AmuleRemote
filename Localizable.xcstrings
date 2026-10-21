@@ -321,6 +321,46 @@
         }
       }
     },
+    "%lld attivi · %lld in coda": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld نشط · %lld في قائمة الانتظار"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld aktiv · %lld in Warteschlange"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld active · %lld queued"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld activas · %lld en cola"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld actifs · %lld en attente"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 个活动 · %lld 个排队"
+          }
+        }
+      }
+    },
     "%lld errori": {
       "localizations": {
         "ar": {
@@ -561,6 +601,46 @@
         }
       }
     },
+    "%lld link trovati": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على %lld رابط"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Links gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld links found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld enlaces encontrados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld liens trouvés"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找到 %lld 个链接"
+          }
+        }
+      }
+    },
     "%lld risultati per «%@».": {
       "localizations": {
         "ar": {
@@ -637,6 +717,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已选择 %lld 项"
+          }
+        }
+      }
+    },
+    "%lld server · selezionati %lld": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld خادم · المحدد %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Server · %lld ausgewählt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld servers · %lld selected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld servidores · %lld seleccionados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld serveurs · %lld sélectionnés"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 个服务器 · 已选 %lld 个"
           }
         }
       }
@@ -1601,6 +1721,46 @@
         }
       }
     },
+    "Aggiungi ad aMule Remote": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة إلى aMule Remote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu aMule Remote hinzufügen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to aMule Remote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir a aMule Remote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter à aMule Remote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加到 aMule Remote"
+          }
+        }
+      }
+    },
     "Aggiungi cartella (percorso nel server):": {
       "localizations": {
         "ar": {
@@ -1637,6 +1797,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加文件夹（服务器上的路径）："
+          }
+        }
+      }
+    },
+    "Aggiungi fonte": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة مصدر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quelle hinzufügen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add source"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir fuente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter la source"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加来源"
           }
         }
       }
@@ -2041,6 +2241,46 @@
         }
       }
     },
+    "Aggiunti %lld download ad aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إضافة %lld تنزيل إلى aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Downloads zu aMule hinzugefügt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added %lld downloads to aMule."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadidas %lld descargas a aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld téléchargements ajoutés à aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已向 aMule 添加 %lld 个下载。"
+          }
+        }
+      }
+    },
     "Aggiunti %lld link ai download.": {
       "localizations": {
         "ar": {
@@ -2077,6 +2317,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已将 %lld 个链接添加到下载。"
+          }
+        }
+      }
+    },
+    "Aggiunti %lld server ad aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت إضافة %lld خادم إلى aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Server zu aMule hinzugefügt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added %lld servers to aMule."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadidos %lld servidores a aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld serveurs ajoutés à aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已向 aMule 添加 %lld 个服务器。"
           }
         }
       }
@@ -2361,6 +2641,46 @@
         }
       }
     },
+    "Apple TV": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple TV"
+          }
+        }
+      }
+    },
     "Applica al server": {
       "localizations": {
         "ar": {
@@ -2397,6 +2717,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用到服务器"
+          }
+        }
+      }
+    },
+    "Apre aMule Remote per incollare link eD2k.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يفتح aMule Remote للصق روابط eD2k."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet aMule Remote zum Einfügen von eD2k-Links."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens aMule Remote to paste eD2k links."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre aMule Remote para pegar enlaces eD2k."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre aMule Remote pour coller des liens eD2k."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开 aMule Remote 以粘贴 eD2k 链接。"
+          }
+        }
+      }
+    },
+    "Apre aMule Remote per incollare uno o più link eD2k.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يفتح aMule Remote للصق رابط eD2k واحد أو أكثر."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet aMule Remote, um einen oder mehrere eD2k-Links einzufügen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens aMule Remote to paste one or more eD2k links."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre aMule Remote para pegar uno o más enlaces eD2k."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre aMule Remote pour coller un ou plusieurs liens eD2k."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开 aMule Remote 以粘贴一个或多个 eD2k 链接。"
           }
         }
       }
@@ -4077,6 +4477,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "服务器上的文件夹"
+          }
+        }
+      }
+    },
+    "Catalogo non aggiornato: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يُحدَّث الكتالوج: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Katalog nicht aktualisiert: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catalog not updated: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catálogo no actualizado: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catalogue non mis à jour : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目录未更新：%@"
           }
         }
       }
@@ -6241,6 +6681,86 @@
         }
       }
     },
+    "Continua": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متابعة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续"
+          }
+        }
+      }
+    },
+    "Continua la ricerca “%@” da %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متابعة البحث «%@» من %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche „%@“ von %@ fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue the search “%@” from %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar la búsqueda «%@» desde %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer la recherche « %@ » depuis %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从 %2$@ 继续搜索“%1$@”"
+          }
+        }
+      }
+    },
     "Controlla spazio libero": {
       "localizations": {
         "ar": {
@@ -7841,6 +8361,166 @@
         }
       }
     },
+    "Elenchi server": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قوائم الخوادم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverlisten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server lists"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listas de servidores"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listes de serveurs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "服务器列表"
+          }
+        }
+      }
+    },
+    "Elenchi server (server.met)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قوائم الخوادم (server.met)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverlisten (server.met)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server lists (server.met)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listas de servidores (server.met)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listes de serveurs (server.met)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "服务器列表（server.met）"
+          }
+        }
+      }
+    },
+    "Elenco mantenuto nel progetto e aggiornato senza nuove versioni dell'app. Ogni fonte viene scaricata e letta dall'app: vedi i server prima di importarli, anche se il tuo aMule non ha accesso al web.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة يحتفظ بها المشروع وتُحدَّث دون إصدارات جديدة للتطبيق. يقوم التطبيق بتنزيل كل مصدر وقراءته: ترى الخوادم قبل استيرادها حتى لو لم يكن لدى aMule وصول إلى الويب."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine im Projekt gepflegte Liste, die ohne neue App-Versionen aktualisiert wird. Jede Quelle wird von der App geladen und gelesen: Du siehst die Server vor dem Import, auch wenn dein aMule keinen Webzugang hat."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A list maintained in the project and updated without new app releases. Every source is downloaded and read by the app: you see the servers before importing them, even if your aMule has no web access."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista mantenida en el proyecto y actualizada sin nuevas versiones de la app. Cada fuente la descarga y lee la app: ves los servidores antes de importarlos, aunque tu aMule no tenga acceso web."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste maintenue dans le projet et mise à jour sans nouvelle version de l'app. Chaque source est téléchargée et lue par l'app : vous voyez les serveurs avant de les importer, même si votre aMule n'a pas d'accès web."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "列表由项目维护，无需发布新版本即可更新。每个来源都由 App 下载并解析：导入前即可查看服务器，即使你的 aMule 无法访问网络。"
+          }
+        }
+      }
+    },
+    "Elenco server": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة الخوادم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverliste"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server list"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista de servidores"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste de serveurs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "服务器列表"
+          }
+        }
+      }
+    },
     "Elimina": {
       "localizations": {
         "ar": {
@@ -8397,6 +9077,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "让服务器重新扫描共享文件夹"
+          }
+        }
+      }
+    },
+    "Fai scaricare l'elenco al server": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اجعل الخادم ينزّل القائمة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste vom Server laden lassen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let the server download the list"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Que el servidor descargue la lista"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laisser le serveur télécharger la liste"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让服务器下载列表"
           }
         }
       }
@@ -9201,6 +9921,46 @@
         }
       }
     },
+    "Fonte non disponibile": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المصدر غير متاح"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quelle nicht verfügbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source unavailable"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuente no disponible"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source indisponible"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "来源不可用"
+          }
+        }
+      }
+    },
     "Fonti": {
       "localizations": {
         "ar": {
@@ -9237,6 +9997,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "来源"
+          }
+        }
+      }
+    },
+    "Fonti affidabili": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مصادر موثوقة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vertrauenswürdige Quellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trusted sources"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuentes fiables"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources fiables"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可信来源"
           }
         }
       }
@@ -9397,6 +10197,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "来源：%llu/%llu"
+          }
+        }
+      }
+    },
+    "Formato server.met non riconosciuto (tag %lld).": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تنسيق server.met غير معروف (الوسم %lld)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbekanntes server.met-Format (Tag %lld)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unrecognized server.met format (tag %lld)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formato server.met no reconocido (etiqueta %lld)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Format server.met non reconnu (tag %lld)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法识别的 server.met 格式（标签 %lld）。"
           }
         }
       }
@@ -9637,6 +10477,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote 指南（wiki）"
+          }
+        }
+      }
+    },
+    "Hai trovato un server.met sul web? Incolla qui l'indirizzo (anche .gz): l'app lo verifica e lo ricorda tra le tue fonti.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هل وجدت server.met على الويب؟ الصق العنوان هنا (أيضًا .gz): يتحقق التطبيق منه ويحفظه ضمن مصادرك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein server.met im Web gefunden? Füge die Adresse hier ein (auch .gz): Die App prüft sie und merkt sie sich unter deinen Quellen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a server.met on the web? Paste its address here (.gz too): the app checks it and keeps it among your sources."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Has encontrado un server.met en la web? Pega aquí la dirección (también .gz): la app lo comprueba y lo guarda entre tus fuentes."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous avez trouvé un server.met sur le web ? Collez l'adresse ici (.gz aussi) : l'app le vérifie et le garde parmi vos sources."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在网上找到了 server.met？把地址粘贴到这里（也支持 .gz）：App 会验证并保存到你的来源中。"
           }
         }
       }
@@ -10401,6 +11281,86 @@
         }
       }
     },
+    "Il file scaricato non è un server.met.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الملف الذي تم تنزيله ليس server.met."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die geladene Datei ist kein server.met."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The downloaded file is not a server.met."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El archivo descargado no es un server.met."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le fichier téléchargé n'est pas un server.met."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载的文件不是 server.met。"
+          }
+        }
+      }
+    },
+    "Il file server.met è incompleto o danneggiato.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملف server.met غير مكتمل أو تالف."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die server.met-Datei ist unvollständig oder beschädigt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The server.met file is incomplete or damaged."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El archivo server.met está incompleto o dañado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le fichier server.met est incomplet ou endommagé."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "server.met 文件不完整或已损坏。"
+          }
+        }
+      }
+    },
     "Il profilo con la stella è quello predefinito, proposto all'avvio. Scorri a sinistra per eliminare un profilo o renderlo predefinito.": {
       "localizations": {
         "ar": {
@@ -10481,6 +11441,46 @@
         }
       }
     },
+    "Il sito ha risposto con l'errore HTTP %lld.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استجاب الموقع بخطأ HTTP ‏%lld."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Website antwortete mit HTTP-Fehler %lld."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The site answered with HTTP error %lld."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El sitio respondió con el error HTTP %lld."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le site a répondu avec l'erreur HTTP %lld."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "网站返回 HTTP 错误 %lld。"
+          }
+        }
+      }
+    },
     "Il telecomando per il tuo server aMule (amuled) su NAS, Unraid, Raspberry Pi o PC di casa: l'app non scarica nulla sul dispositivo, controlla il server che già possiedi tramite il protocollo EC (External Connections).": {
       "localizations": {
         "ar": {
@@ -10557,6 +11557,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "不限"
+          }
+        }
+      }
+    },
+    "Importa %lld server in aMule": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استيراد %lld خادم إلى aMule"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Server in aMule importieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import %lld servers into aMule"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar %lld servidores en aMule"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importer %lld serveurs dans aMule"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导入 %lld 个服务器到 aMule"
           }
         }
       }
@@ -11081,6 +12121,46 @@
         }
       }
     },
+    "Indirizzo non valido": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عنوان غير صالح"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ungültige Adresse"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid address"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dirección no válida"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adresse non valide"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地址无效"
+          }
+        }
+      }
+    },
     "Informativa sulla privacy": {
       "localizations": {
         "ar": {
@@ -11237,6 +12317,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "开始使用"
+          }
+        }
+      }
+    },
+    "Inserisci un indirizzo http:// o https:// che punti a un file server.met.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أدخل عنوان http:// أو https:// يشير إلى ملف server.met."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gib eine http://- oder https://-Adresse ein, die auf eine server.met-Datei zeigt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter an http:// or https:// address pointing to a server.met file."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Introduce una dirección http:// o https:// que apunte a un archivo server.met."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saisissez une adresse http:// ou https:// pointant vers un fichier server.met."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请输入指向 server.met 文件的 http:// 或 https:// 地址。"
           }
         }
       }
@@ -11881,6 +13001,86 @@
         }
       }
     },
+    "Le fonti personalizzate si aggiungono da iPhone, iPad o Mac.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تُضاف المصادر المخصصة من iPhone أو iPad أو Mac."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene Quellen werden auf iPhone, iPad oder Mac hinzugefügt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom sources are added from iPhone, iPad or Mac."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las fuentes personalizadas se añaden desde iPhone, iPad o Mac."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les sources personnalisées s'ajoutent depuis l'iPhone, l'iPad ou le Mac."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义来源可在 iPhone、iPad 或 Mac 上添加。"
+          }
+        }
+      }
+    },
+    "Le mie fonti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مصادري"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meine Quellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My sources"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mis fuentes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mes sources"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我的来源"
+          }
+        }
+      }
+    },
     "Le notifiche (download avviati e completati, server non raggiungibile, cadute e riconnessioni eD2k/Kad) si gestiscono in Impostazioni di Sistema → Notifiche: la riga Notifiche ti porta lì.": {
       "localizations": {
         "ar": {
@@ -12037,6 +13237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "通知已在系统“设置”中关闭。"
+          }
+        }
+      }
+    },
+    "Lettura del contenuto…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ قراءة المحتوى…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inhalt wird gelesen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reading the content…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leyendo el contenido…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lecture du contenu…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在读取内容…"
           }
         }
       }
@@ -12401,6 +13641,46 @@
         }
       }
     },
+    "Link": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "روابط"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Links"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Links"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enlaces"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liens"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "链接"
+          }
+        }
+      }
+    },
     "Link eD2k": {
       "localizations": {
         "ar": {
@@ -12761,6 +14041,46 @@
         }
       }
     },
+    "Messi in pausa: %lld": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الإيقاف مؤقتًا: %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausiert: %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused: %lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pausa: %lld"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pause : %lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已暂停：%lld"
+          }
+        }
+      }
+    },
     "Mette in pausa il download il cui nome contiene il testo indicato.": {
       "localizations": {
         "ar": {
@@ -12837,6 +14157,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "暂停 aMule 服务器上所有活跃的下载。"
+          }
+        }
+      }
+    },
+    "Mette in pausa tutti i download del server aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يوقف جميع تنزيلات خادم aMule مؤقتًا."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausiert alle Downloads des aMule-Servers."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pauses all downloads of the aMule server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa todas las descargas del servidor aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met en pause tous les téléchargements du serveur aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停 aMule 服务器的所有下载。"
           }
         }
       }
@@ -13521,6 +14881,46 @@
         }
       }
     },
+    "Nessun link ed2k:// nel contenuto condiviso.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يوجد رابط ed2k:// في المحتوى المشارك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein ed2k://-Link im geteilten Inhalt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ed2k:// link in the shared content."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún enlace ed2k:// en el contenido compartido."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun lien ed2k:// dans le contenu partagé."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享的内容中没有 ed2k:// 链接。"
+          }
+        }
+      }
+    },
     "Nessun link ed2k:// nel testo": {
       "localizations": {
         "ar": {
@@ -13717,6 +15117,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有“%@”的结果。"
+          }
+        }
+      }
+    },
+    "Nessun server nel file": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد خوادم في الملف"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Server in der Datei"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No servers in the file"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún servidor en el archivo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun serveur dans le fichier"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文件中没有服务器"
           }
         }
       }
@@ -14041,6 +15481,46 @@
         }
       }
     },
+    "Nome (facoltativo)": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الاسم (اختياري)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (optional)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (optional)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre (opcional)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nom (facultatif)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名称（可选）"
+          }
+        }
+      }
+    },
     "Nome (o parte)": {
       "localizations": {
         "ar": {
@@ -14197,6 +15677,126 @@
           "stringUnit": {
             "state": "translated",
             "value": "名称："
+          }
+        }
+      }
+    },
+    "Non ancora verificata": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يتم التحقق بعد"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nicht geprüft"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not checked yet"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no comprobada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore vérifiée"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "尚未检查"
+          }
+        }
+      }
+    },
+    "Non disponibile: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير متاح: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht verfügbar: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unavailable: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No disponible: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indisponible : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不可用：%@"
+          }
+        }
+      }
+    },
+    "Non raggiungibile": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير متاح"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht erreichbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unreachable"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inaccesible"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Injoignable"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接"
           }
         }
       }
@@ -14997,6 +16597,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "密码"
+          }
+        }
+      }
+    },
+    "Password del server non trovata: apri aMule Remote e connettiti una volta.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يُعثر على كلمة مرور الخادم: افتح aMule Remote واتصل مرة واحدة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverpasswort nicht gefunden: Öffne aMule Remote und verbinde dich einmal."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server password not found: open aMule Remote and connect once."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contraseña del servidor no encontrada: abre aMule Remote y conéctate una vez."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mot de passe du serveur introuvable : ouvrez aMule Remote et connectez-vous une fois."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到服务器密码：请打开 aMule Remote 并连接一次。"
           }
         }
       }
@@ -16521,6 +18161,46 @@
         }
       }
     },
+    "Raggiungibile · %lld server": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متاح · %lld خادم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erreichbar · %lld Server"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reachable · %lld servers"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accesible · %lld servidores"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joignable · %lld serveurs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可访问 · %lld 个服务器"
+          }
+        }
+      }
+    },
     "Refresh pagina (secondi):": {
       "localizations": {
         "ar": {
@@ -17001,6 +18681,46 @@
         }
       }
     },
+    "Ricerca “%@”": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بحث «%@»"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche „%@“"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search “%@”"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Búsqueda «%@»"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche « %@ »"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索“%@”"
+          }
+        }
+      }
+    },
     "Riceverai qui gli avvisi di aMule Remote.": {
       "localizations": {
         "ar": {
@@ -17157,6 +18877,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "请求混淆"
+          }
+        }
+      }
+    },
+    "Richiesta inviata ad aMule: l'elenco si aggiorna in pochi secondi.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أُرسل الطلب إلى aMule: تُحدَّث القائمة خلال ثوانٍ."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfrage an aMule gesendet: Die Liste wird in wenigen Sekunden aktualisiert."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request sent to aMule: the list updates in a few seconds."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitud enviada a aMule: la lista se actualiza en unos segundos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demande envoyée à aMule : la liste se met à jour en quelques secondes."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已向 aMule 发送请求：列表将在几秒内更新。"
           }
         }
       }
@@ -17641,6 +19401,46 @@
         }
       }
     },
+    "Riprende tutti i download in pausa del server aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستأنف جميع التنزيلات المتوقفة مؤقتًا في خادم aMule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setzt alle pausierten Downloads des aMule-Servers fort."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumes all paused downloads of the aMule server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanuda todas las descargas en pausa del servidor aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reprend tous les téléchargements en pause du serveur aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续 aMule 服务器上所有已暂停的下载。"
+          }
+        }
+      }
+    },
     "Riprende tutti i download in pausa sul server aMule.": {
       "localizations": {
         "ar": {
@@ -17997,6 +19797,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "已恢复 %lld 个下载。"
+          }
+        }
+      }
+    },
+    "Ripresi: %lld": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الاستئناف: %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortgesetzt: %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumed: %lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudados: %lld"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repris : %lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已继续：%lld"
           }
         }
       }
@@ -18637,6 +20477,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "下载到类别"
+          }
+        }
+      }
+    },
+    "Scaricamento in corso…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ التنزيل…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird geladen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloading…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargement…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在下载…"
           }
         }
       }
@@ -19321,6 +21201,46 @@
         }
       }
     },
+    "Sezione": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "القسم"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereich"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Section"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sección"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Section"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "板块"
+          }
+        }
+      }
+    },
     "Sicurezza": {
       "localizations": {
         "ar": {
@@ -19597,6 +21517,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "仅来自已识别客户端（SecIdent）"
+          }
+        }
+      }
+    },
+    "Sostituisci l'elenco attuale": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استبدال القائمة الحالية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuelle Liste ersetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replace the current list"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sustituir la lista actual"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remplacer la liste actuelle"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "替换当前列表"
           }
         }
       }
@@ -21561,6 +23521,46 @@
         }
       }
     },
+    "Utenti: %@ · File: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المستخدمون: %@ · الملفات: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benutzer: %@ · Dateien: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: %@ · Files: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usuarios: %@ · Archivos: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisateurs : %@ · Fichiers : %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用户：%@ · 文件：%@"
+          }
+        }
+      }
+    },
     "Utenti: %llu": {
       "localizations": {
         "ar": {
@@ -21681,6 +23681,46 @@
         }
       }
     },
+    "Velocità aMule": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة aMule"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule-Geschwindigkeit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule speed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de aMule"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse aMule"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule 速度"
+          }
+        }
+      }
+    },
     "Velocità di download": {
       "localizations": {
         "ar": {
@@ -21757,6 +23797,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule 服务器当前的下载速度（kB/s，可在自动化中使用的数值）。"
+          }
+        }
+      }
+    },
+    "Velocità di download e upload e download attivi del tuo server aMule.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سرعة التنزيل والرفع والتنزيلات النشطة لخادم aMule الخاص بك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download- und Upload-Geschwindigkeit sowie aktive Downloads deines aMule-Servers."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download and upload speed and active downloads of your aMule server."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad de descarga y subida y descargas activas de tu servidor aMule."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vitesse de téléchargement et d'envoi et téléchargements actifs de votre serveur aMule."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的 aMule 服务器的下载/上传速度和活动下载。"
           }
         }
       }
@@ -22001,6 +24081,46 @@
         }
       }
     },
+    "Verifica in corso…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ التحقق…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird geprüft…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprobando…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vérification…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在检查…"
+          }
+        }
+      }
+    },
     "Verifica se un eventuale webserver aMule (amuleweb) risponde all'indirizzo indicato, via HTTPS o HTTP.": {
       "localizations": {
         "ar": {
@@ -22037,6 +24157,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查 aMule 网页服务器（amuleweb）是否在指定地址响应（HTTPS 或 HTTP）。"
+          }
+        }
+      }
+    },
+    "Verifica tutte le fonti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحقق من جميع المصادر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Quellen prüfen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check all sources"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprobar todas las fuentes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vérifier toutes les sources"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查所有来源"
           }
         }
       }
@@ -22397,6 +24557,126 @@
           "stringUnit": {
             "state": "translated",
             "value": "aMule Remote 是基于 MIT 许可证发布的自由软件：你可以自由使用、复制、修改和再分发，但需保留版权声明。"
+          }
+        }
+      }
+    },
+    "aMule: aggiungi link": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: إضافة رابط"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: Link hinzufügen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: add link"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: añadir enlace"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule : ajouter un lien"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule：添加链接"
+          }
+        }
+      }
+    },
+    "aMule: pausa tutti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: إيقاف الكل مؤقتًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: alle pausieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: pause all"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: pausar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule : tout mettre en pause"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule：全部暂停"
+          }
+        }
+      }
+    },
+    "aMule: riprendi tutti": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: استئناف الكل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: alle fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: resume all"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule: reanudar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule : tout reprendre"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aMule：全部继续"
           }
         }
       }
@@ -22801,6 +25081,46 @@
         }
       }
     },
+    "https://esempio.org/server.met": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://example.org/server.met"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://beispiel.org/server.met"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://example.org/server.met"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://ejemplo.org/server.met"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://exemple.org/server.met"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://example.org/server.met"
+          }
+        }
+      }
+    },
     "nessuna": {
       "localizations": {
         "ar": {
@@ -22917,6 +25237,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "全部"
+          }
+        }
+      }
+    },
+    "«Sostituisci» rimuove prima i server già presenti in aMule. «Fai scaricare» passa l'indirizzo ad aMule, che deve avere accesso al web.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«استبدال» يزيل أولًا الخوادم الموجودة في aMule. «اجعل الخادم ينزّل» يمرّر العنوان إلى aMule الذي يحتاج وصولًا إلى الويب."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„Ersetzen“ entfernt zuerst die bereits in aMule vorhandenen Server. „Vom Server laden lassen“ übergibt die Adresse an aMule, das Webzugang braucht."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“Replace” first removes the servers already in aMule. “Let the server download” passes the address to aMule, which needs web access."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«Sustituir» elimina antes los servidores ya presentes en aMule. «Que el servidor descargue» pasa la dirección a aMule, que necesita acceso web."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "« Remplacer » supprime d'abord les serveurs déjà présents dans aMule. « Laisser le serveur télécharger » transmet l'adresse à aMule, qui doit avoir un accès web."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“替换”会先移除 aMule 中已有的服务器。“让服务器下载”会把地址交给 aMule，需要其能访问网络。"
           }
         }
       }

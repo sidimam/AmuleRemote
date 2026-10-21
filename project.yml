@@ -40,6 +40,7 @@ targets:
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
       - path: Sources/AmuleRemote/Continuity.swift
+      - path: Sources/AmuleRemote/Ed2kLink.swift
       - path: Localizable.xcstrings
       - path: iOS
       - path: Icons/AppIcon.icon
@@ -58,6 +59,8 @@ targets:
         type: file
     dependencies:
       - target: AmuleRemoteWatch
+      - target: AmuleRemoteShare
+      - target: AmuleRemoteWidgets
     # iCloud Key-Value Storage (identificatore FISSO condiviso con il DMG Developer ID,
     # che ha bundle id com.sdimambro.amule-remote) + gruppo keychain condiviso.
     entitlements:
@@ -83,12 +86,18 @@ targets:
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
         TARGETED_DEVICE_FAMILY: "1,2"
-        CURRENT_PROJECT_VERSION: 24
-        MARKETING_VERSION: "1.4.4"
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
         IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule iOS AppStore
   # Target nativo macOS per il MAC APP STORE (acquisto universale: stesso
   # bundle id dell'app iOS → stessa scheda). Il DMG Developer ID continua a
   # usare la build SPM (swift build) come da README.
@@ -102,6 +111,8 @@ targets:
       - path: Mac
       - path: Icons/AppIcon.icon
         type: file
+    dependencies:
+      - target: AmuleRemoteShareMac
     entitlements:
       path: SupportFiles/Mac.entitlements
       properties:
@@ -121,8 +132,8 @@ targets:
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Simone Di Mambro — MIT License"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 24
-        MARKETING_VERSION: "1.4.4"
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
@@ -144,12 +155,18 @@ targets:
         INFOPLIST_FILE: SupportFiles/Watch-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 24
-        MARKETING_VERSION: "1.4.4"
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
         TARGETED_DEVICE_FAMILY: "4"
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule Watch AppStore
   # Target visionOS (Apple Vision Pro): stessa app, senza il ponte Watch
   # (WatchConnectivity non esiste su visionOS).
   AmuleRemoteVision:
@@ -184,6 +201,7 @@ targets:
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
       - path: Sources/AmuleRemote/Continuity.swift
+      - path: Sources/AmuleRemote/Ed2kLink.swift
       - path: Localizable.xcstrings
       - path: iOS
         excludes:
@@ -207,11 +225,17 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIcon-blu AppIcon-rosso AppIcon-arancione AppIcon-viola AppIcon-teal AppIcon-grafite"
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
-        CURRENT_PROJECT_VERSION: 24
-        MARKETING_VERSION: "1.4.4"
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule iOS AppStore
   # Target tvOS (Apple TV): stesso motore EC, interfaccia per il telecomando
   # (cartella TV/). Stesso bundle id → stessa scheda App Store (acquisto universale).
   AmuleRemoteTV:
@@ -245,6 +269,7 @@ targets:
       - path: Sources/AmuleRemote/ServerLists.swift
       - path: Sources/AmuleRemote/ServerListsView.swift
       - path: Sources/AmuleRemote/Continuity.swift
+      - path: Sources/AmuleRemote/Ed2kLink.swift
       - path: Localizable.xcstrings
       - path: TV
     entitlements:
@@ -264,9 +289,117 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         TARGETED_DEVICE_FAMILY: "3"
-        CURRENT_PROJECT_VERSION: 24
-        MARKETING_VERSION: "1.4.4"
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
         SWIFT_VERSION: "5.9"
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: X5SR67A8AL
         TVOS_DEPLOYMENT_TARGET: "17.0"
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule tvOS AppStore
+
+  # Share Extension «Aggiungi ad aMule Remote» (iOS/iPadOS): link ed2k da Note,
+  # Safari, Messaggi… verso il profilo corrente (gruppo keychain condiviso).
+  AmuleRemoteShare:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ShareExtension
+      - path: Sources/AmuleRemote/Ed2kLink.swift
+      - path: Sources/AmuleRemote/ECCodes.swift
+      - path: Sources/AmuleRemote/ECPacket.swift
+      - path: Sources/AmuleRemote/ECClient.swift
+      - path: Sources/AmuleRemote/Models.swift
+      - path: Sources/AmuleRemote/Keychain.swift
+      - path: Localizable.xcstrings
+    entitlements:
+      path: SupportFiles/Share.entitlements
+    settings:
+      base:
+        PRODUCT_NAME: Aggiungi ad aMule Remote
+        PRODUCT_BUNDLE_IDENTIFIER: com.sdimambro.amule-remote-ios.share
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: SupportFiles/Share-Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Aggiungi ad aMule Remote
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
+        SWIFT_VERSION: "5.9"
+        SKIP_INSTALL: YES
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule Share iOS AppStore
+
+  # Stessa Share Extension per il Mac App Store.
+  AmuleRemoteShareMac:
+    type: app-extension
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: ShareExtension
+      - path: Sources/AmuleRemote/Ed2kLink.swift
+      - path: Sources/AmuleRemote/ECCodes.swift
+      - path: Sources/AmuleRemote/ECPacket.swift
+      - path: Sources/AmuleRemote/ECClient.swift
+      - path: Sources/AmuleRemote/Models.swift
+      - path: Sources/AmuleRemote/Keychain.swift
+      - path: Localizable.xcstrings
+    entitlements:
+      path: SupportFiles/ShareMac.entitlements
+    settings:
+      base:
+        PRODUCT_NAME: Aggiungi ad aMule Remote
+        PRODUCT_BUNDLE_IDENTIFIER: com.sdimambro.amule-remote-ios.share
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: SupportFiles/Share-Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Aggiungi ad aMule Remote
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
+        SWIFT_VERSION: "5.9"
+        SKIP_INSTALL: YES
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule Share Mac AppStore
+
+  # Widget «Velocità» e controlli del Centro di Controllo (iOS/iPadOS).
+  AmuleRemoteWidgets:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Widgets
+      - path: Sources/AmuleRemote/ECCodes.swift
+      - path: Sources/AmuleRemote/ECPacket.swift
+      - path: Sources/AmuleRemote/ECClient.swift
+      - path: Sources/AmuleRemote/Models.swift
+      - path: Sources/AmuleRemote/Keychain.swift
+      - path: Localizable.xcstrings
+    entitlements:
+      path: SupportFiles/Widgets.entitlements
+    settings:
+      base:
+        PRODUCT_NAME: aMule Remote Widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.sdimambro.amule-remote-ios.widgets
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: SupportFiles/Widgets-Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: aMule Remote
+        CURRENT_PROJECT_VERSION: 25
+        MARKETING_VERSION: "1.5"
+        SWIFT_VERSION: "5.9"
+        SKIP_INSTALL: YES
+      configs:
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: Apple Distribution
+          DEVELOPMENT_TEAM: X5SR67A8AL
+          PROVISIONING_PROFILE_SPECIFIER: aMule Widgets AppStore

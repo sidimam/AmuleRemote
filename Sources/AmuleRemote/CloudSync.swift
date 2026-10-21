@@ -9,7 +9,7 @@ import Security
 ///    così viaggiano nel Portachiavi iCloud (vedi Keychain.swift).
 /// Nessun dato passa per server di terzi: solo l'account iCloud dell'utente.
 enum CloudSync {
-    static let enabledKey = "iCloudSyncEnabled"
+    static let enabledKey = KeychainSyncPolicy.enabledKey
     private static let profilesKey = "profiles.v1"
     private static let defaultKey = "defaultProfile.v1"
     private static let deletedKey = "deletedProfiles.v1"
@@ -24,14 +24,7 @@ enum CloudSync {
     /// Developer ID con profilo iCloud + SupportFiles/MacDirect.entitlements).
     /// Una build locale `swift build` senza firma/entitlements non lo ha: lì la
     /// funzione resta disattivata con una nota nelle impostazioni.
-    static var isAvailable: Bool {
-        #if os(macOS)
-        guard let task = SecTaskCreateFromSelf(nil) else { return false }
-        return SecTaskCopyValueForEntitlement(task, "com.apple.developer.ubiquity-kvstore-identifier" as CFString, nil) != nil
-        #else
-        return true
-        #endif
-    }
+    static var isAvailable: Bool { KeychainSyncPolicy.available }
 
     struct Payload: Equatable {
         var profiles: [ServerProfile]

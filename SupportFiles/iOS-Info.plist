@@ -16,6 +16,14 @@
 				<string>ed2k</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.sdimambro.amule-remote.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>amuleremote</string>
+			</array>
+		</dict>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

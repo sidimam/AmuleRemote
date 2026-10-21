@@ -222,6 +222,7 @@ final class AppState: ObservableObject {
         }
         // All'avvio comanda il profilo predefinito, se esiste.
         if let def = profiles.first(where: { $0.id == defaultProfileID }) {
+            Keychain.saveSharedProfile(host: def.host, port: def.port, name: def.name)
             host = def.host
             port = def.port
         }
@@ -310,6 +311,7 @@ final class AppState: ObservableObject {
         host = p.host
         port = p.port
         password = Keychain.loadPassword(account: p.address) ?? ""
+        Keychain.saveSharedProfile(host: p.host, port: p.port, name: p.name)
     }
 
     /// Cambio rapido: disconnette dal server corrente e connette al profilo scelto.
@@ -355,15 +357,17 @@ final class AppState: ObservableObject {
 
     func handleIncomingURL(_ url: URL) {
         let s = url.absoluteString.removingPercentEncoding ?? url.absoluteString
+        // amuleremote://addlink: dal controllo «Aggiungi link» del Centro di Controllo.
+        if url.scheme?.lowercased() == "amuleremote" {
+            if url.host?.lowercased() == "addlink" { addLinkRequested = true }
+            return
+        }
         guard s.lowercased().hasPrefix("ed2k://") else { return }
         pendingEd2kLink = s
     }
 
     /// Nome file leggibile da un link ed2k://|file|nome|size|hash|/
-    nonisolated static func ed2kLinkName(_ link: String) -> String {
-        let parts = link.split(separator: "|")
-        return parts.count > 2 ? String(parts[2]) : link
-    }
+    nonisolated static func ed2kLinkName(_ link: String) -> String { Ed2kLink.name(link) }
 
     /// Conferma del link in attesa: connette se serve, poi accoda.
     func confirmPendingEd2kLink() async {
@@ -425,18 +429,7 @@ final class AppState: ObservableObject {
 
     /// Tutti i link ed2k:// contenuti in un testo (uno per riga, incollati
     /// insieme, dentro una nota…), senza doppioni e nell'ordine di apparizione.
-    nonisolated static func extractEd2kLinks(_ text: String) -> [String] {
-        let pattern = #"ed2k://\|file\|[^\s|]+\|\d+\|[0-9A-Fa-f]{32}\|(?:[^\s]*?\|)?/?"#
-        guard let re = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) else { return [] }
-        let ns = text as NSString
-        var seen = Set<String>(), out: [String] = []
-        for m in re.matches(in: text, range: NSRange(location: 0, length: ns.length)) {
-            var link = ns.substring(with: m.range)
-            if !link.hasSuffix("/") { link += "/" }
-            if seen.insert(link.lowercased()).inserted { out.append(link) }
-        }
-        return out
-    }
+    nonisolated static func extractEd2kLinks(_ text: String) -> [String] { Ed2kLink.extract(text) }
 
     /// Accoda tutti i link trovati nel testo; ritorna quanti.
     func addEd2kLinks(from text: String) async -> Int {
